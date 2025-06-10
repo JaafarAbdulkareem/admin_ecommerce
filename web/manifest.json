@@ -1,6 +1,6 @@
 {
-    "name": "admin_ecommece",
-    "short_name": "admin_ecommece",
+    "name": "admin_ecommerce",
+    "short_name": "admin_ecommerce",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
