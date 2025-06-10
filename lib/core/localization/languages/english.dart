@@ -9,6 +9,17 @@ Map<String, String> english = {
   KeyLanguage.invalidPassword: "Enter The Digital Password",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
+//home
+  KeyLanguage.titleCategory: "Category",
+  KeyLanguage.titleProduct: "Product",
+  KeyLanguage.titleUsers: "Users",
+  KeyLanguage.titleOrders: "Orders",
+  KeyLanguage.titleReport: "Report",
+  KeyLanguage.titleNotification: "Notification",
+  KeyLanguage.titleMessage: "Message",
+  KeyLanguage.titleDelivery: "Delivery",
+  KeyLanguage.titlePayment: "Payment",
+  KeyLanguage.titleSetting: "Setting",
 };
 //   KeyLanguage.arabic: "Arabic",
 //   KeyLanguage.english: "English",

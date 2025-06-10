@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 
 abstract class ConstantTypeTheme {
   static ThemeData englishTheme = ThemeData(
+    textTheme: const TextTheme(
+      titleSmall: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        color: AppColorText.primary,
+      ),
+    ),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.primary,
@@ -14,6 +21,13 @@ abstract class ConstantTypeTheme {
     fontFamily: ConstantTextFons.englishFont,
   );
   static ThemeData arabicTheme = ThemeData(
+    textTheme: const TextTheme(
+      headlineSmall: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        color: AppColorText.primary,
+      ),
+    ),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.primary,

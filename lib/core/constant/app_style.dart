@@ -71,9 +71,9 @@ abstract class AppStyle {
 
   static TextStyle styleLight16(BuildContext context) {
     return const TextStyle(
-      fontWeight: FontWeight.w300,
-      fontSize: 16,
-      color: AppColorText.secondary,
+     fontSize: 16,
+      fontWeight: FontWeight.w300
+      // color: AppColorText.secondary,
     );
   }
 

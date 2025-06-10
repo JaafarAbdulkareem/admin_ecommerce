@@ -7,6 +7,17 @@ abstract class KeyLanguage {
   static const String invalidPassword = "invalidPassword";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
+//home
+static const String titleCategory = "titleCategory";
+static const String titleProduct = "titleProduct";
+static const String titleUsers = "titleUsers";
+static const String titleOrders = "titleOrders";
+static const String titleReport = "titleReport";
+static const String titleNotification = "titleNotification";
+static const String titleMessage = "titleMessage";
+static const String titleDelivery = "titleDelivery";
+static const String titlePayment = "titlePayment";
+static const String titleSetting = "titleSetting";
 //   static const String arabic = "arabic";
 //   static const String english = "english";
 //   static const String chooseProduct = "Choose Product";
