@@ -5,12 +5,19 @@ import 'package:flutter/material.dart';
 abstract class ConstantTypeTheme {
   static ThemeData englishTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
-    floatingActionButtonTheme:
-        const FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColor.primary,
+    ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: AppColor.primary,
+    ),
     fontFamily: ConstantTextFons.englishFont,
   );
   static ThemeData arabicTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColor.primary,
+    ),
     floatingActionButtonTheme:
         const FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
     fontFamily: ConstantTextFons.arabicFont,

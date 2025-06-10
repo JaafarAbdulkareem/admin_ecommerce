@@ -1,24 +1,24 @@
 // import 'package:admin_ecommerce/controller/order/archive_order_controller.dart';
 // import 'package:admin_ecommerce/controller/order/order_controller.dart';
-// import 'package:admin_ecommerce/core/constant/app_color.dart';
-// import 'package:admin_ecommerce/core/constant/app_icon.dart';
-// import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
-// import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:admin_ecommerce/core/constant/app_color.dart';
+import 'package:admin_ecommerce/core/constant/app_icon.dart';
+import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-// Future<void> requestNotificationPremission() async {
-//   // NotificationSettings settings =
-//   await FirebaseMessaging.instance.requestPermission(
-//     alert: true,
-//     announcement: false,
-//     badge: true,
-//     carPlay: false,
-//     criticalAlert: false,
-//     provisional: false,
-//     sound: true,
-//   );
+Future<void> requestNotificationPremission() async {
+  // NotificationSettings settings =
+  await FirebaseMessaging.instance.requestPermission(
+    alert: true,
+    announcement: false,
+    badge: true,
+    carPlay: false,
+    criticalAlert: false,
+    provisional: false,
+    sound: true,
+  );
 
 //   // if (settings.authorizationStatus == AuthorizationStatus.authorized) {
 //   //   print('User granted permission');
@@ -27,7 +27,7 @@
 //   // } else {
 //   //   print('User declined or has not accepted permission');
 //   // }
-// }
+}
 
 // // class AuthorizationStatusException implements Exception {}
 // // class ProvisionalStatusException implements Exception {}
@@ -60,7 +60,7 @@
 //   });
 // }
 
-// void fCMNotification() async {
-//   await requestNotificationPremission();
-//   notificationMessage();
-// }
+void fCMNotification() async {
+  await requestNotificationPremission();
+  // notificationMessage();
+}

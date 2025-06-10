@@ -15,7 +15,7 @@ class CustomFloatingButton extends StatelessWidget {
     return IconButton(
       color: AppColorText.textButton,
       style: IconButton.styleFrom(
-        backgroundColor: AppColor.primary,
+        // backgroundColor: AppColor.primary,
         padding: const EdgeInsets.all(08),
       ),
       onPressed: onTap,

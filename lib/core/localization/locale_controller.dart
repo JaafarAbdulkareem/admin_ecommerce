@@ -42,7 +42,7 @@ class LocaleController extends GetxController {
           : ConstantTypeTheme.englishTheme;
     }
 
-    // fCMNotification();
+    fCMNotification();
     super.onInit();
   }
 

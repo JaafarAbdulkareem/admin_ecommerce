@@ -10,10 +10,6 @@ String? validator(String? value, String type, int min, int max) {
     value = value.trim();
     if (value.isEmpty) {
       return KeyLanguage.empty.tr;
-    } else if (ConstantKey.usernameValidator == type) {
-      if (!GetUtils.isUsername(value)) {
-        return KeyLanguage.invalidUsername.tr;
-      }
     } else if (ConstantKey.emailValidator == type) {
       if (!GetUtils.isEmail(value)) {
         return KeyLanguage.invalidEmail.tr;
@@ -29,10 +25,6 @@ String? validator(String? value, String type, int min, int max) {
         }
       } else {
         return KeyLanguage.invalidPassword.tr;
-      }
-    } else if (ConstantKey.phoneValidator == type) {
-      if (!GetUtils.isPhoneNumber(value)) {
-        return KeyLanguage.invalidPhone.tr;
       }
     }
     return null;
