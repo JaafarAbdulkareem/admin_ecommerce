@@ -12,27 +12,31 @@ class ItemGridHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              data.image,
-              height: ConstantScale.homeImageSize,
-              width: ConstantScale.homeImageSize,
-              fit: BoxFit.cover,
-            ),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                data.title.tr,
-                style: Theme.of(context).textTheme.titleSmall,
-                maxLines: 1,
+      child: MaterialButton(
+        padding: const EdgeInsets.all(0),
+        onPressed: data.onPressed,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                data.image,
+                height: ConstantScale.homeImageSize,
+                width: ConstantScale.homeImageSize,
+                fit: BoxFit.cover,
               ),
-            ),
-            const SizedBox(height: 4),
-          ],
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  data.title.tr,
+                  style: Theme.of(context).textTheme.titleSmall,
+                  maxLines: 1,
+                ),
+              ),
+              const SizedBox(height: 4),
+            ],
+          ),
         ),
       ),
     );
