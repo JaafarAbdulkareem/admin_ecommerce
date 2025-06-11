@@ -1,6 +1,6 @@
 abstract class ApiConstant {
   static const String server =
-      "https://b526-49-206-0-60.ngrok-free.app/"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
+      "https://b3e2-49-206-0-60.ngrok-free.app/"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
   // static const String server = "http://192.168.0.113"; // home wifi
   // static const String server = "http://192.168.230.139";
   // static const String server = "http://192.168.50.139"; // mobile
@@ -10,16 +10,14 @@ abstract class ApiConstant {
   static const String imagePath = "$serverPath/upload";
   static const String categoryImagePath = "$imagePath/category";
   static const String productImagePath = "$imagePath/product";
-//  static const String folderUser = "$serverPath/users/";
-//   static const String folderAuth = "$folderUser/auth";
-//   static const String apiSignup = "$folderAuth/signup.php";
-//   static const String apiVerificationSignup =
-//       "$folderAuth/verify_code_signup.php";
-//   static const String apiVerification = "$folderAuth/verify_code.php";
-//   static const String apiLogin = "$folderAuth/login.php";
-//   static const String apiForgetPassword = "$folderAuth/forget_password.php";
-//   static const String apiResetPassword = "$folderAuth/reset_password.php";
-//   static const String apiViewAuth = "$folderAuth/view_auth.php";
+  static const String folderAdmin = "$serverPath/Admin/";
+  static const String folderAuth = "$folderAdmin/auth";
+
+  static const String apiVerification = "$folderAuth/verify_code.php";
+  static const String apiLogin = "$folderAuth/login.php";
+  static const String apiForgetPassword = "$folderAuth/forget_password.php";
+  static const String apiResetPassword = "$folderAuth/reset_password.php";
+  // static const String apiViewAuth = "$folderAuth/view_auth.php";
 
 //   static const String folderHome = "$folderUser/home";
 //   static const String apiHome = "$folderHome/home.php";

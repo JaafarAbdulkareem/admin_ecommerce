@@ -22,7 +22,8 @@ class BodyLoginView extends GetView<LoginControllerImp> {
     return Form(
       key: controller.keyLogin,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:ConstantScale.horizonPage),
+        padding:
+            const EdgeInsets.symmetric(horizontal: ConstantScale.horizonPage),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,

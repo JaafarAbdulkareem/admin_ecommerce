@@ -33,9 +33,9 @@ abstract class KeyLanguage {
   // static const String dialogPopContent = "dialogPopContent";
   // static const String emailFoundMessage = "emailFoundMessage";
   // static const String verifyWrongMessage = "verifyWrongMessage";
-  // static const String someErrorMessage = "someThingMessage";
+  static const String alertSomeError = "alertSomeError";
   // static const String noApproveMessage = "noApproveMessage";
-  // static const String noFoundMessage = "noFoundMessage";
+  static const String alertNoFound = "alertNoFound";
   // static const String passwordMismatchMassage = "passwordNotMatch";
   static const String alertEnterEmail = "alertEnterEmail";
   // static const String incrementMessage = "incrementMessage";

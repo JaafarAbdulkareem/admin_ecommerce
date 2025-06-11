@@ -37,10 +37,10 @@ Map<String, String> english = {
   // KeyLanguage.dialogPopContent: "Do You Want Exit?",
   // KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
   // KeyLanguage.verifyWrongMessage: "Your Verification Was Wrong, Try Again ",
-  // KeyLanguage.someErrorMessage: "An Error Occurred, Please Try Again Later",
+  KeyLanguage.alertSomeError: "An Error Occurred, Please Try Again Later",
   // KeyLanguage.noApproveMessage:
   //     "verify Your Verification, click Forget Password ",
-  // KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
+  KeyLanguage.alertNoFound: "The Email or Password Was Wrong, Try Again",
   // KeyLanguage.passwordMismatchMassage:
   //     "Password Mismatch, Check Your Password again",
   KeyLanguage.alertEnterEmail: "Enter Your Email First Please",

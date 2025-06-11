@@ -5,7 +5,9 @@ abstract class ConstantKey {
   static const String keyLogin = "keyLogin";
   static const String keyfavoriteId = "keyFavoriteId";
   static const String keyUserId = "keyUserId";
-  static const String keyUsername = "keyUsername";
+  static const String keyEmail = "keyEmail";
+  static const String keyPassword = "keyPassword";
+  // static const String keyUsername = "keyUsername";
   // static const String userIdValidator = "userId";
   //validator
   static const String usernameValidator = "username";
