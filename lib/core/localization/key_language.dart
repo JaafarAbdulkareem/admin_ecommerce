@@ -23,6 +23,8 @@ abstract class KeyLanguage {
   static const String titleForgetPassword = "titleForgetPassword";
   static const String messageVerification = "messageVerification";
   static const String forgetPasswordContent = "forgetPasswordContent";
+  static const String titleRePassword = "titleRePassword";
+  static const String resetPasswordContent = "resetPasswordContent";
 
 //home
   static const String titleCategory = "titleCategory";
@@ -43,7 +45,7 @@ abstract class KeyLanguage {
   static const String alertSomeError = "alertSomeError";
   // static const String noApproveMessage = "noApproveMessage";
   static const String alertNoFound = "alertNoFound";
-  // static const String passwordMismatchMassage = "passwordNotMatch";
+  static const String passwordMismatchMassage = "passwordMismatchMassage";
   static const String alertEnterEmail = "alertEnterEmail";
   // static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";
@@ -64,6 +66,7 @@ abstract class KeyLanguage {
   static const String yesButton = "yesButton";
   static const String noButton = "noButton";
   static const String checkButton = "checkButton";
+  static const String saveButton = "saveButton";
 
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
@@ -72,7 +75,6 @@ abstract class KeyLanguage {
 //   //button
 //   static const String continueButton = "ContinueButton";
 //   static const String signupButton = "signupButton";
-//   static const String saveButton = "saveButton";
 //   static const String verifyButton = "verifyButton";
 //   static const String goToCartButton = "goToCartButton";
 //   static const String nextButton = "nextButton";
@@ -89,7 +91,6 @@ abstract class KeyLanguage {
 //login
 //   static const String successTitle = "successTitle";
 //   static const String signupContent = "signupContent";
-//   static const String resetPasswordContent = "resetPasswordContent";
 //   static const String successContent = "successContent";
 // //////Text field
 //   //label

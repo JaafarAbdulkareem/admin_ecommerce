@@ -41,9 +41,19 @@ class VerificationControllerImp extends VerificationController {
       if (response[ApiResult.status] == ApiResult.success) {
         statusRequest = StatusRequest.loading;
         update();
-        await Get.offAllNamed(ConstantScreenName.resetPassword, arguments: {
-          ApiKey.email: email,
-        });
+        await Get.offNamedUntil(
+          ConstantScreenName.resetPassword,
+          (route) => route.settings.name == ConstantScreenName.login,
+          arguments: {
+            ApiKey.email: email,
+          },
+        );
+        // await Get.offNamed(
+        //   ConstantScreenName.resetPassword,
+        //   arguments: {
+        //     ApiKey.email: email,
+        //   },
+        // );
       } else {
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
@@ -86,11 +96,10 @@ class VerificationControllerImp extends VerificationController {
 
   @override
   void verificationOnTap({required String verifyCode}) async {
-    await prefs.prefs.setBool(ConstantKey.keyLogin, true);
-
     if (Get.isRegistered<ForgetPasswordControllerImp>()) {
       goToResetPassword(verifyCode: verifyCode);
     } else {
+      await prefs.prefs.setBool(ConstantKey.keyLogin, true);
       goToHome(verifyCode: verifyCode);
     }
   }

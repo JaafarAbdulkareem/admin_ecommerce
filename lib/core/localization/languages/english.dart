@@ -26,6 +26,8 @@ Map<String, String> english = {
   KeyLanguage.messageVerification: "Please, Enter The Digital Code to Sent : ",
   KeyLanguage.forgetPasswordContent:
       "Please, Enter Your Email Address to Recive A Verification Code",
+  KeyLanguage.titleRePassword: "Reset Password",
+  KeyLanguage.resetPasswordContent: "Please, Enter New Password",
 //home
   KeyLanguage.titleCategory: "Category",
   KeyLanguage.titleProduct: "Product",
@@ -46,8 +48,8 @@ Map<String, String> english = {
   // KeyLanguage.noApproveMessage:
   //     "verify Your Verification, click Forget Password ",
   KeyLanguage.alertNoFound: "The Email or Password Was Wrong, Try Again",
-  // KeyLanguage.passwordMismatchMassage:
-  //     "Password Mismatch, Check Your Password again",
+  KeyLanguage.passwordMismatchMassage:
+      "Password Mismatch, Check Your Password again",
   KeyLanguage.alertEnterEmail: "Enter Your Email First Please",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
@@ -73,6 +75,7 @@ Map<String, String> english = {
   KeyLanguage.yesButton: "Yes",
   KeyLanguage.noButton: "No",
   KeyLanguage.checkButton: "Check",
+  KeyLanguage.saveButton: "Save",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
@@ -83,7 +86,6 @@ Map<String, String> english = {
 //   //button
 //   KeyLanguage.continueButton: "Continue",
 //   KeyLanguage.signupButton: "SignUp",
-//   KeyLanguage.saveButton: "Save",
 //   KeyLanguage.verifyButton: "Verify",
 //   KeyLanguage.goToCartButton: "Add To Card",
 //   KeyLanguage.nextButton: "Next",
@@ -102,7 +104,6 @@ Map<String, String> english = {
 //   KeyLanguage.successTitle: "Success",
 //   KeyLanguage.signupContent:
 //       "Signup with your email and password or continue with social media",
-//   KeyLanguage.resetPasswordContent: "Please, Enter New Password",
 //   KeyLanguage.successContent:
 //       "Success! Your Action Is Complete. Please Log In Again.",
 // //text field

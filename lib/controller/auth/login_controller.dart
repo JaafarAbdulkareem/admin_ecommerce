@@ -34,8 +34,8 @@ class LoginControllerImp extends LoginController {
   @override
   void onInit() {
     keyLogin = GlobalKey<FormState>();
-    email = TextEditingController(text: "admin@gmail.com");
-    password = TextEditingController(text: "654321");
+    email = TextEditingController();
+    password = TextEditingController();
     BackButtonInterceptor.add(onBackPressed);
     statusRequest = StatusRequest.initial;
     loginRemote = LoginRemote(curd: Get.find());
@@ -122,7 +122,8 @@ class LoginControllerImp extends LoginController {
     if (email.text.isNotEmpty) {
       statusRequest = StatusRequest.loading;
       update();
-      await Get.toNamed(
+      password.clear();
+      Get.toNamed(
         ConstantScreenName.forgetPassword,
         arguments: {
           ApiKey.email: email.text,
