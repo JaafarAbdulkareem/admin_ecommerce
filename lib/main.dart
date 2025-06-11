@@ -1,6 +1,5 @@
 import 'package:admin_ecommerce/core/localization/locale_controller.dart';
 import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
-import 'package:admin_ecommerce/view/screen/home/home_view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:admin_ecommerce/core/binding/initial_bindings.dart';
 import 'package:admin_ecommerce/core/localization/translation_languages.dart';
@@ -33,12 +32,12 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
       debugShowCheckedModeBanner: false,
-      title: 'Ecommerce',
+      title: 'Admin Ecommerce',
       theme: controller.theme,
       translations: TranslationLanguages(),
       locale: controller.language,
       initialBinding: InitialBindings(),
-      home: const HomeView(),
+      // home: const SplashView(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

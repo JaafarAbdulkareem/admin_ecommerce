@@ -14,7 +14,9 @@ class OnboardingMiddleware extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     if (pref.prefs.getBool(ConstantKey.keyLogin) ?? false) {
       return const RouteSettings(name: ConstantScreenName.home);
-    } 
+    } else if (pref.prefs.getBool(ConstantKey.keySplash) ?? false) {
+      return const RouteSettings(name: ConstantScreenName.login);
+    }
     return null;
   }
 }

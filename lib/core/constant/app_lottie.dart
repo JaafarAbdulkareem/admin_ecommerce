@@ -8,4 +8,5 @@ abstract class AppLottie {
   static const String offline = "$_path/offline.json";
   static const String server = "$_path/server.json";
   static const String couponsCelebration = "$_path/coupons_celebration2.json";
+  static const String splash = "$_path/splash.json";
 }

@@ -1,16 +1,16 @@
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
+import 'package:admin_ecommerce/core/theme/text_theme.dart';
 import 'package:flutter/material.dart';
 
 abstract class ConstantTypeTheme {
   static ThemeData englishTheme = ThemeData(
-    textTheme: const TextTheme(
-      titleSmall: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w300,
-        color: AppColorText.primary,
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: AppColor.primary,
       ),
     ),
+    textTheme: textTheme(),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.primary,
@@ -20,14 +20,14 @@ abstract class ConstantTypeTheme {
     ),
     fontFamily: ConstantTextFons.englishFont,
   );
+
   static ThemeData arabicTheme = ThemeData(
-    textTheme: const TextTheme(
-      headlineSmall: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w300,
-        color: AppColorText.primary,
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: AppColor.primary,
       ),
     ),
+    textTheme: textTheme(),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.primary,

@@ -1,6 +1,5 @@
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/app_icon.dart';
-import 'package:admin_ecommerce/core/constant/app_style.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
 
@@ -46,11 +45,11 @@ class CustomTextFormFieldWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Text(
               label,
-              style: AppStyle.styleLight16(context),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
           ),
           hintText: hint,
-          hintStyle: AppStyle.styleLight14(context),
+          hintStyle: Theme.of(context).textTheme.bodySmall,
           suffixIcon: keyboardType == TextInputType.number
               ? IconButton(
                   onPressed: changeCasePassword,

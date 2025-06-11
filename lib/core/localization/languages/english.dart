@@ -3,12 +3,18 @@ import 'package:admin_ecommerce/core/localization/key_language.dart';
 Map<String, String> english = {
 //appbar
   KeyLanguage.appBarHome: "Home",
+  KeyLanguage.appBarLogin: "Login",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
   KeyLanguage.invalidPassword: "Enter The Digital Password",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
+//onboarding
+  KeyLanguage.chooseLanguage: "Choose Language",
+  KeyLanguage.arabic: "Arabic",
+  KeyLanguage.english: "English",
+  KeyLanguage.titleSplash: "Welcome to My App",
 //home
   KeyLanguage.titleCategory: "Category",
   KeyLanguage.titleProduct: "Product",
@@ -21,9 +27,7 @@ Map<String, String> english = {
   KeyLanguage.titlePayment: "Payment",
   KeyLanguage.titleSetting: "Setting",
 };
-//   KeyLanguage.arabic: "Arabic",
-//   KeyLanguage.english: "English",
-//   KeyLanguage.chooseProduct: "Choose Product",
+  
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
 //   KeyLanguage.trackYourOrder: "Track Your Order",
 //   KeyLanguage.fastDelivery: "Fast Delivery",

@@ -50,7 +50,7 @@ class LocaleController extends GetxController {
     statusRequest = StatusRequest.loading;
     update();
     await changeLanguage(codeLanguage);
-    await Get.toNamed(ConstantScreenName.onboarding);
+    await Get.toNamed(ConstantScreenName.splash);
     statusRequest = StatusRequest.success;
     update();
   }

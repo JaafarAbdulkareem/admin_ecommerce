@@ -1,26 +1,30 @@
 abstract class KeyLanguage {
 //appBar
   static const String appBarHome = "appBarHome";
+  static const String appBarLogin = "appBarLogin";
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
   static const String invalidPassword = "invalidPassword";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
+//onboarding
+  static const String chooseLanguage = "chooseLanguage";
+  static const String arabic = "arabic";
+  static const String english = "english";
+  static const String titleSplash = "titleSplash";
 //home
-static const String titleCategory = "titleCategory";
-static const String titleProduct = "titleProduct";
-static const String titleUsers = "titleUsers";
-static const String titleOrders = "titleOrders";
-static const String titleReport = "titleReport";
-static const String titleNotification = "titleNotification";
-static const String titleMessage = "titleMessage";
-static const String titleDelivery = "titleDelivery";
-static const String titlePayment = "titlePayment";
-static const String titleSetting = "titleSetting";
-//   static const String arabic = "arabic";
-//   static const String english = "english";
-//   static const String chooseProduct = "Choose Product";
+  static const String titleCategory = "titleCategory";
+  static const String titleProduct = "titleProduct";
+  static const String titleUsers = "titleUsers";
+  static const String titleOrders = "titleOrders";
+  static const String titleReport = "titleReport";
+  static const String titleNotification = "titleNotification";
+  static const String titleMessage = "titleMessage";
+  static const String titleDelivery = "titleDelivery";
+  static const String titlePayment = "titlePayment";
+  static const String titleSetting = "titleSetting";
+
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
 //   static const String fastDelivery = "Fast Delivery";
