@@ -16,6 +16,7 @@ class BodyVerifcationView extends GetView<VerificationControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TitleDescriptionWidget(
             title:

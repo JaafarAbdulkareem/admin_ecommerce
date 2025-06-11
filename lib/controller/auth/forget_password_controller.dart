@@ -8,64 +8,58 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class ForgetPasswordController extends GetxController {
-  // void forgetPasswordOnTap();
+  void checkOnTap();
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {
-  // late GlobalKey<FormState> keyForgetPassword;
-  // late TextEditingController email;
-  // late StatusRequest statusRequest;
-  // late ForgetPasswordRemote forgetPasswordRemote;
-  // @override
-  // void onInit() {
-  //   keyForgetPassword = GlobalKey<FormState>();
-  //   email = TextEditingController(text: Get.arguments[ApiKey.email]);
-  //   statusRequest = StatusRequest.initial;
-  //   forgetPasswordRemote = ForgetPasswordRemote(curd: Get.find());
-  //   super.onInit();
-  // }
+  late GlobalKey<FormState> keyForgetPassword;
+  late TextEditingController email;
+  late StatusRequest statusRequest;
+  late ForgetPasswordRemote forgetPasswordRemote;
+  @override
+  void onInit() {
+    keyForgetPassword = GlobalKey<FormState>();
+    email = TextEditingController(text: Get.arguments[ApiKey.email]);
+    statusRequest = StatusRequest.initial;
+    forgetPasswordRemote = ForgetPasswordRemote(curd: Get.find());
+    super.onInit();
+  }
 
-  // @override
-  // void dispose() {
-  //   email.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    email.dispose();
+    super.dispose();
+  }
 
-  // @override
-  // void forgetPasswordOnTap() async {
-  //   if (keyForgetPassword.currentState!.validate()) {
-  //     var response = await forgetPasswordRemote.getData(
-  //       email: email.text,
-  //     );
-  //     statusRequest = handleStatus(response);
-  //     update();
-  //     if (statusRequest == StatusRequest.success) {
-  //       if (response[ApiResult.status] == ApiResult.success) {
-  //         statusRequest = StatusRequest.loading;
-  //         update();
-  //         await Get.toNamed(
-  //           ConstantScreenName.vertify,
-  //           arguments: {
-  //             ApiKey.email: email.text,
-  //             ApiKey.verifyCode: response[ApiResult.data].toString(),
-  //           },
-  //         );
-  //       } else {
-  //         email.clear();
-  //         await Get.defaultDialog(
-  //           title: KeyLanguage.alert.tr,
-  //           middleText: KeyLanguage.emailFoundMessage.tr,
-  //         );
-  //       }
-  //       statusRequest = StatusRequest.success;
-  //       update();
-  //     }
-  //     // else {
-  //     //   await Get.defaultDialog(
-  //     //     title: KeyLanguage.alert.tr,
-  //     //     middleText: KeyLanguage.someThingMessage.tr,
-  //     //   );
-  //     // }
-  //   }
-  // }
+  @override
+  void checkOnTap() async {
+    if (keyForgetPassword.currentState!.validate()) {
+      var response = await forgetPasswordRemote.getData(
+        email: email.text,
+      );
+      statusRequest = handleStatus(response);
+      update();
+      if (statusRequest == StatusRequest.success) {
+        if (response[ApiResult.status] == ApiResult.success) {
+          statusRequest = StatusRequest.loading;
+          update();
+          await Get.toNamed(
+            ConstantScreenName.verifyCode,
+            arguments: {
+              ApiKey.email: email.text,
+              ApiKey.verifyCode: response[ApiResult.data],
+            },
+          );
+        } else {
+          email.clear();
+          await Get.defaultDialog(
+            title: KeyLanguage.alert.tr,
+            middleText: KeyLanguage.alertNoFound.tr,
+          );
+        }
+        statusRequest = StatusRequest.success;
+        update();
+      } 
+    }
+  }
 }

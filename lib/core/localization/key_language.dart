@@ -22,6 +22,7 @@ abstract class KeyLanguage {
   static const String messageLogin = "messageLogin";
   static const String titleForgetPassword = "titleForgetPassword";
   static const String messageVerification = "messageVerification";
+  static const String forgetPasswordContent = "forgetPasswordContent";
 
 //home
   static const String titleCategory = "titleCategory";
@@ -62,6 +63,8 @@ abstract class KeyLanguage {
   static const String loginButton = "loginButton";
   static const String yesButton = "yesButton";
   static const String noButton = "noButton";
+  static const String checkButton = "checkButton";
+
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
 //   static const String fastDelivery = "Fast Delivery";
@@ -70,7 +73,6 @@ abstract class KeyLanguage {
 //   static const String continueButton = "ContinueButton";
 //   static const String signupButton = "signupButton";
 //   static const String saveButton = "saveButton";
-//   static const String checkButton = "checkButton";
 //   static const String verifyButton = "verifyButton";
 //   static const String goToCartButton = "goToCartButton";
 //   static const String nextButton = "nextButton";
@@ -86,9 +88,7 @@ abstract class KeyLanguage {
 //   static const String submitButton = "submitButton";
 //login
 //   static const String successTitle = "successTitle";
-//
 //   static const String signupContent = "signupContent";
-//   static const String forgetPasswordContent = "forgetPasswordContent";
 //   static const String resetPasswordContent = "resetPasswordContent";
 //   static const String successContent = "successContent";
 // //////Text field

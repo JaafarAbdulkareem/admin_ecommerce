@@ -24,7 +24,8 @@ Map<String, String> english = {
       "Login with your email and password or continue with social media",
   KeyLanguage.titleForgetPassword: "Forget Password",
   KeyLanguage.messageVerification: "Please, Enter The Digital Code to Sent : ",
-
+  KeyLanguage.forgetPasswordContent:
+      "Please, Enter Your Email Address to Recive A Verification Code",
 //home
   KeyLanguage.titleCategory: "Category",
   KeyLanguage.titleProduct: "Product",
@@ -71,6 +72,7 @@ Map<String, String> english = {
   KeyLanguage.loginButton: "Login",
   KeyLanguage.yesButton: "Yes",
   KeyLanguage.noButton: "No",
+  KeyLanguage.checkButton: "Check",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
@@ -82,7 +84,6 @@ Map<String, String> english = {
 //   KeyLanguage.continueButton: "Continue",
 //   KeyLanguage.signupButton: "SignUp",
 //   KeyLanguage.saveButton: "Save",
-//   KeyLanguage.checkButton: "Checkout",
 //   KeyLanguage.verifyButton: "Verify",
 //   KeyLanguage.goToCartButton: "Add To Card",
 //   KeyLanguage.nextButton: "Next",
@@ -96,12 +97,11 @@ Map<String, String> english = {
 //   KeyLanguage.injectButton: "Inject",
 //   KeyLanguage.cancelButton: "Cancel",
 //   KeyLanguage.submitButton: "Submit",
+
 // //auth
 //   KeyLanguage.successTitle: "Success",
 //   KeyLanguage.signupContent:
 //       "Signup with your email and password or continue with social media",
-//   KeyLanguage.forgetPasswordContent:
-//       "Please, Enter Your Email Address to Recive A Verification Code",
 //   KeyLanguage.resetPasswordContent: "Please, Enter New Password",
 //   KeyLanguage.successContent:
 //       "Success! Your Action Is Complete. Please Log In Again.",
