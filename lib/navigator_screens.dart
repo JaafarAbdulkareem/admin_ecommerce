@@ -1,4 +1,4 @@
-import 'package:admin_ecommerce/core/animation/splash_view.dart';
+import 'package:admin_ecommerce/view/screen/onboarding/splash_view.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/middleware/onboarding_middleware.dart';
 import 'package:admin_ecommerce/view/screen/auth/login_view.dart';

@@ -14,6 +14,7 @@ abstract class ConstantTypeTheme {
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.primary,
+      foregroundColor: AppColorText.textButton
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColor.primary,
