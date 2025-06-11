@@ -11,10 +11,10 @@ abstract class ApiConstant {
   static const String categoryImagePath = "$imagePath/category";
   static const String productImagePath = "$imagePath/product";
   static const String folderAdmin = "$serverPath/Admin/";
-  static const String folderAuth = "$folderAdmin/auth";
 
-  static const String apiVerification = "$folderAuth/verify_code.php";
+  static const String folderAuth = "$folderAdmin/auth";
   static const String apiLogin = "$folderAuth/login.php";
+  static const String apiVerification = "$folderAuth/verify_code.php";
   static const String apiForgetPassword = "$folderAuth/forget_password.php";
   static const String apiResetPassword = "$folderAuth/reset_password.php";
   // static const String apiViewAuth = "$folderAuth/view_auth.php";

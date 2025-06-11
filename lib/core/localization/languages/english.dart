@@ -4,6 +4,9 @@ Map<String, String> english = {
 //appbar
   KeyLanguage.appBarHome: "Home",
   KeyLanguage.appBarLogin: "Login",
+  KeyLanguage.appBarVerification: "Verification",
+  KeyLanguage.appBarForgetPassword: "Check Email",
+  KeyLanguage.appBarRePassword: "New Password",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -17,9 +20,10 @@ Map<String, String> english = {
   KeyLanguage.titleSplash: "Welcome To My App",
 //auth
   KeyLanguage.titleWelcome: "Welcome Back",
-  KeyLanguage.loginContent:
+  KeyLanguage.messageLogin:
       "Login with your email and password or continue with social media",
   KeyLanguage.titleForgetPassword: "Forget Password",
+  KeyLanguage.messageVerification: "Please, Enter The Digital Code to Sent : ",
 
 //home
   KeyLanguage.titleCategory: "Category",
@@ -34,9 +38,9 @@ Map<String, String> english = {
   KeyLanguage.titleSetting: "Setting",
 //dialog
   KeyLanguage.alert: "Alert",
-  // KeyLanguage.dialogPopContent: "Do You Want Exit?",
+  KeyLanguage.alertWantExit: "Do You Want Exit?",
   // KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
-  // KeyLanguage.verifyWrongMessage: "Your Verification Was Wrong, Try Again ",
+  KeyLanguage.alertVerifyWrong: "Your Verification Was Wrong, Try Again ",
   KeyLanguage.alertSomeError: "An Error Occurred, Please Try Again Later",
   // KeyLanguage.noApproveMessage:
   //     "verify Your Verification, click Forget Password ",
@@ -65,6 +69,8 @@ Map<String, String> english = {
 
 //button
   KeyLanguage.loginButton: "Login",
+  KeyLanguage.yesButton: "Yes",
+  KeyLanguage.noButton: "No",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
@@ -78,8 +84,6 @@ Map<String, String> english = {
 //   KeyLanguage.saveButton: "Save",
 //   KeyLanguage.checkButton: "Checkout",
 //   KeyLanguage.verifyButton: "Verify",
-//   KeyLanguage.yesButton: "Yes",
-//   KeyLanguage.noButton: "No",
 //   KeyLanguage.goToCartButton: "Add To Card",
 //   KeyLanguage.nextButton: "Next",
 //   KeyLanguage.applyButton: "Apply",
@@ -93,15 +97,11 @@ Map<String, String> english = {
 //   KeyLanguage.cancelButton: "Cancel",
 //   KeyLanguage.submitButton: "Submit",
 // //auth
-//   KeyLanguage.checkEmailTitle: "Check Email",
-//   KeyLanguage.verifyTitle: "Verification",
-//   KeyLanguage.rePasswordTitle: "New Password",
 //   KeyLanguage.successTitle: "Success",
 //   KeyLanguage.signupContent:
 //       "Signup with your email and password or continue with social media",
 //   KeyLanguage.forgetPasswordContent:
 //       "Please, Enter Your Email Address to Recive A Verification Code",
-//   KeyLanguage.verifyContent: "Please, Enter The Digital Code to Sent : ",
 //   KeyLanguage.resetPasswordContent: "Please, Enter New Password",
 //   KeyLanguage.successContent:
 //       "Success! Your Action Is Complete. Please Log In Again.",

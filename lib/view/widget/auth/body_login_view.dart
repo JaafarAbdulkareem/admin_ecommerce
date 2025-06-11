@@ -31,7 +31,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
             const CustomLogoWidget(),
             TitleDescriptionWidget(
               title: KeyLanguage.titleWelcome.tr,
-              subTitle: KeyLanguage.loginContent.tr,
+              subTitle: KeyLanguage.messageLogin.tr,
             ),
             CustomTextFormFieldWidget(
               hint: KeyLanguage.emailHint.tr,

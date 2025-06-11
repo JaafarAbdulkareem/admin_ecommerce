@@ -4,18 +4,15 @@ abstract class ConstantScale {
   static const double horizonFieldText = 24;
 //button
   static const double buttonSize = 18;
-
+//auth
+  static const int otpNumber = 4;
 //home
   static const int numberGridHome = 3;
   static const double homeImageSize = 80;
   static const double aspectRatio = 0.85;
 
   // static const int initialOnboardingIndex = 0;
-//   static const int otpNumber = 4;
 //field
-  // static const int minUsername = 3;
-  // static const int maxUsername = 50;
-
   static const int minEmail = 5;
   static const int maxEmail = 100;
 

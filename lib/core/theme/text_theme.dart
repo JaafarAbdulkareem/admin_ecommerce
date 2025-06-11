@@ -35,6 +35,7 @@ TextTheme textTheme() {
     bodySmall: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: AppColorText.primary,
       // fontFamily: ConstantTextFons.sans,
     ),
   );

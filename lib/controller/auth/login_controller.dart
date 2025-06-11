@@ -5,10 +5,12 @@ import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 // import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
+import 'package:admin_ecommerce/core/function/on_back_pressed.dart';
 // import 'package:admin_ecommerce/core/function/on_back_pressed.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
 import 'package:admin_ecommerce/data/data_source/remote/auth/login_remote.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 // import 'package:admin_ecommerce/data/data_source/remote/auth/login_remote.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +34,9 @@ class LoginControllerImp extends LoginController {
   @override
   void onInit() {
     keyLogin = GlobalKey<FormState>();
-    email = TextEditingController();
-    password = TextEditingController();
-    // BackButtonInterceptor.add(onBackPressed);
+    email = TextEditingController(text: "admin@gmail.com");
+    password = TextEditingController(text: "654321");
+    BackButtonInterceptor.add(onBackPressed);
     statusRequest = StatusRequest.initial;
     loginRemote = LoginRemote(curd: Get.find());
     titleDialog = KeyLanguage.alert.tr;
@@ -47,11 +49,10 @@ class LoginControllerImp extends LoginController {
   void dispose() {
     email.dispose();
     password.dispose();
-    // BackButtonInterceptor.remove(onBackPressed);
+    BackButtonInterceptor.remove(onBackPressed);
     super.dispose();
   }
 
-  // @override
   Future<void> sharedPreferencesInitial(response) async {
     await prefs.prefs
         .setString(ConstantKey.keyUserId, response[ApiColumnDb.id]);

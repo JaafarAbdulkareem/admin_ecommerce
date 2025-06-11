@@ -2,6 +2,10 @@ abstract class KeyLanguage {
 //appBar
   static const String appBarHome = "appBarHome";
   static const String appBarLogin = "appBarLogin";
+  static const String appBarVerification = "appBarVerification";
+  static const String appBarForgetPassword = "appBarForgetPassword";
+  static const String appBarRePassword = "appBarRePassword";
+
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
@@ -15,8 +19,10 @@ abstract class KeyLanguage {
   static const String titleSplash = "titleSplash";
 //auth
   static const String titleWelcome = "titleWelcome";
-  static const String loginContent = "loginContent";
-  static const String titleForgetPassword = "forgetPassword";
+  static const String messageLogin = "messageLogin";
+  static const String titleForgetPassword = "titleForgetPassword";
+  static const String messageVerification = "messageVerification";
+
 //home
   static const String titleCategory = "titleCategory";
   static const String titleProduct = "titleProduct";
@@ -30,9 +36,9 @@ abstract class KeyLanguage {
   static const String titleSetting = "titleSetting";
   //dialog
   static const String alert = "alert";
-  // static const String dialogPopContent = "dialogPopContent";
+  static const String alertWantExit = "dialogPopContent";
   // static const String emailFoundMessage = "emailFoundMessage";
-  // static const String verifyWrongMessage = "verifyWrongMessage";
+  static const String alertVerifyWrong = "verifyWrongMessage";
   static const String alertSomeError = "alertSomeError";
   // static const String noApproveMessage = "noApproveMessage";
   static const String alertNoFound = "alertNoFound";
@@ -54,6 +60,8 @@ abstract class KeyLanguage {
   static const String rePasswordHint = "rePasswordHint";
 //button
   static const String loginButton = "loginButton";
+  static const String yesButton = "yesButton";
+  static const String noButton = "noButton";
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
 //   static const String fastDelivery = "Fast Delivery";
@@ -64,8 +72,6 @@ abstract class KeyLanguage {
 //   static const String saveButton = "saveButton";
 //   static const String checkButton = "checkButton";
 //   static const String verifyButton = "verifyButton";
-//   static const String yesButton = "yesButton";
-//   static const String noButton = "noButton";
 //   static const String goToCartButton = "goToCartButton";
 //   static const String nextButton = "nextButton";
 //   static const String applyButton = "applyButton";
@@ -79,14 +85,10 @@ abstract class KeyLanguage {
 //   static const String cancelButton = "cancelButton";
 //   static const String submitButton = "submitButton";
 //login
-//   static const String checkEmailTitle = "checkEmailTitle";
-//   static const String verifyTitle = "verifyTitle";
-//   static const String rePasswordTitle = "rePasswordTitle";
 //   static const String successTitle = "successTitle";
 //
 //   static const String signupContent = "signupContent";
 //   static const String forgetPasswordContent = "forgetPasswordContent";
-//   static const String verifyContent = "verifyContent";
 //   static const String resetPasswordContent = "resetPasswordContent";
 //   static const String successContent = "successContent";
 // //////Text field
@@ -113,7 +115,7 @@ abstract class KeyLanguage {
 //   static const String commentHint = 'commentHint';
 
 //   //message
-//   
+//
 //   static const String messageLinkLogin = "messsageLinkLogin";
 //   static const String messageLinkSignup = "messageLinkSignup";
 //   static const String productNoNotAvailableMessage =

@@ -1,6 +1,5 @@
 import 'package:admin_ecommerce/core/localization/locale_controller.dart';
 import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
-import 'package:admin_ecommerce/view/screen/auth/login_view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:admin_ecommerce/core/binding/initial_bindings.dart';
 import 'package:admin_ecommerce/core/localization/translation_languages.dart';
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
       translations: TranslationLanguages(),
       locale: controller.language,
       initialBinding: InitialBindings(),
-      home: const LoginView(),
+      // home: const VerificationView(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

@@ -1,4 +1,5 @@
 import 'package:admin_ecommerce/core/constant/app_color.dart';
+import 'package:admin_ecommerce/core/constant/constant_bool.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ InputDecorationTheme inputDecorationTheme() {
       horizontal: ConstantScale.horizonFieldText,
     ),
     floatingLabelBehavior: FloatingLabelBehavior.always,
-    isDense: true,
+    isDense: ConstantBool.isDense,
     border: _outlineInputBorder(),
     enabledBorder: _outlineInputBorder(),
     focusedBorder: _outlineInputBorder(),
