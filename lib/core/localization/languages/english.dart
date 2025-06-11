@@ -10,11 +10,17 @@ Map<String, String> english = {
   KeyLanguage.invalidPassword: "Enter The Digital Password",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
-//onboarding
+//splash
   KeyLanguage.chooseLanguage: "Choose Language",
   KeyLanguage.arabic: "Arabic",
   KeyLanguage.english: "English",
-  KeyLanguage.titleSplash: "Welcome to My App",
+  KeyLanguage.titleSplash: "Welcome To My App",
+//auth
+  KeyLanguage.titleWelcome: "Welcome Back",
+  KeyLanguage.loginContent:
+      "Login with your email and password or continue with social media",
+  KeyLanguage.titleForgetPassword: "Forget Password",
+
 //home
   KeyLanguage.titleCategory: "Category",
   KeyLanguage.titleProduct: "Product",
@@ -26,6 +32,39 @@ Map<String, String> english = {
   KeyLanguage.titleDelivery: "Delivery",
   KeyLanguage.titlePayment: "Payment",
   KeyLanguage.titleSetting: "Setting",
+//dialog
+  KeyLanguage.alert: "Alert",
+  // KeyLanguage.dialogPopContent: "Do You Want Exit?",
+  // KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
+  // KeyLanguage.verifyWrongMessage: "Your Verification Was Wrong, Try Again ",
+  // KeyLanguage.someErrorMessage: "An Error Occurred, Please Try Again Later",
+  // KeyLanguage.noApproveMessage:
+  //     "verify Your Verification, click Forget Password ",
+  // KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
+  // KeyLanguage.passwordMismatchMassage:
+  //     "Password Mismatch, Check Your Password again",
+  KeyLanguage.alertEnterEmail: "Enter Your Email First Please",
+  // KeyLanguage.incrementMessage:
+  //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
+  // // KeyLanguage.decrementMessage:
+  // //     "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
+  // KeyLanguage.notFoundProductMessage: "This Product Is Not Available",
+  // KeyLanguage.serviceExceptionMessage:
+  //     "Location Services Are Turned Off. Please Enable Location Services To Continue.",
+  // KeyLanguage.permissionExceptionMessage:
+  //     "Location Permission Is Denied. Please Grant Location Access In Your Device Settings To Continue.",
+  // KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
+//label
+  KeyLanguage.emailLabel: "Email",
+  KeyLanguage.passwordLabel: "Password",
+  KeyLanguage.rePasswordLabel: "Re Password",
+//hint
+  KeyLanguage.emailHint: "Enter Your Email",
+  KeyLanguage.passwordHint: "Enter Your Password",
+  KeyLanguage.rePasswordHint: "Enter Your Password Again",
+
+//button
+  KeyLanguage.loginButton: "Login",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
@@ -35,7 +74,6 @@ Map<String, String> english = {
 //       "We Have 100k Product, Choose\nYour Product From Our E-commerce Shop",
 //   //button
 //   KeyLanguage.continueButton: "Continue",
-//   KeyLanguage.loginButton: "Login",
 //   KeyLanguage.signupButton: "SignUp",
 //   KeyLanguage.saveButton: "Save",
 //   KeyLanguage.checkButton: "Checkout",
@@ -55,13 +93,10 @@ Map<String, String> english = {
 //   KeyLanguage.cancelButton: "Cancel",
 //   KeyLanguage.submitButton: "Submit",
 // //auth
-//   KeyLanguage.welcomeTitle: "Welcome Back",
 //   KeyLanguage.checkEmailTitle: "Check Email",
 //   KeyLanguage.verifyTitle: "Verification",
 //   KeyLanguage.rePasswordTitle: "New Password",
 //   KeyLanguage.successTitle: "Success",
-//   KeyLanguage.loginContent:
-//       "Login with your email and password or continue with social media",
 //   KeyLanguage.signupContent:
 //       "Signup with your email and password or continue with social media",
 //   KeyLanguage.forgetPasswordContent:
@@ -73,9 +108,6 @@ Map<String, String> english = {
 // //text field
 //   //label
 //   KeyLanguage.usernameLabel: "Username",
-//   KeyLanguage.emailLabel: "Email",
-//   KeyLanguage.passwordLabel: "Password",
-//   KeyLanguage.rePasswordLabel: "Re Password",
 //   KeyLanguage.phoneLabel: "Phone",
 //   KeyLanguage.searchLabel: "Search",
 //   KeyLanguage.typeAddressLabel: "Type Building",
@@ -84,10 +116,7 @@ Map<String, String> english = {
 //   KeyLanguage.detailAddressLabel: "Detail Address(Option)",
 
 //   //hint
-//   KeyLanguage.usernameHint: "Enter Your Name",
-//   KeyLanguage.emailHint: "Enter Your Email",
-//   KeyLanguage.passwordHint: "Enter Your Password",
-//   KeyLanguage.rePasswordHint: "Enter Your Password Again",
+//     KeyLanguage.usernameHint: "Enter Your Name",
 //   KeyLanguage.phoneHint: "Enter Your Phone",
 //   KeyLanguage.searchHint: "Find Your Product Here",
 //   KeyLanguage.typeAddressHint: "e.g. Home, Office, School 🏠🏢🏫",
@@ -99,7 +128,7 @@ Map<String, String> english = {
 //       "Tap a star to set your rating. Add more description here if you want.",
 //   KeyLanguage.commentHint: "Set your custom comment hint",
 //   //message
-//   KeyLanguage.forgetPassword: "Forget Password",
+//   
 //   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
 //   KeyLanguage.messageLinkSignup: "I really have an account",
 //   KeyLanguage.productNoNotAvailableMessage:
@@ -112,31 +141,7 @@ Map<String, String> english = {
   // KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
   // KeyLanguage.lessMin: "Entry length is less than : ",
   // KeyLanguage.greaterMax: "Entry length is greater than : ",
-//   //dialog
-//   KeyLanguage.alert: "Alert",
-//   KeyLanguage.dialogPopContent: "Do You Want Exit?",
-//   KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
-//   KeyLanguage.verifyWrongMessage: "Your Verification Was Wrong, Try Again ",
-//   KeyLanguage.someErrorMessage: "An Error Occurred, Please Try Again Later",
-//   KeyLanguage.noApproveMessage:
-//       "verify Your Verification, click Forget Password ",
-//   KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
-//   KeyLanguage.passwordMismatchMassage:
-//       "Password Mismatch, Check Your Password again",
-//   KeyLanguage.enterEmailMessage: "Enter Your Email First Please",
-//   KeyLanguage.incrementMessage:
-//       "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
-//   // KeyLanguage.decrementMessage:
-//   //     "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
-//   KeyLanguage.notFoundProductMessage: "This Product Is Not Available",
-//   KeyLanguage.serviceExceptionMessage:
-//       "Location Services Are Turned Off. Please Enable Location Services To Continue.",
-//   KeyLanguage.permissionExceptionMessage:
-//       "Location Permission Is Denied. Please Grant Location Access In Your Device Settings To Continue.",
-//   KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
-//   KeyLanguage.productOutStackMessage:
-//       "Some Products Are Not Valid Or Out Of Stock.",
-//   //home
+  //home
 //   KeyLanguage.hello: "Hello",
 //   KeyLanguage.titleCategories: "Categories",
 //   KeyLanguage.titleDiscountProduct: "Product For You",

@@ -1,6 +1,10 @@
 abstract class ConstantScale {
   static const double horizonPage = 14;
   static const double verticalPage = 12;
+  static const double horizonFieldText = 24;
+//button
+  static const double buttonSize = 18;
+
 //home
   static const int numberGridHome = 3;
   static const double homeImageSize = 80;
@@ -12,8 +16,8 @@ abstract class ConstantScale {
   // static const int minUsername = 3;
   // static const int maxUsername = 50;
 
-  // static const int minEmail = 5;
-  // static const int maxEmail = 100;
+  static const int minEmail = 5;
+  static const int maxEmail = 100;
 
   static const int minPassword = 4;
   static const int maxPassword = 20;

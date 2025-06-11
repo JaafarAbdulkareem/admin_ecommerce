@@ -1,4 +1,3 @@
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/app_icon.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +37,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
         obscureText: obscure,
         keyboardType: keyboardType,
         obscuringCharacter: ConstantText.obscureText,
+        style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
           label: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Text(
@@ -58,20 +56,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
                   ),
                 )
               : Icon(icon),
-          isDense: true,
-          border: outlineInputBorder(),
-          enabledBorder: outlineInputBorder(),
-          focusedBorder: outlineInputBorder(),
         ),
-      ),
-    );
-  }
-
-  OutlineInputBorder outlineInputBorder() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(24),
-      borderSide: const BorderSide(
-        color: AppColor.secondary,
       ),
     );
   }

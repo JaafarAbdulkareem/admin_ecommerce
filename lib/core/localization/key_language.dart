@@ -8,11 +8,15 @@ abstract class KeyLanguage {
   static const String invalidPassword = "invalidPassword";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
-//onboarding
+//splash
   static const String chooseLanguage = "chooseLanguage";
   static const String arabic = "arabic";
   static const String english = "english";
   static const String titleSplash = "titleSplash";
+//auth
+  static const String titleWelcome = "titleWelcome";
+  static const String loginContent = "loginContent";
+  static const String titleForgetPassword = "forgetPassword";
 //home
   static const String titleCategory = "titleCategory";
   static const String titleProduct = "titleProduct";
@@ -24,14 +28,38 @@ abstract class KeyLanguage {
   static const String titleDelivery = "titleDelivery";
   static const String titlePayment = "titlePayment";
   static const String titleSetting = "titleSetting";
-
+  //dialog
+  static const String alert = "alert";
+  // static const String dialogPopContent = "dialogPopContent";
+  // static const String emailFoundMessage = "emailFoundMessage";
+  // static const String verifyWrongMessage = "verifyWrongMessage";
+  // static const String someErrorMessage = "someThingMessage";
+  // static const String noApproveMessage = "noApproveMessage";
+  // static const String noFoundMessage = "noFoundMessage";
+  // static const String passwordMismatchMassage = "passwordNotMatch";
+  static const String alertEnterEmail = "alertEnterEmail";
+  // static const String incrementMessage = "incrementMessage";
+  // static const String decrementMessage = "decrementMessage";
+  // static const String notFoundProductMessage = "messageNotFoundProduct";
+  // static const String serviceExceptionMessage = "serviceExceptionMessage";
+  // static const String permissionExceptionMessage = "permissionExceptionMessage";
+  // static const String orderSuccessMessage = "orderSuccessMessage";
+//label
+  static const String emailLabel = "emailLabel";
+  static const String passwordLabel = "passwordLabel";
+  static const String rePasswordLabel = "rePasswordLabel";
+//hint
+  static const String emailHint = "emailHint";
+  static const String passwordHint = "passwordHint";
+  static const String rePasswordHint = "rePasswordHint";
+//button
+  static const String loginButton = "loginButton";
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
 //   static const String fastDelivery = "Fast Delivery";
 //   static const String bodyChooseProduct = "bodyChooseProduct";
 //   //button
 //   static const String continueButton = "ContinueButton";
-//   static const String loginButton = "loginButton";
 //   static const String signupButton = "signupButton";
 //   static const String saveButton = "saveButton";
 //   static const String checkButton = "checkButton";
@@ -50,13 +78,12 @@ abstract class KeyLanguage {
 //   static const String injectButton = "injectButton";
 //   static const String cancelButton = "cancelButton";
 //   static const String submitButton = "submitButton";
-// //auth
-//   static const String welcomeTitle = "welcomeTitle";
+//login
 //   static const String checkEmailTitle = "checkEmailTitle";
 //   static const String verifyTitle = "verifyTitle";
 //   static const String rePasswordTitle = "rePasswordTitle";
 //   static const String successTitle = "successTitle";
-//   static const String loginContent = "loginContent";
+//
 //   static const String signupContent = "signupContent";
 //   static const String forgetPasswordContent = "forgetPasswordContent";
 //   static const String verifyContent = "verifyContent";
@@ -65,9 +92,7 @@ abstract class KeyLanguage {
 // //////Text field
 //   //label
 //   static const String usernameLabel = "UsernameLabel";
-//   static const String emailLabel = "emailLabel";
-//   static const String passwordLabel = "passwordLabel";
-//   static const String rePasswordLabel = "rePasswordLabel";
+
 //   static const String phoneLabel = "phoneLabel";
 //   static const String searchLabel = "searcheLabel";
 //   static const String typeAddressLabel = "typeAddressLabel";
@@ -76,9 +101,7 @@ abstract class KeyLanguage {
 //   static const String detailAddressLabel = "detailAddressLabel";
 //   //hint
 //   static const String usernameHint = "usernameHint";
-//   static const String emailHint = "emailHint";
-//   static const String passwordHint = "passwordHint";
-//   static const String rePasswordHint = "rePasswordHint";
+
 //   static const String phoneHint = "phoneHint";
 //   static const String searchHint = "searcheHint";
 //   static const String typeAddressHint = "typeAddressHint";
@@ -90,7 +113,7 @@ abstract class KeyLanguage {
 //   static const String commentHint = 'commentHint';
 
 //   //message
-//   static const String forgetPassword = "forgetPassword";
+//   
 //   static const String messageLinkLogin = "messsageLinkLogin";
 //   static const String messageLinkSignup = "messageLinkSignup";
 //   static const String productNoNotAvailableMessage =
@@ -103,23 +126,7 @@ abstract class KeyLanguage {
   // static const String invalidPhone = "invalidPhone";
   // static const String lessMin = "lessMin";
   // static const String greaterMax = "greaterMax";
-//   //dialog
-//   static const String alert = "alert";
-//   static const String dialogPopContent = "dialogPopContent";
-//   static const String emailFoundMessage = "emailFoundMessage";
-//   static const String verifyWrongMessage = "verifyWrongMessage";
-//   static const String someErrorMessage = "someThingMessage";
-//   static const String noApproveMessage = "noApproveMessage";
-//   static const String noFoundMessage = "noFoundMessage";
-//   static const String passwordMismatchMassage = "passwordNotMatch";
-//   static const String enterEmailMessage = "enterEmailMessage";
-//   static const String incrementMessage = "incrementMessage";
-//   // static const String decrementMessage = "decrementMessage";
-//   static const String notFoundProductMessage = "messageNotFoundProduct";
-//   static const String serviceExceptionMessage = "serviceExceptionMessage";
-//   static const String permissionExceptionMessage = "permissionExceptionMessage";
-//   static const String orderSuccessMessage = "orderSuccessMessage";
-//   static const String productOutStackMessage = "productOutStackMessage";
+
 //   //home
 //   static const String hello = "hello";
 //   static const String titleCategories = "titleCategories";

@@ -4,11 +4,9 @@ class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({
     super.key,
     required this.text,
-    // required this.color,
     required this.onTap,
   });
   final String text;
-  // final Color color;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,6 @@ class CustomButtonWidget extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Text(
           text,
-          // style: AppStyle.styleBold16(context),
         ),
       ),
     );

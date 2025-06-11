@@ -1,5 +1,4 @@
 import 'package:admin_ecommerce/controller/home/home_controller.dart';
-import 'package:admin_ecommerce/core/constant/constant_bool.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/view/widget/home/body_home_view.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,6 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: ConstantBool.appBarTitleCenter,
         title: Text(
           KeyLanguage.appBarHome.tr,
         ),

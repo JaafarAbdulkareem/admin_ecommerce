@@ -54,11 +54,11 @@
 //   }
 
 //   static TextStyle styleSemiBold14(BuildContext context) {
-//     return const TextStyle(
-//       fontSize: 14,
-//       fontWeight: FontWeight.w600,
-//       color: AppColor.primary,
-//     );
+    // return const TextStyle(
+    //   fontSize: 14,
+    //   fontWeight: FontWeight.w600,
+    //   color: AppColor.primary,
+    // );
 //   }
 
 //   static TextStyle styleBold14(BuildContext context) {

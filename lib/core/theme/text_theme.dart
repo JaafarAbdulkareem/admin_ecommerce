@@ -28,6 +28,10 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
       color: AppColorText.textButton,
     ),
+    // bodyMedium: TextStyle(
+    //   fontSize: 14,
+    //   fontWeight: FontWeight.w600,
+    // ),
     bodySmall: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,

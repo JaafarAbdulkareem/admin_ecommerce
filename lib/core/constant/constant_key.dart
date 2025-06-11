@@ -29,6 +29,7 @@ abstract class ConstantKey {
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
+  static const String idHintPassword = "idHintPassword";
   static const String idListProductCart = "idListProductCart";
   static const String idFavoriteProduct = "idFavoriteProduct";
   static const String idReceiveShopping = "idReceiveShopping";
