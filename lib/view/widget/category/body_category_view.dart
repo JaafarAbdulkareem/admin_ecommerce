@@ -25,6 +25,9 @@ class BodyCategoryView extends GetView<CategoryControllerImp> {
             deleteOnTap: () {
               controller.deleteCategory(index);
             },
+            updateOnTap: () {
+              controller.goToUpdateCategory(index);
+            },
           ),
         ),
       ),

@@ -7,6 +7,7 @@ abstract class KeyLanguage {
   static const String appBarRePassword = "appBarRePassword";
   static const String appBarCategory = "appBarCategory";
   static const String appBarInsertCategory = "appBarInsertCategory";
+  static const String appBarUpdateCategory = "appBarUpdateCategory";
 
 //validator
   static const String empty = "empty";

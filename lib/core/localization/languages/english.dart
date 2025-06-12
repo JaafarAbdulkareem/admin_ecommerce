@@ -9,6 +9,7 @@ Map<String, String> english = {
   KeyLanguage.appBarRePassword: "New Password",
   KeyLanguage.appBarCategory: "Category",
   KeyLanguage.appBarInsertCategory: "Insert Category",
+  KeyLanguage.appBarUpdateCategory: "Update Category",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",

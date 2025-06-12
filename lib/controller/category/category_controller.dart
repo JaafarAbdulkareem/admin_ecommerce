@@ -1,5 +1,6 @@
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
@@ -10,7 +11,7 @@ import 'package:get/get.dart';
 abstract class CategoryController extends GetxController {
   void deleteCategory(int index);
   void goToInsertCategory();
-  void goToUpdateCategory();
+  void goToUpdateCategory(int index);
 }
 
 class CategoryControllerImp extends CategoryController {
@@ -114,7 +115,12 @@ class CategoryControllerImp extends CategoryController {
   }
 
   @override
-  void goToUpdateCategory() {
-    // TODO: implement goToUpdateCategory
+  void goToUpdateCategory(int index) {
+    Get.toNamed(
+      ConstantScreenName.updateCategory,
+      arguments: {
+        ConstantKey.categoryData: categoryData[index], 
+      },
+    );
   }
 }

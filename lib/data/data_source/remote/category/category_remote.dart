@@ -59,16 +59,20 @@ class CategoryRemote {
       response = await curd.postData(
         ApiConstant.apiUpdateCategory,
         {
+          ApiKey.id: data.id.toString(),
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
+          ApiKey.image: "",
         },
       );
     } else {
       response = await curd.postDataWithFile(
         url: ApiConstant.apiUpdateCategory,
         body: {
+          ApiKey.id: data.id.toString(),
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
+          ApiKey.image: data.image,
         },
         fieldFile: ApiKey.newImage,
         file: file,
