@@ -12,7 +12,9 @@ abstract class ConstantTypeTheme {
     // buttonTheme: ButtonThemeData(
     //   buttonColor: AppColor.correct
     // ),
+
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
+    cardColor: AppColor.card,
     textButtonTheme: textButtonThemeData(),
     inputDecorationTheme: inputDecorationTheme(),
     textTheme: textTheme(),

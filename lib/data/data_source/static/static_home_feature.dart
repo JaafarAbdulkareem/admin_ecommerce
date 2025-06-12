@@ -1,13 +1,15 @@
 import 'package:admin_ecommerce/core/constant/app_images.dart';
+import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/models/home_model.dart';
+import 'package:get/get.dart';
 
 List<HomeModel> dataHomeFeature = [
   HomeModel(
     image: AppImages.imagesCategory,
     title: KeyLanguage.titleCategory,
     onPressed: () {
-      // Navigator function for Category
+      Get.toNamed(ConstantScreenName.category);
     },
   ),
   HomeModel(

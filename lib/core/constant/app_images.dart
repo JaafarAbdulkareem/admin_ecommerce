@@ -45,5 +45,9 @@ class AppImages {
   /// Assets for imagesUsers
   /// assets/images/users.jpg
   static const String imagesUsers = "assets/images/users.jpg";
+
+  /// Assets for imagesWolf
+  /// assets/images/wolf.svg
+  static const String imagesWolf = "assets/images/wolf.svg";
 }
 

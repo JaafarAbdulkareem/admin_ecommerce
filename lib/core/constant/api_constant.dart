@@ -10,6 +10,7 @@ abstract class ApiConstant {
   static const String imagePath = "$serverPath/upload";
   static const String categoryImagePath = "$imagePath/category";
   static const String productImagePath = "$imagePath/product";
+
   static const String folderAdmin = "$serverPath/Admin/";
 
   static const String folderAuth = "$folderAdmin/auth";
@@ -18,6 +19,12 @@ abstract class ApiConstant {
   static const String apiForgetPassword = "$folderAuth/forget_password.php";
   static const String apiResetPassword = "$folderAuth/reset_password.php";
   // static const String apiViewAuth = "$folderAuth/view_auth.php";
+
+  static const String folderCategory = "$folderAdmin/category";
+  static const String apiViewCategory = "$folderCategory/view_category.php";
+  static const String apiInsertCategory = "$folderCategory/insert_category.php";
+  static const String apiDeleteCategory = "$folderCategory/delete_category.php";
+  static const String apiUpdateCategory = "$folderCategory/update_category.php";
 
 //   static const String folderHome = "$folderUser/home";
 //   static const String apiHome = "$folderHome/home.php";
@@ -31,11 +38,11 @@ abstract class ApiConstant {
 //   static const String apiIncrement = "$folderCart/increment.php";
 //   static const String apiDecrement = "$folderCart/decrement.php";
 
-//   static const String folderAddress = "$folderUser/address";
-//   static const String apiViewAddress = "$folderAddress/view_address.php";
-//   static const String apiInsertAddress = "$folderAddress/insert_address.php";
-//   static const String apiDeleteAddress = "$folderAddress/delete_address.php";
-//   static const String apiUpdateAddress = "$folderAddress/update_address.php";
+  // static const String folderAddress = "$folderUser/address";
+  // static const String apiViewAddress = "$folderAddress/view_address.php";
+  // static const String apiInsertAddress = "$folderAddress/insert_address.php";
+  // static const String apiDeleteAddress = "$folderAddress/delete_address.php";
+  // static const String apiUpdateAddress = "$folderAddress/update_address.php";
 
 //   static const String folderCoupons = "$folderUser/coupons";
 //   static const String apiViewCoupons = "$folderCoupons/view_coupons.php";

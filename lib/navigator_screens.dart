@@ -1,6 +1,7 @@
 import 'package:admin_ecommerce/view/screen/auth/forget_password/forget_password_view.dart';
 import 'package:admin_ecommerce/view/screen/auth/forget_password/reset_password_view.dart';
 import 'package:admin_ecommerce/view/screen/auth/forget_password/verification_view.dart';
+import 'package:admin_ecommerce/view/screen/category/category_view.dart';
 import 'package:admin_ecommerce/view/screen/onboarding/splash_view.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/middleware/onboarding_middleware.dart';
@@ -42,5 +43,9 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.home,
         page: () => const HomeView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.category,
+        page: () => const CategoryView(),
       ),
     ];

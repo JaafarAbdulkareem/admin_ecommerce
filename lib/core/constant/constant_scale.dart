@@ -10,6 +10,8 @@ abstract class ConstantScale {
   static const int numberGridHome = 3;
   static const double homeImageSize = 80;
   static const double aspectRatio = 0.85;
+  static const double svgImage = 80;
+  static const double categoryaspectRatioCard = 3.5;
 
   // static const int initialOnboardingIndex = 0;
 //field
