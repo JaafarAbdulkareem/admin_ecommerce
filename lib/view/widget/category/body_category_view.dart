@@ -10,17 +10,21 @@ class BodyCategoryView extends GetView<CategoryControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: ConstantScale.horizonPage,
-        vertical: ConstantScale.verticalPage,
+      padding: const EdgeInsets.only(
+        right: ConstantScale.horizonPage,
+        left: ConstantScale.horizonPage,
+        top: ConstantScale.verticalPage,
+        bottom: ConstantScale.verticalPage + 25,
       ),
       child: ListView.builder(
-        // itemCount:1,
         itemCount: CategoryControllerImp.categoryData.length,
         itemBuilder: (context, index) => AspectRatio(
-          aspectRatio: ConstantScale.categoryaspectRatioCard ,
+          aspectRatio: ConstantScale.categoryaspectRatioCard,
           child: ItemListCategoryView(
             data: CategoryControllerImp.categoryData[index],
+            deleteOnTap: () {
+              controller.deleteCategory(index);
+            },
           ),
         ),
       ),

@@ -9,8 +9,10 @@ class ItemListCategoryView extends StatelessWidget {
   const ItemListCategoryView({
     super.key,
     required this.data,
+    required this.deleteOnTap,
   });
   final CategoryModel data;
+  final VoidCallback deleteOnTap;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -38,7 +40,7 @@ class ItemListCategoryView extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: deleteOnTap,
               icon: const Icon(
                 AppIcon.delete,
                 size: ConstantScale.iconDelete,

@@ -2,12 +2,13 @@ import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
+import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
 import 'package:admin_ecommerce/data/models/category_model.dart';
 import 'package:get/get.dart';
 
 abstract class CategoryController extends GetxController {
-  void deleteCategory();
+  void deleteCategory(int index);
   void goToInsertCategory();
   void goToUpdateCategory();
 }
@@ -37,9 +38,7 @@ class CategoryControllerImp extends CategoryController {
   }
 
   Future<void> getData() async {
-    print("****** : $firstTime");
     if (firstTime) {
-      print("****** 88888 *************");
       categoryData.clear();
       firstTime = false;
       statusRequest = StatusRequest.loading;
@@ -49,7 +48,6 @@ class CategoryControllerImp extends CategoryController {
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           fetchData(response[ApiResult.data]);
-          print("category length : ${categoryData.length}");
           checkDataLength();
         } else {
           statusRequest = StatusRequest.failure;
@@ -81,8 +79,33 @@ class CategoryControllerImp extends CategoryController {
   }
 
   @override
-  void deleteCategory() {
-    // TODO: implement deleteCategory
+  void deleteCategory(int index) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await categoryRemote.deleteCategory(
+      id: categoryData[index].id.toString(),
+      image: categoryData[index].image,
+    );
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
+        categoryData.removeAt(index);
+        if (categoryData.isEmpty) {
+          statusRequest = StatusRequest.failure;
+          update();
+        } else {
+          statusRequest = StatusRequest.success;
+          update();
+        }
+      } else {
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.alertSomeError.tr,
+        );
+      }
+    } else {
+      update();
+    }
   }
 
   @override
