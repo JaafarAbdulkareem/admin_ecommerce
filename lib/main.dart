@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       translations: TranslationLanguages(),
       locale: controller.language,
       initialBinding: InitialBindings(),
-      // home: const VerificationView(),
+      // home: const InsertCategoryView(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

@@ -20,14 +20,15 @@ class CategoryRemote {
   }
 
   insertCategory({
-    required CategoryModel data,
+    required String arabicName,
+    required String englishName,
     required File file,
   }) async {
     var response = await curd.postDataWithFile(
       url: ApiConstant.apiInsertCategory,
       body: {
-        ApiKey.arabicName: data.arabicName,
-        ApiKey.englishName: data.englishName,
+        ApiKey.arabicName: arabicName,
+        ApiKey.englishName: englishName,
       },
       fieldFile: ApiKey.newImage,
       file: file,

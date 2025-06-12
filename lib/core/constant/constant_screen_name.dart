@@ -9,9 +9,12 @@ class ConstantScreenName {
   static const String verifyCode = "/verifyCode";
   static const String resetPassword = "/resetPassword";
   // static const String success = "/success";
-  // //home
+//home
   static const String home = "/home";
+//category
   static const String category = "/category";
+  static const String insertCategory = "/insertCategory";
+  static const String updateCategory = "/updateCategory";
   // static const String product = "/product";
   // static const String productDetail = "/productDetail";
   // static const String favorite = "/favorite";

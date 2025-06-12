@@ -8,7 +8,7 @@ Future<Widget> loadCachedSvg(String imageUrl) async {
   final file = await DefaultCacheManager().getSingleFile(imageUrl);
   return SvgPicture.file(
     file,
-    colorFilter: const ColorFilter.mode(AppColor.iconColor, BlendMode.srcIn),
+    colorFilter: const ColorFilter.mode(AppColor.iconColor ,BlendMode.srcIn),
     width: ConstantScale.svgImage,
   );
 }

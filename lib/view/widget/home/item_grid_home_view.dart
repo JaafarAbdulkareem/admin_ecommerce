@@ -12,6 +12,7 @@ class ItemGridHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       child: MaterialButton(
         padding: const EdgeInsets.all(0),
         onPressed: data.onPressed,

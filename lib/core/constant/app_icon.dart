@@ -5,7 +5,14 @@ abstract class AppIcon {
   static const IconData email = Icons.email_outlined;
   static const IconData closePassword = Icons.lock_outline;
   static const IconData openPassword = Icons.lock_open_outlined;
-  static const IconData edit = Icons.edit;
+  static const IconData category = Icons.category_outlined;
+  static const IconData product = Icons.shopping_bag_outlined;
+
+  static const IconData camera =  Icons.camera_alt;
+  static const IconData gallery = Icons.image ;
+
+
+  // static const IconData edit = Icons.edit;
   // static const IconData phone = Icons.phone_android_rounded;
   // static const IconData success = Icons.check_circle_outline;
   // static const IconData search = Icons.search_outlined;
@@ -27,7 +34,7 @@ abstract class AppIcon {
   // static const IconData archive = Icons.archive_outlined;
   // static const IconData contactUs =  Icons.phone_outlined;
   // static const IconData logout = Icons.logout_outlined;
-  // static const IconData delete = Icons.delete_outline;
+  static const IconData delete = Icons.delete_outline;
   // static const IconData deleteSwipe = Icons.delete;
   // static const IconData typeAddress = Icons.bookmark;
   // static const IconData city = Icons.location_city;

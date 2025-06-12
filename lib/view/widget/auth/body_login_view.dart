@@ -34,8 +34,8 @@ class BodyLoginView extends GetView<LoginControllerImp> {
               subTitle: KeyLanguage.messageLogin.tr,
             ),
             CustomTextFormFieldWidget(
-              hint: KeyLanguage.emailHint.tr,
-              label: KeyLanguage.emailLabel.tr,
+              hint: KeyLanguage.hintEmail.tr,
+              label: KeyLanguage.labelEmail.tr,
               icon: AppIcon.email,
               controller: controller.email,
               keyboardType: TextInputType.emailAddress,
@@ -49,8 +49,8 @@ class BodyLoginView extends GetView<LoginControllerImp> {
             GetBuilder<LoginControllerImp>(
               id: ConstantKey.idHintPassword,
               builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
+                hint: KeyLanguage.hintPassword.tr,
+                label: KeyLanguage.labelPassword.tr,
                 icon: AppIcon.closePassword,
                 controller: controller.password,
                 obscure: controller.hidePassword,
@@ -68,7 +68,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
             ),
             const ForgetPasswordWidget(),
             CustomButtonWidget(
-              text: KeyLanguage.loginButton.tr,
+              text: KeyLanguage.buttonLogin.tr,
               onTap: () {
                 controller.loginOnTap();
               },

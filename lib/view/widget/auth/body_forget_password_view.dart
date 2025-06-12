@@ -31,8 +31,8 @@ class BodyForgetPasswordView extends GetView<ForgetPasswordControllerImp> {
             ),
             const SizedBox(height: 24),
             CustomTextFormFieldWidget(
-              hint: KeyLanguage.emailHint.tr,
-              label: KeyLanguage.emailLabel.tr,
+              hint: KeyLanguage.hintEmail.tr,
+              label: KeyLanguage.labelEmail.tr,
               icon: AppIcon.email,
               controller: controller.email,
               keyboardType: TextInputType.emailAddress,
@@ -45,7 +45,7 @@ class BodyForgetPasswordView extends GetView<ForgetPasswordControllerImp> {
             ),
             const SizedBox(height: 12),
             CustomButtonWidget(
-              text: KeyLanguage.checkButton.tr,
+              text: KeyLanguage.buttonCheck.tr,
               onTap: () {
                 controller.checkOnTap();
               },

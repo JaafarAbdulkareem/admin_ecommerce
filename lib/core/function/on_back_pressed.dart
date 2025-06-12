@@ -13,12 +13,12 @@ Future<bool> onBackPressed(bool stopDefaultButtonEvent, RouteInfo info) async {
               onPressed: () {
                 exit(0);
               },
-              child: Text(KeyLanguage.yesButton.tr)),
+              child: Text(KeyLanguage.buttonYes.tr)),
           TextButton(
             onPressed: () {
               Get.back();
             },
-            child: Text(KeyLanguage.noButton.tr),
+            child: Text(KeyLanguage.buttonNo.tr),
           ),
         ],
       ) ??

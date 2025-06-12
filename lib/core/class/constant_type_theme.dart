@@ -18,6 +18,11 @@ abstract class ConstantTypeTheme {
 //     backgroundColor: AppColor.correct,
 //   ),
 // ) ,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      backgroundColor: AppColor.iconColor,
+      foregroundColor: AppColor.primary,
+    )),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     cardColor: AppColor.card,
     textButtonTheme: textButtonThemeData(),

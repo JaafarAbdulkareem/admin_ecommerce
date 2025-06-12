@@ -8,6 +8,7 @@ Map<String, String> english = {
   KeyLanguage.appBarForgetPassword: "Check Email",
   KeyLanguage.appBarRePassword: "New Password",
   KeyLanguage.appBarCategory: "Category",
+  KeyLanguage.appBarInsertCategory: "Insert Category",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -40,6 +41,11 @@ Map<String, String> english = {
   KeyLanguage.titleDelivery: "Delivery",
   KeyLanguage.titlePayment: "Payment",
   KeyLanguage.titleSetting: "Setting",
+//category
+  KeyLanguage.titleCamera: "Camera",
+  KeyLanguage.titleGallery: "Gallery",
+  KeyLanguage.messageInsertImage:
+      "Category Image Is Required. Please Upload An Image.",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -63,20 +69,26 @@ Map<String, String> english = {
   //     "Location Permission Is Denied. Please Grant Location Access In Your Device Settings To Continue.",
   // KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
 //label
-  KeyLanguage.emailLabel: "Email",
-  KeyLanguage.passwordLabel: "Password",
-  KeyLanguage.rePasswordLabel: "Re Password",
+  KeyLanguage.labelEmail: "Email",
+  KeyLanguage.labelPassword: "Password",
+  KeyLanguage.labelRePassword: "Re Password",
+  KeyLanguage.labelCategoryArabic: "Category (Arabic)",
+  KeyLanguage.labelCategoryEnglish: "Category (English)",
 //hint
-  KeyLanguage.emailHint: "Enter Your Email",
-  KeyLanguage.passwordHint: "Enter Your Password",
-  KeyLanguage.rePasswordHint: "Enter Your Password Again",
+  KeyLanguage.hintEmail: "Enter Your Email",
+  KeyLanguage.hintPassword: "Enter Your Password",
+  KeyLanguage.hintRePassword: "Enter Your Password Again",
+  KeyLanguage.hintCategoryArabic: "Enter Your Arabic Category",
+  KeyLanguage.hintCategoryEnglish: "Enter Your English Category",
 
 //button
-  KeyLanguage.loginButton: "Login",
-  KeyLanguage.yesButton: "Yes",
-  KeyLanguage.noButton: "No",
-  KeyLanguage.checkButton: "Check",
-  KeyLanguage.saveButton: "Save",
+  KeyLanguage.buttonLogin: "Login",
+  KeyLanguage.buttonYes: "Yes",
+  KeyLanguage.buttonNo: "No",
+  KeyLanguage.buttonCheck: "Check",
+  KeyLanguage.buttonSave: "Save",
+  KeyLanguage.buttonAdd: "Add",
+  KeyLanguage.buttonChooseImage: "Choose Image",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",

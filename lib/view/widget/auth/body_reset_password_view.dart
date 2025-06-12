@@ -31,8 +31,8 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
             ),
             GetBuilder<ResetPasswordControllerImp>(
               builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
+                hint: KeyLanguage.hintPassword.tr,
+                label: KeyLanguage.labelPassword.tr,
                 icon: AppIcon.closePassword,
                 controller: controller.password,
                 obscure: controller.hidePassword,
@@ -50,8 +50,8 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
             ),
             GetBuilder<ResetPasswordControllerImp>(
               builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.rePasswordHint.tr,
-                label: KeyLanguage.rePasswordLabel.tr,
+                hint: KeyLanguage.hintRePassword.tr,
+                label: KeyLanguage.labelRePassword.tr,
                 icon: AppIcon.closePassword,
                 controller: controller.rePassword,
                 obscure: controller.hideRepassword,
@@ -68,7 +68,7 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
               ),
             ),
             CustomButtonWidget(
-              text: KeyLanguage.saveButton.tr,
+              text: KeyLanguage.buttonSave.tr,
               onTap: () {
                 controller.saveOnTap();
               },

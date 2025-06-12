@@ -6,6 +6,7 @@ abstract class KeyLanguage {
   static const String appBarForgetPassword = "appBarForgetPassword";
   static const String appBarRePassword = "appBarRePassword";
   static const String appBarCategory = "appBarCategory";
+  static const String appBarInsertCategory = "appBarInsertCategory";
 
 //validator
   static const String empty = "empty";
@@ -38,6 +39,10 @@ abstract class KeyLanguage {
   static const String titleDelivery = "titleDelivery";
   static const String titlePayment = "titlePayment";
   static const String titleSetting = "titleSetting";
+//category
+  static const String titleCamera = "titleCamera";
+  static const String titleGallery = "titleGallery";
+  static const String messageInsertImage = "messageInsertImage";
   //dialog
   static const String alert = "alert";
   static const String alertWantExit = "dialogPopContent";
@@ -55,19 +60,26 @@ abstract class KeyLanguage {
   // static const String permissionExceptionMessage = "permissionExceptionMessage";
   // static const String orderSuccessMessage = "orderSuccessMessage";
 //label
-  static const String emailLabel = "emailLabel";
-  static const String passwordLabel = "passwordLabel";
-  static const String rePasswordLabel = "rePasswordLabel";
+  static const String labelEmail = "labelEmail";
+  static const String labelPassword = "labelPassword";
+  static const String labelRePassword = "rePasswordLabel";
+  static const String labelCategoryArabic = "labelCategoryArabic";
+  static const String labelCategoryEnglish = "labelCategoryEnglish";
 //hint
-  static const String emailHint = "emailHint";
-  static const String passwordHint = "passwordHint";
-  static const String rePasswordHint = "rePasswordHint";
+  static const String hintEmail = "hintEmail";
+  static const String hintPassword = "hintPassword";
+  static const String hintRePassword = "hintRePassword";
+  static const String hintCategoryArabic = "hintCategoryArabic";
+  static const String hintCategoryEnglish = "hintCategoryEnglish";
+
 //button
-  static const String loginButton = "loginButton";
-  static const String yesButton = "yesButton";
-  static const String noButton = "noButton";
-  static const String checkButton = "checkButton";
-  static const String saveButton = "saveButton";
+  static const String buttonLogin = "buttonLogin";
+  static const String buttonYes = "buttonYes";
+  static const String buttonNo = "buttonNo";
+  static const String buttonCheck = "buttonCheck";
+  static const String buttonSave = "buttonSave";
+  static const String buttonAdd = "buttonAdd";
+  static const String buttonChooseImage = "buttonChooseImage";
 
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";

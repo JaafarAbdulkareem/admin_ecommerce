@@ -1,11 +1,16 @@
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
 import 'package:admin_ecommerce/data/models/category_model.dart';
 import 'package:get/get.dart';
 
-abstract class CategoryController extends GetxController {}
+abstract class CategoryController extends GetxController {
+  void deleteCategory();
+  void goToInsertCategory();
+  void goToUpdateCategory();
+}
 
 class CategoryControllerImp extends CategoryController {
   static List<CategoryModel> categoryData = [];
@@ -32,7 +37,9 @@ class CategoryControllerImp extends CategoryController {
   }
 
   Future<void> getData() async {
+    print("****** : $firstTime");
     if (firstTime) {
+      print("****** 88888 *************");
       categoryData.clear();
       firstTime = false;
       statusRequest = StatusRequest.loading;
@@ -42,6 +49,7 @@ class CategoryControllerImp extends CategoryController {
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           fetchData(response[ApiResult.data]);
+          print("category length : ${categoryData.length}");
           checkDataLength();
         } else {
           statusRequest = StatusRequest.failure;
@@ -70,5 +78,20 @@ class CategoryControllerImp extends CategoryController {
       statusRequest = StatusRequest.success;
       update();
     }
+  }
+
+  @override
+  void deleteCategory() {
+    // TODO: implement deleteCategory
+  }
+
+  @override
+  void goToInsertCategory() {
+    Get.toNamed(ConstantScreenName.insertCategory);
+  }
+
+  @override
+  void goToUpdateCategory() {
+    // TODO: implement goToUpdateCategory
   }
 }
