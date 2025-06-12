@@ -9,10 +9,15 @@ import 'package:flutter/material.dart';
 
 abstract class ConstantTypeTheme {
   static ThemeData englishTheme = ThemeData(
-    // buttonTheme: ButtonThemeData(
-    //   buttonColor: AppColor.correct
-    // ),
+//     buttonTheme: ButtonThemeData(
+//       buttonColor: AppColor.correct
+//     ),
 
+// iconButtonTheme:IconButtonThemeData(
+//   style: IconButton.styleFrom(
+//     backgroundColor: AppColor.correct,
+//   ),
+// ) ,
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     cardColor: AppColor.card,
     textButtonTheme: textButtonThemeData(),

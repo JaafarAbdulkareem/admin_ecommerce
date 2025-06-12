@@ -47,8 +47,11 @@ class CategoryControllerImp extends CategoryController {
           statusRequest = StatusRequest.failure;
           update();
         }
+      } else {
+        update();
       }
     } else {
+      statusRequest = StatusRequest.success;
       update();
     }
   }
