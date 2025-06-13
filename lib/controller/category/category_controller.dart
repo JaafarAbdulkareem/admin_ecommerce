@@ -2,6 +2,7 @@ import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
+import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
@@ -80,48 +81,38 @@ class CategoryControllerImp extends CategoryController {
   }
 
   @override
-  void deleteCategory(int index) async {
-    // await Get.defaultDialog(
-    //     title: KeyLanguage.alert.tr,
-    //     middleText: KeyLanguage.dialogPopContent.tr,
-    //     actions: [
-    //       TextButton(
-    //           onPressed: () {
-    //             exit(0);
-    //           },
-    //           child: Text(KeyLanguage.yesButton.tr)),
-    //       TextButton(
-    //         onPressed: () {
-    //           Get.back();
-    //         },
-    //         child: Text(KeyLanguage.noButton.tr),
-    //       ),
-    statusRequest = StatusRequest.loading;
-    update();
-    var response = await categoryRemote.deleteCategory(
-      id: categoryData[index].id.toString(),
-      image: categoryData[index].image,
-    );
-    statusRequest = handleStatus(response);
-    if (statusRequest == StatusRequest.success) {
-      if (response[ApiResult.status] == ApiResult.success) {
-        categoryData.removeAt(index);
-        if (categoryData.isEmpty) {
-          statusRequest = StatusRequest.failure;
-          update();
+  void deleteCategory(int index) {
+    dialogWantDelete(
+      yesButton: () async {
+        statusRequest = StatusRequest.loading;
+        update();
+        var response = await categoryRemote.deleteCategory(
+          id: categoryData[index].id.toString(),
+          image: categoryData[index].image,
+        );
+        statusRequest = handleStatus(response);
+        if (statusRequest == StatusRequest.success) {
+          if (response[ApiResult.status] == ApiResult.success) {
+            categoryData.removeAt(index);
+            if (categoryData.isEmpty) {
+              statusRequest = StatusRequest.failure;
+              update();
+            } else {
+              statusRequest = StatusRequest.success;
+              update();
+            }
+          } else {
+            await Get.defaultDialog(
+              title: KeyLanguage.alert.tr,
+              middleText: KeyLanguage.alertSomeError.tr,
+            );
+          }
         } else {
-          statusRequest = StatusRequest.success;
           update();
         }
-      } else {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.alertSomeError.tr,
-        );
-      }
-    } else {
-      update();
-    }
+        Get.back();
+      },
+    );
   }
 
   @override
@@ -134,7 +125,7 @@ class CategoryControllerImp extends CategoryController {
     Get.toNamed(
       ConstantScreenName.updateCategory,
       arguments: {
-        ConstantKey.categoryData: categoryData[index], 
+        ConstantKey.categoryData: categoryData[index],
       },
     );
   }

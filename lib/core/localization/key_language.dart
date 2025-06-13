@@ -46,7 +46,8 @@ abstract class KeyLanguage {
   static const String messageInsertImage = "messageInsertImage";
   //dialog
   static const String alert = "alert";
-  static const String alertWantExit = "dialogPopContent";
+  static const String alertWantExit = "alertWantExit";
+  static const String alertWantDelete = "alertWantDelete";
   // static const String emailFoundMessage = "emailFoundMessage";
   static const String alertVerifyWrong = "verifyWrongMessage";
   static const String alertSomeError = "alertSomeError";

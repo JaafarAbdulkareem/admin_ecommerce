@@ -50,6 +50,7 @@ Map<String, String> english = {
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
+  KeyLanguage.alertWantDelete: "Do You Want To Delete?",
   // KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
   KeyLanguage.alertVerifyWrong: "Your Verification Was Wrong, Try Again ",
   KeyLanguage.alertSomeError: "An Error Occurred, Please Try Again Later",
