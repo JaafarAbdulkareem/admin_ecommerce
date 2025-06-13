@@ -6,6 +6,7 @@ import 'package:admin_ecommerce/core/function/validator.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/core/share/custom_button_widget.dart';
 import 'package:admin_ecommerce/core/share/custom_text_form_field_widget.dart';
+import 'package:admin_ecommerce/view/widget/category/choose_image_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -44,12 +45,8 @@ class BodyInsertCategoryView extends GetView<InsertCategoryControllerImp> {
                 keyboardType: TextInputType.text,
                 validator: (value) => validatorGeneral(value),
               ),
-              ElevatedButton(
-                child: Text(KeyLanguage.buttonChooseImage.tr),
-                onPressed: () {
-                  controller.chooseImageButton();
-                },
-              ),
+              const ChooseImageButtonWidget<InsertCategoryControllerImp>(),
+              const SizedBox(height: 6),
               GetBuilder<InsertCategoryControllerImp>(
                 id: ConstantKey.idChooseImage,
                 builder: (controller) {

@@ -45,7 +45,7 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
                 keyboardType: TextInputType.text,
                 validator: (value) => validatorGeneral(value),
               ),
-              const ChooseImageButtonWidget(),
+              const ChooseImageButtonWidget<UpdateCategoryControllerImp>(),
               const SizedBox(height: 6),
               GetBuilder<UpdateCategoryControllerImp>(
                 id: ConstantKey.idChooseImage,
@@ -66,4 +66,3 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
     );
   }
 }
-
