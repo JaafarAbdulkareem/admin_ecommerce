@@ -59,6 +59,7 @@ Map<String, String> english = {
   KeyLanguage.passwordMismatchMassage:
       "Password Mismatch, Check Your Password again",
   KeyLanguage.alertEnterEmail: "Enter Your Email First Please",
+  KeyLanguage.alertNoThingChange: "Oops! You Haven’t Changed Anything Yet. Please Make An Update Before Saving.",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:
@@ -90,6 +91,7 @@ Map<String, String> english = {
   KeyLanguage.buttonSave: "Save",
   KeyLanguage.buttonAdd: "Add",
   KeyLanguage.buttonChooseImage: "Choose Image",
+  KeyLanguage.buttonCancel: "Cancel",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
@@ -111,7 +113,6 @@ Map<String, String> english = {
 //   KeyLanguage.deleteButton: "Delete",
 //   KeyLanguage.acceptButton: "Accept",
 //   KeyLanguage.injectButton: "Inject",
-//   KeyLanguage.cancelButton: "Cancel",
 //   KeyLanguage.submitButton: "Submit",
 
 // //auth

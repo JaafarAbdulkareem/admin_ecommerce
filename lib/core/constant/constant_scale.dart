@@ -16,6 +16,7 @@ abstract class ConstantScale {
   static const double iconDelete = 28;
   static const double iconChooseImage = 45;
   static const double textChooseImage = 16;
+  static const double loadingChooseImage = 42;
 
   // static const int initialOnboardingIndex = 0;
 //field

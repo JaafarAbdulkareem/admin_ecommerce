@@ -7,7 +7,6 @@ import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/function/upload_image.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/core/share/custom_sheet_camera_gallery_widget.dart';
 import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
 import 'package:admin_ecommerce/data/models/category_model.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +14,7 @@ import 'package:get/get.dart';
 
 abstract class UpdateCategoryController extends GetxController {
   void updateButton();
+  void cancelButton();
   void chooseImageButton();
 }
 
@@ -54,10 +54,12 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
       if (categoryData.arabicName == arabicField.text &&
           categoryData.englishName == englishField.text &&
           file == null) {
-        Get.back();
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.alertNoThingChange.tr,
+        );
       } else {
         statusRequest = StatusRequest.loading;
-        update();
         var response = await categoryRemote.updateCategory(
           data: CategoryModel(
             id: categoryData.id,
@@ -92,31 +94,21 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
   }
 
   @override
-  void chooseImageButton() async {
-    await Get.bottomSheet(
-      BottomSheet(
-        onClosing: () {},
-        builder: (context) {
-          return CustomSheetCameraGalleryWidget(
-            cameraOnTap: cameraOnTap,
-            galleryOnTap: galleryOnTap,
-          );
-        },
-      ),
-    );
+  void cancelButton() {
+    Get.back();
+  }
 
+  @override
+  void chooseImageButton() async {
+    statusRequest = StatusRequest.loading;
+    update([ConstantKey.idGalleryImage]);
+
+    file = await pickFileFromGallery(isSvg: true);
+
+    statusRequest = StatusRequest.success;
+    update([ConstantKey.idGalleryImage]);
     if (file != null) {
       update([ConstantKey.idChooseImage]);
     }
-  }
-
-  void cameraOnTap() async {
-    file = await pickImageFromCamera();
-    Get.back();
-  }
-
-  void galleryOnTap() async {
-    file = await pickFileFromGallery(isSvg: true);
-    Get.back();
   }
 }

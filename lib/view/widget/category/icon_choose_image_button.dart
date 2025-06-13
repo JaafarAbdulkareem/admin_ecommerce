@@ -1,8 +1,8 @@
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';
 
-class ChooseImageButton extends StatelessWidget {
-  const ChooseImageButton({
+class IconChooseImageButton extends StatelessWidget {
+  const IconChooseImageButton({
     super.key,
     required this.icon,
     required this.text,

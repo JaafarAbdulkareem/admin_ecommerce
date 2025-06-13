@@ -81,6 +81,21 @@ class CategoryControllerImp extends CategoryController {
 
   @override
   void deleteCategory(int index) async {
+    // await Get.defaultDialog(
+    //     title: KeyLanguage.alert.tr,
+    //     middleText: KeyLanguage.dialogPopContent.tr,
+    //     actions: [
+    //       TextButton(
+    //           onPressed: () {
+    //             exit(0);
+    //           },
+    //           child: Text(KeyLanguage.yesButton.tr)),
+    //       TextButton(
+    //         onPressed: () {
+    //           Get.back();
+    //         },
+    //         child: Text(KeyLanguage.noButton.tr),
+    //       ),
     statusRequest = StatusRequest.loading;
     update();
     var response = await categoryRemote.deleteCategory(

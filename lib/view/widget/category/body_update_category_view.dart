@@ -4,8 +4,9 @@ import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/validator.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/core/share/custom_button_widget.dart';
+import 'package:admin_ecommerce/core/share/cancel_save_button.dart';
 import 'package:admin_ecommerce/core/share/custom_text_form_field_widget.dart';
+import 'package:admin_ecommerce/view/widget/category/choose_image_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -44,12 +45,8 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
                 keyboardType: TextInputType.text,
                 validator: (value) => validatorGeneral(value),
               ),
-              ElevatedButton(
-                child: Text(KeyLanguage.buttonChooseImage.tr),
-                onPressed: () {
-                  controller.chooseImageButton();
-                },
-              ),
+              const ChooseImageButtonWidget(),
+              const SizedBox(height: 6),
               GetBuilder<UpdateCategoryControllerImp>(
                 id: ConstantKey.idChooseImage,
                 builder: (controller) {
@@ -61,12 +58,7 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
                       : const SizedBox();
                 },
               ),
-              CustomButtonWidget(
-                text: KeyLanguage.buttonAdd.tr,
-                onTap: () {
-                  controller.updateButton();
-                },
-              ),
+              const CancelSaveButton(),
             ],
           ),
         ),
@@ -74,3 +66,4 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
     );
   }
 }
+

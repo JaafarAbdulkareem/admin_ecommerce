@@ -54,6 +54,7 @@ abstract class KeyLanguage {
   static const String alertNoFound = "alertNoFound";
   static const String passwordMismatchMassage = "passwordMismatchMassage";
   static const String alertEnterEmail = "alertEnterEmail";
+  static const String alertNoThingChange = "alertNoThingChange";
   // static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";
   // static const String notFoundProductMessage = "messageNotFoundProduct";
@@ -81,6 +82,7 @@ abstract class KeyLanguage {
   static const String buttonSave = "buttonSave";
   static const String buttonAdd = "buttonAdd";
   static const String buttonChooseImage = "buttonChooseImage";
+  static const String buttonCancel = "buttonCancel";
 
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
@@ -100,7 +102,6 @@ abstract class KeyLanguage {
 //   static const String deleteButton = "deleteButton";
 //   static const String acceptButton = "acceptButton";
 //   static const String injectButton = "injectButton";
-//   static const String cancelButton = "cancelButton";
 //   static const String submitButton = "submitButton";
 //login
 //   static const String successTitle = "successTitle";
