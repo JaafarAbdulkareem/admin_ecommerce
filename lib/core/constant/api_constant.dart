@@ -21,10 +21,16 @@ abstract class ApiConstant {
   // static const String apiViewAuth = "$folderAuth/view_auth.php";
 
   static const String folderCategory = "$folderAdmin/category";
-  static const String apiViewCategory = "$folderCategory/view_category.php";
-  static const String apiInsertCategory = "$folderCategory/insert_category.php";
-  static const String apiDeleteCategory = "$folderCategory/delete_category.php";
-  static const String apiUpdateCategory = "$folderCategory/update_category.php";
+  static const String apiViewCategory = "$folderProduct/view_category.php";
+  static const String apiInsertCategory = "$folderProduct/insert_category.php";
+  static const String apiDeleteCategory = "$folderProduct/delete_category.php";
+  static const String apiUpdateCategory = "$folderProduct/update_category.php";
+
+  static const String folderProduct = "$folderAdmin/product";
+  static const String apiViewProduct = "$folderProduct/view_product.php";
+  static const String apiInsertProduct = "$folderProduct/insert_product.php";
+  static const String apiDeleteProduct = "$folderProduct/delete_product.php";
+  static const String apiUpdateProduct = "$folderProduct/update_product.php";
 
 //   static const String folderHome = "$folderUser/home";
 //   static const String apiHome = "$folderHome/home.php";

@@ -7,10 +7,17 @@ abstract class ApiKey {
 //category
   static const String id = "id";
   // static const String userId = "userId";
-  static const String englishName = "englishName";
   static const String arabicName = "arabicName";
+  static const String englishName = "englishName";
+  static const String arabicDescription = "arabicDescription";
+  static const String englishDescription = "englishDescription";
   static const String image = "image";
   static const String newImage = "newImage";
+  static const String count = "count";
+  static const String active = "active";
+  static const String price = "price";
+  static const String discount = "discount";
+  static const String categoryId = "categoryId";
   // static const String productId = "productId";
   // static const String count = "count";
   // static const String orderId = "orderId";

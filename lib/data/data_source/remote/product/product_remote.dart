@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:admin_ecommerce/core/constant/api_constant.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/service/curd.dart';
-import 'package:admin_ecommerce/data/models/category_model.dart';
+import 'package:admin_ecommerce/data/models/product_model.dart';
 
 class CategoryRemote {
   final Curd curd;
@@ -12,22 +12,28 @@ class CategoryRemote {
 
   getData() async {
     var response = await curd.postData(
-      ApiConstant.apiViewCategory,
+      ApiConstant.apiViewProduct,
       {},
     );
     return response.fold((left) => left, (right) => right);
   }
 
-  insertCategory({
-    required String arabicName,
-    required String englishName,
+  insertProduct({
+    required ProductModel data,
     required File file,
   }) async {
     var response = await curd.postDataWithFile(
-      url: ApiConstant.apiInsertCategory,
+      url: ApiConstant.apiInsertProduct,
       body: {
-        ApiKey.arabicName: arabicName,
-        ApiKey.englishName: englishName,
+        ApiKey.arabicName: data.arabicName,
+        ApiKey.englishName: data.englishName,
+        ApiKey.arabicDescription: data.arabicDescription,
+        ApiKey.englishDescription: data.englishDescription,
+        ApiKey.count: data.count,
+        ApiKey.active: data.active,
+        ApiKey.price: data.price,
+        ApiKey.discount: data.discount,
+        ApiKey.categoryId: data.categoryId,
       },
       fieldFile: ApiKey.newImage,
       file: file,
@@ -35,12 +41,12 @@ class CategoryRemote {
     return response.fold((left) => left, (right) => right);
   }
 
-  deleteCategory({
+  deleteProduct({
     required String id,
     required String image,
   }) async {
     var response = await curd.postData(
-      ApiConstant.apiDeleteCategory,
+      ApiConstant.apiDeleteProduct,
       {
         ApiKey.id: id,
         ApiKey.image: image,
@@ -49,29 +55,43 @@ class CategoryRemote {
     return response.fold((left) => left, (right) => right);
   }
 
-  updateCategory({
-    required CategoryModel data,
+  updateProduct({
+    required ProductModel data,
     required File? file,
   }) async {
     dynamic response;
     if (file == null) {
       response = await curd.postData(
-        ApiConstant.apiUpdateCategory,
+        ApiConstant.apiUpdateProduct,
         {
-          ApiKey.id: data.id.toString(),
+          ApiKey.id: data.id,
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
           ApiKey.image: "",
+          ApiKey.arabicDescription: data.arabicDescription,
+          ApiKey.englishDescription: data.englishDescription,
+          ApiKey.count: data.count,
+          ApiKey.active: data.active,
+          ApiKey.price: data.price,
+          ApiKey.discount: data.discount,
+          ApiKey.categoryId: data.categoryId,
         },
       );
     } else {
       response = await curd.postDataWithFile(
-        url: ApiConstant.apiUpdateCategory,
+        url: ApiConstant.apiUpdateProduct,
         body: {
-          ApiKey.id: data.id.toString(),
+          ApiKey.id: data.id,
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
           ApiKey.image: data.image,
+          ApiKey.arabicDescription: data.arabicDescription,
+          ApiKey.englishDescription: data.englishDescription,
+          ApiKey.count: data.count,
+          ApiKey.active: data.active,
+          ApiKey.price: data.price,
+          ApiKey.discount: data.discount,
+          ApiKey.categoryId: data.categoryId,
         },
         fieldFile: ApiKey.newImage,
         file: file,
