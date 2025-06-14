@@ -10,6 +10,7 @@ Map<String, String> english = {
   KeyLanguage.appBarCategory: "Category",
   KeyLanguage.appBarInsertCategory: "Insert Category",
   KeyLanguage.appBarUpdateCategory: "Update Category",
+  KeyLanguage.appBarProduct: "Product",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -60,7 +61,8 @@ Map<String, String> english = {
   KeyLanguage.passwordMismatchMassage:
       "Password Mismatch, Check Your Password again",
   KeyLanguage.alertEnterEmail: "Enter Your Email First Please",
-  KeyLanguage.alertNoThingChange: "Oops! You Haven’t Changed Anything Yet. Please Make An Update Before Saving.",
+  KeyLanguage.alertNoThingChange:
+      "Oops! You Haven’t Changed Anything Yet. Please Make An Update Before Saving.",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:

@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:admin_ecommerce/controller/category/base_category_controller.dart';
+import 'package:admin_ecommerce/controller/base/base_choose_image_controller.dart';
 import 'package:admin_ecommerce/controller/category/category_controller.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
@@ -13,7 +13,7 @@ import 'package:admin_ecommerce/data/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class UpdateCategoryController extends BaseCategoryController {
+abstract class UpdateCategoryController extends BaseChooseImageController {
   void updateButton();
   void cancelButton();
 }

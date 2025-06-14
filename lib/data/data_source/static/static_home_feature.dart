@@ -16,7 +16,7 @@ List<HomeModel> dataHomeFeature = [
     image: AppImages.imagesProduct,
     title: KeyLanguage.titleProduct,
     onPressed: () {
-      // Navigator function for Product
+      Get.toNamed(ConstantScreenName.product);
     },
   ),
   HomeModel(

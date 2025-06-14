@@ -6,36 +6,36 @@ import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
-import 'package:admin_ecommerce/data/models/category_model.dart';
+import 'package:admin_ecommerce/data/data_source/remote/product/product_remote.dart';
+import 'package:admin_ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
 
-abstract class CategoryController extends BaseFloatingButtonController {
-  void deleteCategory(int index);
-  // void goToInsertCategory();
-  void goToUpdateCategory(int index);
+abstract class ProductController extends BaseFloatingButtonController {
+  void deleteProduct(int index);
+  void goToUpdateProduct(int index);
 }
 
-class CategoryControllerImp extends CategoryController {
-  static List<CategoryModel> categoryData = [];
+class ProductControllerImp extends ProductController {
+  static List<ProductModel> productData = [];
   static bool firstTime = true;
   late StatusRequest statusRequest;
-  late CategoryRemote categoryRemote;
+  late ProductRemote productRemote;
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
-    categoryRemote = CategoryRemote(curd: Get.find());
+    productRemote = ProductRemote(curd: Get.find());
     getData();
     super.onInit();
   }
 
   Future<void> getData() async {
     if (firstTime) {
-      categoryData.clear();
+      productData.clear();
       firstTime = false;
       statusRequest = StatusRequest.loading;
       update();
-      var response = await categoryRemote.getData();
+      var response = await productRemote.getData();
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
@@ -56,12 +56,12 @@ class CategoryControllerImp extends CategoryController {
 
   fetchData(response) {
     for (var element in response) {
-      categoryData.add(CategoryModel.fromJson(element));
+      productData.add(ProductModel.fromJson(element));
     }
   }
 
   void checkDataLength() {
-    if (categoryData.isEmpty) {
+    if (productData.isEmpty) {
       statusRequest = StatusRequest.failure;
       update();
     } else {
@@ -71,20 +71,20 @@ class CategoryControllerImp extends CategoryController {
   }
 
   @override
-  void deleteCategory(int index) {
+  void deleteProduct(int index) {
     dialogWantDelete(
       yesButton: () async {
         statusRequest = StatusRequest.loading;
         update();
-        var response = await categoryRemote.deleteCategory(
-          id: categoryData[index].id.toString(),
-          image: categoryData[index].image,
+        var response = await productRemote.deleteProduct(
+          id: productData[index].id,
+          image: productData[index].image,
         );
         statusRequest = handleStatus(response);
         if (statusRequest == StatusRequest.success) {
           if (response[ApiResult.status] == ApiResult.success) {
-            categoryData.removeAt(index);
-            if (categoryData.isEmpty) {
+            productData.removeAt(index);
+            if (productData.isEmpty) {
               statusRequest = StatusRequest.failure;
               update();
             } else {
@@ -107,15 +107,15 @@ class CategoryControllerImp extends CategoryController {
 
   @override
   void goToInsertPage() {
-    Get.toNamed(ConstantScreenName.insertCategory);
+    Get.toNamed(ConstantScreenName.insertProduct);
   }
 
   @override
-  void goToUpdateCategory(int index) {
+  void goToUpdateProduct(int index) {
     Get.toNamed(
-      ConstantScreenName.updateCategory,
+      ConstantScreenName.updateProduct,
       arguments: {
-        ConstantKey.categoryData: categoryData[index],
+        ConstantKey.categoryData: productData[index],
       },
     );
   }

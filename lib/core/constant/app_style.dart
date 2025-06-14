@@ -20,12 +20,12 @@
 //   }
 
 //   static TextStyle styleSemiBold12(BuildContext context) {
-//     return const TextStyle(
-//       fontSize: 12,
-//       color: AppColorText.textButton,
-//       fontWeight: FontWeight.w600,
-//       fontFamily: ConstantTextFons.sans,
-//     );
+    // return const TextStyle(
+    //   fontSize: 12,
+    //   color: AppColorText.textButton,
+    //   fontWeight: FontWeight.w600,
+    //   fontFamily: ConstantTextFons.sans,
+    // );
 //   }
 
 //   static TextStyle styleBold12(BuildContext context) {

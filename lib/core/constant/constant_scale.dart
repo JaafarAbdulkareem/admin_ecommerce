@@ -12,7 +12,7 @@ abstract class ConstantScale {
 //category
   static const double aspectRatio = 0.85;
   static const double svgImage = 80;
-  static const double categoryaspectRatioCard = 3.5;
+  static const double goodsAspectRatioCard = 3.5;
   static const double iconDelete = 28;
   static const double iconChooseImage = 45;
   static const double textChooseImage = 16;

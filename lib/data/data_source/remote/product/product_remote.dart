@@ -5,10 +5,10 @@ import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/service/curd.dart';
 import 'package:admin_ecommerce/data/models/product_model.dart';
 
-class CategoryRemote {
+class ProductRemote {
   final Curd curd;
 
-  CategoryRemote({required this.curd});
+  ProductRemote({required this.curd});
 
   getData() async {
     var response = await curd.postData(

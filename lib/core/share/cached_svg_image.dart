@@ -5,8 +5,11 @@ import 'package:admin_ecommerce/core/function/load_cached_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class CatchedSvgImage extends StatelessWidget {
-  const CatchedSvgImage({super.key, required this.image});
+class CachedSvgImage extends StatelessWidget {
+  const CachedSvgImage({
+    super.key,
+    required this.image,
+  });
   final String image;
   @override
   Widget build(BuildContext context) {

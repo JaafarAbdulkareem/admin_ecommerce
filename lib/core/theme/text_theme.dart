@@ -38,5 +38,11 @@ TextTheme textTheme() {
       color: AppColorText.primary,
       // fontFamily: ConstantTextFons.sans,
     ),
+
+    labelLarge: TextStyle(
+      fontSize: 12,
+      color: AppColorText.secondary,
+      fontWeight: FontWeight.bold,
+    ),
   );
 }

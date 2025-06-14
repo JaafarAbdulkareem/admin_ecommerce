@@ -1,0 +1,28 @@
+import 'package:admin_ecommerce/core/constant/api_constant.dart';
+import 'package:admin_ecommerce/core/constant/app_icon.dart';
+import 'package:admin_ecommerce/core/constant/app_lottie.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+
+class CachedAssetImage extends StatelessWidget {
+  const CachedAssetImage({
+    super.key,
+    required this.image,
+  });
+
+  final String image;
+  @override
+  Widget build(BuildContext context) {
+    return CachedNetworkImage(
+      imageUrl: "${ApiConstant.productImagePath}/$image",
+      progressIndicatorBuilder: (context, url, downloadProgress) =>
+          Lottie.asset(
+        AppLottie.loading,
+      ),
+      errorWidget: (context, url, error) => const Icon(
+        AppIcon.error,
+      ),
+    );
+  }
+}

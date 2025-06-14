@@ -1,11 +1,11 @@
-import 'package:admin_ecommerce/controller/category/category_controller.dart';
+import 'package:admin_ecommerce/controller/product/product_controller.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
-import 'package:admin_ecommerce/view/widget/category/item_list_category_view.dart';
+import 'package:admin_ecommerce/view/widget/product/item_list_product_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BodyCategoryView extends GetView<CategoryControllerImp> {
-  const BodyCategoryView({super.key});
+class BodyProductView extends GetView<ProductControllerImp> {
+  const BodyProductView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +17,16 @@ class BodyCategoryView extends GetView<CategoryControllerImp> {
         bottom: ConstantScale.verticalPage + 25,
       ),
       child: ListView.builder(
-        itemCount: CategoryControllerImp.categoryData.length,
+        itemCount: ProductControllerImp.productData.length,
         itemBuilder: (context, index) => AspectRatio(
           aspectRatio: ConstantScale.goodsAspectRatioCard,
-          child: ItemListCategoryView(
-            data: CategoryControllerImp.categoryData[index],
+          child: ItemListProductView(
+            data: ProductControllerImp.productData[index],
             deleteOnTap: () {
-              controller.deleteCategory(index);
+              controller.deleteProduct(index);
             },
             updateOnTap: () {
-              controller.goToUpdateCategory(index);
+              controller.goToUpdateProduct(index);
             },
           ),
         ),

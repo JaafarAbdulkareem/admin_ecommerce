@@ -15,7 +15,10 @@ class ConstantScreenName {
   static const String category = "/category";
   static const String insertCategory = "/insertCategory";
   static const String updateCategory = "/updateCategory";
-  // static const String product = "/product";
+// product
+  static const String product = "/product";
+  static const String insertProduct = "/insertProduct";
+  static const String updateProduct = "/updateProduct";
   // static const String productDetail = "/productDetail";
   // static const String favorite = "/favorite";
   // static const String cart = "/cart";
