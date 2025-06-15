@@ -18,11 +18,23 @@ abstract class ConstantTypeTheme {
 //     backgroundColor: AppColor.correct,
 //   ),
 // ) ,
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.resolveWith<Color>((states) {
+        return AppColorText.textButton; // Always white thumb
+      }),
+      trackColor: WidgetStateProperty.resolveWith<Color>((states) {
+        if (states.contains(WidgetState.selected)) {
+          return AppColor.primary; // ON state
+        }
+        return AppColor.secondary; // OFF state
+      }),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      backgroundColor: AppColor.iconColor,
-      foregroundColor: AppColor.primary,
-    )),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColor.iconColor,
+        foregroundColor: AppColor.primary,
+      ),
+    ),
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     cardColor: AppColor.card,
     textButtonTheme: textButtonThemeData(),

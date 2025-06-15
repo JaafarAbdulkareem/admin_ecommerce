@@ -69,7 +69,7 @@ class InsertCategoryControllerImp extends InsertCategoryController {
       } else {
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.messageInsertImage.tr,
+          middleText: KeyLanguage.alertInsertImage.tr,
         );
       }
     }

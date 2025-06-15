@@ -16,8 +16,15 @@ TextTheme textTheme() {
     // titleLarge: TextStyle(
     //   fontWeight: FontWeight.bold,
     //   fontSize: 16,
-    //   color: AppColorText.textButton,
+    //   color: AppColorText.primary,
+
+    //   // color: AppColorText.textButton,
     // ),
+    titleMedium: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: AppColor.primary,
+    ),
     titleSmall: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w300,

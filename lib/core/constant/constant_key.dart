@@ -16,6 +16,7 @@ abstract class ConstantKey {
   // static const String phoneValidator = "phone";
 //agurement navigator
   static const String categoryData = "categoryData";
+  // static const String categoryTitleData = "categoryTitleData";
   // static const String productData = "productData";
   // static const String categoryNames = "categoryNames";
   // static const String favoriteIDData = "favoriteIDData";
@@ -40,6 +41,7 @@ abstract class ConstantKey {
   // static const String idRatingButton = "idRatingButton";
   static const String idChooseImage = "idChooseImage";
   static const String idGalleryImage = "idGalleryImage";
+  static const String idActiveSwitch = "idActiveSwitch";
   // static const String idGoogleMap = "idGoogleMap";
   // id marker in google map
   // static const String idUserLocation = "userLocation";

@@ -22,7 +22,10 @@ class ChooseImageButtonWidget<T extends BaseChooseImageController>
           builder: (controller) {
             return CustomLoadingWidget(
               statusRequest: controller.statusRequest,
-              child: Text(KeyLanguage.buttonChooseImage.tr),
+              child: Text(
+                KeyLanguage.buttonChooseImage.tr,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
             );
           },
         ),
@@ -33,5 +36,3 @@ class ChooseImageButtonWidget<T extends BaseChooseImageController>
     );
   }
 }
-
-

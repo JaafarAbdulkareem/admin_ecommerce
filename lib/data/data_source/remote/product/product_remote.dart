@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:admin_ecommerce/core/constant/api_constant.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/service/curd.dart';
-import 'package:admin_ecommerce/data/models/product_model.dart';
+import 'package:admin_ecommerce/data/models/product/insert_product_model.dart';
+import 'package:admin_ecommerce/data/models/product/product_model.dart';
 
 class ProductRemote {
   final Curd curd;
@@ -19,7 +20,7 @@ class ProductRemote {
   }
 
   insertProduct({
-    required ProductModel data,
+    required InsertProductModel data,
     required File file,
   }) async {
     var response = await curd.postDataWithFile(

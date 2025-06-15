@@ -7,7 +7,7 @@ import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/product/product_remote.dart';
-import 'package:admin_ecommerce/data/models/product_model.dart';
+import 'package:admin_ecommerce/data/models/product/product_model.dart';
 import 'package:get/get.dart';
 
 abstract class ProductController extends BaseFloatingButtonController {

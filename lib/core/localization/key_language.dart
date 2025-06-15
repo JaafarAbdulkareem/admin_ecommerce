@@ -9,6 +9,8 @@ abstract class KeyLanguage {
   static const String appBarInsertCategory = "appBarInsertCategory";
   static const String appBarUpdateCategory = "appBarUpdateCategory";
   static const String appBarProduct = "appBarProduct";
+  static const String appBarInsertProduct = "appBarInsertProduct";
+  static const String appBarUpdateProduct = "appBarUpdateProduct";
 
 //validator
   static const String empty = "empty";
@@ -44,7 +46,8 @@ abstract class KeyLanguage {
 //category
   static const String titleCamera = "titleCamera";
   static const String titleGallery = "titleGallery";
-  static const String messageInsertImage = "messageInsertImage";
+//product
+  static const String titleActive = "titleActive";
   //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
@@ -57,6 +60,8 @@ abstract class KeyLanguage {
   static const String passwordMismatchMassage = "passwordMismatchMassage";
   static const String alertEnterEmail = "alertEnterEmail";
   static const String alertNoThingChange = "alertNoThingChange";
+  static const String alertInsertImage = "alertInsertImage";
+  static const String alertInsertCategory = "alertInsertCategory";
   // static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";
   // static const String notFoundProductMessage = "messageNotFoundProduct";
@@ -69,12 +74,33 @@ abstract class KeyLanguage {
   static const String labelRePassword = "rePasswordLabel";
   static const String labelCategoryArabic = "labelCategoryArabic";
   static const String labelCategoryEnglish = "labelCategoryEnglish";
+  static const String labelProductArabicName = "labelProductArabicName";
+  static const String labelProductEnglishName = "labelProductEnglishName";
+  static const String labelProductArabicDescription =
+      "labelProductArabicDescription";
+  static const String labelProductEnglishDescription =
+      "labelProductEnglishDescription";
+  static const String labelCount = "labelCount";
+  static const String labelPrice = "labelPrice";
+  static const String labelDiscount = "labelDiscount";
+
 //hint
   static const String hintEmail = "hintEmail";
   static const String hintPassword = "hintPassword";
   static const String hintRePassword = "hintRePassword";
   static const String hintCategoryArabic = "hintCategoryArabic";
   static const String hintCategoryEnglish = "hintCategoryEnglish";
+  static const String hintProductArabicName = "hintProductArabicName";
+  static const String hintProductEnglishName = "hintProductEnglishName";
+  static const String hintProductArabicDescription =
+      "hintProductArabicDescription";
+  static const String hintProductEnglishDescription =
+      "hintProductEnglishDescription";
+  static const String hintCount = "hintCount";
+  static const String hintPrice = "hintPrice";
+  static const String hintDiscount = "hintDiscount";
+  static const String hintProductDrop = "hintProductDrop";
+  static const String hintSearch = "hintSearch";
 
 //button
   static const String buttonLogin = "buttonLogin";

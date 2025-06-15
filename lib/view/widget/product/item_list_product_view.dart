@@ -2,7 +2,7 @@ import 'package:admin_ecommerce/core/constant/app_icon.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/translate_language.dart';
 import 'package:admin_ecommerce/core/share/cached_asset_image.dart';
-import 'package:admin_ecommerce/data/models/product_model.dart';
+import 'package:admin_ecommerce/data/models/product/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ItemListProductView extends StatelessWidget {

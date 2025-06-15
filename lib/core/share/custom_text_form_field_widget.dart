@@ -8,7 +8,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.maxLines = 1,
     required this.hint,
     required this.label,
-    required this.icon,
+    this.icon,
     required this.controller,
     this.onTap,
     this.validator,
@@ -18,7 +18,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   });
   final int? maxLines;
   final String hint, label;
-  final IconData icon;
+  final IconData? icon;
   final TextEditingController controller;
   final VoidCallback? onTap;
   final String? Function(String?)? validator;
@@ -38,6 +38,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
         keyboardType: keyboardType,
         obscuringCharacter: ConstantText.obscureText,
         style: Theme.of(context).textTheme.bodySmall,
+        textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           label: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),

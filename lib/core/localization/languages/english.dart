@@ -11,6 +11,8 @@ Map<String, String> english = {
   KeyLanguage.appBarInsertCategory: "Insert Category",
   KeyLanguage.appBarUpdateCategory: "Update Category",
   KeyLanguage.appBarProduct: "Product",
+  KeyLanguage.appBarInsertProduct: "Insert Product",
+  KeyLanguage.appBarUpdateProduct: "Update Product",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -46,8 +48,9 @@ Map<String, String> english = {
 //category
   KeyLanguage.titleCamera: "Camera",
   KeyLanguage.titleGallery: "Gallery",
-  KeyLanguage.messageInsertImage:
-      "Category Image Is Required. Please Upload An Image.",
+
+//product
+  KeyLanguage.titleActive: "Active",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -63,6 +66,9 @@ Map<String, String> english = {
   KeyLanguage.alertEnterEmail: "Enter Your Email First Please",
   KeyLanguage.alertNoThingChange:
       "Oops! You Haven’t Changed Anything Yet. Please Make An Update Before Saving.",
+  KeyLanguage.alertInsertImage: "Image Is Required. Please Upload An Image.",
+  KeyLanguage.alertInsertCategory:
+      "Category Type Is Required. Please Choose A Category.",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:
@@ -79,12 +85,30 @@ Map<String, String> english = {
   KeyLanguage.labelRePassword: "Re Password",
   KeyLanguage.labelCategoryArabic: "Category (Arabic)",
   KeyLanguage.labelCategoryEnglish: "Category (English)",
+  KeyLanguage.labelProductArabicName: "Product Name (Arabic)",
+  KeyLanguage.labelProductEnglishName: "Product Name (English)",
+  KeyLanguage.labelProductArabicDescription: "Product Description (Arabic)",
+  KeyLanguage.labelProductEnglishDescription: "Product Description (English)",
+  KeyLanguage.labelCount: "Count",
+  KeyLanguage.labelPrice: "Price",
+  KeyLanguage.labelDiscount: "Discount (%)",
 //hint
   KeyLanguage.hintEmail: "Enter Your Email",
   KeyLanguage.hintPassword: "Enter Your Password",
   KeyLanguage.hintRePassword: "Enter Your Password Again",
-  KeyLanguage.hintCategoryArabic: "Enter Your Arabic Category",
-  KeyLanguage.hintCategoryEnglish: "Enter Your English Category",
+  KeyLanguage.hintCategoryArabic: "Enter Your Category Name (Arabic)",
+  KeyLanguage.hintCategoryEnglish: "Enter Your Category Name (English) ",
+  KeyLanguage.hintProductArabicName: "Enter Product Name (Arabic)",
+  KeyLanguage.hintProductEnglishName: "Enter Product Name (English)",
+  KeyLanguage.hintProductArabicDescription:
+      "Enter Product Description (Arabic)",
+  KeyLanguage.hintProductEnglishDescription:
+      "Enter Product Description (English)",
+  KeyLanguage.hintCount: "Enter Count",
+  KeyLanguage.hintPrice: "Enter Price",
+  KeyLanguage.hintDiscount: "Discount",
+  KeyLanguage.hintProductDrop: "Choose Category Name",
+  KeyLanguage.hintSearch: "Search",
 
 //button
   KeyLanguage.buttonLogin: "Login",

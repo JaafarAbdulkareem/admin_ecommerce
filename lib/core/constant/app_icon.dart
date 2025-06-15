@@ -7,10 +7,11 @@ abstract class AppIcon {
   static const IconData openPassword = Icons.lock_open_outlined;
   static const IconData category = Icons.category_outlined;
   static const IconData product = Icons.shopping_bag_outlined;
-
-  static const IconData camera =  Icons.camera_alt;
-  static const IconData gallery = Icons.image ;
-
+  static const IconData count = Icons.format_list_numbered;
+  static const IconData price = Icons.attach_money;
+  static const IconData discount = Icons.local_offer_outlined;
+  static const IconData camera = Icons.camera_alt;
+  static const IconData gallery = Icons.image;
 
   // static const IconData edit = Icons.edit;
   // static const IconData phone = Icons.phone_android_rounded;

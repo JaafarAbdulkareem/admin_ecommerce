@@ -10,6 +10,7 @@ import 'package:admin_ecommerce/core/middleware/onboarding_middleware.dart';
 import 'package:admin_ecommerce/view/screen/auth/login_view.dart';
 import 'package:admin_ecommerce/view/screen/home/home_view.dart';
 import 'package:admin_ecommerce/view/screen/onboarding/choose_app_language_view.dart';
+import 'package:admin_ecommerce/view/screen/product/insert_product_view.dart';
 import 'package:admin_ecommerce/view/screen/product/product_view.dart';
 import 'package:get/get.dart';
 
@@ -64,5 +65,9 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.product,
         page: () => const ProductView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.insertProduct,
+        page: () => const InsertProductView(),
       ),
     ];
