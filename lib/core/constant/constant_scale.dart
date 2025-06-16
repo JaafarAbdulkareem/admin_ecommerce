@@ -60,8 +60,8 @@ abstract class ConstantScale {
 //   //cart
 //   static const int couponsLottieDelay = 3;
 
-//   //order
-//   static const int cachOption = 0;
+//order
+  static const int initiBarIndex = 0;
 //   static const int paymentOption = 1;
 //   static const int deliveryOption = 0;
 //   static const int receiveOption = 1;

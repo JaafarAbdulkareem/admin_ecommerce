@@ -13,6 +13,7 @@ Map<String, String> english = {
   KeyLanguage.appBarProduct: "Product",
   KeyLanguage.appBarInsertProduct: "Insert Product",
   KeyLanguage.appBarUpdateProduct: "Update Product",
+  KeyLanguage.appBarOrder: "Order",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -119,6 +120,12 @@ Map<String, String> english = {
   KeyLanguage.buttonAdd: "Add",
   KeyLanguage.buttonChooseImage: "Choose Image",
   KeyLanguage.buttonCancel: "Cancel",
+
+  //bar
+  KeyLanguage.barPending: "Pending",
+  KeyLanguage.barProper: "Confirmed", // More clear than "Proper"
+  KeyLanguage.barOnTheWay: "Transit", // Shorter than "On the Way"
+  KeyLanguage.barDone: "Done",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",

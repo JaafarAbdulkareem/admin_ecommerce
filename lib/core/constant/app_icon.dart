@@ -13,6 +13,11 @@ abstract class AppIcon {
   static const IconData camera = Icons.camera_alt;
   static const IconData gallery = Icons.image;
 
+  static const IconData barPending = Icons.hourglass_top_outlined;
+  static const IconData barProper = Icons.assignment_turned_in;
+  static const IconData barOnTheWay = Icons.local_shipping;
+  static const IconData barDone = Icons.check_circle;
+
   // static const IconData edit = Icons.edit;
   // static const IconData phone = Icons.phone_android_rounded;
   // static const IconData success = Icons.check_circle_outline;
