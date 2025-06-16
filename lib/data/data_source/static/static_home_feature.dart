@@ -20,17 +20,17 @@ List<HomeModel> dataHomeFeature = [
     },
   ),
   HomeModel(
+    image: AppImages.imagesOrder,
+    title: KeyLanguage.titleOrders,
+    onPressed: () {
+      Get.toNamed(ConstantScreenName.order);
+    },
+  ),
+  HomeModel(
     image: AppImages.imagesUsers,
     title: KeyLanguage.titleUsers,
     onPressed: () {
       // Navigator function for Users
-    },
-  ),
-  HomeModel(
-    image: AppImages.imagesOrder,
-    title: KeyLanguage.titleOrders,
-    onPressed: () {
-      // Navigator function for Orders
     },
   ),
   HomeModel(

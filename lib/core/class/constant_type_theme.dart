@@ -1,5 +1,6 @@
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/theme/app_bar_theme.dart';
 import 'package:admin_ecommerce/core/theme/floating_action_button_theme_data.dart';
 import 'package:admin_ecommerce/core/theme/input_decoration_theme.dart';
@@ -18,6 +19,11 @@ abstract class ConstantTypeTheme {
 //     backgroundColor: AppColor.correct,
 //   ),
 // ) ,
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: AppColor.backgroundScaffold,
+      shadowColor: AppColor.primary,
+      elevation: ConstantScale.elevation,
+    ),
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith<Color>((states) {
         return AppColorText.textButton; // Always white thumb

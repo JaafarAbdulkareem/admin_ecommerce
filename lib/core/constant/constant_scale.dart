@@ -20,6 +20,10 @@ abstract class ConstantScale {
 //product
   static const double margenInsertProduct = 6;
   static const double imageInsert = 150;
+//order
+  static const double iconOrderSelect = 40;
+  static const double iconOrderNotSelect = 32;
+  static const double elevation = 30;
 
   // static const int initialOnboardingIndex = 0;
 //field
