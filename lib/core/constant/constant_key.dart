@@ -16,6 +16,7 @@ abstract class ConstantKey {
   // static const String phoneValidator = "phone";
 //agurement navigator
   static const String categoryData = "categoryData";
+  static const String productData = "productData";
   // static const String categoryTitleData = "categoryTitleData";
   // static const String productData = "productData";
   // static const String categoryNames = "categoryNames";

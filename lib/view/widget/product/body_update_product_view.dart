@@ -1,24 +1,23 @@
-import 'package:admin_ecommerce/controller/product/insert_product_controller.dart';
+import 'package:admin_ecommerce/controller/product/update_product_controller.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
-import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/core/share/custom_button_widget.dart';
+import 'package:admin_ecommerce/core/share/cancel_save_button.dart';
 import 'package:admin_ecommerce/core/template/choose_image_button_widget.dart';
-import 'package:admin_ecommerce/view/widget/product/active_price_insert_field.dart';
-import 'package:admin_ecommerce/view/widget/product/description_insert_field.dart';
-import 'package:admin_ecommerce/view/widget/product/list_category_insert_drop_down.dart';
-import 'package:admin_ecommerce/view/widget/product/count_discount_insert_field.dart';
-import 'package:admin_ecommerce/view/widget/product/name_insert_field.dart';
+import 'package:admin_ecommerce/view/widget/product/active_price_update_field.dart';
+import 'package:admin_ecommerce/view/widget/product/description_update_field.dart';
+import 'package:admin_ecommerce/view/widget/product/count_discount_update_field.dart';
+import 'package:admin_ecommerce/view/widget/product/list_category_update_drop_down.dart';
+import 'package:admin_ecommerce/view/widget/product/name_update_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BodyInsertProductView extends GetView<InsertProductControllerImp> {
-  const BodyInsertProductView({super.key});
+class BodyUpdateProductView extends GetView<UpdateProductControllerImp> {
+  const BodyUpdateProductView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: controller.keyInsertProduct,
+      key: controller.keyUpdateProduct,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: ConstantScale.horizonPage,
@@ -29,14 +28,14 @@ class BodyInsertProductView extends GetView<InsertProductControllerImp> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: ConstantScale.margenInsertProduct * 2),
-              const NameInsertField(),
-              const CountDiscountInsertField(),
-              const ActivePriceInsertField(),
-              const ListCategoryInsertDropDown(),
+              const NameUpdateField(),
+              const CountDiscountUpdateField(),
+              const ActivePriceUpdateField(),
+              const ListCategoryUpdateDropDown(),
               const SizedBox(height: ConstantScale.margenInsertProduct),
-              const ChooseImageButtonWidget<InsertProductControllerImp>(),
+              const ChooseImageButtonWidget<UpdateProductControllerImp>(),
               const SizedBox(height: ConstantScale.margenInsertProduct),
-              GetBuilder<InsertProductControllerImp>(
+              GetBuilder<UpdateProductControllerImp>(
                 id: ConstantKey.idChooseImage,
                 builder: (controller) {
                   return controller.file != null
@@ -48,12 +47,10 @@ class BodyInsertProductView extends GetView<InsertProductControllerImp> {
                 },
               ),
               const SizedBox(height: ConstantScale.margenInsertProduct),
-              const DescriptionInsertField(),
-              CustomButtonWidget(
-                text: KeyLanguage.buttonAdd.tr,
-                onTap: () {
-                  controller.addButton();
-                },
+              const DescriptionUpdateField(),
+              CancelSaveButton(
+                cancelButton: controller.cancelButton,
+                saveButton: controller.updateButton,
               ),
             ],
           ),

@@ -115,7 +115,7 @@ class ProductControllerImp extends ProductController {
     Get.toNamed(
       ConstantScreenName.updateProduct,
       arguments: {
-        ConstantKey.categoryData: productData[index],
+        ConstantKey.productData: productData[index],
       },
     );
   }

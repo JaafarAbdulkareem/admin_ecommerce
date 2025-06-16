@@ -78,7 +78,7 @@ class InsertProductControllerImp extends InsertProductController {
     super.dispose();
   }
 
-  fetchDropDownListData() async {
+  void fetchDropDownListData() async {
     if (CategoryControllerImp.categoryData.isEmpty) {
       CategoryControllerImp.firstTime = true;
       await categoryController.getData();

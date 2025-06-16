@@ -9,7 +9,7 @@ class ProductModel {
   final String image;
   final int countProduct;
   final int count;
-  final int active;
+  final bool active;
   final double price;
   final double discount;
   final double discountPrice;
@@ -45,25 +45,25 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      id: json[ApiColumnDb.id] ?? '',
-      arabicName: json[ApiColumnDb.arabicName] ?? '',
-      englishName: json[ApiColumnDb.englishName] ?? '',
-      arabicDescription: json[ApiColumnDb.arabicDescription] ?? '',
-      englishDescription: json[ApiColumnDb.englishDescription] ?? '',
-      image: json[ApiColumnDb.image] ?? '',
-      countProduct: int.parse(json[ApiColumnDb.countProduct].toString()),
-      count: int.parse(json[ApiColumnDb.count].toString()),
-      active: int.parse(json[ApiColumnDb.active].toString()),
-      price: double.parse(json[ApiColumnDb.price].toString()),
-      discount: double.parse(json[ApiColumnDb.discount].toString()),
-      discountPrice: double.parse(json[ApiColumnDb.discountPrice].toString()),
-      timeCreate: json[ApiColumnDb.timeCreate] ?? '',
-      categoryId: json[ApiColumnDb.categoryId] ?? '',
-      categoryArabicName: json[ApiColumnDb.categoryArabicName] ?? '',
-      categoryEnglishName: json[ApiColumnDb.categoryEnglishName] ?? '',
-      categoryImage: json[ApiColumnDb.categoryImage] ?? '',
-      categoryTimeCreate: json[ApiColumnDb.categoryTimeCreate] ?? '',
-      rating: double.parse(json[ApiColumnDb.rating].toString()),
+      id: json[ApiColumnDb.id]?.toString() ?? '',
+      arabicName: json[ApiColumnDb.arabicName]?.toString() ?? '',
+      englishName: json[ApiColumnDb.englishName]?.toString() ?? '',
+      arabicDescription: json[ApiColumnDb.arabicDescription]?.toString() ?? '',
+      englishDescription: json[ApiColumnDb.englishDescription]?.toString() ?? '',
+      image: json[ApiColumnDb.image]?.toString() ?? '',
+      countProduct: int.tryParse(json[ApiColumnDb.countProduct].toString()) ?? 0,
+      count: int.tryParse(json[ApiColumnDb.count].toString()) ?? 0,
+      active: json[ApiColumnDb.active].toString() == '1', // Assumes 1 = true, 0 = false
+      price: double.tryParse(json[ApiColumnDb.price].toString()) ?? 0.0,
+      discount: double.tryParse(json[ApiColumnDb.discount].toString()) ?? 0.0,
+      discountPrice: double.tryParse(json[ApiColumnDb.discountPrice].toString()) ?? 0.0,
+      timeCreate: json[ApiColumnDb.timeCreate]?.toString() ?? '',
+      categoryId: json[ApiColumnDb.categoryId]?.toString() ?? '',
+      categoryArabicName: json[ApiColumnDb.categoryArabicName]?.toString() ?? '',
+      categoryEnglishName: json[ApiColumnDb.categoryEnglishName]?.toString() ?? '',
+      categoryImage: json[ApiColumnDb.categoryImage]?.toString() ?? '',
+      categoryTimeCreate: json[ApiColumnDb.categoryTimeCreate]?.toString() ?? '',
+      rating: double.tryParse(json[ApiColumnDb.rating].toString()) ?? 0.0,
     );
   }
 
@@ -77,7 +77,7 @@ class ProductModel {
       ApiColumnDb.image: image,
       ApiColumnDb.countProduct: countProduct,
       ApiColumnDb.count: count,
-      ApiColumnDb.active: active,
+      ApiColumnDb.active: active ? 1 : 0, // Convert bool back to int
       ApiColumnDb.price: price,
       ApiColumnDb.discount: discount,
       ApiColumnDb.discountPrice: discountPrice,

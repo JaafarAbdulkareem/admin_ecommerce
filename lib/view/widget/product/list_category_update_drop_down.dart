@@ -1,12 +1,12 @@
-import 'package:admin_ecommerce/controller/product/insert_product_controller.dart';
+import 'package:admin_ecommerce/controller/product/update_product_controller.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_bool.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CategoryDropDownList extends GetView<InsertProductControllerImp> {
-  const CategoryDropDownList({super.key});
+class ListCategoryUpdateDropDown extends GetView<UpdateProductControllerImp> {
+  const ListCategoryUpdateDropDown({super.key});
 
   @override
   Widget build(BuildContext context) {

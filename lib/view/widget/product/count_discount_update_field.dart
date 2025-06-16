@@ -1,4 +1,4 @@
-import 'package:admin_ecommerce/controller/product/insert_product_controller.dart';
+import 'package:admin_ecommerce/controller/product/update_product_controller.dart';
 import 'package:admin_ecommerce/core/constant/app_icon.dart';
 import 'package:admin_ecommerce/core/function/validator.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
@@ -6,8 +6,8 @@ import 'package:admin_ecommerce/core/share/custom_text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CountDiscountTextFormField extends GetView<InsertProductControllerImp> {
-  const CountDiscountTextFormField({super.key});
+class CountDiscountUpdateField extends GetView<UpdateProductControllerImp> {
+  const CountDiscountUpdateField({super.key});
 
   @override
   Widget build(BuildContext context) {

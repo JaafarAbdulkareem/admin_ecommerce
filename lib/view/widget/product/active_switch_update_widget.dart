@@ -1,11 +1,11 @@
-import 'package:admin_ecommerce/controller/product/insert_product_controller.dart';
+import 'package:admin_ecommerce/controller/product/update_product_controller.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ActiveSwitchWidget extends StatelessWidget {
-  const ActiveSwitchWidget({
+class ActiveSwitchUpdateWidget extends StatelessWidget {
+  const ActiveSwitchUpdateWidget({
     super.key,
   });
 
@@ -15,7 +15,7 @@ class ActiveSwitchWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(KeyLanguage.titleActive.tr),
-        GetBuilder<InsertProductControllerImp>(
+        GetBuilder<UpdateProductControllerImp>(
           id: ConstantKey.idActiveSwitch,
           builder: (controller) {
             return Switch(

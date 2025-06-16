@@ -58,7 +58,10 @@ class BodyUpdateCategoryView extends GetView<UpdateCategoryControllerImp> {
                       : const SizedBox();
                 },
               ),
-              const CancelSaveButton(),
+              CancelSaveButton(
+                cancelButton: controller.cancelButton,
+                saveButton: controller.updateButton,
+              ),
             ],
           ),
         ),

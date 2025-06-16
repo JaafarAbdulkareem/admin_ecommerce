@@ -4,7 +4,6 @@ import 'package:admin_ecommerce/core/constant/api_constant.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/service/curd.dart';
 import 'package:admin_ecommerce/data/models/product/insert_product_model.dart';
-import 'package:admin_ecommerce/data/models/product/product_model.dart';
 
 class ProductRemote {
   final Curd curd;
@@ -57,7 +56,9 @@ class ProductRemote {
   }
 
   updateProduct({
-    required ProductModel data,
+    required String id,
+    required String? image,
+    required InsertProductModel data,
     required File? file,
   }) async {
     dynamic response;
@@ -65,7 +66,7 @@ class ProductRemote {
       response = await curd.postData(
         ApiConstant.apiUpdateProduct,
         {
-          ApiKey.id: data.id,
+          ApiKey.id: id,
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
           ApiKey.image: "",
@@ -82,10 +83,10 @@ class ProductRemote {
       response = await curd.postDataWithFile(
         url: ApiConstant.apiUpdateProduct,
         body: {
-          ApiKey.id: data.id,
+          ApiKey.id: id,
           ApiKey.arabicName: data.arabicName,
           ApiKey.englishName: data.englishName,
-          ApiKey.image: data.image,
+          ApiKey.image: image,
           ApiKey.arabicDescription: data.arabicDescription,
           ApiKey.englishDescription: data.englishDescription,
           ApiKey.count: data.count,

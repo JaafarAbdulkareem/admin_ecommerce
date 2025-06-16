@@ -4,18 +4,18 @@ import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/validator.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/core/share/custom_text_form_field_widget.dart';
-import 'package:admin_ecommerce/view/widget/product/active_switch_widget.dart';
+import 'package:admin_ecommerce/view/widget/product/active_switch_insert_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ActivePriceTextFormField extends GetView<InsertProductControllerImp> {
-  const ActivePriceTextFormField({super.key});
+class ActivePriceInsertField extends GetView<InsertProductControllerImp> {
+  const ActivePriceInsertField({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const ActiveSwitchWidget(),
+        const ActiveSwitchInsertWidget(),
         const SizedBox(width: 14),
         Expanded(
           child: CustomTextFormFieldWidget(
