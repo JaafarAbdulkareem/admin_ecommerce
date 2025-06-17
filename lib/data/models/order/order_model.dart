@@ -7,7 +7,7 @@ class OrderModel {
   final double deliveryPrice;
   final double price;
   final double totalPrice;
-  final int status;
+  late int status;
   final String userId;
   final String? addressId;
   final String? couponsId;

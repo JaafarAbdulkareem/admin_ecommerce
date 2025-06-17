@@ -86,8 +86,13 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        prepareOrderData.add(penddingOrderData.firstWhere((e) => e.id == id));
-        penddingOrderData.removeWhere((e) => e.id == id);
+        int index = orderData.indexWhere((e) => e.id == id);
+        if (index != -1) {
+          orderData[index].status = ConstantScale.onWayOption;
+        }
+        filterDeliveryStatusOrder();
+        // prepareOrderData.add(penddingOrderData.firstWhere((e) => e.id == id));
+        // penddingOrderData.removeWhere((e) => e.id == id);
         statusRequest = StatusRequest.success;
         update([ConstantKey.idPenddingButton + id]);
         if (penddingOrderData.isEmpty) {
@@ -124,8 +129,13 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        onWayOrderData.add(prepareOrderData.firstWhere((e) => e.id == id));
-        prepareOrderData.removeWhere((e) => e.id == id);
+        int index = orderData.indexWhere((e) => e.id == id);
+        if (index != -1) {
+          orderData[index].status = ConstantScale.onWayOption;
+        }
+        filterDeliveryStatusOrder();
+        // onWayOrderData.add(prepareOrderData.firstWhere((e) => e.id == id));
+        // prepareOrderData.removeWhere((e) => e.id == id);
         statusRequest = StatusRequest.success;
         update([ConstantKey.idPrepareButton + id]);
         if (prepareOrderData.isEmpty) {
@@ -162,8 +172,13 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        doneOrderData.add(onWayOrderData.firstWhere((e) => e.id == id));
-        onWayOrderData.removeWhere((e) => e.id == id);
+        int index = orderData.indexWhere((e) => e.id == id);
+        if (index != -1) {
+          orderData[index].status = ConstantScale.doneDeliveryOption;
+        }
+        filterDeliveryStatusOrder();
+        // doneOrderData.add(onWayOrderData.firstWhere((e) => e.id == id));
+        // onWayOrderData.removeWhere((e) => e.id == id);
         statusRequest = StatusRequest.success;
         update([ConstantKey.idDeliveryButton + id]);
         if (onWayOrderData.isEmpty) {
