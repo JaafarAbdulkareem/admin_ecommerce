@@ -4,7 +4,7 @@ import 'package:admin_ecommerce/data/models/order/order_feature_model.dart';
 import 'package:admin_ecommerce/view/widget/order/body_order_done_view.dart';
 import 'package:admin_ecommerce/view/widget/order/body_order_on_the_way_view.dart';
 import 'package:admin_ecommerce/view/widget/order/body_order_pending_view.dart';
-import 'package:admin_ecommerce/view/widget/order/body_order_proper_view.dart';
+import 'package:admin_ecommerce/view/widget/order/body_order_prepare_view.dart';
 
 const List<OrderFeatureModel> orderFeatures = [
   OrderFeatureModel(
@@ -15,7 +15,7 @@ const List<OrderFeatureModel> orderFeatures = [
   OrderFeatureModel(
     title: KeyLanguage.barProper,
     icon: AppIcon.barProper,
-    body: BodyOrderProperView(),
+    body: BodyOrderPrepareView(),
   ),
   OrderFeatureModel(
     title: KeyLanguage.barOnTheWay,
