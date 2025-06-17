@@ -47,27 +47,27 @@ List<HomeModel> dataHomeFeature = [
       // Navigator function for Notification
     },
   ),
-  HomeModel(
-    image: AppImages.imagesMessage,
-    title: KeyLanguage.titleMessage,
-    onPressed: () {
-      // Navigator function for Message
-    },
-  ),
-  HomeModel(
-    image: AppImages.imagesDelivery,
-    title: KeyLanguage.titleDelivery,
-    onPressed: () {
-      // Navigator function for Delivery
-    },
-  ),
-  HomeModel(
-    image: AppImages.imagesPayment,
-    title: KeyLanguage.titlePayment,
-    onPressed: () {
-      // Navigator function for Payment
-    },
-  ),
+  // HomeModel(
+  //   image: AppImages.imagesMessage,
+  //   title: KeyLanguage.titleMessage,
+  //   onPressed: () {
+  //     // Navigator function for Message
+  //   },
+  // ),
+  // HomeModel(
+  //   image: AppImages.imagesDelivery,
+  //   title: KeyLanguage.titleDelivery,
+  //   onPressed: () {
+  //     // Navigator function for Delivery
+  //   },
+  // ),
+  // HomeModel(
+  //   image: AppImages.imagesPayment,
+  //   title: KeyLanguage.titlePayment,
+  //   onPressed: () {
+  //     // Navigator function for Payment
+  //   },
+  // ),
   HomeModel(
     image: AppImages.imagesSetting,
     title: KeyLanguage.titleSetting,

@@ -26,13 +26,13 @@ class AppImages {
   /// assets/images/order.png
   static const String imagesOrder = "assets/images/order.png";
 
-  /// Assets for imagesPayment
-  /// assets/images/payment.png
-  static const String imagesPayment = "assets/images/payment.png";
-
   /// Assets for imagesProduct
   /// assets/images/product.png
   static const String imagesProduct = "assets/images/product.png";
+
+  /// Assets for imagesReceive
+  /// assets/images/receive.png
+  static const String imagesReceive = "assets/images/receive.png";
 
   /// Assets for imagesReport
   /// assets/images/report.png
@@ -45,9 +45,5 @@ class AppImages {
   /// Assets for imagesUsers
   /// assets/images/users.jpg
   static const String imagesUsers = "assets/images/users.jpg";
-
-  /// Assets for imagesWolf
-  /// assets/images/wolf.svg
-  static const String imagesWolf = "assets/images/wolf.svg";
 }
 

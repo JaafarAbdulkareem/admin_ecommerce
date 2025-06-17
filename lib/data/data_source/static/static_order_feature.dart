@@ -23,7 +23,7 @@ const List<OrderFeatureModel> orderFeatures = [
     body: BodyOrderOnTheWayView(),
   ),
   OrderFeatureModel(
-    title: KeyLanguage.barDone,
+    title: KeyLanguage.barArchive,
     icon: AppIcon.barDone,
     body: BodyOrderDoneView(),
   ),

@@ -17,6 +17,8 @@ abstract class ConstantKey {
 //agurement navigator
   static const String categoryData = "categoryData";
   static const String productData = "productData";
+  static const String deliveryData = "deliveryData";
+  static const String receiveData = "receiveData";
   // static const String categoryTitleData = "categoryTitleData";
   // static const String productData = "productData";
   // static const String categoryNames = "categoryNames";

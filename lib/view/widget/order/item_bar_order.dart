@@ -23,7 +23,7 @@ class ItemBarOrder extends GetView<OrderControllerImp> {
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 1)),
         onPressed: () {
-          controller.changeBottonBar(index);
+          // controller.changeBottonBar(index);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

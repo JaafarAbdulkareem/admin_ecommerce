@@ -21,10 +21,15 @@ TextTheme textTheme() {
     //   // color: AppColorText.textButton,
     // ),
     titleMedium: TextStyle(
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: FontWeight.w600,
-      color: AppColor.primary,
+      color: AppColorText.textButton,
     ),
+    // titleMedium: TextStyle(
+    //   fontSize: 16,
+    //   fontWeight: FontWeight.w600,
+    //   color: AppColor.primary,
+    // ),
     titleSmall: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w300,

@@ -8,7 +8,6 @@ class ApiColumnDb {
   // static const String approve = "approve";
   static const String timeCreate = "time_create";
 //home
-  // static const String userId = "user_id";
   static const String arabicName = "arabic_name";
   static const String englishName = "english_name";
   static const String image = "image";
@@ -43,13 +42,15 @@ class ApiColumnDb {
   // static const String amount = "amount";
   // static const String expiryData = "expiry_date";
   //order
-  // static const String addressId = 'address_id';
-  // static const String typePayment = 'type_payment';
-  // static const String typeDelivery = 'type_delivery';
-  // static const String deliveryPrice = 'delivery_price';
-  // static const String totalPrice = 'total_price';
-  // static const String status = "status";
-  // static const String couponsId = 'coupons_id';
+  static const String addressId = 'address_id';
+  static const String typePayment = 'type_payment';
+  static const String typeDelivery = 'type_delivery';
+  static const String deliveryPrice = 'delivery_price';
+  static const String totalPrice = 'total_price';
+  static const String status = "status";
+  static const String couponsId = 'coupons_id';
+  static const String userId = "user_id";
+
   // static const String productsData = "products_data";
   //rating
   // static const String orderId = "order_id";

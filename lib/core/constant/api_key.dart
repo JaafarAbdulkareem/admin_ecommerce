@@ -6,7 +6,6 @@ abstract class ApiKey {
   static const String verifyCode = "verifyCode";
 //category
   static const String id = "id";
-  // static const String userId = "userId";
   static const String arabicName = "arabicName";
   static const String englishName = "englishName";
   static const String arabicDescription = "arabicDescription";
@@ -18,6 +17,8 @@ abstract class ApiKey {
   static const String price = "price";
   static const String discount = "discount";
   static const String categoryId = "categoryId";
+//order
+  static const String userId = "userId";
   // static const String productId = "productId";
   // static const String count = "count";
   // static const String orderId = "orderId";

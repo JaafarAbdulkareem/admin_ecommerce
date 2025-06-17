@@ -18,7 +18,7 @@ class OrderNavigatorBar extends StatelessWidget {
               (index) => Expanded(
                 child: ItemBarOrder(
                   data: orderFeatures[index],
-                  selected: index == controller.barIndex,
+                  selected: true,//index == controller.barIndex,
                   index: index,
                 ),
               ),

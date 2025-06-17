@@ -1,7 +1,7 @@
 import 'package:admin_ecommerce/controller/order/order_controller.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/data/data_source/static/static_order_feature.dart';
-import 'package:admin_ecommerce/view/widget/order/order_navigator_bar.dart';
+import 'package:admin_ecommerce/core/share/home_status_view.dart';
+import 'package:admin_ecommerce/view/widget/order/body_order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,10 +18,12 @@ class OrderView extends StatelessWidget {
           KeyLanguage.appBarOrder.tr,
         ),
       ),
-      bottomNavigationBar: const OrderNavigatorBar(),
       body: SafeArea(
         child: GetBuilder<OrderControllerImp>(
-          builder: (controller) => orderFeatures[controller.barIndex].body,
+          builder: (controller) => HomeStatusView(
+            statusRequest: controller.statusRequest,
+            child: const BodyOrderView(),
+          ),
         ),
       ),
     );

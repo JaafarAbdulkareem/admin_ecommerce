@@ -41,7 +41,6 @@ abstract class KeyLanguage {
   static const String titleReport = "titleReport";
   static const String titleNotification = "titleNotification";
   static const String titleMessage = "titleMessage";
-  static const String titleDelivery = "titleDelivery";
   static const String titlePayment = "titlePayment";
   static const String titleSetting = "titleSetting";
 //category
@@ -49,7 +48,25 @@ abstract class KeyLanguage {
   static const String titleGallery = "titleGallery";
 //product
   static const String titleActive = "titleActive";
-  //dialog
+//order
+  static const String titleDelivery = "titleDelivery";
+  static const String titleReceive = "titleReceive";
+  static const String orderNumber = "orderNumber";
+  static const String orderType = "orderType";
+  static const String orderPrice = "orderPrice";
+  static const String deliveyPrice = "deliveyPrice";
+  static const String paymentMethod = "paymentMethod";
+  static const String orderStatus = "orderStatus";
+  static const String cashOption = "cashOption";
+  static const String paymentOption = "paymentOption";
+  static const String deliveryOption = "deliveryOption";
+  static const String receiveOption = "receiveOption";
+  static const String approvedOption = "approvedOption";
+  static const String prepareOption = "prepareOption";
+  static const String onWayOption = "onWayOption";
+  static const String doneDeliveryOption = "doneDeliveryOption";
+  static const String totalPrice = "totalPrice";
+//dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
   static const String alertWantDelete = "alertWantDelete";
@@ -112,11 +129,15 @@ abstract class KeyLanguage {
   static const String buttonAdd = "buttonAdd";
   static const String buttonChooseImage = "buttonChooseImage";
   static const String buttonCancel = "buttonCancel";
+  static const String buttonDetail = "buttonDetail";
+  static const String buttonPending = "buttonPending";
+  static const String buttonProper = "buttonProper";
+  static const String buttonOnTheWay = "buttonOnTheWay";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";
   static const String barOnTheWay = "barOnTheWay";
-  static const String barDone = "barDone";
+  static const String barArchive = "barArchive";
 
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";
@@ -132,7 +153,6 @@ abstract class KeyLanguage {
 //   static const String removeButton = "reomveButton";
 //   static const String checkoutButton = "checkoutButton";
 //   static const String orderButton = "orderButton";
-//   static const String detailButton = "detailButton";
 //   static const String deleteButton = "deleteButton";
 //   static const String acceptButton = "acceptButton";
 //   static const String injectButton = "injectButton";
@@ -221,7 +241,6 @@ abstract class KeyLanguage {
 //   static const String appBarTitleCart = "appBarTitleCart";
 //   static const String youHave = "youHave";
 //   static const String listITemCart = "listItemCart";
-//   static const String totalPriceTitle = "totalPriceTitle";
 //   static const String shoppingTitle = "shoppingTitle";
 //   static const String priceTitle = "priceTitle";
 //   static const String ratingTitle = "ratingTitle";
@@ -239,35 +258,21 @@ abstract class KeyLanguage {
 //   static const String waitingGoogleMap = "waitingGoogleMap";
 
 //   //checkout
-//   static const String titlePaymentMethod = "titlePaymentMethod";
-//   static const String titleDeliveryType = "titleDeliveryType";
-//   static const String titleShoppingAddress = "titleShoppingAddress";
-//   static const String cashOption = "cashOption";
-//   static const String paymentOption = "paymentOption";
-//   static const String deliveryOption = "deliveryOption";
-//   static const String receiveOption = "receiveOption";
-//   static const String errorAddressMessage = "errorAddressMessage";
+  // static const String titlePaymentMethod = "titlePaymentMethod";
+  // static const String titleDeliveryType = "titleDeliveryType";
+  // static const String titleShoppingAddress = "titleShoppingAddress";
+  // static const String errorAddressMessage = "errorAddressMessage";
 //   static const String chooseDeliveryMessage = "chooseDeliveryMessage";
 //   static const String chooseAddressMessage = "chooseAddressMessage";
 //   //order
-//   static const String appBarTitleOrder = "appBarTitleOrder";
-//   static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";
-//   static const String appBarTitleArchive = "appBarTitleArchive";
-//   static const String orderNumber = "orderNumber";
-//   static const String orderType = "orderType";
-//   static const String orderPrice = "orderPrice";
-//   static const String deliveyPrice = "deliveyPrice";
-//   static const String paymentMethod = "paymentMethod";
-//   static const String orderStatus = "orderStatus";
-//   static const String approvedOption = "approvedOption";
-//   static const String prepareOption = "prepareOption";
-//   static const String onWayOption = "onWayOption";
-//   static const String doneDeliveryOption = "doneDeliveryOption";
-//   // static const String totalPrice  = "deliveyPrice";
-//   static const String productTitle = "productTitle";
-//   static const String countTitle = "countTitle";
-//   static const String quantityTitle = "quantityTitle";
-//   static const String addressTitle = "addressTitle";
+  // static const String appBarTitleOrder = "appBarTitleOrder";
+  // static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";
+  // static const String appBarTitleArchive = "appBarTitleArchive";
+  // static const String totalPrice  = "deliveyPrice";
+  // static const String productTitle = "productTitle";
+  // static const String countTitle = "countTitle";
+  // static const String quantityTitle = "quantityTitle";
+  // static const String addressTitle = "addressTitle";
 //   //notification
 //   static const String appBarTitleNotification = "appBarTitleNotification";
 }

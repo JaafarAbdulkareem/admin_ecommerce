@@ -16,6 +16,7 @@ class CustomButtonWidget extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Text(
           text,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );
