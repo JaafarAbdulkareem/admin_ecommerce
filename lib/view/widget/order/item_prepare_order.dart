@@ -64,7 +64,7 @@ class ItemPrepareOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmButton: () {
-                controller.prepareButton(
+                controller.onthWayButton(
                   id: data.id,
                   userId: data.userId,
                 );
@@ -77,7 +77,7 @@ class ItemPrepareOrder extends GetView<DeliveryOrderControllerImp> {
                     child: CustomLoadingWidget(
                       statusRequest: controller.statusRequest,
                       child: Text(
-                        KeyLanguage.buttonPrepare.tr,
+                        KeyLanguage.buttonOnTheWay.tr,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),

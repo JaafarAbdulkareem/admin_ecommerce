@@ -130,9 +130,9 @@ abstract class KeyLanguage {
   static const String buttonChooseImage = "buttonChooseImage";
   static const String buttonCancel = "buttonCancel";
   static const String buttonDetail = "buttonDetail";
-  static const String buttonPending = "buttonPending";
   static const String buttonPrepare = "buttonProper";
   static const String buttonOnTheWay = "buttonOnTheWay";
+  static const String buttonDelivery = "buttonDelivery";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";

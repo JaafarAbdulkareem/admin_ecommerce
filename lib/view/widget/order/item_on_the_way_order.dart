@@ -11,8 +11,8 @@ import 'package:admin_ecommerce/view/widget/order/order_twice_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemPendingOrder extends GetView<DeliveryOrderControllerImp> {
-  const ItemPendingOrder({
+class ItemOnTheWayOrder extends GetView<DeliveryOrderControllerImp> {
+  const ItemOnTheWayOrder({
     super.key,
     required this.data,
   });
@@ -64,20 +64,20 @@ class ItemPendingOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmButton: () {
-                controller.prepareButton(
+                controller.deliveryButton(
                   id: data.id,
                   userId: data.userId,
                 );
               },
               confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
-                id: ConstantKey.idPenddingButton + data.id,
+                id: ConstantKey.idDeliveryButton + data.id,
                 builder: (_) {
                   return SizedBox(
                     height: 27,
                     child: CustomLoadingWidget(
                       statusRequest: controller.statusRequest,
                       child: Text(
-                        KeyLanguage.buttonPrepare.tr,
+                        KeyLanguage.buttonDelivery.tr,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),

@@ -12,8 +12,8 @@ import 'package:get/get.dart';
 
 abstract class DeliveryOrderController extends BaseDetailOrderConroller {
   void changeBottonBar(int currentnIdex);
-  void penddingButton({required String id, required String userId});
   void prepareButton({required String id, required String userId});
+  void onthWayButton({required String id, required String userId});
   void deliveryButton({required String id, required String userId});
 }
 
@@ -73,7 +73,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }
 
   @override
-  void penddingButton({
+  void prepareButton({
     required String id,
     required String userId,
   }) async {
@@ -111,7 +111,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }
 
   @override
-  void prepareButton({
+  void onthWayButton({
     required String id,
     required String userId,
   }) async {
