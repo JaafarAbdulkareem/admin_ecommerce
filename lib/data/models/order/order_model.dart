@@ -1,16 +1,16 @@
 import 'package:admin_ecommerce/core/constant/api_column_db.dart';
 
 class OrderModel {
-  late int id;
+  late String id;
   final int typePayment;
   final int typeDelivery;
   final double deliveryPrice;
   final double price;
   final double totalPrice;
   final int status;
-  final int userId;
-  final int? addressId;
-  final int? couponsId;
+  final String userId;
+  final String? addressId;
+  final String? couponsId;
 
   OrderModel({
     required this.id,
@@ -19,29 +19,27 @@ class OrderModel {
     required this.deliveryPrice,
     required this.price,
     required this.totalPrice,
-    this.status = 0,
+    required this.status,
     required this.userId,
     this.addressId,
     this.couponsId,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
-        id: int.parse(json[ApiColumnDb.id]),
-        typePayment: int.parse(json[ApiColumnDb.typePayment]),
-        typeDelivery: int.parse(json[ApiColumnDb.typeDelivery]),
-        deliveryPrice: double.parse(json[ApiColumnDb.deliveryPrice]),
-        price: double.parse(json[ApiColumnDb.price]),
-        totalPrice: double.parse(json[ApiColumnDb.totalPrice]),
-        status: int.parse(json[ApiColumnDb.status]),
-        userId: int.parse(json[ApiColumnDb.userId]),
-        addressId: json[ApiColumnDb.addressId] != null
-            ? int.tryParse(json[ApiColumnDb.addressId])
-            : null,
-        couponsId: json[ApiColumnDb.couponsId] != null
-            ? int.tryParse(json[ApiColumnDb.couponsId])
-            : null,
+        id: json[ApiColumnDb.id].toString(),
+        typePayment: int.parse(json[ApiColumnDb.typePayment].toString()),
+        typeDelivery: int.parse(json[ApiColumnDb.typeDelivery].toString()),
+        deliveryPrice: double.parse(json[ApiColumnDb.deliveryPrice].toString()),
+        price: double.parse(json[ApiColumnDb.price].toString()),
+        totalPrice: double.parse(json[ApiColumnDb.totalPrice].toString()),
+        status: int.parse(json[ApiColumnDb.status].toString()),
+        userId: json[ApiColumnDb.userId].toString(),
+        addressId: json[ApiColumnDb.addressId]?.toString(),
+        couponsId: json[ApiColumnDb.couponsId]?.toString(),
       );
+
   Map<String, dynamic> toJson() => {
+        ApiColumnDb.id: id,
         ApiColumnDb.typePayment: typePayment,
         ApiColumnDb.typeDelivery: typeDelivery,
         ApiColumnDb.deliveryPrice: deliveryPrice,
@@ -50,5 +48,6 @@ class OrderModel {
         ApiColumnDb.userId: userId,
         ApiColumnDb.addressId: addressId,
         ApiColumnDb.couponsId: couponsId,
+        ApiColumnDb.status: status,
       };
 }

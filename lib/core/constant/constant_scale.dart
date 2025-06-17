@@ -24,6 +24,14 @@ abstract class ConstantScale {
   static const double iconOrderSelect = 40;
   static const double iconOrderNotSelect = 32;
   static const double elevation = 30;
+  static const int initiBarIndex = 0;
+  static const int cachOption = 0;
+  static const int deliveryOption = 0;
+  static const int receiveOption = 1;
+  static const int pendingOption = 0;
+  static const int prepareOption = 1;
+  static const int onWayOption = 2;
+  static const int doneDeliveryOption = 3;
 
   // static const int initialOnboardingIndex = 0;
 //field
@@ -65,15 +73,7 @@ abstract class ConstantScale {
 //   static const int couponsLottieDelay = 3;
 
 //order
-  static const int initiBarIndex = 0;
-  static const int cachOption= 0;
   // static const int paymentOption = 1;
-  static const int deliveryOption = 0;
-  static const int receiveOption = 1;
-  static const int approvedOption = 0;
-  static const int prepareOption = 1;
-  static const int onWayOption = 2;
-  // static const int doneDeliveryOption = 3;
   // static const double iconRating = 35;
 //   //notification
 //   static const double iconDelete = 35;

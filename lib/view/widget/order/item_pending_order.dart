@@ -1,8 +1,9 @@
-import 'package:admin_ecommerce/controller/order/order_controller.dart';
+import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/commant_order.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
+import 'package:admin_ecommerce/core/share/custom_loading_widget.dart';
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
 import 'package:admin_ecommerce/view/widget/order/text_item_order.dart';
 import 'package:admin_ecommerce/view/widget/order/text_status_order.dart';
@@ -10,8 +11,8 @@ import 'package:admin_ecommerce/view/widget/order/order_twice_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemListOrder extends GetView<OrderControllerImp> {
-  const ItemListOrder({
+class ItemPendingOrder extends GetView<DeliveryOrderControllerImp> {
+  const ItemPendingOrder({
     super.key,
     required this.data,
   });
@@ -56,9 +57,33 @@ class ItemListOrder extends GetView<OrderControllerImp> {
             ),
             const Divider(),
             OrderTwiceButton(
-              detailButton: () {},
-              confirmButton: () {},
-              text: KeyLanguage.buttonPending,
+              detailButton: () {
+                controller.goToDetailOrder(
+                  id: data.id,
+                  userId: data.userId,
+                );
+              },
+              confirmButton: () {
+                controller.penddingButton(
+                  id: data.id,
+                  userId: data.userId,
+                );
+              },
+              confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
+                id: ConstantKey.idPenddingButton + data.id,
+                builder: (_) {
+                  return SizedBox(
+                    height: 27,
+                    child: CustomLoadingWidget(
+                      statusRequest: controller.statusRequest,
+                      child: Text(
+                        KeyLanguage.buttonPending.tr,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

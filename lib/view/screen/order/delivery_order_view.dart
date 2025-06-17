@@ -1,5 +1,6 @@
-import 'package:admin_ecommerce/controller/order/order_controller.dart';
+import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
+import 'package:admin_ecommerce/core/share/status_view.dart';
 import 'package:admin_ecommerce/data/data_source/static/static_order_feature.dart';
 import 'package:admin_ecommerce/view/widget/order/order_navigator_bar.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class DeliveryOrderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => OrderControllerImp());
+    Get.lazyPut(() => DeliveryOrderControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -19,12 +20,14 @@ class DeliveryOrderView extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: const OrderNavigatorBar(),
-      // body: SafeArea(
-      //   child: GetBuilder<OrderControllerImp>(
-      //     builder: (controller) =>
-      //     // orderFeatures[controller.barIndex].body,
-      //   ),
-      // ),
+      body: SafeArea(
+        child: GetBuilder<DeliveryOrderControllerImp>(
+          builder: (controller) => StatusView(
+            statusRequest: controller.statusRequest,
+            child: orderFeatures[controller.barIndex].body,
+          ),
+        ),
+      ),
     );
   }
 }

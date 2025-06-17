@@ -19,7 +19,7 @@ String commantDeliveryChoose(int choose) {
 }
 
 String commantOrderStatus(int choose) {
-  if (choose == ConstantScale.approvedOption) {
+  if (choose == ConstantScale.pendingOption) {
     return KeyLanguage.approvedOption.tr;
   } else if (choose == ConstantScale.prepareOption) {
     return KeyLanguage.prepareOption.tr;

@@ -1,4 +1,4 @@
-import 'package:admin_ecommerce/controller/order/order_controller.dart';
+import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart';
 import 'package:admin_ecommerce/data/data_source/static/static_order_feature.dart';
 import 'package:admin_ecommerce/view/widget/order/item_bar_order.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ class OrderNavigatorBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<OrderControllerImp>(
+    return GetBuilder<DeliveryOrderControllerImp>(
       builder: (controller) {
         return BottomAppBar(
           child: Row(
@@ -18,7 +18,7 @@ class OrderNavigatorBar extends StatelessWidget {
               (index) => Expanded(
                 child: ItemBarOrder(
                   data: orderFeatures[index],
-                  selected: true,//index == controller.barIndex,
+                  selected: index == controller.barIndex,
                   index: index,
                 ),
               ),

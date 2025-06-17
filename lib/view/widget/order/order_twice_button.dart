@@ -9,11 +9,11 @@ class OrderTwiceButton extends StatelessWidget {
     super.key,
     required this.detailButton,
     required this.confirmButton,
-    required this.text,
+    required this.confirmWidget,
   });
 
   final VoidCallback detailButton, confirmButton;
-  final String text;
+  final Widget confirmWidget;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,16 +22,12 @@ class OrderTwiceButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: confirmButton,
             style: ElevatedButton.styleFrom(
-              // padding: EdgeInsets.zero,
               backgroundColor: AppColor.price,
               foregroundColor: AppColorText.textButton,
             ),
             child: FittedBox(
               fit: BoxFit.scaleDown,
-              child: Text(
-                text.tr,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
+              child: confirmWidget,
             ),
           ),
         ),
