@@ -73,7 +73,10 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }
 
   @override
-  void penddingButton({required String id, required String userId}) async {
+  void penddingButton({
+    required String id,
+    required String userId,
+  }) async {
     statusRequest = StatusRequest.loading;
     update([ConstantKey.idPenddingButton + id]);
     var response = await deliveryOrderRemote.pendingOrder(
@@ -108,11 +111,78 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }
 
   @override
-  void prepareButton({required String id, required String userId}) {
-    // TODO: implement prepareButton
+  void prepareButton({
+    required String id,
+    required String userId,
+  }) async {
+    statusRequest = StatusRequest.loading;
+    update([ConstantKey.idPrepareButton + id]);
+    var response = await deliveryOrderRemote.prepareOrder(
+      id: id,
+      userId: userId,
+    );
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
+        onWayOrderData.add(prepareOrderData.firstWhere((e) => e.id == id));
+        prepareOrderData.removeWhere((e) => e.id == id);
+        statusRequest = StatusRequest.success;
+        update([ConstantKey.idPrepareButton + id]);
+        if (prepareOrderData.isEmpty) {
+          statusRequest = StatusRequest.failure;
+          update([ConstantKey.idPrepareButton]);
+        } else {
+          update([ConstantKey.idPrepareButton]);
+        }
+      } else {
+        statusRequest = StatusRequest.failure;
+        update([ConstantKey.idPrepareButton]);
+      }
+    } else {
+      Get.snackbar(
+        KeyLanguage.alert.tr,
+        KeyLanguage.alertSomeError.tr,
+        backgroundColor: AppColor.snackbar,
+      );
+      update();
+    }
   }
+
   @override
-  void deliveryButton({required String id, required String userId}) {
-    // TODO: implement deliveryButton
+  void deliveryButton({
+    required String id,
+    required String userId,
+  }) async {
+    statusRequest = StatusRequest.loading;
+    update([ConstantKey.idDeliveryButton + id]);
+    var response = await deliveryOrderRemote.deliveryOrder(
+      id: id,
+      userId: userId,
+    );
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
+        doneOrderData.add(onWayOrderData.firstWhere((e) => e.id == id));
+        onWayOrderData.removeWhere((e) => e.id == id);
+        statusRequest = StatusRequest.success;
+        update([ConstantKey.idDeliveryButton + id]);
+        if (onWayOrderData.isEmpty) {
+          statusRequest = StatusRequest.failure;
+          update([ConstantKey.idDeliveryButton]);
+        } else {
+          update([ConstantKey.idDeliveryButton]);
+        }
+      } else {
+        statusRequest = StatusRequest.failure;
+        update([ConstantKey.idDeliveryButton]);
+      }
+    } else {
+      Get.snackbar(
+        KeyLanguage.alert.tr,
+        KeyLanguage.alertSomeError.tr,
+        backgroundColor: AppColor.snackbar,
+      );
+      update();
+    }
   }
 }
