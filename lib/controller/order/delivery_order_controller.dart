@@ -1,4 +1,4 @@
-import 'package:admin_ecommerce/controller/base/base_detail_order_conroller.dart';
+import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
@@ -10,8 +10,8 @@ import 'package:admin_ecommerce/data/data_source/remote/order/delivery_order_rem
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
 import 'package:get/get.dart';
 
-abstract class DeliveryOrderController extends BaseDetailOrderConroller {
-  void changeBottonBar(int currentnIdex);
+abstract class DeliveryOrderController extends BaseTypeOrderController {
+  // void changeBottonBar(int currentnIdex);
   void prepareButton({required String id, required String userId});
   void onthWayButton({required String id, required String userId});
   void deliveryButton({required String id, required String userId});
@@ -54,11 +54,6 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         doneOrderData.add(element);
       }
     }
-
-    print("Pending: ${penddingOrderData.length}, "
-        "Preparing: ${prepareOrderData.length}, "
-        "On the Way: ${onWayOrderData.length}, "
-        "Done: ${doneOrderData.length}");
   }
 
   @override

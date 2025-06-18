@@ -14,6 +14,8 @@ Map<String, String> english = {
   KeyLanguage.appBarInsertProduct: "Insert Product",
   KeyLanguage.appBarUpdateProduct: "Update Product",
   KeyLanguage.appBarOrder: "Order",
+  KeyLanguage.appBarDeliveryOrder: "Delivery Order",
+  KeyLanguage.appBarReceiveOrder: "Receive Order",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -140,12 +142,14 @@ Map<String, String> english = {
   KeyLanguage.buttonPrepare: "Confirmed",
   KeyLanguage.buttonOnTheWay: "In Transit",
   KeyLanguage.buttonDelivery: "Delivery",
+  KeyLanguage.buttonPickUp: "Picked Up",
 
   //bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"
   KeyLanguage.barOnTheWay: "Transit", // Shorter than "On the Way"
   KeyLanguage.barArchive: "Archive",
+  KeyLanguage.barPendingPickup: "Waiting",
 };
   
 //   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",

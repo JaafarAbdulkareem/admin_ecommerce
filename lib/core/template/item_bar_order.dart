@@ -1,11 +1,11 @@
-import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart';
+import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/data/models/order/order_feature_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemBarOrder extends GetView<DeliveryOrderControllerImp> {
+class ItemBarOrder<T extends BaseTypeOrderController> extends GetView<T> {
   const ItemBarOrder({
     super.key,
     required this.data,

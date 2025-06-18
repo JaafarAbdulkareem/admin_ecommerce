@@ -2,7 +2,8 @@ import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:get/get.dart';
 
-class BaseDetailOrderConroller extends GetxController {
+abstract class BaseTypeOrderController extends GetxController {
+  void changeBottonBar(int currentnIdex);
   void goToDetailOrder({
     required String id,
     required String userId,

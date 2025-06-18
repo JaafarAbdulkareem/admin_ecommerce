@@ -32,6 +32,8 @@ abstract class ConstantScale {
   static const int prepareOption = 1;
   static const int onWayOption = 2;
   static const int doneDeliveryOption = 3;
+  static const int pendingPickUpOption = 0;
+  // static const int archiveOrderOption = 3;
 
   // static const int initialOnboardingIndex = 0;
 //field

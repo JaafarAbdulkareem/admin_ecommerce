@@ -12,6 +12,8 @@ abstract class KeyLanguage {
   static const String appBarInsertProduct = "appBarInsertProduct";
   static const String appBarUpdateProduct = "appBarUpdateProduct";
   static const String appBarOrder = "appBarOrder";
+  static const String appBarDeliveryOrder = "appBarDeliveryOrder";
+  static const String appBarReceiveOrder = "appBarReceiveOrder";
 
 //validator
   static const String empty = "empty";
@@ -133,11 +135,13 @@ abstract class KeyLanguage {
   static const String buttonPrepare = "buttonProper";
   static const String buttonOnTheWay = "buttonOnTheWay";
   static const String buttonDelivery = "buttonDelivery";
+  static const String buttonPickUp = "buttonPickUp";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";
   static const String barOnTheWay = "barOnTheWay";
   static const String barArchive = "barArchive";
+  static const String barPendingPickup = "barPendingPickup";
 
 //   static const String easyAndSafePayment = "Easy and Safe Payment";
 //   static const String trackYourOrder = "Track Your Order";

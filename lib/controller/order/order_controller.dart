@@ -18,18 +18,15 @@ abstract class OrderController extends GetxController {
 class OrderControllerImp extends OrderController {
   late StatusRequest statusRequest;
   late OrderRemote orderRemote;
-  late List<OrderModel> deliveryData;
-  late List<OrderModel> receiveData;
-  late List<OrderModel> orderData;
+  static List<OrderModel> orderData = [];
+  static List<OrderModel> deliveryData = [];
+  static List<OrderModel> receiveData = [];
   static bool firstTime = true;
 
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     orderRemote = OrderRemote(curd: Get.find());
-    orderData = [];
-    deliveryData = [];
-    receiveData = [];
     getData();
     super.onInit();
   }
@@ -55,8 +52,6 @@ class OrderControllerImp extends OrderController {
         update();
       }
     } else {
-      // statusRequest = StatusRequest.success;
-      // update();
       checkDataLength();
     }
   }

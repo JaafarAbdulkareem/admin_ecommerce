@@ -2,20 +2,20 @@ import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart'
 import 'package:admin_ecommerce/core/constant/app_lottie.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
-import 'package:admin_ecommerce/view/widget/order/item_on_the_way_order.dart';
+import 'package:admin_ecommerce/view/widget/order/item_prepare_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class BodyOrderOnTheWayView extends StatelessWidget {
-  const BodyOrderOnTheWayView({super.key});
+class BodyDeliveryPrepareView extends StatelessWidget {
+  const BodyDeliveryPrepareView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
-      id: ConstantKey.idDeliveryButton,
+      id: ConstantKey.idPrepareButton,
       builder: (controller) {
-        return controller.onWayOrderData.isEmpty
+        return controller.prepareOrderData.isEmpty
             ? Center(
                 child: Lottie.asset(
                   AppLottie.nodata,
@@ -23,14 +23,14 @@ class BodyOrderOnTheWayView extends StatelessWidget {
                 ),
               )
             : ListView.builder(
-                itemCount: controller.onWayOrderData.length,
+                itemCount: controller.prepareOrderData.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: ConstantScale.horizonPage,
                     vertical: ConstantScale.verticalPage,
                   ),
-                  child: ItemOnTheWayOrder(
-                    data: controller.onWayOrderData[index],
+                  child: ItemPrepareOrder(
+                    data: controller.prepareOrderData[index],
                   ),
                 ),
               );

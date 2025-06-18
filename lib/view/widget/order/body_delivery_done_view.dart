@@ -4,8 +4,8 @@ import 'package:admin_ecommerce/view/widget/order/item_done_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BodyOrderDoneView extends GetView<DeliveryOrderControllerImp> {
-  const BodyOrderDoneView({super.key});
+class BodyDeliveryDoneView extends GetView<DeliveryOrderControllerImp> {
+  const BodyDeliveryDoneView({super.key});
 
   @override
   Widget build(BuildContext context) {
