@@ -11,7 +11,6 @@ import 'package:admin_ecommerce/data/models/order/order_model.dart';
 import 'package:get/get.dart';
 
 abstract class DeliveryOrderController extends BaseTypeOrderController {
-  // void changeBottonBar(int currentnIdex);
   void prepareButton({required String id, required String userId});
   void onthWayButton({required String id, required String userId});
   void deliveryButton({required String id, required String userId});
@@ -33,7 +32,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     barIndex = ConstantScale.initiBarIndex;
     orderData = Get.arguments[ConstantKey.deliveryData];
     filterDeliveryStatusOrder();
-    data = [penddingOrderData, prepareOrderData, onWayOrderData, doneOrderData];
+
     deliveryOrderRemote = DeliveryOrderRemote(curd: Get.find());
     super.onInit();
   }
@@ -54,6 +53,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         doneOrderData.add(element);
       }
     }
+    data = [penddingOrderData, prepareOrderData, onWayOrderData, doneOrderData];
   }
 
   @override
@@ -73,7 +73,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idPenddingButton + id]);
+    update([ConstantKey.idPendingButton + id]);
     var response = await deliveryOrderRemote.pendingOrder(
       id: id,
       userId: userId,
@@ -83,22 +83,20 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       if (response[ApiResult.status] == ApiResult.success) {
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
-          orderData[index].status = ConstantScale.onWayOption;
+          orderData[index].status = ConstantScale.prepareOption;
+          filterDeliveryStatusOrder();
         }
-        filterDeliveryStatusOrder();
-        // prepareOrderData.add(penddingOrderData.firstWhere((e) => e.id == id));
-        // penddingOrderData.removeWhere((e) => e.id == id);
-        statusRequest = StatusRequest.success;
-        update([ConstantKey.idPenddingButton + id]);
+        update([ConstantKey.idPendingButton + id]);
         if (penddingOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idPenddingButton]);
+          update([ConstantKey.idPendingButton]);
         } else {
-          update([ConstantKey.idPenddingButton]);
+          statusRequest = StatusRequest.success;
+          update([ConstantKey.idPendingButton]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idPenddingButton]);
+        update([ConstantKey.idPendingButton]);
       }
     } else {
       Get.snackbar(
@@ -127,16 +125,14 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
           orderData[index].status = ConstantScale.onWayOption;
+          filterDeliveryStatusOrder();
         }
-        filterDeliveryStatusOrder();
-        // onWayOrderData.add(prepareOrderData.firstWhere((e) => e.id == id));
-        // prepareOrderData.removeWhere((e) => e.id == id);
-        statusRequest = StatusRequest.success;
         update([ConstantKey.idPrepareButton + id]);
         if (prepareOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
           update([ConstantKey.idPrepareButton]);
         } else {
+          statusRequest = StatusRequest.success;
           update([ConstantKey.idPrepareButton]);
         }
       } else {
@@ -170,16 +166,14 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
           orderData[index].status = ConstantScale.doneDeliveryOption;
+          filterDeliveryStatusOrder();
         }
-        filterDeliveryStatusOrder();
-        // doneOrderData.add(onWayOrderData.firstWhere((e) => e.id == id));
-        // onWayOrderData.removeWhere((e) => e.id == id);
-        statusRequest = StatusRequest.success;
         update([ConstantKey.idDeliveryButton + id]);
         if (onWayOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
           update([ConstantKey.idDeliveryButton]);
         } else {
+          statusRequest = StatusRequest.success;
           update([ConstantKey.idDeliveryButton]);
         }
       } else {

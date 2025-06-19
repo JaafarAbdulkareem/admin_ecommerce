@@ -55,16 +55,20 @@ class ItemReceiveDoneOrder extends GetView<ReceiveOrderControllerImp> {
               style: Theme.of(context).textTheme.labelLarge,
             ),
             const Divider(),
-            Center(
-              child: CustomButtonWidget(
-                text: KeyLanguage.buttonDetail.tr,
-                onTap: () {
-                  controller.goToDetailOrder(
-                    id: data.id,
-                    userId: data.userId,
-                  );
-                },
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: CustomButtonWidget(
+                    text: KeyLanguage.buttonDetail.tr,
+                    onTap: () {
+                      controller.goToDetailOrder(
+                        id: data.id,
+                        userId: data.userId,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
         ),

@@ -13,7 +13,7 @@ class BodyDeliveryPendingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
-      id: ConstantKey.idPenddingButton,
+      id: ConstantKey.idPendingButton,
       builder: (controller) {
         return controller.penddingOrderData.isEmpty
             ? Center(

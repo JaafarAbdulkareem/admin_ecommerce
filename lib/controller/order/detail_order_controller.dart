@@ -2,23 +2,17 @@ import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/core/service/location_service.dart';
+// import 'package:admin_ecommerce/core/service/location_service.dart';
 import 'package:admin_ecommerce/data/data_source/remote/order/detail_order_remote.dart';
 import 'package:admin_ecommerce/data/models/order/detail_order/detail_order_model.dart';
-// import 'package:admin_ecommerce/view/widget/order/show_rating_dialogs_product.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-abstract class DetailOrderController extends GetxController {
-  // void getProductRating({
-  //   required BuildContext context,
-  //   required int index,
-  // });
-  // void changeRatingValue(int index);
-}
+abstract class DetailOrderController extends GetxController {}
 
 class DetailOrderControllerImp extends DetailOrderController {
   late DetailOrderRemote detailOrderRemote;
@@ -27,7 +21,8 @@ class DetailOrderControllerImp extends DetailOrderController {
   late DetailOrderModel detailOrderData;
   static DetailOrderModel? lastdetailOrderData;
   Set<Marker> markers = {};
-  // // Set<Polyline> polylines = {};
+  Set<Polyline> polylines = {};
+  late LatLng latLngStore;
   late CameraPosition initialCameraPosition;
   // late GoogleMapController googleMapController;
   // late LocationService locationService;
@@ -38,8 +33,12 @@ class DetailOrderControllerImp extends DetailOrderController {
     orderId = Get.arguments[ApiKey.id];
     userId = Get.arguments[ApiKey.userId];
     statusRequest = StatusRequest.initial;
-    initialCameraPosition = const CameraPosition(
-      target: LatLng(0, 0),
+    latLngStore = const LatLng(
+      ConstantScale.latitudeStore,
+      ConstantScale.longitudeStore,
+    );
+    initialCameraPosition = CameraPosition(
+      target: latLngStore,
       zoom: 2,
     );
     initialGetData();
@@ -50,15 +49,12 @@ class DetailOrderControllerImp extends DetailOrderController {
   }
 
   void initialGetData() {
-    print("getData functoin : ${lastdetailOrderData}");
-
     if (lastdetailOrderData != null && lastdetailOrderData?.id == orderId) {
       detailOrderData = lastdetailOrderData!;
-      print("getData functoin 2 : $detailOrderData");
+      mapCameraPosition();
       statusRequest = StatusRequest.success;
       update();
     } else {
-      print("getData functoin 3 : ");
       getData();
     }
   }
@@ -79,7 +75,6 @@ class DetailOrderControllerImp extends DetailOrderController {
       userId: userId,
     );
 
-    print("response : $response");
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
@@ -105,43 +100,26 @@ class DetailOrderControllerImp extends DetailOrderController {
 
   void mapCameraPosition() {
     if (detailOrderData.addressId != null) {
-      LatLng latLng = LatLng(detailOrderData.address!.latitude,
+      markers.add(
+        Marker(
+          markerId: const MarkerId(ConstantKey.idStoreLocation),
+          position: latLngStore,
+        ),
+      );
+      LatLng latLngDestination = LatLng(detailOrderData.address!.latitude,
           detailOrderData.address!.longitude);
       markers.add(
         Marker(
           markerId: const MarkerId(ConstantKey.idUserLocation),
-          position: latLng,
+          position: latLngDestination,
         ),
       );
       initialCameraPosition = CameraPosition(
-        target: latLng,
+        target: latLngStore,
         zoom: 14,
       );
     }
   }
-
-  // @override
-  // void getProductRating({
-  //   required BuildContext context,
-  //   required int index,
-  // }) async {
-  //   await showRatingDialogProduct(
-  //     context: context,
-  //     index: index,
-  //     image: detailOrderData.productsData[index].image,
-  //     productId: detailOrderData.productsData[index].productId.toString(),
-  //     orderId: orderId,
-  //   );
-  //   update([ConstantKey.idRatingButton]);
-  // }
-
-  // @override
-  // void changeRatingValue(int index) {
-  //   if (lastdetailOrderData != null) {
-  //     detailOrderData = lastdetailOrderData!;
-  //     detailOrderData.productsData[index].rating = true;
-  //   }
-  // }
 
   // // void onMapCreated(controller) async {
   // //   googleMapController = controller;

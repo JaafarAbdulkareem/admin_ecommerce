@@ -70,7 +70,7 @@ class ItemPendingOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
-                id: ConstantKey.idPenddingButton + data.id,
+                id: ConstantKey.idPendingButton + data.id,
                 builder: (_) {
                   return SizedBox(
                     height: 27,
