@@ -16,6 +16,7 @@ Map<String, String> english = {
   KeyLanguage.appBarOrder: "Order",
   KeyLanguage.appBarDeliveryOrder: "Delivery Order",
   KeyLanguage.appBarReceiveOrder: "Receive Order",
+  KeyLanguage.appBarNotification: "Notificaiton",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",

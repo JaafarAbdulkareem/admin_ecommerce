@@ -24,6 +24,8 @@ class ConstantScreenName {
   static const String deliveryOrder = "/deliveryOrder";
   static const String receiveOrder = "/receiveOrder";
   static const String detailOrder = "/detailOrder";
+//notification
+  static const String notification = "/notification";
   // static const String productDetail = "/productDetail";
   // static const String favorite = "/favorite";
   // static const String cart = "/cart";

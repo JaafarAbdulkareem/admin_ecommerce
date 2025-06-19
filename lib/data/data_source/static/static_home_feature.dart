@@ -27,12 +27,19 @@ List<HomeModel> dataHomeFeature = [
     },
   ),
   HomeModel(
-    image: AppImages.imagesUsers,
-    title: KeyLanguage.titleUsers,
+    image: AppImages.imagesMessage,
+    title: KeyLanguage.titleMessage,
     onPressed: () {
-      // Navigator function for Users
+      Get.toNamed(ConstantScreenName.notification);
     },
   ),
+  // HomeModel(
+  //   image: AppImages.imagesUsers,
+  //   title: KeyLanguage.titleUsers,
+  //   onPressed: () {
+  //     // Navigator function for Users
+  //   },
+  // ),
   HomeModel(
     image: AppImages.imagesReport,
     title: KeyLanguage.titleReport,
@@ -40,20 +47,14 @@ List<HomeModel> dataHomeFeature = [
       // Navigator function for Report
     },
   ),
-  HomeModel(
-    image: AppImages.imagesNotification,
-    title: KeyLanguage.titleNotification,
-    onPressed: () {
-      // Navigator function for Notification
-    },
-  ),
   // HomeModel(
-  //   image: AppImages.imagesMessage,
-  //   title: KeyLanguage.titleMessage,
+  //   image: AppImages.imagesNotification,
+  //   title: KeyLanguage.titleNotification,
   //   onPressed: () {
-  //     // Navigator function for Message
+  //     // Navigator function for Notification
   //   },
   // ),
+  
   // HomeModel(
   //   image: AppImages.imagesDelivery,
   //   title: KeyLanguage.titleDelivery,

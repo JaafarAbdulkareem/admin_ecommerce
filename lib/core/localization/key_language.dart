@@ -14,6 +14,7 @@ abstract class KeyLanguage {
   static const String appBarOrder = "appBarOrder";
   static const String appBarDeliveryOrder = "appBarDeliveryOrder";
   static const String appBarReceiveOrder = "appBarReceiveOrder";
+  static const String appBarNotification = "appBarNotification";
 
 //validator
   static const String empty = "empty";
