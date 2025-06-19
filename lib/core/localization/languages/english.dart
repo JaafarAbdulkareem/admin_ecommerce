@@ -16,6 +16,7 @@ Map<String, String> english = {
   KeyLanguage.appBarOrder: "Order",
   KeyLanguage.appBarDeliveryOrder: "Delivery Order",
   KeyLanguage.appBarReceiveOrder: "Receive Order",
+  KeyLanguage.appBarDetailOrder: "Detail Order",
   KeyLanguage.appBarNotification: "Notificaiton",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
@@ -71,6 +72,9 @@ Map<String, String> english = {
   KeyLanguage.onWayOption: "🚚 Order Is Currently In Transit To The Customer.",
   KeyLanguage.doneDeliveryOption: "✅ Order Marked As Delivered And Closed.",
   KeyLanguage.totalPrice: "Total Price",
+//  KeyLanguage.productTitle: "Products",
+  KeyLanguage.titlQeuantity: "QTY",
+    KeyLanguage.titlePrice: "Price",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -89,6 +93,8 @@ Map<String, String> english = {
   KeyLanguage.alertInsertImage: "Image Is Required. Please Upload An Image.",
   KeyLanguage.alertInsertCategory:
       "Category Type Is Required. Please Choose A Category.",
+  KeyLanguage.alertAddressLoading:
+      "Oops! Couldn't Load Your Address. Try Again?",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:
@@ -144,6 +150,7 @@ Map<String, String> english = {
   KeyLanguage.buttonOnTheWay: "In Transit",
   KeyLanguage.buttonDelivery: "Delivery",
   KeyLanguage.buttonPickUp: "Picked Up",
+  // KeyLanguage.buttonTrack: "Track",
 
   //bar
   KeyLanguage.barPending: "Pending",
@@ -254,7 +261,6 @@ Map<String, String> english = {
 //   KeyLanguage.youHave: "You Have",
 //   KeyLanguage.listITemCart: "Item/s In Your List",
 //   KeyLanguage.shoppingTitle: "Shopping",
-//   KeyLanguage.priceTitle: "Price",
 //   KeyLanguage.ratingTitle: "Rating",
 //   KeyLanguage.couponsDiscount: "Coupon Discount",
 //   KeyLanguage.couponsNotFoundMessage:
@@ -274,8 +280,6 @@ Map<String, String> english = {
   // KeyLanguage.paymentOption: "Payment Cards",
   // KeyLanguage.deliveryOption: "Delivery",
   // KeyLanguage.receiveOption: "Receive",
-  // KeyLanguage.errorAddressMessage:
-  //     "Oops! Couldn't Load Your Address. Try Again?",
   // KeyLanguage.chooseDeliveryMessage:
   //     "Oops! Please Select A Delivery Option—Either Delivery Or Receive—Before Continuing. 😊",
   // KeyLanguage.chooseAddressMessage:
@@ -293,9 +297,6 @@ Map<String, String> english = {
   // KeyLanguage.prepareOption: "📦 We’re Preparing Your Order.",
   // KeyLanguage.onWayOption: "🚚 Your Order Is On The Way!",
   // KeyLanguage.doneDeliveryOption: "📬 Your Order Has Been Delivered. Enjoy!",
-  // KeyLanguage.productTitle: "Products",
-  // KeyLanguage.countTitle: "Counts",
-  // KeyLanguage.quantityTitle: "QTY",
   // KeyLanguage.addressTitle: "Shipping Address",
 //   //notification
 //   KeyLanguage.appBarTitleNotification: "Notificaion",

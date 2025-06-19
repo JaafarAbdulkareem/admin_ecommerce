@@ -21,60 +21,64 @@ class BodyLoginView extends GetView<LoginControllerImp> {
   Widget build(BuildContext context) {
     return Form(
       key: controller.keyLogin,
-      child: Padding(
-        padding:
-            const EdgeInsets.symmetric(horizontal: ConstantScale.horizonPage),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const CustomLogoWidget(),
-            TitleDescriptionWidget(
-              title: KeyLanguage.titleWelcome.tr,
-              subTitle: KeyLanguage.messageLogin.tr,
-            ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.hintEmail.tr,
-              label: KeyLanguage.labelEmail.tr,
-              icon: AppIcon.email,
-              controller: controller.email,
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) => validator(
-                value,
-                ConstantKey.emailValidator,
-                ConstantScale.minEmail,
-                ConstantScale.maxEmail,
-              ),
-            ),
-            GetBuilder<LoginControllerImp>(
-              id: ConstantKey.idHintPassword,
-              builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.hintPassword.tr,
-                label: KeyLanguage.labelPassword.tr,
-                icon: AppIcon.closePassword,
-                controller: controller.password,
-                obscure: controller.hidePassword,
-                keyboardType: TextInputType.number,
-                validator: (value) => validator(
-                  value,
-                  ConstantKey.passwordValidator,
-                  ConstantScale.minPassword,
-                  ConstantScale.maxPassword,
+      child: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: ConstantScale.horizonPage),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const CustomLogoWidget(),
+                TitleDescriptionWidget(
+                  title: KeyLanguage.titleWelcome.tr,
+                  subTitle: KeyLanguage.messageLogin.tr,
                 ),
-                changeCasePassword: () {
-                  controller.changeStatePassword();
-                },
-              ),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.hintEmail.tr,
+                  label: KeyLanguage.labelEmail.tr,
+                  icon: AppIcon.email,
+                  controller: controller.email,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.emailValidator,
+                    ConstantScale.minEmail,
+                    ConstantScale.maxEmail,
+                  ),
+                ),
+                GetBuilder<LoginControllerImp>(
+                  id: ConstantKey.idHintPassword,
+                  builder: (controller) => CustomTextFormFieldWidget(
+                    hint: KeyLanguage.hintPassword.tr,
+                    label: KeyLanguage.labelPassword.tr,
+                    icon: AppIcon.closePassword,
+                    controller: controller.password,
+                    obscure: controller.hidePassword,
+                    keyboardType: TextInputType.number,
+                    validator: (value) => validator(
+                      value,
+                      ConstantKey.passwordValidator,
+                      ConstantScale.minPassword,
+                      ConstantScale.maxPassword,
+                    ),
+                    changeCasePassword: () {
+                      controller.changeStatePassword();
+                    },
+                  ),
+                ),
+                const ForgetPasswordWidget(),
+                CustomButtonWidget(
+                  text: KeyLanguage.buttonLogin.tr,
+                  onTap: () {
+                    controller.loginOnTap();
+                  },
+                ),
+                const SizedBox(height: 32),
+              ],
             ),
-            const ForgetPasswordWidget(),
-            CustomButtonWidget(
-              text: KeyLanguage.buttonLogin.tr,
-              onTap: () {
-                controller.loginOnTap();
-              },
-            ),
-            const SizedBox(height: 32),
-          ],
+          ),
         ),
       ),
     );

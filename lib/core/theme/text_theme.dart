@@ -1,4 +1,5 @@
 import 'package:admin_ecommerce/core/constant/app_color.dart';
+import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
 
 TextTheme textTheme() {
@@ -40,10 +41,12 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
       color: AppColorText.textButton,
     ),
-    // bodyMedium: TextStyle(
-    //   fontSize: 14,
-    //   fontWeight: FontWeight.w600,
-    // ),
+    bodyMedium: TextStyle(
+      fontSize: 14,
+      color: AppColor.price,
+      fontWeight: FontWeight.w400,
+      fontFamily: ConstantTextFons.sans,
+    ),
     bodySmall: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
