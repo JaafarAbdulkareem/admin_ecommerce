@@ -40,6 +40,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_cache_manager: ^3.3.0
+  flutter_polyline_points: ^2.1.0
   flutter_svg: ^2.0.17
   get: ^4.6.6
   google_maps_flutter: ^2.10.0

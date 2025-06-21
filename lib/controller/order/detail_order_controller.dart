@@ -1,3 +1,4 @@
+import 'package:admin_ecommerce/core/class/custom_google_map.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
@@ -5,10 +6,8 @@ import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-// import 'package:admin_ecommerce/core/service/location_service.dart';
 import 'package:admin_ecommerce/data/data_source/remote/order/detail_order_remote.dart';
 import 'package:admin_ecommerce/data/models/order/detail_order/detail_order_model.dart';
-// import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -20,11 +19,11 @@ class DetailOrderControllerImp extends DetailOrderController {
   late StatusRequest statusRequest;
   late DetailOrderModel detailOrderData;
   static DetailOrderModel? lastdetailOrderData;
-  Set<Marker> markers = {};
-  Set<Polyline> polylines = {};
   late LatLng latLngStore;
   late CameraPosition initialCameraPosition;
-  // late GoogleMapController googleMapController;
+
+  late GoogleMapController googleMapController;
+  CustomGoogleMap customGoogleMap = CustomGoogleMap();
   // late LocationService locationService;
   // late Uuid uuid;
   @override
@@ -51,7 +50,6 @@ class DetailOrderControllerImp extends DetailOrderController {
   void initialGetData() {
     if (lastdetailOrderData != null && lastdetailOrderData?.id == orderId) {
       detailOrderData = lastdetailOrderData!;
-      mapCameraPosition();
       statusRequest = StatusRequest.success;
       update();
     } else {
@@ -61,7 +59,7 @@ class DetailOrderControllerImp extends DetailOrderController {
 
   @override
   void dispose() {
-    // googleMapController.dispose();
+    googleMapController.dispose();
     // locationService.cancelLocationSubscription();
 
     super.dispose();
@@ -80,8 +78,6 @@ class DetailOrderControllerImp extends DetailOrderController {
       if (response[ApiResult.status] == ApiResult.success) {
         detailOrderData = DetailOrderModel.fromJson(response[ApiResult.data]);
         lastdetailOrderData = detailOrderData;
-        mapCameraPosition();
-
         statusRequest = StatusRequest.success;
         update();
       } else {
@@ -98,52 +94,37 @@ class DetailOrderControllerImp extends DetailOrderController {
     }
   }
 
-  void mapCameraPosition() {
-    if (detailOrderData.addressId != null) {
-      markers.add(
-        Marker(
-          markerId: const MarkerId(ConstantKey.idStoreLocation),
-          position: latLngStore,
-        ),
-      );
-      LatLng latLngDestination = LatLng(detailOrderData.address!.latitude,
-          detailOrderData.address!.longitude);
-      markers.add(
-        Marker(
-          markerId: const MarkerId(ConstantKey.idUserLocation),
-          position: latLngDestination,
-        ),
-      );
-      initialCameraPosition = CameraPosition(
-        target: latLngStore,
-        zoom: 14,
-      );
-    }
+  void onMapCreated(controller) async {
+    googleMapController = controller;
+    customGoogleMap.mapCameraPosition(
+      detailOrderData: detailOrderData,
+      refresh: () {
+        googleMapController.animateCamera(
+            CameraUpdate.newLatLngBounds(customGoogleMap.bounds!, 16));
+        update([ConstantKey.idGoogleMap]); // or setState if you're in a widget
+      },
+    );
+    //   await locationService.getRealTimeLocationData((locationData) {
+    //     final currentLatLng = LatLng(
+    //       locationData.latitude!,
+    //       locationData.longitude!,
+    //     );
+
+    //     // Update the same marker (by ID) to avoid duplication
+    //     // markers.removeWhere(
+    //     //     (marker) => marker.markerId.value == ConstantKey.idUserLocation);
+    // markers.add(
+    //   Marker(
+    //     markerId: const MarkerId(ConstantKey.idUserLocation),
+    //     position: currentLatLng,
+    //   ),
+    // );
+    //     // markers.refresh();
+
+    //     googleMapController.animateCamera(
+    //       CameraUpdate.newLatLng(currentLatLng),
+    //     );
+    //     update([ConstantKey.idGoogleMap]);
+    //   });
   }
-
-  // // void onMapCreated(controller) async {
-  // //   googleMapController = controller;
-  // //   await locationService.getRealTimeLocationData((locationData) {
-  // //     final currentLatLng = LatLng(
-  // //       locationData.latitude!,
-  // //       locationData.longitude!,
-  // //     );
-
-  // //     // Update the same marker (by ID) to avoid duplication
-  // //     // markers.removeWhere(
-  // //     //     (marker) => marker.markerId.value == ConstantKey.idUserLocation);
-  // // markers.add(
-  // //   Marker(
-  // //     markerId: const MarkerId(ConstantKey.idUserLocation),
-  // //     position: currentLatLng,
-  // //   ),
-  // // );
-  // //     // markers.refresh();
-
-  // //     googleMapController.animateCamera(
-  // //       CameraUpdate.newLatLng(currentLatLng),
-  // //     );
-  // //     update([ConstantKey.idGoogleMap]);
-  // //   });
-  // // }
 }
