@@ -23,9 +23,7 @@ class DetailOrderControllerImp extends DetailOrderController {
   late CameraPosition initialCameraPosition;
 
   late GoogleMapController googleMapController;
-  CustomGoogleMap customGoogleMap = CustomGoogleMap();
-  // late LocationService locationService;
-  // late Uuid uuid;
+  late CustomGoogleMap customGoogleMap;
   @override
   void onInit() {
     detailOrderRemote = DetailOrderRemote(curd: Get.find());
@@ -41,6 +39,11 @@ class DetailOrderControllerImp extends DetailOrderController {
       zoom: 2,
     );
     initialGetData();
+    customGoogleMap = CustomGoogleMap(refresh: () {
+      googleMapController.animateCamera(
+          CameraUpdate.newLatLngBounds(customGoogleMap.bounds!, 16));
+      update([ConstantKey.idGoogleMap]);
+    });
     // locationService = LocationService();
     // uuid = const Uuid();
 
@@ -60,8 +63,7 @@ class DetailOrderControllerImp extends DetailOrderController {
   @override
   void dispose() {
     googleMapController.dispose();
-    // locationService.cancelLocationSubscription();
-
+    customGoogleMap.dispose();
     super.dispose();
   }
 
@@ -98,33 +100,6 @@ class DetailOrderControllerImp extends DetailOrderController {
     googleMapController = controller;
     customGoogleMap.mapCameraPosition(
       detailOrderData: detailOrderData,
-      refresh: () {
-        googleMapController.animateCamera(
-            CameraUpdate.newLatLngBounds(customGoogleMap.bounds!, 16));
-        update([ConstantKey.idGoogleMap]); // or setState if you're in a widget
-      },
     );
-    //   await locationService.getRealTimeLocationData((locationData) {
-    //     final currentLatLng = LatLng(
-    //       locationData.latitude!,
-    //       locationData.longitude!,
-    //     );
-
-    //     // Update the same marker (by ID) to avoid duplication
-    //     // markers.removeWhere(
-    //     //     (marker) => marker.markerId.value == ConstantKey.idUserLocation);
-    // markers.add(
-    //   Marker(
-    //     markerId: const MarkerId(ConstantKey.idUserLocation),
-    //     position: currentLatLng,
-    //   ),
-    // );
-    //     // markers.refresh();
-
-    //     googleMapController.animateCamera(
-    //       CameraUpdate.newLatLng(currentLatLng),
-    //     );
-    //     update([ConstantKey.idGoogleMap]);
-    //   });
   }
 }

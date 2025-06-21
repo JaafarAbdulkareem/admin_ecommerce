@@ -1,30 +1,37 @@
+import 'dart:async';
 import 'dart:math';
 
+import 'package:admin_ecommerce/core/constant/api_column_db.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/app_images.dart';
 import 'package:admin_ecommerce/core/constant/constant_api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/data/models/order/detail_order/detail_order_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomGoogleMap {
   PolylinePoints polylinePoints = PolylinePoints();
-  final LatLng latLngSource = const LatLng(
+  late LatLng latLngSource;
+  LatLng latLngStore = const LatLng(
     ConstantScale.latitudeStore,
     ConstantScale.longitudeStore,
   );
 
+  StreamSubscription<DocumentSnapshot>? _deliveryLocationSubscription;
   LatLng? latLngDestination;
   Set<Marker> markers = {};
   Set<Polyline> polylines = {};
   LatLngBounds? bounds;
 
+  final VoidCallback refresh;
+  CustomGoogleMap({required this.refresh});
+
   void mapCameraPosition({
     required DetailOrderModel detailOrderData,
-    required VoidCallback refresh,
   }) async {
     if (detailOrderData.addressId != null) {
       markers.add(
@@ -35,7 +42,7 @@ class CustomGoogleMap {
             height: 40,
           ),
           markerId: const MarkerId(ConstantKey.idStoreLocation),
-          position: latLngSource,
+          position: latLngStore,
         ),
       );
 
@@ -55,9 +62,46 @@ class CustomGoogleMap {
         ),
       );
 
-      await getRoutePolyline();
-      refresh();
+      await getDeliveryLocation(
+        id: detailOrderData.id,
+      );
     }
+  }
+
+  Future<void> getDeliveryLocation({
+    required String id,
+  }) async {
+    _deliveryLocationSubscription = FirebaseFirestore.instance
+        .collection(ConstantKey.collectionDelivery)
+        .doc(id)
+        .snapshots()
+        .listen((event) {
+      if (event.exists) {
+        latLngSource = LatLng(
+          event.get(ApiColumnDb.latitude),
+          event.get(ApiColumnDb.longitude),
+        );
+        updateDeliveryLocation();
+      }
+    });
+  }
+
+  void updateDeliveryLocation() async {
+    markers
+        .removeWhere((e) => e.markerId.value == ConstantKey.idDeliveryLocation);
+    markers.add(
+      Marker(
+        icon: AssetMapBitmap(
+          AppImages.imagesDeliveryMan,
+          width: 40,
+          height: 40,
+        ),
+        markerId: const MarkerId(ConstantKey.idDeliveryLocation),
+        position: latLngSource,
+      ),
+    );
+    await getRoutePolyline();
+    refresh();
   }
 
   Future<void> getRoutePolyline() async {
@@ -117,5 +161,10 @@ class CustomGoogleMap {
         northeastLongitude,
       ),
     );
+  }
+
+  void dispose() {
+    _deliveryLocationSubscription?.cancel();
+    _deliveryLocationSubscription = null;
   }
 }

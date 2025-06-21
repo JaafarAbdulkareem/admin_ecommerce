@@ -53,6 +53,7 @@ abstract class ConstantKey {
 // id marker in google map
   static const String idStoreLocation = "idStoreLocation";
   static const String idUserLocation = "iduserLocation";
+  static const String idDeliveryLocation = "idDeliveryLocation";
   // static const String idCouponsApply = "idCouponsApply";
 //checkout
   // static const String idPaymentType = "idPaymentType";
@@ -68,6 +69,8 @@ abstract class ConstantKey {
 
   //topics
   // static const String usersTopics = "users";
+//firebase firestore
+  static const String collectionDelivery = "delivery";
 }
 
 abstract class ConstantLanguage {
