@@ -155,6 +155,7 @@ Map<String, String> english = {
   //bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"
+  KeyLanguage.barAccept: "Accepted", 
   KeyLanguage.barOnTheWay: "Transit", // Shorter than "On the Way"
   KeyLanguage.barArchive: "Archive",
   KeyLanguage.barPendingPickup: "Waiting",

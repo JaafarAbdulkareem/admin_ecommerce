@@ -148,6 +148,7 @@ abstract class KeyLanguage {
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";
+  static const String barAccept = "barAccept";
   static const String barOnTheWay = "barOnTheWay";
   static const String barArchive = "barArchive";
   static const String barPendingPickup = "barPendingPickup";

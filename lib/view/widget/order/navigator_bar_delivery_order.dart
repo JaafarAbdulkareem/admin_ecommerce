@@ -11,18 +11,39 @@ class NavigatorBarDeliveryOrder extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
       builder: (controller) {
-        return BottomAppBar(
-          child: Row(
-            children: List.generate(
-              deliveryOrderFeature.length,
-              (index) => Expanded(
-                child: ItemBarOrder<DeliveryOrderControllerImp>(
-                  data: deliveryOrderFeature[index],
-                  selected: index == controller.barIndex,
-                  index: index,
+        return AspectRatio(
+          aspectRatio: 2.6,
+          child: BottomAppBar(
+            child: Wrap(
+              alignment: WrapAlignment.spaceEvenly,
+              runSpacing: 10,
+              children: List.generate(
+                deliveryOrderFeature.length,
+                (index) => SizedBox(
+                  width: MediaQuery.of(context).size.width /
+                      (deliveryOrderFeature.length - 1),
+                  height: 55,
+                  child: ItemBarOrder<DeliveryOrderControllerImp>(
+                    data: deliveryOrderFeature[index],
+                    selected: index == controller.barIndex,
+                    index: index,
+                  ),
                 ),
               ),
             ),
+
+            // child: Row(
+            //   children: List.generate(
+            //     deliveryOrderFeature.length,
+            //     (index) => Expanded(
+            //       child: ItemBarOrder<DeliveryOrderControllerImp>(
+            //         data: deliveryOrderFeature[index],
+            //         selected: index == controller.barIndex,
+            //         index: index,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ),
         );
       },

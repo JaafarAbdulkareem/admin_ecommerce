@@ -14,7 +14,8 @@ abstract class AppIcon {
   static const IconData gallery = Icons.image;
 
   static const IconData barPending = Icons.hourglass_top_outlined;
-  static const IconData barProper = Icons.assignment_turned_in;
+  static const IconData barProper = Icons.shopping_bag;
+  static const IconData barAccept = Icons.assignment_turned_in;
   static const IconData barOnTheWay = Icons.local_shipping;
   static const IconData barDone = Icons.check_circle;
 

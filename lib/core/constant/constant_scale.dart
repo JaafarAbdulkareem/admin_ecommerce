@@ -30,8 +30,9 @@ abstract class ConstantScale {
   static const int receiveOption = 1;
   static const int pendingOption = 0;
   static const int prepareOption = 1;
-  static const int onWayOption = 2;
-  static const int doneDeliveryOption = 3;
+  static const int acceptOption = 2;
+  static const int onWayOption = 3;
+  static const int doneDeliveryOption = 4;
   static const int pendingPickUpOption = 0;
   static const double latitudeStore = 13.05702191320258;
   static const double longitudeStore = 77.62897824322815;

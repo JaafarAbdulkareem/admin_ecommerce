@@ -23,6 +23,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   late List<OrderModel> penddingOrderData;
   late List<OrderModel> prepareOrderData;
   late List<OrderModel> onWayOrderData;
+  late List<OrderModel> acceptOrderData;
   late List<OrderModel> doneOrderData;
   late List<List<OrderModel>> data;
   late DeliveryOrderRemote deliveryOrderRemote;
@@ -37,23 +38,43 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     super.onInit();
   }
 
-  filterDeliveryStatusOrder() {
+  void filterDeliveryStatusOrder() {
     penddingOrderData = [];
     prepareOrderData = [];
+    acceptOrderData = [];
     onWayOrderData = [];
     doneOrderData = [];
-    for (OrderModel element in orderData) {
-      if (element.status == ConstantScale.pendingOption) {
-        penddingOrderData.add(element);
-      } else if (element.status == ConstantScale.prepareOption) {
-        prepareOrderData.add(element);
-      } else if (element.status == ConstantScale.onWayOption) {
-        onWayOrderData.add(element);
-      } else if (element.status == ConstantScale.doneDeliveryOption) {
-        doneOrderData.add(element);
+
+    for (OrderModel order in orderData) {
+      switch (order.status) {
+        case ConstantScale.pendingOption:
+          penddingOrderData.add(order);
+          break;
+        case ConstantScale.prepareOption:
+          prepareOrderData.add(order);
+          break;
+        case ConstantScale.acceptOption:
+          acceptOrderData.add(order);
+          break;
+        case ConstantScale.onWayOption:
+          onWayOrderData.add(order);
+          break;
+        case ConstantScale.doneDeliveryOption:
+          doneOrderData.add(order);
+          break;
+        default:
+          // Optional: handle unknown statuses
+          break;
       }
     }
-    data = [penddingOrderData, prepareOrderData, onWayOrderData, doneOrderData];
+
+    data = [
+      penddingOrderData,
+      prepareOrderData,
+      acceptOrderData,
+      onWayOrderData,
+      doneOrderData,
+    ];
   }
 
   @override
@@ -147,6 +168,11 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       );
       update();
     }
+  }
+
+  refreshAccepted() // will delivery man make accept and give notification
+  {
+    update([ConstantKey.idAccepted]);
   }
 
   @override
