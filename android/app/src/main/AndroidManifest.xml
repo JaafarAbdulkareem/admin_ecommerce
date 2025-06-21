@@ -1,5 +1,10 @@
 <manifest package="com.example.admin_ecommerce" xmlns:android="http://schemas.android.com/apk/res/android">
+
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:label="admin_ecommerce"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
