@@ -30,7 +30,7 @@ class ItemBarOrder<T extends BaseTypeOrderController> extends GetView<T> {
           children: [
             Icon(
               data.icon,
-              color: selected ? AppColor.primary : AppColorText.textButton,
+              color: selected ? AppColor.primary : AppColorText.textButtonLight,
               size: selected
                   ? ConstantScale.iconOrderSelect
                   : ConstantScale.iconOrderNotSelect,

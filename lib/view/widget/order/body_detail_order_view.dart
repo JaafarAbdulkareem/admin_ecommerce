@@ -1,5 +1,4 @@
 import 'package:admin_ecommerce/controller/order/detail_order_controller.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/view/widget/order/google_map_detail_order.dart';
@@ -17,7 +16,7 @@ class BodyDetailOrderView extends GetView<DetailOrderControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Center(
         child: Card(
-          color: AppColor.card,
+          color: Theme.of(context).cardColor,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             child: SingleChildScrollView(

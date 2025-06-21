@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:admin_ecommerce/controller/base/base_choose_image_controller.dart';
 import 'package:admin_ecommerce/controller/category/category_controller.dart';
 import 'package:admin_ecommerce/controller/product/product_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/function/translate_language.dart';
@@ -49,6 +49,8 @@ class UpdateProductControllerImp extends UpdateProductController {
 
   late CategoryControllerImp categoryController;
   late List<SelectedListItem> selectListData;
+
+  final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {
@@ -167,11 +169,7 @@ class UpdateProductControllerImp extends UpdateProductController {
           }
         } else {
           Get.back();
-          Get.snackbar(
-            KeyLanguage.alert.tr,
-            KeyLanguage.alertSomeError.tr,
-            backgroundColor: AppColor.snackbar,
-          );
+          alertDefualt.snackBarDefault();
         }
       }
     }

@@ -74,7 +74,7 @@ Map<String, String> english = {
   KeyLanguage.totalPrice: "Total Price",
 //  KeyLanguage.productTitle: "Products",
   KeyLanguage.titlQeuantity: "QTY",
-    KeyLanguage.titlePrice: "Price",
+  KeyLanguage.titlePrice: "Price",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -150,12 +150,14 @@ Map<String, String> english = {
   KeyLanguage.buttonOnTheWay: "In Transit",
   KeyLanguage.buttonDelivery: "Delivery",
   KeyLanguage.buttonPickUp: "Picked Up",
+  KeyLanguage.buttonCall: "Call",
+  KeyLanguage.buttonOpenSetting: "Open Settings",
   // KeyLanguage.buttonTrack: "Track",
 
   //bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"
-  KeyLanguage.barAccept: "Accepted", 
+  KeyLanguage.barAccept: "Accepted",
   KeyLanguage.barOnTheWay: "Transit", // Shorter than "On the Way"
   KeyLanguage.barArchive: "Archive",
   KeyLanguage.barPendingPickup: "Waiting",

@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:admin_ecommerce/controller/base/base_choose_image_controller.dart';
 import 'package:admin_ecommerce/controller/category/category_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/function/upload_image.dart';
@@ -26,6 +26,7 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
   File? file;
   late CategoryRemote categoryRemote;
   late CategoryControllerImp categoryController;
+  final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {
@@ -82,11 +83,7 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
           }
         } else {
           Get.back();
-          Get.snackbar(
-            KeyLanguage.alert.tr,
-            KeyLanguage.alertSomeError.tr,
-            backgroundColor: AppColor.snackbar,
-          );
+          alertDefualt.snackBarDefault(body: KeyLanguage.alertSomeError.tr);
         }
       }
     }

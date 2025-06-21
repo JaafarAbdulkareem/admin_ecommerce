@@ -1,11 +1,10 @@
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
-import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/order/order_remote.dart';
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
 import 'package:get/get.dart';
@@ -22,6 +21,8 @@ class OrderControllerImp extends OrderController {
   static List<OrderModel> deliveryData = [];
   static List<OrderModel> receiveData = [];
   static bool firstTime = true;
+
+  final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {
@@ -79,11 +80,7 @@ class OrderControllerImp extends OrderController {
       } else if (element.typeDelivery == ConstantScale.receiveOption) {
         receiveData.add(element);
       } else {
-        Get.snackbar(
-          KeyLanguage.alert.tr,
-          KeyLanguage.alertSomeError.tr,
-          backgroundColor: AppColor.snackbar,
-        );
+        alertDefualt.snackBarDefault();
         Get.back();
       }
     }

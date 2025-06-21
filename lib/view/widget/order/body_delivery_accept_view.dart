@@ -2,7 +2,7 @@ import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart'
 import 'package:admin_ecommerce/core/constant/app_lottie.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
-import 'package:admin_ecommerce/view/widget/order/item_done_order.dart';
+import 'package:admin_ecommerce/view/widget/order/item_accept_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -15,7 +15,7 @@ class BodyDeliveryAcceptView extends GetView<DeliveryOrderControllerImp> {
     return GetBuilder<DeliveryOrderControllerImp>(
       id: ConstantKey.idAccepted,
       builder: (controller) {
-        return controller.penddingOrderData.isEmpty
+        return controller.acceptOrderData.isEmpty
             ? Center(
                 child: Lottie.asset(
                   AppLottie.nodata,
@@ -23,14 +23,14 @@ class BodyDeliveryAcceptView extends GetView<DeliveryOrderControllerImp> {
                 ),
               )
             : ListView.builder(
-                itemCount: controller.doneOrderData.length,
+                itemCount: controller.acceptOrderData.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: ConstantScale.horizonPage,
                     vertical: ConstantScale.verticalPage,
                   ),
-                  child: ItemDoneOrder(
-                    data: controller.doneOrderData[index],
+                  child: ItemAcceptOrder(
+                    data: controller.acceptOrderData[index],
                   ),
                 ),
               );

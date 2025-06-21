@@ -1,19 +1,22 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
+import 'package:admin_ecommerce/core/class/request_permission.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
-import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/order/delivery_order_remote.dart';
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 abstract class DeliveryOrderController extends BaseTypeOrderController {
   void prepareButton({required String id, required String userId});
   void onthWayButton({required String id, required String userId});
   void deliveryButton({required String id, required String userId});
+  void onCall();
 }
 
 class DeliveryOrderControllerImp extends DeliveryOrderController {
@@ -27,11 +30,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   late List<OrderModel> doneOrderData;
   late List<List<OrderModel>> data;
   late DeliveryOrderRemote deliveryOrderRemote;
+
+  final RequestPermission permissionHandler = RequestPermission();
+  final AlertDefault alertDefualt = AlertDefault();
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     barIndex = ConstantScale.initiBarIndex;
     orderData = Get.arguments[ConstantKey.deliveryData];
+    print("orderData : ${orderData.length}");
     filterDeliveryStatusOrder();
 
     deliveryOrderRemote = DeliveryOrderRemote(curd: Get.find());
@@ -62,9 +70,9 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         case ConstantScale.doneDeliveryOption:
           doneOrderData.add(order);
           break;
-        default:
-          // Optional: handle unknown statuses
-          break;
+        // default:
+        //   // Optional: handle unknown statuses
+        //   break;
       }
     }
 
@@ -75,6 +83,12 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       onWayOrderData,
       doneOrderData,
     ];
+
+    print("Pending: ${penddingOrderData.length}, "
+        "Prepare: ${prepareOrderData.length}, "
+        "Accepted: ${acceptOrderData.length}, "
+        "On the Way: ${onWayOrderData.length}, "
+        "Done: ${doneOrderData.length}");
   }
 
   @override
@@ -120,11 +134,8 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         update([ConstantKey.idPendingButton]);
       }
     } else {
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.alertSomeError.tr,
-        backgroundColor: AppColor.snackbar,
-      );
+      alertDefualt.snackBarDefault();
+
       update();
     }
   }
@@ -161,11 +172,8 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         update([ConstantKey.idPrepareButton]);
       }
     } else {
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.alertSomeError.tr,
-        backgroundColor: AppColor.snackbar,
-      );
+      alertDefualt.snackBarDefault();
+
       update();
     }
   }
@@ -207,12 +215,179 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         update([ConstantKey.idDeliveryButton]);
       }
     } else {
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.alertSomeError.tr,
-        backgroundColor: AppColor.snackbar,
-      );
+      alertDefualt.snackBarDefault();
       update();
     }
+  }
+
+  Future<void> onCall() async {
+    final status = await Permission.phone.status;
+
+    if (status.isGranted) {
+      _makeCall();
+    } else if (status.isDenied) {
+      _showRequestPermissionDialog();
+    } else if (status.isPermanentlyDenied) {
+      _showGoToSettingsDialog();
+    } else {
+      print("📛 Unknown permission status: $status");
+    }
+  }
+
+  void _makeCall() async {
+    final Uri phoneUri = Uri.parse("tel:+1-555-010-999");
+    final bool launched = await launchUrl(phoneUri);
+    print(launched ? "✅ Launch success" : "❌ Launch failed");
+  }
+
+  void _showRequestPermissionDialog() {
+    alertDefualt.dialogPhoneDefalut(
+      title: "Phone Permission Required",
+      body:
+          "This app needs phone access to make calls.\nWould you like to allow it?",
+      onConfirm: () async {
+        Get.back();
+        try {
+          await permissionHandler.requestPhonePermission();
+          await onCall(); // Retry if granted
+        } on PermissionPhoneException {
+          print("❌ User denied phone permission.");
+        }
+      },
+    );
+  }
+
+  void _showGoToSettingsDialog() {
+    alertDefualt.dialogPhoneDefalut(
+      title: "Permission Permanently Denied",
+      body:
+          "Phone permission is permanently denied. Please enable it from app settings.",
+      onConfirm: () {
+        openAppSettings();
+        Get.back();
+      },
+    );
+  }
+
+  // Future<void> requestPermissions() async {
+  //   await Permission.camera.request();
+  //   await Permission.phone.request();
+  // }
+
+  // Future<void> onCall() async {
+  //   var status = await Permission.phone.status;
+
+  //   if (status.isGranted) {
+  //     final Uri phoneUri = Uri.parse("tel:+1-555-010-999");
+  //     final bool launched = await launchUrl(phoneUri);
+  //     print(launched ? "✅ Launch success" : "❌ Launch failed");
+  //   } else if (status.isDenied) {
+  //     Get.defaultDialog(
+  //       title: "Permission Permanently Denied",
+  //       titleStyle: Get.theme.textTheme.titleLarge?.copyWith(
+  //         color: AppColor.primary,
+  //         fontWeight: FontWeight.bold,
+  //       ),
+  //       middleText:
+  //           "Phone permission is permanently denied. Please enable it from app settings.",
+  //       middleTextStyle: Get.theme.textTheme.bodyMedium?.copyWith(
+  //         color: AppColorText.primary,
+  //       ),
+  //       backgroundColor: AppColor.card,
+  //       radius: 12,
+  //       textConfirm: "Open Settings",
+  //       confirmTextColor: Colors.white,
+  //       buttonColor: AppColor.primary,
+  //       textCancel: "Cancel",
+  //       cancelTextColor: AppColorText.textButton,
+  //       onConfirm: () {
+  //         openAppSettings();
+  //         Get.back();
+  //       },
+  //     );
+  //     // 🔁 Ask again with a dialog
+  //     Get.defaultDialog(
+  //       title: "Phone Permission Required",
+  //       middleText:
+  //           "This app needs phone access to make calls.\nWould you like to allow it?",
+  //       textConfirm: "Allow",
+  //       textCancel: "Cancel",
+  //       onConfirm: () async {
+  //         Get.back();
+  //         var newStatus = await Permission.phone.request();
+  //         if (newStatus.isGranted) {
+  //           onCall(); // retry after permission granted
+  //         } else {
+  //           print("❌ Still not granted after prompt.");
+  //         }
+  //       },
+  //     );
+  //   } else if (status.isPermanentlyDenied) {
+  //     // 🚫 Can't ask again — user must open settings
+  //     Get.defaultDialog(
+  //       title: "Permission Permanently Denied",
+  //       titleStyle: Get.theme.textTheme.titleLarge?.copyWith(
+  //         color: AppColor.primary,
+  //         fontWeight: FontWeight.bold,
+  //       ),
+  //       middleText:
+  //           "Phone permission is permanently denied. Please enable it from app settings.",
+  //       middleTextStyle: Get.theme.textTheme.bodyMedium?.copyWith(
+  //         color: AppColorText.textButton,
+  //       ),
+  //       backgroundColor: AppColor.card,
+  //       radius: 12,
+  //       textConfirm: "Open Settings",
+  //       confirmTextColor: Colors.white,
+  //       buttonColor: AppColor.primary,
+  //       textCancel: "Cancel",
+  //       cancelTextColor: AppColorText.textButton,
+  //       onConfirm: () {
+  //         openAppSettings();
+  //         Get.back();
+  //       },
+  //     );
+
+  //     // Get.defaultDialog(
+  //     //   title: "Permission Permanently Denied",
+  //     //   middleText:
+  //     //       "Phone permission is permanently denied. Please enable it from app settings.",
+  //     //   textConfirm: "Open Settings",
+  //     //   textCancel: "Cancel",
+  //     //   onConfirm: () {
+  //     //     openAppSettings();
+  //     //     Get.back();
+  //     //   },
+  //     // );
+  //   } else {
+  //     print("📛 Unknown phone permission state: $status");
+  //   }
+
+  //   //   // statusRequest = StatusRequest.loading;
+  //   //   // update();
+  //   //  var x = await launchUrl(Uri.parse("tel:+1-555-010-999")).then((_) {
+  //   //   print("success");
+  //   //     // statusRequest = StatusRequest.success;
+  //   //     // update([calledButton]);
+  //   //   }).catchError((error) {
+  //   //   print("failure");
+  //   //     // statusRequest = StatusRequest.failure;
+  //   //     // update();
+  //   //   });
+  //   //   print("x = $x");
+  // }
+
+  void openAppSettingsDialog() {
+    Get.defaultDialog(
+      title: "Permission Required",
+      middleText:
+          "Phone permission is required to make a call.\nPlease enable it in settings.",
+      textConfirm: "Open Settings",
+      textCancel: "Cancel",
+      onConfirm: () {
+        openAppSettings();
+        Get.back();
+      },
+    );
   }
 }

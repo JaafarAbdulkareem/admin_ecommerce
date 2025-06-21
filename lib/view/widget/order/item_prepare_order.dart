@@ -20,6 +20,7 @@ class ItemPrepareOrder extends GetView<DeliveryOrderControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
         child: Column(

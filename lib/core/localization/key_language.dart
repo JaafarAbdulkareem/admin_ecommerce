@@ -144,6 +144,8 @@ abstract class KeyLanguage {
   static const String buttonOnTheWay = "buttonOnTheWay";
   static const String buttonDelivery = "buttonDelivery";
   static const String buttonPickUp = "buttonPickUp";
+  static const String buttonCall = "buttonCall";
+  static const String buttonOpenSetting = "buttonOpenSetting";
   // static const String buttonTrack = "buttonTrack";
 //bar
   static const String barPending = "barPending";

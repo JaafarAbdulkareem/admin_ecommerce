@@ -1,4 +1,4 @@
-import 'package:admin_ecommerce/controller/order/receive_order_controller.dart';
+import 'package:admin_ecommerce/controller/order/delivery_order_controller.dart';
 import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/commant_order.dart';
@@ -10,8 +10,8 @@ import 'package:admin_ecommerce/view/widget/order/text_status_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemReceiveOrder extends GetView<ReceiveOrderControllerImp> {
-  const ItemReceiveOrder({
+class ItemAcceptOrder extends GetView<DeliveryOrderControllerImp> {
+  const ItemAcceptOrder({
     super.key,
     required this.data,
   });
@@ -19,6 +19,7 @@ class ItemReceiveOrder extends GetView<ReceiveOrderControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
         child: Column(
@@ -55,16 +56,35 @@ class ItemReceiveOrder extends GetView<ReceiveOrderControllerImp> {
               style: Theme.of(context).textTheme.labelLarge,
             ),
             const Divider(),
-            Center(
-              child: CustomButtonWidget(
-                text: KeyLanguage.buttonDetail.tr,
-                onTap: () {
-                  controller.goToDetailOrder(
-                    id: data.id,
-                    userId: data.userId,
-                  );
-                },
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColor.wrong,
+                    ),
+                    child: Text(
+                      KeyLanguage.buttonCall.tr,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    onPressed: () {
+                      controller.onCall();
+                    },
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: CustomButtonWidget(
+                    text: KeyLanguage.buttonDetail.tr,
+                    onTap: () {
+                      controller.goToDetailOrder(
+                        id: data.id,
+                        userId: data.userId,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
         ),

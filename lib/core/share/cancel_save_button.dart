@@ -21,7 +21,7 @@ class CancelSaveButton extends StatelessWidget {
             onPressed: cancelButton,
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColor.wrong,
-              foregroundColor: AppColorText.textButton,
+              foregroundColor: AppColorText.textButtonLight,
             ),
             child: Text(KeyLanguage.buttonCancel.tr),
           ),
