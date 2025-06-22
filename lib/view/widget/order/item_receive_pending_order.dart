@@ -86,6 +86,24 @@ class ItemReceivePendingOrder extends GetView<ReceiveOrderControllerImp> {
                 },
               ),
             ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColor.wrong,
+                    ),
+                    child: Text(
+                      KeyLanguage.buttonCall.tr,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    onPressed: () {
+                      // controller.onCall();
+                    },
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

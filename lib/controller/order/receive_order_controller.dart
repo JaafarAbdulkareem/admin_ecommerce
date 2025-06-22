@@ -35,7 +35,6 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
     receiveData = [];
     archiveData = [];
     filterDeliveryStatusOrder();
-    data = [receiveData, archiveData];
     super.onInit();
   }
 
@@ -50,9 +49,7 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
         archiveData.add(element);
       }
     }
-
-    print("receiveData: ${receiveData.length}, "
-        "archiveData: ${archiveData.length}, ");
+    data = [receiveData, archiveData];
   }
 
   @override
@@ -83,8 +80,8 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
           orderData[index].status = ConstantScale.doneDeliveryOption;
+          filterDeliveryStatusOrder();
         }
-        filterDeliveryStatusOrder();
         statusRequest = StatusRequest.success;
         update([ConstantKey.idPickUpButton + id]);
         if (receiveData.isEmpty) {

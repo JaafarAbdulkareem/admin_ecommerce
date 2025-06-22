@@ -121,12 +121,12 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           orderData[index].status = ConstantScale.prepareOption;
           filterDeliveryStatusOrder();
         }
+        statusRequest = StatusRequest.success;
         update([ConstantKey.idPendingButton + id]);
         if (penddingOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
           update([ConstantKey.idPendingButton]);
         } else {
-          statusRequest = StatusRequest.success;
           update([ConstantKey.idPendingButton]);
         }
       } else {
@@ -159,12 +159,12 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           orderData[index].status = ConstantScale.onWayOption;
           filterDeliveryStatusOrder();
         }
+        statusRequest = StatusRequest.success;
         update([ConstantKey.idPrepareButton + id]);
         if (prepareOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
           update([ConstantKey.idPrepareButton]);
         } else {
-          statusRequest = StatusRequest.success;
           update([ConstantKey.idPrepareButton]);
         }
       } else {
@@ -178,7 +178,10 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     }
   }
 
-  refreshAccepted() // will delivery man make accept and give notification
+  refreshAccepted({
+    required String name,
+    required String phone,
+  }) // will delivery man make accept and give notification
   {
     update([ConstantKey.idAccepted]);
   }
@@ -202,12 +205,12 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           orderData[index].status = ConstantScale.doneDeliveryOption;
           filterDeliveryStatusOrder();
         }
+        statusRequest = StatusRequest.success;
         update([ConstantKey.idDeliveryButton + id]);
         if (onWayOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
           update([ConstantKey.idDeliveryButton]);
         } else {
-          statusRequest = StatusRequest.success;
           update([ConstantKey.idDeliveryButton]);
         }
       } else {

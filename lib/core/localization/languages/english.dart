@@ -150,7 +150,7 @@ Map<String, String> english = {
   KeyLanguage.buttonOnTheWay: "In Transit",
   KeyLanguage.buttonDelivery: "Delivery",
   KeyLanguage.buttonPickUp: "Picked Up",
-  KeyLanguage.buttonCall: "Call",
+  KeyLanguage.buttonCall: "Call Now",
   KeyLanguage.buttonOpenSetting: "Open Settings",
   // KeyLanguage.buttonTrack: "Track",
 
