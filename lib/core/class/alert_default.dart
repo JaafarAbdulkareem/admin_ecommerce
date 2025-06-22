@@ -6,11 +6,13 @@ import 'package:get/get.dart';
 class AlertDefault {
   /// Snackbar for general light/dark themed alerts
   void snackBarDefault({
+    IconData? icon,
     String? title,
     String? body,
   }) {
     final bool isDark = Get.isDarkMode;
     Get.snackbar(
+      icon: Icon(icon),
       title ?? KeyLanguage.alert.tr,
       body ?? KeyLanguage.alertSomeError.tr,
       backgroundColor: isDark ? AppColor.snackbarDark : AppColor.snackbarLight,

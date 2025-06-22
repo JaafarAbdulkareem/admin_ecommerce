@@ -11,6 +11,7 @@ import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
 import 'package:admin_ecommerce/data/data_source/remote/auth/login_remote.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:admin_ecommerce/data/data_source/remote/auth/login_remote.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class LoginControllerImp extends LoginController {
     loginRemote = LoginRemote(curd: Get.find());
     titleDialog = KeyLanguage.alert.tr;
     prefs = Get.find<SharedPrefsService>();
-
+    FirebaseMessaging.instance.subscribeToTopic(ConstantKey.adminsTopics);
     super.onInit();
   }
 

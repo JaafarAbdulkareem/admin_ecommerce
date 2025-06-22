@@ -68,8 +68,8 @@ abstract class ConstantKey {
   // static const String deliveryOption = "deliveryOption";
   // static const String receiveOption = "receiveOption";
 
-  //topics
-  // static const String usersTopics = "users";
+//firebase message topics
+  static const String adminsTopics = "admins";
 //firebase firestore
   static const String collectionDelivery = "delivery";
 }

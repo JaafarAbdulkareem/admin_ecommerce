@@ -1,5 +1,4 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
-import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
@@ -23,7 +22,6 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
   late List<OrderModel> archiveData;
   late List<List<OrderModel>> data;
   // static bool  = true;
-  final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {

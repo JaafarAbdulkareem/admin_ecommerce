@@ -19,12 +19,12 @@ abstract class AppIcon {
   static const IconData barOnTheWay = Icons.local_shipping;
   static const IconData barDone = Icons.check_circle;
 
+  static const IconData notificationRing = Icons.notifications_active_outlined;
   // static const IconData edit = Icons.edit;
   // static const IconData phone = Icons.phone_android_rounded;
   // static const IconData success = Icons.check_circle_outline;
   // static const IconData search = Icons.search_outlined;
   // static const IconData notification = Icons.notifications;
-  // static const IconData notificationRing = Icons.notifications_active_outlined;
   // static const IconData home = Icons.home;
   // static const IconData setting = Icons.settings;
   // static const IconData cart = Icons.shopping_cart;

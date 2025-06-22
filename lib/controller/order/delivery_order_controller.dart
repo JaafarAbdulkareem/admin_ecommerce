@@ -1,5 +1,4 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
-import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
@@ -13,7 +12,6 @@ abstract class DeliveryOrderController extends BaseTypeOrderController {
   void prepareButton({required String id, required String userId});
   void onthWayButton({required String id, required String userId});
   void deliveryButton({required String id, required String userId});
-  // void onCall();
 }
 
 class DeliveryOrderControllerImp extends DeliveryOrderController {
@@ -27,8 +25,6 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   late List<OrderModel> doneOrderData;
   late List<List<OrderModel>> data;
   late DeliveryOrderRemote deliveryOrderRemote;
-
-  final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {

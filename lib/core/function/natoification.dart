@@ -1,11 +1,8 @@
-// import 'package:admin_ecommerce/controller/order/archive_order_controller.dart';
-// import 'package:admin_ecommerce/controller/order/order_controller.dart';
-import 'package:admin_ecommerce/core/constant/app_color.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/constant/app_icon.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 
 Future<void> requestNotificationPremission() async {
@@ -32,35 +29,38 @@ Future<void> requestNotificationPremission() async {
 // // class AuthorizationStatusException implements Exception {}
 // // class ProvisionalStatusException implements Exception {}
 
-// void notificationMessage() {
-//   FirebaseMessaging.onMessage.listen((message) async {
-//     await FlutterRingtonePlayer().playNotification();
-//     Get.snackbar(
-//       icon: Icon(AppIcon.notificationRing),
-//       message.notification?.title ?? "",
-//       message.notification?.body ?? "",
-//       backgroundColor: AppColor.snackbar,
-//     );
-//     if (ConstantScreenName.order == message.data["pagename"]) {
-//       print("page : ${Get.currentRoute}");
-//       OrderControllerImp orderController;
-//       ArchiveOrderControllerImp archiveController;
-//       if (ConstantScreenName.home == Get.currentRoute) {
-//         orderController = Get.find<OrderControllerImp>();
-//         archiveController = Get.put(ArchiveOrderControllerImp());
-//         orderController.refreshOrderStatus();
-//         archiveController.refreshArchiveOrderStatus();
-//       } else if (ConstantScreenName.archiveOrder == Get.currentRoute) {
-//         orderController = Get.put(OrderControllerImp());
-//         archiveController = Get.find<ArchiveOrderControllerImp>();
-//         orderController.refreshOrderStatus();
-//         archiveController.refreshArchiveOrderStatus();
-//       }
-//     }
-//   });
-// }
+void notificationMessage() {
+  AlertDefault alertDefault = AlertDefault();
+  FirebaseMessaging.onMessage.listen((message) async {
+    print("************************");
+    print("${message.data}");
+    print("************************");
+    await FlutterRingtonePlayer().playNotification();
+    alertDefault.snackBarDefault(
+      icon: AppIcon.notificationRing,
+      title: message.notification?.title ?? "",
+      body: message.notification?.body ?? "",
+    );
+    if (ConstantScreenName.deliveryOrder == message.data["pagename"]) {
+      print("**************** page : ${Get.currentRoute}");
+      // OrderControllerImp orderController;
+      // ArchiveOrderControllerImp archiveController;
+      // if (ConstantScreenName.home == Get.currentRoute) {
+      //   orderController = Get.find<OrderControllerImp>();
+      //   archiveController = Get.put(ArchiveOrderControllerImp());
+      //   orderController.refreshOrderStatus();
+      //   archiveController.refreshArchiveOrderStatus();
+      // } else if (ConstantScreenName.archiveOrder == Get.currentRoute) {
+      //   orderController = Get.put(OrderControllerImp());
+      //   archiveController = Get.find<ArchiveOrderControllerImp>();
+      //   orderController.refreshOrderStatus();
+      //   archiveController.refreshArchiveOrderStatus();
+      // }
+    }
+  });
+}
 
 void fCMNotification() async {
   await requestNotificationPremission();
-  // notificationMessage();
+  notificationMessage();
 }
