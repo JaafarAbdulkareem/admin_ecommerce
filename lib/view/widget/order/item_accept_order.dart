@@ -3,8 +3,9 @@ import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/commant_order.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
-import 'package:admin_ecommerce/core/share/custom_button_widget.dart';
+import 'package:admin_ecommerce/core/share/custom_loading_widget.dart';
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
+import 'package:admin_ecommerce/view/widget/order/order_twice_button.dart';
 import 'package:admin_ecommerce/view/widget/order/text_item_order.dart';
 import 'package:admin_ecommerce/view/widget/order/text_status_order.dart';
 import 'package:flutter/material.dart';
@@ -56,36 +57,65 @@ class ItemAcceptOrder extends GetView<DeliveryOrderControllerImp> {
               style: Theme.of(context).textTheme.labelLarge,
             ),
             const Divider(),
+            OrderTwiceButton(
+              detailButton: () {
+                controller.goToDetailOrder(
+                  id: data.id,
+                  userId: data.userId,
+                );
+              },
+              confirmButton: () {
+                controller.onthWayButton(
+                  id: data.id,
+                  userId: data.userId,
+                );
+              },
+              confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
+                id: ConstantKey.idAccepted + data.id,
+                builder: (_) {
+                  return SizedBox(
+                    height: 27,
+                    child: CustomLoadingWidget(
+                      statusRequest: controller.statusRequest,
+                      child: Text(
+                        KeyLanguage.buttonOnTheWay.tr,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
             Row(
               children: [
                 // if (data.phone != null) ...{
-                  Expanded(
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: AppColor.wrong,
-                      ),
-                      child: Text(
-                        KeyLanguage.buttonCall.tr,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      onPressed: () {
-                        controller.onCall(data.phone!);
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                // },
                 Expanded(
-                  child: CustomButtonWidget(
-                    text: KeyLanguage.buttonDetail.tr,
-                    onTap: () {
-                      controller.goToDetailOrder(
-                        id: data.id,
-                        userId: data.userId,
-                      );
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColor.wrong,
+                    ),
+                    child: Text(
+                      KeyLanguage.buttonCall.tr,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    onPressed: () {
+                      controller.onCall(data.phone!);
                     },
                   ),
                 ),
+                const SizedBox(width: 12),
+                // },
+                // Expanded(
+                //   child: CustomButtonWidget(
+                //     text: KeyLanguage.buttonDetail.tr,
+                //     onTap: () {
+                //       controller.goToDetailOrder(
+                //         id: data.id,
+                //         userId: data.userId,
+                //       );
+                //     },
+                //   ),
+                // ),
               ],
             ),
           ],

@@ -13,7 +13,7 @@ class BodyDeliveryOnTheWayView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
-      id: ConstantKey.idDeliveryButton,
+      id: ConstantKey.idOnTheWayButton,
       builder: (controller) {
         return controller.onWayOrderData.isEmpty
             ? Center(

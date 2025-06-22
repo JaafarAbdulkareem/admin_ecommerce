@@ -7,16 +7,16 @@ class DeliveryOrderRemote {
 
   DeliveryOrderRemote({required this.curd});
 
-  pendingOrder({
-    required String id,
-    required String userId,
-  }) async {
-    var response = await curd.postData(ApiConstant.apiPendingOrder, {
-      ApiKey.id: id,
-      ApiKey.userId: userId,
-    });
-    return response.fold((left) => left, (right) => right);
-  }
+  // pendingOrder({
+  //   required String id,
+  //   required String userId,
+  // }) async {
+  //   var response = await curd.postData(ApiConstant.apiPendingOrder, {
+  //     ApiKey.id: id,
+  //     ApiKey.userId: userId,
+  //   });
+  //   return response.fold((left) => left, (right) => right);
+  // }
 
   prepareOrder({
     required String id,
@@ -29,11 +29,22 @@ class DeliveryOrderRemote {
     return response.fold((left) => left, (right) => right);
   }
 
-  deliveryOrder({
+  onTheWayOrder({
     required String id,
     required String userId,
   }) async {
-    var response = await curd.postData(ApiConstant.apiDeliveryOrder, {
+    var response = await curd.postData(ApiConstant.apiOnTheWayOrder, {
+      ApiKey.id: id,
+      ApiKey.userId: userId,
+    });
+    return response.fold((left) => left, (right) => right);
+  }
+
+  doneOrder({
+    required String id,
+    required String userId,
+  }) async {
+    var response = await curd.postData(ApiConstant.apiDoneOrder, {
       ApiKey.id: id,
       ApiKey.userId: userId,
     });

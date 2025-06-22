@@ -148,7 +148,7 @@ Map<String, String> english = {
   KeyLanguage.buttonDetail: "Details",
   KeyLanguage.buttonPrepare: "Confirmed",
   KeyLanguage.buttonOnTheWay: "In Transit",
-  KeyLanguage.buttonDelivery: "Delivery",
+  KeyLanguage.buttonDone: "Done",
   KeyLanguage.buttonPickUp: "Picked Up",
   KeyLanguage.buttonCall: "Call Now",
   KeyLanguage.buttonOpenSetting: "Open Settings",

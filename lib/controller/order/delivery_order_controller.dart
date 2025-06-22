@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 abstract class DeliveryOrderController extends BaseTypeOrderController {
   void prepareButton({required String id, required String userId});
   void onthWayButton({required String id, required String userId});
-  void deliveryButton({required String id, required String userId});
+  void doneOrderButton({required String id, required String userId});
 }
 
 class DeliveryOrderControllerImp extends DeliveryOrderController {
@@ -20,8 +20,8 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   late List<OrderModel> orderData;
   late List<OrderModel> penddingOrderData;
   late List<OrderModel> prepareOrderData;
-  late List<OrderModel> onWayOrderData;
   late List<OrderModel> acceptOrderData;
+  late List<OrderModel> onWayOrderData;
   late List<OrderModel> doneOrderData;
   late List<List<OrderModel>> data;
   late DeliveryOrderRemote deliveryOrderRemote;
@@ -61,9 +61,6 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
         case ConstantScale.doneDeliveryOption:
           doneOrderData.add(order);
           break;
-        // default:
-        //   // Optional: handle unknown statuses
-        //   break;
       }
     }
 
@@ -94,7 +91,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }) async {
     statusRequest = StatusRequest.loading;
     update([ConstantKey.idPendingButton + id]);
-    var response = await deliveryOrderRemote.pendingOrder(
+    var response = await deliveryOrderRemote.prepareOrder(
       id: id,
       userId: userId,
     );
@@ -131,8 +128,8 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idPrepareButton + id]);
-    var response = await deliveryOrderRemote.prepareOrder(
+    update([ConstantKey.idAccepted + id]);
+    var response = await deliveryOrderRemote.onTheWayOrder(
       id: id,
       userId: userId,
     );
@@ -145,16 +142,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           filterDeliveryStatusOrder();
         }
         statusRequest = StatusRequest.success;
-        update([ConstantKey.idPrepareButton + id]);
+        update([ConstantKey.idAccepted + id]);
         if (prepareOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idPrepareButton]);
+          update([ConstantKey.idAccepted]);
         } else {
-          update([ConstantKey.idPrepareButton]);
+          update([ConstantKey.idAccepted]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idPrepareButton]);
+        update([ConstantKey.idAccepted]);
       }
     } else {
       alertDefualt.snackBarDefault();
@@ -172,13 +169,13 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   }
 
   @override
-  void deliveryButton({
+  void doneOrderButton({
     required String id,
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idDeliveryButton + id]);
-    var response = await deliveryOrderRemote.deliveryOrder(
+    update([ConstantKey.idOnTheWayButton + id]);
+    var response = await deliveryOrderRemote.doneOrder(
       id: id,
       userId: userId,
     );
@@ -191,16 +188,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           filterDeliveryStatusOrder();
         }
         statusRequest = StatusRequest.success;
-        update([ConstantKey.idDeliveryButton + id]);
+        update([ConstantKey.idOnTheWayButton + id]);
         if (onWayOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idDeliveryButton]);
+          update([ConstantKey.idOnTheWayButton]);
         } else {
-          update([ConstantKey.idDeliveryButton]);
+          update([ConstantKey.idOnTheWayButton]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idDeliveryButton]);
+        update([ConstantKey.idOnTheWayButton]);
       }
     } else {
       alertDefualt.snackBarDefault();

@@ -35,9 +35,10 @@ abstract class ApiConstant {
   static const String folderOrder = "$folderAdmin/order";
   static const String apiViewOrder = "$folderOrder/view_order.php";
   static const String apiViewDetailOrder = "$folderOrder/view_detail_order.php";
-  static const String apiPendingOrder = "$folderOrder/pending_order.php";
+  // static const String apiPendingOrder = "$folderOrder/pending_order.php";
   static const String apiPrepareOrder = "$folderOrder/prepare_order.php";
-  static const String apiDeliveryOrder = "$folderOrder/delivery_order.php";
+  static const String apiOnTheWayOrder = "$folderOrder/on_the_way_order.php";
+  static const String apiDoneOrder = "$folderOrder/done_order.php";
   static const String apiReceiveOrder = "$folderOrder/receive_order.php";
 
 //   static const String folderHome = "$folderUser/home";

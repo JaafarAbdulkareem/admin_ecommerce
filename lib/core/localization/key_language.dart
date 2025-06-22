@@ -142,7 +142,7 @@ abstract class KeyLanguage {
   static const String buttonDetail = "buttonDetail";
   static const String buttonPrepare = "buttonProper";
   static const String buttonOnTheWay = "buttonOnTheWay";
-  static const String buttonDelivery = "buttonDelivery";
+  static const String buttonDone = "buttonDone";
   static const String buttonPickUp = "buttonPickUp";
   static const String buttonCall = "buttonCall";
   static const String buttonOpenSetting = "buttonOpenSetting";

@@ -65,26 +65,48 @@ class ItemOnTheWayOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmButton: () {
-                controller.deliveryButton(
+                controller.doneOrderButton(
                   id: data.id,
                   userId: data.userId,
                 );
               },
               confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
-                id: ConstantKey.idDeliveryButton + data.id,
+                id: ConstantKey.idOnTheWayButton + data.id,
                 builder: (_) {
                   return SizedBox(
                     height: 27,
                     child: CustomLoadingWidget(
                       statusRequest: controller.statusRequest,
                       child: Text(
-                        KeyLanguage.buttonDelivery.tr,
+                        KeyLanguage.buttonDone.tr,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),
                   );
                 },
               ),
+            ),
+            Row(
+              children: [
+                // if (data.phone != null) ...{
+                Expanded(
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColor.wrong,
+                    ),
+                    child: Text(
+                      KeyLanguage.buttonCall.tr,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    onPressed: () {
+                      controller.onCall(data.phone!);
+                    },
+                  ),
+                ),
+                const SizedBox(width: 12),
+                // },
+               
+              ],
             ),
           ],
         ),
