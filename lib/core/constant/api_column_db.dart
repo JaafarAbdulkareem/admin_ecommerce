@@ -1,9 +1,9 @@
 class ApiColumnDb {
   static const String id = "id";
-  // static const String username = "username";
+  static const String username = "username";
   static const String email = "email";
   static const String password = "password";
-  // static const String phone = "phone";
+  static const String phone = "phone";
   // static const String verifyCode = "verify_code";
   // static const String approve = "approve";
   static const String timeCreate = "time_create";

@@ -58,21 +58,23 @@ class ItemAcceptOrder extends GetView<DeliveryOrderControllerImp> {
             const Divider(),
             Row(
               children: [
-                Expanded(
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: AppColor.wrong,
+                // if (data.phone != null) ...{
+                  Expanded(
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: AppColor.wrong,
+                      ),
+                      child: Text(
+                        KeyLanguage.buttonCall.tr,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      onPressed: () {
+                        controller.onCall(data.phone!);
+                      },
                     ),
-                    child: Text(
-                      KeyLanguage.buttonCall.tr,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    onPressed: () {
-                      controller.onCall();
-                    },
                   ),
-                ),
-                const SizedBox(width: 12),
+                  const SizedBox(width: 12),
+                // },
                 Expanded(
                   child: CustomButtonWidget(
                     text: KeyLanguage.buttonDetail.tr,

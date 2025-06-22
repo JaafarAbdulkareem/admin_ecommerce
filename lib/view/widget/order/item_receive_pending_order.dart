@@ -98,7 +98,7 @@ class ItemReceivePendingOrder extends GetView<ReceiveOrderControllerImp> {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     onPressed: () {
-                      // controller.onCall();
+                      controller.onCall(data.phone!);
                     },
                   ),
                 ),
