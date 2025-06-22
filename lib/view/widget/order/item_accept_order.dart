@@ -103,19 +103,6 @@ class ItemAcceptOrder extends GetView<DeliveryOrderControllerImp> {
                     },
                   ),
                 ),
-                const SizedBox(width: 12),
-                // },
-                // Expanded(
-                //   child: CustomButtonWidget(
-                //     text: KeyLanguage.buttonDetail.tr,
-                //     onTap: () {
-                //       controller.goToDetailOrder(
-                //         id: data.id,
-                //         userId: data.userId,
-                //       );
-                //     },
-                //   ),
-                // ),
               ],
             ),
           ],

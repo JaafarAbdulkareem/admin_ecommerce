@@ -22,17 +22,22 @@ class OrderControllerImp extends OrderController {
   static List<OrderModel> receiveData = [];
   static bool firstTime = true;
 
+  // bool calledGetData = true;
   final AlertDefault alertDefualt = AlertDefault();
 
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     orderRemote = OrderRemote(curd: Get.find());
-    getData();
+      getData();
+    //   print("calledGetData : $calledGetData");
+    // if (calledGetData) {
+    // }
     super.onInit();
   }
 
   Future<void> getData() async {
+    print("############## $firstTime ###############");
     if (firstTime) {
       orderData.clear();
       firstTime = false;
@@ -74,6 +79,8 @@ class OrderControllerImp extends OrderController {
   }
 
   void filterOrderData() {
+    deliveryData.clear();
+    receiveData.clear();
     for (OrderModel element in orderData) {
       if (element.typeDelivery == ConstantScale.deliveryOption) {
         deliveryData.add(element);
@@ -90,9 +97,9 @@ class OrderControllerImp extends OrderController {
   void goToDeliveryOrder() {
     Get.toNamed(
       ConstantScreenName.deliveryOrder,
-      arguments: {
-        ConstantKey.deliveryData: deliveryData,
-      },
+      // arguments: {
+      //   ConstantKey.deliveryData: deliveryData,
+      // },
     );
   }
 
@@ -104,5 +111,41 @@ class OrderControllerImp extends OrderController {
         ConstantKey.receiveData: receiveData,
       },
     );
+  }
+
+  void refreshAccepted({
+    required String id,
+    required String name,
+    required String email,
+    required String phone,
+  }) {
+    int index = deliveryData.indexWhere((e) => e.id == id);
+    print("${orderData.length} : ${deliveryData.length} : index : $index");
+    if (index != -1) {
+      deliveryData[index].name = name;
+      deliveryData[index].email = email;
+      deliveryData[index].phone = phone;
+      deliveryData[index].status = ConstantScale.acceptOption;
+    }
+    // update([ConstantKey.idPrepareButton]);
+  }
+
+  void refreshFirstAccepted({
+    required String id,
+    required String name,
+    required String email,
+    required String phone,
+  }) async {
+    orderData.clear();
+    firstTime = true;
+    await getData();
+    int index = deliveryData.indexWhere((e) => e.id == id);
+    print("${orderData.length} : ${deliveryData.length} : index2 : $index");
+    if (index != -1) {
+      deliveryData[index].name = name;
+      deliveryData[index].email = email;
+      deliveryData[index].phone = phone;
+      deliveryData[index].status = ConstantScale.acceptOption;
+    }
   }
 }

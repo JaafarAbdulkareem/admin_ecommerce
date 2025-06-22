@@ -13,9 +13,9 @@ class OrderModel {
   final String? couponsId;
 
   /// These may return null from the DB view when `typeDelivery = 0`
-  final String? name;
-  final String? email;
-  final String? phone;
+  String? name;
+  String? email;
+  String? phone;
 
   OrderModel({
     required this.id,

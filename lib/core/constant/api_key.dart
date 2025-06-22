@@ -19,6 +19,9 @@ abstract class ApiKey {
   static const String categoryId = "categoryId";
 //order
   static const String userId = "userId";
+  static const String deliveryName = "deliveryName";
+  static const String deliveryEmail = "deliveryEmail";
+  static const String deliveryPhone = "deliveryPhone";
   // static const String productId = "productId";
   // static const String count = "count";
   // static const String orderId = "orderId";

@@ -72,6 +72,10 @@ abstract class ConstantKey {
   static const String adminsTopics = "admins";
 //firebase firestore
   static const String collectionDelivery = "delivery";
+
+//pageid
+  static const String idAcceptedPage = "idAcceptedPage";
+  static const String idDonePage = "idDonePage";
 }
 
 abstract class ConstantLanguage {

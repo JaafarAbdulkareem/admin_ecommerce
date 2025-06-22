@@ -1,4 +1,5 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
+import 'package:admin_ecommerce/controller/order/order_controller.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
@@ -30,7 +31,8 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
   void onInit() {
     statusRequest = StatusRequest.initial;
     barIndex = ConstantScale.initiBarIndex;
-    orderData = Get.arguments[ConstantKey.deliveryData];
+    orderData = OrderControllerImp.deliveryData;
+    // orderData = Get.arguments[ConstantKey.deliveryData];
     filterDeliveryStatusOrder();
 
     deliveryOrderRemote = DeliveryOrderRemote(curd: Get.find());
@@ -160,14 +162,6 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     }
   }
 
-  refreshAccepted({
-    required String name,
-    required String phone,
-  }) // will delivery man make accept and give notification
-  {
-    update([ConstantKey.idAccepted]);
-  }
-
   @override
   void doneOrderButton({
     required String id,
@@ -205,125 +199,23 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     }
   }
 
-  // Future<void> requestPermissions() async {
-  //   await Permission.camera.request();
-  //   await Permission.phone.request();
-  // }
+  refreshAccepted({
+    required String id,
+    required String name,
+    required String email,
+    required String phone,
+  }) {
+    int index = orderData.indexWhere((e) => e.id == id);
+    print("index : $index");
+    if (index != -1) {
+      orderData[index].name = name;
+      orderData[index].email = email;
+      orderData[index].phone = phone;
+      orderData[index].status = ConstantScale.acceptOption;
+      filterDeliveryStatusOrder();
+    }
+    update([ConstantKey.idPrepareButton]);
+  }
 
-  // Future<void> onCall() async {
-  //   var status = await Permission.phone.status;
-
-  //   if (status.isGranted) {
-  //     final Uri phoneUri = Uri.parse("tel:+1-555-010-999");
-  //     final bool launched = await launchUrl(phoneUri);
-  //     print(launched ? "✅ Launch success" : "❌ Launch failed");
-  //   } else if (status.isDenied) {
-  //     Get.defaultDialog(
-  //       title: "Permission Permanently Denied",
-  //       titleStyle: Get.theme.textTheme.titleLarge?.copyWith(
-  //         color: AppColor.primary,
-  //         fontWeight: FontWeight.bold,
-  //       ),
-  //       middleText:
-  //           "Phone permission is permanently denied. Please enable it from app settings.",
-  //       middleTextStyle: Get.theme.textTheme.bodyMedium?.copyWith(
-  //         color: AppColorText.primary,
-  //       ),
-  //       backgroundColor: AppColor.card,
-  //       radius: 12,
-  //       textConfirm: "Open Settings",
-  //       confirmTextColor: Colors.white,
-  //       buttonColor: AppColor.primary,
-  //       textCancel: "Cancel",
-  //       cancelTextColor: AppColorText.textButton,
-  //       onConfirm: () {
-  //         openAppSettings();
-  //         Get.back();
-  //       },
-  //     );
-  //     // 🔁 Ask again with a dialog
-  //     Get.defaultDialog(
-  //       title: "Phone Permission Required",
-  //       middleText:
-  //           "This app needs phone access to make calls.\nWould you like to allow it?",
-  //       textConfirm: "Allow",
-  //       textCancel: "Cancel",
-  //       onConfirm: () async {
-  //         Get.back();
-  //         var newStatus = await Permission.phone.request();
-  //         if (newStatus.isGranted) {
-  //           onCall(); // retry after permission granted
-  //         } else {
-  //           print("❌ Still not granted after prompt.");
-  //         }
-  //       },
-  //     );
-  //   } else if (status.isPermanentlyDenied) {
-  //     // 🚫 Can't ask again — user must open settings
-  //     Get.defaultDialog(
-  //       title: "Permission Permanently Denied",
-  //       titleStyle: Get.theme.textTheme.titleLarge?.copyWith(
-  //         color: AppColor.primary,
-  //         fontWeight: FontWeight.bold,
-  //       ),
-  //       middleText:
-  //           "Phone permission is permanently denied. Please enable it from app settings.",
-  //       middleTextStyle: Get.theme.textTheme.bodyMedium?.copyWith(
-  //         color: AppColorText.textButton,
-  //       ),
-  //       backgroundColor: AppColor.card,
-  //       radius: 12,
-  //       textConfirm: "Open Settings",
-  //       confirmTextColor: Colors.white,
-  //       buttonColor: AppColor.primary,
-  //       textCancel: "Cancel",
-  //       cancelTextColor: AppColorText.textButton,
-  //       onConfirm: () {
-  //         openAppSettings();
-  //         Get.back();
-  //       },
-  //     );
-
-  //     // Get.defaultDialog(
-  //     //   title: "Permission Permanently Denied",
-  //     //   middleText:
-  //     //       "Phone permission is permanently denied. Please enable it from app settings.",
-  //     //   textConfirm: "Open Settings",
-  //     //   textCancel: "Cancel",
-  //     //   onConfirm: () {
-  //     //     openAppSettings();
-  //     //     Get.back();
-  //     //   },
-  //     // );
-  //   } else {
-  //     print("📛 Unknown phone permission state: $status");
-  //   }
-
-  //   //   // statusRequest = StatusRequest.loading;
-  //   //   // update();
-  //   //  var x = await launchUrl(Uri.parse("tel:+1-555-010-999")).then((_) {
-  //   //   print("success");
-  //   //     // statusRequest = StatusRequest.success;
-  //   //     // update([calledButton]);
-  //   //   }).catchError((error) {
-  //   //   print("failure");
-  //   //     // statusRequest = StatusRequest.failure;
-  //   //     // update();
-  //   //   });
-  //   //   print("x = $x");
-  // }
-
-  // void openAppSettingsDialog() {
-  //   Get.defaultDialog(
-  //     title: "Permission Required",
-  //     middleText:
-  //         "Phone permission is required to make a call.\nPlease enable it in settings.",
-  //     textConfirm: "Open Settings",
-  //     textCancel: "Cancel",
-  //     onConfirm: () {
-  //       openAppSettings();
-  //       Get.back();
-  //     },
-  //   );
-  // }
+  // refreshDone(){}
 }

@@ -25,8 +25,7 @@ class OrderTwiceButton extends StatelessWidget {
               backgroundColor: AppColor.price,
               foregroundColor: AppColorText.textButtonLight,
             ),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
+            child: Center(
               child: confirmWidget,
             ),
           ),
