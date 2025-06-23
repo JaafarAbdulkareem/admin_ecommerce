@@ -13,7 +13,7 @@ class BodyDeliveryAcceptView extends GetView<DeliveryOrderControllerImp> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
-      id: ConstantKey.idAccepted,
+      id: ConstantKey.idAcceptedBody,
       builder: (controller) {
         return controller.acceptOrderData.isEmpty
             ? Center(

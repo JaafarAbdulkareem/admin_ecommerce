@@ -45,10 +45,11 @@ abstract class ConstantKey {
   static const String idChooseImage = "idChooseImage";
   static const String idGalleryImage = "idGalleryImage";
   static const String idActiveSwitch = "idActiveSwitch";
-  static const String idPendingButton = "idPendingButton";
-  static const String idPrepareButton = "idPrepareButton";
-  static const String idAccepted = "idAccepted";
-  static const String idOnTheWayButton = "idOnTheWayButton";
+  static const String idPendingBody = "idPendingBody";
+  static const String idPrepareBody = "idPrepareBody";
+  static const String idAcceptedBody = "idAcceptedBody";
+  static const String idOnTheWayBody = "idOnTheWayBody";
+  static const String idOnDoneDeliveryBody = "idOnDoneDeliveryBody";
   static const String idPickUpButton = "idPickUpButton";
   static const String idGoogleMap = "idGoogleMap";
 // id marker in google map

@@ -13,7 +13,7 @@ class BodyDeliveryPrepareView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DeliveryOrderControllerImp>(
-      id: ConstantKey.idPrepareButton,
+      id: ConstantKey.idPrepareBody,
       builder: (controller) {
         return controller.prepareOrderData.isEmpty
             ? Center(

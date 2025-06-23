@@ -71,7 +71,7 @@ class ItemOnTheWayOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
-                id: ConstantKey.idOnTheWayButton + data.id,
+                id: ConstantKey.idOnTheWayBody + data.id,
                 builder: (_) {
                   return SizedBox(
                     height: 27,

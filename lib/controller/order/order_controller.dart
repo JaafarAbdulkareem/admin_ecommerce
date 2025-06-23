@@ -29,7 +29,7 @@ class OrderControllerImp extends OrderController {
   void onInit() {
     statusRequest = StatusRequest.initial;
     orderRemote = OrderRemote(curd: Get.find());
-      getData();
+    getData();
     //   print("calledGetData : $calledGetData");
     // if (calledGetData) {
     // }
@@ -97,9 +97,6 @@ class OrderControllerImp extends OrderController {
   void goToDeliveryOrder() {
     Get.toNamed(
       ConstantScreenName.deliveryOrder,
-      // arguments: {
-      //   ConstantKey.deliveryData: deliveryData,
-      // },
     );
   }
 
@@ -113,39 +110,27 @@ class OrderControllerImp extends OrderController {
     );
   }
 
-  void refreshAccepted({
+  void refreshOrderAccepted({
     required String id,
     required String name,
     required String email,
     required String phone,
   }) {
     int index = deliveryData.indexWhere((e) => e.id == id);
-    print("${orderData.length} : ${deliveryData.length} : index : $index");
     if (index != -1) {
       deliveryData[index].name = name;
       deliveryData[index].email = email;
       deliveryData[index].phone = phone;
       deliveryData[index].status = ConstantScale.acceptOption;
     }
-    // update([ConstantKey.idPrepareButton]);
   }
 
-  void refreshFirstAccepted({
+  void refreshOrderDone({
     required String id,
-    required String name,
-    required String email,
-    required String phone,
-  }) async {
-    orderData.clear();
-    firstTime = true;
-    await getData();
+  }) {
     int index = deliveryData.indexWhere((e) => e.id == id);
-    print("${orderData.length} : ${deliveryData.length} : index2 : $index");
     if (index != -1) {
-      deliveryData[index].name = name;
-      deliveryData[index].email = email;
-      deliveryData[index].phone = phone;
-      deliveryData[index].status = ConstantScale.acceptOption;
+      deliveryData[index].status = ConstantScale.doneDeliveryOption;
     }
   }
 }

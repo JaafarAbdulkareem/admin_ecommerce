@@ -35,32 +35,19 @@ Future<void> requestNotificationPremission() async {
 
 void notificationMessage() {
   AlertDefault alertDefault = AlertDefault();
-  // late DeliveryOrderControllerImp deliveryOrderController;
-  print("***********************notificaiton");
   FirebaseMessaging.onMessage.listen((message) async {
     if (message.data.isNotEmpty) {
-      print("***********************notificaiton Listen");
       String? pageId = message.data['pageid'];
-      // String? pageName = message.data['pagename'];
       if (pageId == ConstantKey.idAcceptedPage) {
         String orderId = message.data[ApiKey.id];
         String deliveryName = message.data[ApiKey.deliveryName];
         String deliveryEmail = message.data[ApiKey.deliveryEmail];
         String deliveryPhone = message.data[ApiKey.deliveryPhone];
 
-        // print("📦 Page ID: $pageId");
-        // print("📦 Page Name: ${Get.currentRoute}");
-        // print("🚚 Delivery ID: $orderId");
-        // print("👤 Name: $deliveryName");
-        // print("📧 Email: $deliveryEmail");
-        // print("📞 Phone: $deliveryPhone");
-        // print(
-        //     ": ${Get.isRegistered<OrderControllerImp>()} : is in accept : ${Get.currentRoute == ConstantScreenName.deliveryOrder}");
-
         if (Get.currentRoute == ConstantScreenName.deliveryOrder) {
           DeliveryOrderControllerImp deliveryOrderController =
               Get.find<DeliveryOrderControllerImp>();
-          deliveryOrderController.refreshAccepted(
+          deliveryOrderController.refreshDeliveryOrderAccepted(
             id: orderId,
             name: deliveryName,
             email: deliveryEmail,
@@ -68,36 +55,36 @@ void notificationMessage() {
           );
         } else if (Get.isRegistered<OrderControllerImp>()) {
           OrderControllerImp orderController = Get.find<OrderControllerImp>();
-          orderController.refreshAccepted(
+          orderController.refreshOrderAccepted(
             id: orderId,
             name: deliveryName,
             email: deliveryEmail,
             phone: deliveryPhone,
           );
         } else {
-          OrderControllerImp.firstTime = false;
-          OrderControllerImp orderController = Get.put(OrderControllerImp());
-          orderController.refreshFirstAccepted(
-            id: orderId,
-            name: deliveryName,
-            email: deliveryEmail,
-            phone: deliveryPhone,
-          );
+          OrderControllerImp.firstTime = true;
         }
       } else if (pageId == ConstantKey.idDonePage) {
-        // OrderControllerImp.firstTime = false;
-        // OrderControllerImp orderController = Get.put(OrderControllerImp());
-        // OrderControllerImp.firstTime = true;
-        // orderController.getData();
-      }
-    }
+        String orderId = message.data[ApiKey.id];
 
-    await FlutterRingtonePlayer().playNotification();
-    alertDefault.snackBarDefault(
-      icon: AppIcon.notificationRing,
-      title: message.notification?.title ?? "",
-      body: message.notification?.body ?? "",
-    );
+        if (Get.currentRoute == ConstantScreenName.deliveryOrder) {
+          DeliveryOrderControllerImp deliveryOrderController =
+              Get.find<DeliveryOrderControllerImp>();
+          deliveryOrderController.refreshDeliveryOrderDone(id: orderId);
+        } else if (Get.isRegistered<OrderControllerImp>()) {
+          OrderControllerImp orderController = Get.find<OrderControllerImp>();
+          orderController.refreshOrderDone(id: orderId);
+        } else {
+          OrderControllerImp.firstTime = true;
+        }
+      }
+      await FlutterRingtonePlayer().playNotification();
+      alertDefault.snackBarDefault(
+        icon: AppIcon.notificationRing,
+        title: message.notification?.title ?? "",
+        body: message.notification?.body ?? "",
+      );
+    }
   });
 }
 

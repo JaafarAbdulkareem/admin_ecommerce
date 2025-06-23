@@ -73,6 +73,11 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       onWayOrderData,
       doneOrderData,
     ];
+    print("🔵 Pending Orders Count: ${penddingOrderData.length}");
+    print("🟡 Prepare Orders Count: ${prepareOrderData.length}");
+    print("🟠 Accepted Orders Count: ${acceptOrderData.length}");
+    print("🛵 On the Way Orders Count: ${onWayOrderData.length}");
+    print("✅ Done Orders Count: ${doneOrderData.length}");
   }
 
   @override
@@ -92,7 +97,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idPendingButton + id]);
+    update([ConstantKey.idPendingBody + id]);
     var response = await deliveryOrderRemote.prepareOrder(
       id: id,
       userId: userId,
@@ -106,16 +111,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           filterDeliveryStatusOrder();
         }
         statusRequest = StatusRequest.success;
-        update([ConstantKey.idPendingButton + id]);
+        update([ConstantKey.idPendingBody + id]);
         if (penddingOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idPendingButton]);
+          update([ConstantKey.idPendingBody]);
         } else {
-          update([ConstantKey.idPendingButton]);
+          update([ConstantKey.idPendingBody]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idPendingButton]);
+        update([ConstantKey.idPendingBody]);
       }
     } else {
       alertDefualt.snackBarDefault();
@@ -130,7 +135,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idAccepted + id]);
+    update([ConstantKey.idAcceptedBody + id]);
     var response = await deliveryOrderRemote.onTheWayOrder(
       id: id,
       userId: userId,
@@ -144,16 +149,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           filterDeliveryStatusOrder();
         }
         statusRequest = StatusRequest.success;
-        update([ConstantKey.idAccepted + id]);
+        update([ConstantKey.idAcceptedBody + id]);
         if (prepareOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idAccepted]);
+          update([ConstantKey.idAcceptedBody]);
         } else {
-          update([ConstantKey.idAccepted]);
+          update([ConstantKey.idAcceptedBody]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idAccepted]);
+        update([ConstantKey.idAcceptedBody]);
       }
     } else {
       alertDefualt.snackBarDefault();
@@ -168,7 +173,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     required String userId,
   }) async {
     statusRequest = StatusRequest.loading;
-    update([ConstantKey.idOnTheWayButton + id]);
+    update([ConstantKey.idOnTheWayBody + id]);
     var response = await deliveryOrderRemote.doneOrder(
       id: id,
       userId: userId,
@@ -182,16 +187,16 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
           filterDeliveryStatusOrder();
         }
         statusRequest = StatusRequest.success;
-        update([ConstantKey.idOnTheWayButton + id]);
+        update([ConstantKey.idOnTheWayBody + id]);
         if (onWayOrderData.isEmpty) {
           statusRequest = StatusRequest.failure;
-          update([ConstantKey.idOnTheWayButton]);
+          update([ConstantKey.idOnTheWayBody]);
         } else {
-          update([ConstantKey.idOnTheWayButton]);
+          update([ConstantKey.idOnTheWayBody]);
         }
       } else {
         statusRequest = StatusRequest.failure;
-        update([ConstantKey.idOnTheWayButton]);
+        update([ConstantKey.idOnTheWayBody]);
       }
     } else {
       alertDefualt.snackBarDefault();
@@ -199,14 +204,13 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     }
   }
 
-  refreshAccepted({
+  refreshDeliveryOrderAccepted({
     required String id,
     required String name,
     required String email,
     required String phone,
   }) {
     int index = orderData.indexWhere((e) => e.id == id);
-    print("index : $index");
     if (index != -1) {
       orderData[index].name = name;
       orderData[index].email = email;
@@ -214,8 +218,19 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       orderData[index].status = ConstantScale.acceptOption;
       filterDeliveryStatusOrder();
     }
-    update([ConstantKey.idPrepareButton]);
+    update([ConstantKey.idPrepareBody]);
+    update([ConstantKey.idAcceptedBody]);
   }
 
-  // refreshDone(){}
+  refreshDeliveryOrderDone({
+    required String id,
+  }) {
+    int index = orderData.indexWhere((e) => e.id == id);
+    if (index != -1) {
+      orderData[index].status = ConstantScale.doneDeliveryOption;
+      filterDeliveryStatusOrder();
+    }
+    update([ConstantKey.idOnTheWayBody]);
+    update([ConstantKey.idOnDoneDeliveryBody]);
+  }
 }

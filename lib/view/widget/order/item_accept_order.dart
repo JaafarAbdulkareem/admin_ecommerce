@@ -71,7 +71,7 @@ class ItemAcceptOrder extends GetView<DeliveryOrderControllerImp> {
                 );
               },
               confirmWidget: GetBuilder<DeliveryOrderControllerImp>(
-                id: ConstantKey.idAccepted + data.id,
+                id: ConstantKey.idAcceptedBody + data.id,
                 builder: (_) {
                   return SizedBox(
                     height: 27,
