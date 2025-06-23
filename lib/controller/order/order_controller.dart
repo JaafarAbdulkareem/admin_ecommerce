@@ -1,7 +1,6 @@
 import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
-import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
@@ -22,7 +21,6 @@ class OrderControllerImp extends OrderController {
   static List<OrderModel> receiveData = [];
   static bool firstTime = true;
 
-  // bool calledGetData = true;
   final AlertDefault alertDefualt = AlertDefault();
 
   @override
@@ -30,14 +28,10 @@ class OrderControllerImp extends OrderController {
     statusRequest = StatusRequest.initial;
     orderRemote = OrderRemote(curd: Get.find());
     getData();
-    //   print("calledGetData : $calledGetData");
-    // if (calledGetData) {
-    // }
     super.onInit();
   }
 
   Future<void> getData() async {
-    print("############## $firstTime ###############");
     if (firstTime) {
       orderData.clear();
       firstTime = false;
@@ -104,9 +98,6 @@ class OrderControllerImp extends OrderController {
   void goToReceiveOrder() {
     Get.toNamed(
       ConstantScreenName.receiveOrder,
-      arguments: {
-        ConstantKey.receiveData: receiveData,
-      },
     );
   }
 

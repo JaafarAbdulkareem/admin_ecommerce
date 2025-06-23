@@ -56,6 +56,10 @@ abstract class KeyLanguage {
   static const String titleDelivery = "titleDelivery";
   static const String titleReceive = "titleReceive";
   static const String orderNumber = "orderNumber";
+  static const String nameUser = "nameUser";
+  static const String nameDelivery = "nameDelivery";
+  static const String emailUser = "emailUser";
+  static const String emailDelivery = "emailDelivery";
   static const String orderType = "orderType";
   static const String orderPrice = "orderPrice";
   static const String deliveyPrice = "deliveyPrice";

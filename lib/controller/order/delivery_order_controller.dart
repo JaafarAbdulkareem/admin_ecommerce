@@ -73,11 +73,6 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       onWayOrderData,
       doneOrderData,
     ];
-    print("🔵 Pending Orders Count: ${penddingOrderData.length}");
-    print("🟡 Prepare Orders Count: ${prepareOrderData.length}");
-    print("🟠 Accepted Orders Count: ${acceptOrderData.length}");
-    print("🛵 On the Way Orders Count: ${onWayOrderData.length}");
-    print("✅ Done Orders Count: ${doneOrderData.length}");
   }
 
   @override

@@ -35,6 +35,12 @@ class ItemReceiveDoneOrder extends GetView<ReceiveOrderControllerImp> {
             ),
             const SizedBox(height: 6),
             TextItemOrder(
+              text: "${KeyLanguage.nameUser.tr}${data.name}",
+            ),
+            TextItemOrder(
+              text: "${KeyLanguage.emailUser.tr}${data.email}",
+            ),
+            TextItemOrder(
               text:
                   "${KeyLanguage.orderType.tr}${commantDeliveryChoose(data.typeDelivery)}",
             ),

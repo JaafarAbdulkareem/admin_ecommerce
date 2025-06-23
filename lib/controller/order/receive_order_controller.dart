@@ -1,4 +1,5 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
+import 'package:admin_ecommerce/controller/order/order_controller.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
@@ -21,7 +22,6 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
   late List<OrderModel> receiveData;
   late List<OrderModel> archiveData;
   late List<List<OrderModel>> data;
-  // static bool  = true;
 
   @override
   void onInit() {
@@ -29,7 +29,7 @@ class ReceiveOrderControllerImp extends ReceiveOrderController {
     receiveOrder = ReceiveOrderRemote(curd: Get.find());
     barIndex = ConstantScale.initiBarIndex;
 
-    orderData = Get.arguments[ConstantKey.receiveData];
+    orderData = OrderControllerImp.orderData;
     receiveData = [];
     archiveData = [];
     filterDeliveryStatusOrder();
