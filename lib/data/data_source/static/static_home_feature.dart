@@ -44,7 +44,7 @@ List<HomeModel> dataHomeFeature = [
     image: AppImages.imagesReport,
     title: KeyLanguage.titleReport,
     onPressed: () {
-      // Navigator function for Report
+      Get.toNamed(ConstantScreenName.report);
     },
   ),
   // HomeModel(
@@ -54,7 +54,7 @@ List<HomeModel> dataHomeFeature = [
   //     // Navigator function for Notification
   //   },
   // ),
-  
+
   // HomeModel(
   //   image: AppImages.imagesDelivery,
   //   title: KeyLanguage.titleDelivery,
