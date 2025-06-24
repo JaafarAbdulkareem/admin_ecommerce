@@ -58,7 +58,7 @@ class ApiColumnDb {
   // static const String star = "star";
   // static const String comment = "comment";
 
-  //notification
-  // static const String title = "title";
-  // static const String body = "body";
+//notification
+  static const String title = "title";
+  static const String body = "body";
 }
