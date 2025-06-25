@@ -52,6 +52,7 @@ abstract class ConstantKey {
   static const String idOnDoneDeliveryBody = "idOnDoneDeliveryBody";
   static const String idPickUpButton = "idPickUpButton";
   static const String idGoogleMap = "idGoogleMap";
+  static const String idDownloadPdf = "idDownloadPdf";
 // id marker in google map
   static const String idStoreLocation = "idStoreLocation";
   static const String idUserLocation = "iduserLocation";

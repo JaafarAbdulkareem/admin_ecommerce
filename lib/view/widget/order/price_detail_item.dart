@@ -21,7 +21,10 @@ class PriceDetailItem extends StatelessWidget {
         discount == null || discount == 0
             ? Text(
                 improvePrice(amount: price),
-                style: style ?? Theme.of(context).textTheme.bodyMedium,
+                style: style ??
+                    Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppColor.price,
+                        ),
               )
             : Row(
                 children: [
@@ -36,7 +39,10 @@ class PriceDetailItem extends StatelessWidget {
                   const SizedBox(width: 6),
                   Text(
                     improvePrice(amount: discountPrice!),
-                    style: style ?? Theme.of(context).textTheme.bodyMedium,
+                    style: style ??
+                        Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppColor.price,
+                            ),
                   ),
                 ],
               ),

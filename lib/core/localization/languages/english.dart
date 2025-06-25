@@ -79,6 +79,15 @@ Map<String, String> english = {
 //  KeyLanguage.productTitle: "Products",
   KeyLanguage.titlQeuantity: "QTY",
   KeyLanguage.titlePrice: "Price",
+//report
+  KeyLanguage.titleUserUsing: "Users Using App",
+  KeyLanguage.titleDeliveries: "Deliveries",
+  KeyLanguage.titleActiveProduct: "Total Products",
+  KeyLanguage.titleInactiveProduct: "Inactive Products",
+  // KeyLanguage.titleorders: "Orders",
+  KeyLanguage.titleLineOrder: "Monthly Metrics",
+  KeyLanguage.titleBarCity: "Orders by City",
+  KeyLanguage.titlePieCategory: "Category Distribution",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -99,6 +108,18 @@ Map<String, String> english = {
       "Category Type Is Required. Please Choose A Category.",
   KeyLanguage.alertAddressLoading:
       "Oops! Couldn't Load Your Address. Try Again?",
+  KeyLanguage.alertTitlePermission: "Storage Permission",
+  KeyLanguage.alertMessagePermission:
+      "App needs permission to save the PDF to your Downloads folder.",
+  KeyLanguage.alertErrorPermission: "Cannot create Downloads folder: ",
+  KeyLanguage.alertTitleDeniedPermission: "Permission Denied",
+  KeyLanguage.alertMessageDeniedPermission:
+      "Storage permission is required to save the PDF.",
+  KeyLanguage.alertMessageCapture: "Failed to capture report pages.",
+  KeyLanguage.alertTitleSuccess: "Success",
+  KeyLanguage.alertMessageSuccessPdf: "PDF saved to Downloads folder.",
+  KeyLanguage.alertFailedSave: "Save Failed",
+  KeyLanguage.alertMessageFailedDownload: "Error saving PDF: ",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:
@@ -156,6 +177,7 @@ Map<String, String> english = {
   KeyLanguage.buttonPickUp: "Picked Up",
   KeyLanguage.buttonCall: "Call Now",
   KeyLanguage.buttonOpenSetting: "Open Settings",
+  KeyLanguage.buttonDownloadPdf: "Download PDF",
   // KeyLanguage.buttonTrack: "Track",
 
   //bar

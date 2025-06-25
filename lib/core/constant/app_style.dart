@@ -4,11 +4,11 @@
 
 // abstract class AppStyle {
 //   static TextStyle styleSemiBold10(BuildContext context) {
-//     return const TextStyle(
-//       fontSize: 10,
-//       color: AppColorText.textButton,
-//       fontWeight: FontWeight.w600,
-//     );
+    // return const TextStyle(
+    //   fontSize: 10,
+    //   color: AppColorText.textButton,
+    //   fontWeight: FontWeight.w600,
+    // );
 //   }
 
 //   static TextStyle styleBold10(BuildContext context) {

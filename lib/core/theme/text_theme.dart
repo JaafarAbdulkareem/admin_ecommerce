@@ -33,7 +33,7 @@ TextTheme textTheme({bool isDark = false}) {
     ),
     bodyMedium: const TextStyle(
       fontSize: 14,
-      color: AppColor.price,
+      // color: AppColor.price,
       fontWeight: FontWeight.w400,
       fontFamily: ConstantTextFons.sans,
     ),
@@ -46,6 +46,11 @@ TextTheme textTheme({bool isDark = false}) {
       fontSize: 12,
       color: AppColorText.secondary,
       fontWeight: FontWeight.bold,
+    ),
+    labelSmall: TextStyle(
+      fontSize: 10,
+      color: isDark ? AppColorText.primaryDark : AppColorText.primaryLight,
+      fontWeight: FontWeight.w600,
     ),
   );
 }

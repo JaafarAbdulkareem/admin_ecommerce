@@ -36,6 +36,11 @@ abstract class ConstantScale {
   static const int pendingPickUpOption = 0;
   static const double latitudeStore = 13.05702191320258;
   static const double longitudeStore = 77.62897824322815;
+//report
+  static const double chartHeight = 400;
+  static const double lineWidth = 3;
+  static const double barWidth = 18;
+  static const double pieRadius = 60;
 
   // static const int archiveOrderOption = 3;
 

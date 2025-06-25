@@ -48,4 +48,6 @@ abstract class AppIcon {
   // static const IconData street = Icons.route;
   // static const IconData detailAddress = Icons.near_me;
   static const IconData error = Icons.error;
+  static const IconData warning = Icons.warning_amber_rounded;
+  static const IconData success = Icons.check_circle;
 }

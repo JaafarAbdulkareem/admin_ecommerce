@@ -77,7 +77,15 @@ abstract class KeyLanguage {
   // static const String titleProduct = "productTitle";
   static const String titlQeuantity = "titlQeuantity";
   static const String titlePrice = "titlePrice";
-
+//report
+  static const String titleUserUsing = "titleUserUsing";
+  static const String titleDeliveries = "titleDeliveries";
+  static const String titleActiveProduct = "titleActiveProduct";
+  static const String titleInactiveProduct = "titleInactiveProduct";
+  // static const String titleOrder = "titlOrder";
+  static const String titleLineOrder = "titleLineOrder";
+  static const String titleBarCity = "titleBarCity";
+  static const String titlePieCategory = "titlePieCategory";
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
@@ -93,6 +101,17 @@ abstract class KeyLanguage {
   static const String alertInsertImage = "alertInsertImage";
   static const String alertInsertCategory = "alertInsertCategory";
   static const String alertAddressLoading = "alertAddressLoading";
+  static const String alertTitlePermission = "alertTitlePermission";
+  static const String alertMessagePermission = "alertMessagePermission";
+  static const String alertErrorPermission = "alertErrorPermission";
+  static const String alertTitleDeniedPermission = "alertTitleDeniedPermission";
+  static const String alertMessageDeniedPermission =
+      "alertMessageDeniedPermission";
+  static const String alertMessageCapture = "alertMessageCapture";
+  static const String alertTitleSuccess = "alertTitleSuccess";
+  static const String alertMessageSuccessPdf = "alertMessageSuccessPdf";
+  static const String alertFailedSave = "alertFailedSave";
+  static const String alertMessageFailedDownload = "alertMessageFailedDownload";
 
   // static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";
@@ -150,6 +169,7 @@ abstract class KeyLanguage {
   static const String buttonPickUp = "buttonPickUp";
   static const String buttonCall = "buttonCall";
   static const String buttonOpenSetting = "buttonOpenSetting";
+  static const String buttonDownloadPdf = "buttonDownload";
   // static const String buttonTrack = "buttonTrack";
 //bar
   static const String barPending = "barPending";

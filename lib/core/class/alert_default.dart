@@ -23,7 +23,7 @@ class AlertDefault {
   }
 
   /// Phone permission dialog with theme support
-  Future<void> dialogPhoneDefalut({
+  Future<void> dialogPhoneDefault({
     required String title,
     required String body,
     required VoidCallback onConfirm,

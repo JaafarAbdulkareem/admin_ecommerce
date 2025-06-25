@@ -45,7 +45,7 @@ abstract class BaseTypeOrderController extends GetxController {
   }
 
   void _showRequestPermissionDialog(phone) {
-    alertDefualt.dialogPhoneDefalut(
+    alertDefualt.dialogPhoneDefault(
       title: "Phone Permission Required",
       body:
           "This app needs phone access to make calls.\nWould you like to allow it?",
@@ -62,7 +62,7 @@ abstract class BaseTypeOrderController extends GetxController {
   }
 
   void _showGoToSettingsDialog() {
-    alertDefualt.dialogPhoneDefalut(
+    alertDefualt.dialogPhoneDefault(
       title: "Permission Permanently Denied",
       body:
           "Phone permission is permanently denied. Please enable it from app settings.",
