@@ -83,7 +83,7 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
           }
         } else {
           Get.back();
-          alertDefualt.snackBarDefault(body: KeyLanguage.alertSomeError.tr);
+          alertDefualt.snackBarDefault();
         }
       }
     }

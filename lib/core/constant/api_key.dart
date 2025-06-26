@@ -46,9 +46,9 @@ abstract class ApiKey {
   // static const String couponsId = "couponsId";
   // static const String addressId = "addressId";
   // static const String listSubmitData = "listSubmitData";
-  // //notifiaction
-  // static const String title = "title";
-  // static const String body = "body";
+  //message
+  static const String title = "title";
+  static const String body = "body";
   // //rating
   // static const String star = "star";
   // static const String comment = "comment";
@@ -64,7 +64,7 @@ abstract class ApiResult {
   static const String category = "category";
   static const String product = "product";
   static const String verifyCode = "verifyCode";
-  
+
   // static const String noData = "noData";
   // static const String noChange = "noChange";
   // static const String noDecrement = "noDecrement";

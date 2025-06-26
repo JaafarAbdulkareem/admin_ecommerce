@@ -120,6 +120,8 @@ abstract class KeyLanguage {
   static const String alertMessageSuccessPdf = "alertMessageSuccessPdf";
   static const String alertFailedSave = "alertFailedSave";
   static const String alertMessageFailedDownload = "alertMessageFailedDownload";
+  static const String alertMessageSuccessMessage = "alertMessageSuccessMessage";
+  static const String alertMessageFailedMessage = "alertMessageFailedMessage";
 
   // static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";

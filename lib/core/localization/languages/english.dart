@@ -131,6 +131,8 @@ Map<String, String> english = {
   KeyLanguage.alertMessageSuccessPdf: "PDF saved to Downloads folder.",
   KeyLanguage.alertFailedSave: "Save Failed",
   KeyLanguage.alertMessageFailedDownload: "Error saving PDF: ",
+  KeyLanguage.alertMessageSuccessMessage: "Your Message Was Sent! The Recipient Will Be Notified Soon. 😊",
+  KeyLanguage.alertMessageFailedMessage: "Oops! Something Went Wrong. The Message Couldn't Be Sent. Please Try Again. 😕",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:

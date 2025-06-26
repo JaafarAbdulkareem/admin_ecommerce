@@ -42,10 +42,11 @@ abstract class ApiConstant {
   static const String apiReceiveOrder = "$folderOrder/receive_order.php";
 
   static const String folderMessage = "$folderAdmin/message";
-  static const String apiInsertDeliveryNotification =
-      "$folderMessage/delivery_insert_notification.php";
-  static const String apiInsertUsersNotification =
+  static const String apiUsersMessageSend =
       "$folderMessage/users_insert_notification.php";
+  static const String apiDeliveryMessageSend =
+      "$folderMessage/delivery_insert_notification.php";
+  
 
   static const String folderNotification = "$folderAdmin/notification";
   static const String apiViewUsersNotification =

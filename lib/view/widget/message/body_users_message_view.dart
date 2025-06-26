@@ -13,42 +13,47 @@ class BodyUsersMessageView extends GetView<UsersMessageControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: ConstantScale.horizonPage,
-          vertical: ConstantScale.verticalPage,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TitleDescriptionWidget(
-              title: KeyLanguage.titleWelcome.tr,
-              subTitle: KeyLanguage.messageUserMessage.tr,
-            ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.hintTitleMessage.tr,
-              label: KeyLanguage.labelTitleMessage.tr,
-              controller: controller.title,
-              keyboardType: TextInputType.text,
-              validator: (value) => validatorGeneral(value),
-            ),
-            const SizedBox(height: 16),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.hintBodyMessage.tr,
-              label: KeyLanguage.labelBodyMessage.tr,
-              controller: controller.body,
-              maxLines: null,
-              keyboardType: TextInputType.text,
-              validator: (value) => validatorGeneral(value),
-            ),
-            const SizedBox(height: 16),
-            CustomButtonWidget(
-              text: KeyLanguage.buttonSend.tr,
-              onTap: () {},
-            ),
-          ],
+    return Form(
+      key:controller.keyMessage,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: ConstantScale.horizonPage,
+            vertical: ConstantScale.verticalPage,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TitleDescriptionWidget(
+                title: KeyLanguage.titleWelcome.tr,
+                subTitle: KeyLanguage.messageUserMessage.tr,
+              ),
+              CustomTextFormFieldWidget(
+                hint: KeyLanguage.hintTitleMessage.tr,
+                label: KeyLanguage.labelTitleMessage.tr,
+                controller: controller.title,
+                keyboardType: TextInputType.text,
+                validator: (value) => validatorGeneral(value),
+              ),
+              const SizedBox(height: 16),
+              CustomTextFormFieldWidget(
+                hint: KeyLanguage.hintBodyMessage.tr,
+                label: KeyLanguage.labelBodyMessage.tr,
+                controller: controller.body,
+                maxLines: null,
+                keyboardType: TextInputType.text,
+                validator: (value) => validatorGeneral(value),
+              ),
+              const SizedBox(height: 16),
+              CustomButtonWidget(
+                text: KeyLanguage.buttonSend.tr,
+                onTap: () {
+                  controller.sendMessage();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
