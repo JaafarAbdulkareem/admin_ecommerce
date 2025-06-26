@@ -4,19 +4,24 @@ import 'package:get/get.dart';
 
 abstract class MessageController extends GetxController {
   void goToUsersMessage();
+  void goToDeliveryMessage();
 }
 
 class MessageControllerImp extends MessageController {
   late StatusRequest statusRequest;
   @override
   void onInit() {
-    //****initial status */
     statusRequest = StatusRequest.success;
     super.onInit();
   }
-  
+
   @override
   void goToUsersMessage() {
     Get.toNamed(ConstantScreenName.usersMessage);
+  }
+
+  @override
+  void goToDeliveryMessage() {
+    Get.toNamed(ConstantScreenName.deliveryMessage);
   }
 }

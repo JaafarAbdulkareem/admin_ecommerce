@@ -24,7 +24,7 @@ class BodyMessageView extends GetView<MessageControllerImp> {
         image: AppImages.imagesDeliveryMan,
         title: KeyLanguage.titleDelivery,
         onPressed: () {
-          // controller.goToDeliveryOrder();
+          controller.goToDeliveryMessage();
         },
       ),
     ];

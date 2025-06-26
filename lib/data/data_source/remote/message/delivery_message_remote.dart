@@ -14,7 +14,7 @@ class DeliveryMessageRemote {
     var response = await curd.postData(ApiConstant.apiDeliveryMessageSend, {
       ApiKey.title: data.title,
       ApiKey.body: data.body,
-      ApiKey.userId: userId,
+      ApiKey.userId: userId ?? "",
     });
     return response.fold((left) => left, (right) => right);
   }
