@@ -17,6 +17,9 @@ Map<String, String> english = {
   KeyLanguage.appBarDeliveryOrder: "Delivery Order",
   KeyLanguage.appBarReceiveOrder: "Receive Order",
   KeyLanguage.appBarDetailOrder: "Detail Order",
+  KeyLanguage.appBarMessage: "Messages",
+  KeyLanguage.appBarUsersMessage: "Users Messages",
+  KeyLanguage.appBarDeliveryMessage: "Delivery Messages",
   KeyLanguage.appBarNotification: "Notificaiton",
   KeyLanguage.appBarReport: "Report",
 //validator
@@ -80,6 +83,11 @@ Map<String, String> english = {
 //  KeyLanguage.productTitle: "Products",
   KeyLanguage.titlQeuantity: "QTY",
   KeyLanguage.titlePrice: "Price",
+//message
+  KeyLanguage.messageUserMessage:
+      "Just Click The Send Button And Your Message Will Be On Its Way! The User Will Get It As A Notification.",
+  KeyLanguage.messageDeliveryMessage:
+      "Click The Send Button To Notify The Delivery Men. They Will Receive The Message As A Notification",
 //report
   KeyLanguage.titleDashboard: "Dashboard",
   KeyLanguage.titleUserUsing: "Users Using App",
@@ -146,6 +154,9 @@ Map<String, String> english = {
   KeyLanguage.labelCount: "Count",
   KeyLanguage.labelPrice: "Price",
   KeyLanguage.labelDiscount: "Discount (%)",
+  KeyLanguage.labelTitleMessage: "Title",
+  KeyLanguage.labelBodyMessage: "Message",
+
 //hint
   KeyLanguage.hintEmail: "Enter Your Email",
   KeyLanguage.hintPassword: "Enter Your Password",
@@ -163,6 +174,8 @@ Map<String, String> english = {
   KeyLanguage.hintDiscount: "Discount",
   KeyLanguage.hintProductDrop: "Choose Category Name",
   KeyLanguage.hintSearch: "Search",
+  KeyLanguage.hintTitleMessage: "Title of your message",
+  KeyLanguage.hintBodyMessage: "Type your message or description...",
 
 //button
   KeyLanguage.buttonLogin: "Login",
@@ -181,6 +194,7 @@ Map<String, String> english = {
   KeyLanguage.buttonCall: "Call Now",
   KeyLanguage.buttonOpenSetting: "Open Settings",
   KeyLanguage.buttonDownloadPdf: "Download PDF",
+  KeyLanguage.buttonSend: "Send",
   // KeyLanguage.buttonTrack: "Track",
 
   //bar

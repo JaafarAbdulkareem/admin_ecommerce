@@ -30,7 +30,7 @@ List<HomeModel> dataHomeFeature = [
     image: AppImages.imagesMessage,
     title: KeyLanguage.titleMessage,
     onPressed: () {
-      Get.toNamed(ConstantScreenName.notification);
+      Get.toNamed(ConstantScreenName.message);
     },
   ),
   // HomeModel(

@@ -4,6 +4,8 @@ import 'package:admin_ecommerce/view/screen/auth/forget_password/verification_vi
 import 'package:admin_ecommerce/view/screen/category/category_view.dart';
 import 'package:admin_ecommerce/view/screen/category/insert_category_view.dart';
 import 'package:admin_ecommerce/view/screen/category/update_category_view.dart';
+import 'package:admin_ecommerce/view/screen/message/message_view.dart';
+import 'package:admin_ecommerce/view/screen/message/users_message_view.dart';
 import 'package:admin_ecommerce/view/screen/notification/notification_view.dart';
 import 'package:admin_ecommerce/view/screen/onboarding/splash_view.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
@@ -98,11 +100,24 @@ List<GetPage<dynamic>> get getPages => [
         name: ConstantScreenName.detailOrder,
         page: () => const DetailOrderView(),
       ),
-//notification
+//message
       GetPage(
-        name: ConstantScreenName.notification,
-        page: () => const NotificationView(),
+        name: ConstantScreenName.message,
+        page: () => const MessageView(),
       ),
+      GetPage(
+        name: ConstantScreenName.usersMessage,
+        page: () => const UsersMessageView(),
+      ),
+      // GetPage(
+      //   name: ConstantScreenName.deliveryMessage,
+      //   page: () => const DeliveryMessageView(),
+      // ),
+// //notification
+//       GetPage(
+//         name: ConstantScreenName.notification,
+//         page: () => const NotificationView(),
+//       ),
 //report
       GetPage(
         name: ConstantScreenName.report,

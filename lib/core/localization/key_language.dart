@@ -15,6 +15,9 @@ abstract class KeyLanguage {
   static const String appBarDeliveryOrder = "appBarDeliveryOrder";
   static const String appBarReceiveOrder = "appBarReceiveOrder";
   static const String appBarDetailOrder = "appBarDetailOrder";
+  static const String appBarMessage = "appBarMessage";
+  static const String appBarUsersMessage = "appBarUSersMessage";
+  static const String appBarDeliveryMessage = "appBarDeliveryMessage";
   static const String appBarNotification = "appBarNotification";
   static const String appBarReport = "appBarReport";
 
@@ -77,6 +80,9 @@ abstract class KeyLanguage {
   static const String totalPrice = "totalPrice";
   static const String titlQeuantity = "titlQeuantity";
   static const String titlePrice = "titlePrice";
+//message
+  static const String messageUserMessage = "messageUserMessage";
+  static const String messageDeliveryMessage = "messageDeliveryMessage";
 //report
   static const String titleDashboard = "titleDashboard";
   static const String titleUserUsing = "titleUserUsing";
@@ -87,7 +93,7 @@ abstract class KeyLanguage {
   static const String titleBarCity = "titleBarCity";
   static const String titlePieCategory = "titlePieCategory";
   static const String noData = "noData";
-  
+
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
@@ -136,6 +142,8 @@ abstract class KeyLanguage {
   static const String labelCount = "labelCount";
   static const String labelPrice = "labelPrice";
   static const String labelDiscount = "labelDiscount";
+  static const String labelTitleMessage = "labelTitleMessage";
+  static const String labelBodyMessage = "labelBodyMessage";
 
 //hint
   static const String hintEmail = "hintEmail";
@@ -154,6 +162,8 @@ abstract class KeyLanguage {
   static const String hintDiscount = "hintDiscount";
   static const String hintProductDrop = "hintProductDrop";
   static const String hintSearch = "hintSearch";
+  static const String hintTitleMessage = "hintTitleMessage";
+  static const String hintBodyMessage = "hintBodyMessage";
 
 //button
   static const String buttonLogin = "buttonLogin";
@@ -171,7 +181,8 @@ abstract class KeyLanguage {
   static const String buttonPickUp = "buttonPickUp";
   static const String buttonCall = "buttonCall";
   static const String buttonOpenSetting = "buttonOpenSetting";
-  static const String buttonDownloadPdf = "buttonDownload";
+  static const String buttonDownloadPdf = "buttonDownloadPdf";
+  static const String buttonSend = "buttonSend";
   // static const String buttonTrack = "buttonTrack";
 //bar
   static const String barPending = "barPending";
