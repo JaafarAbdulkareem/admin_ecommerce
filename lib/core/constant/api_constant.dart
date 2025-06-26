@@ -41,6 +41,9 @@ abstract class ApiConstant {
   static const String apiDoneOrder = "$folderOrder/done_order.php";
   static const String apiReceiveOrder = "$folderOrder/receive_order.php";
 
+
+static const String folderReport = "$folderAdmin/report";
+  static const String apiViewReport = "$folderReport/view_report.php";
 //   static const String folderHome = "$folderUser/home";
 //   static const String apiHome = "$folderHome/home.php";
 //   static const String apiSearchPrdouct = "$folderHome/search_product.php";

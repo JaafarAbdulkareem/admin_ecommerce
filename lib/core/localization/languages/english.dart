@@ -18,6 +18,7 @@ Map<String, String> english = {
   KeyLanguage.appBarReceiveOrder: "Receive Order",
   KeyLanguage.appBarDetailOrder: "Detail Order",
   KeyLanguage.appBarNotification: "Notificaiton",
+  KeyLanguage.appBarReport: "Report",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -80,6 +81,7 @@ Map<String, String> english = {
   KeyLanguage.titlQeuantity: "QTY",
   KeyLanguage.titlePrice: "Price",
 //report
+  KeyLanguage.titleDashboard: "Dashboard",
   KeyLanguage.titleUserUsing: "Users Using App",
   KeyLanguage.titleDeliveries: "Deliveries",
   KeyLanguage.titleActiveProduct: "Total Products",
@@ -88,6 +90,7 @@ Map<String, String> english = {
   KeyLanguage.titleLineOrder: "Monthly Metrics",
   KeyLanguage.titleBarCity: "Orders by City",
   KeyLanguage.titlePieCategory: "Category Distribution",
+  KeyLanguage.noData: "No Data",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",

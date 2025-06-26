@@ -47,7 +47,25 @@ class ApiColumnDb {
   static const String detailAddress = "detail_address";
   static const String latitude = "latitude";
   static const String longitude = "longitude";
-//cart
+//report
+  static const String totalUsers = 'total_users';
+  static const String totalDeliveryMen = 'total_delivery_men';
+  static const String activeProducts = 'active_products';
+  static const String inactiveProducts = 'inactive_products';
+  static const String totalOrders = 'total_orders';
+  static const String month = 'month';
+  static const String orderCount = 'order_count';
+  static const String productCount = 'product_count';
+  static const String dashboardCount = "dashboard_counts";
+  static const String monthlyOrders = "monthly_orders";
+  static const String ordersPerCity = "orders_per_city";
+  static const String productCategoryPie = "product_category_pie";
+
+  // static const String city = 'city';
+
+  // static const String categoryId = 'category_id';
+  // static const String arabicName = 'arabic_name';
+  // static const String englishName = 'english_name';
   //coupons
   // static const String couponsName = "coupons_name";
   // static const String amount = "amount";

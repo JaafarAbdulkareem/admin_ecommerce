@@ -20,6 +20,13 @@ abstract class AppColor {
   static const Color optionCheckout = Color(0xFF7EB5E3);
   static const Color iconDelete = Color(0xFFFFFFFF);
   static const Color dropDown = Color(0x1F000000);
+//dashboard
+  static const Color usersUsing = Color(0xFF2196F3);
+  static const Color deliveries = Colors.green;
+  static const Color activeProducts = Colors.orange;
+  static const Color inactiveProducts = Colors.red;
+  static const Color order = Colors.purple;
+  static const Color barChart = Colors.orange;
 
   // static const Color primary = Color(0xFF2975B3);
   // static const Color secondary = Color(0xFF8B8787);

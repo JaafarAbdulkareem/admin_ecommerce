@@ -16,6 +16,7 @@ abstract class KeyLanguage {
   static const String appBarReceiveOrder = "appBarReceiveOrder";
   static const String appBarDetailOrder = "appBarDetailOrder";
   static const String appBarNotification = "appBarNotification";
+  static const String appBarReport = "appBarReport";
 
 //validator
   static const String empty = "empty";
@@ -74,18 +75,19 @@ abstract class KeyLanguage {
   static const String onWayOption = "onWayOption";
   static const String doneDeliveryOption = "doneDeliveryOption";
   static const String totalPrice = "totalPrice";
-  // static const String titleProduct = "productTitle";
   static const String titlQeuantity = "titlQeuantity";
   static const String titlePrice = "titlePrice";
 //report
+  static const String titleDashboard = "titleDashboard";
   static const String titleUserUsing = "titleUserUsing";
   static const String titleDeliveries = "titleDeliveries";
   static const String titleActiveProduct = "titleActiveProduct";
   static const String titleInactiveProduct = "titleInactiveProduct";
-  // static const String titleOrder = "titlOrder";
   static const String titleLineOrder = "titleLineOrder";
   static const String titleBarCity = "titleBarCity";
   static const String titlePieCategory = "titlePieCategory";
+  static const String noData = "noData";
+  
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";

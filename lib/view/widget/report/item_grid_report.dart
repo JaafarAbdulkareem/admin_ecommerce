@@ -7,7 +7,7 @@ class ItemGridReport extends StatelessWidget {
     required this.data,
   });
 
-  final ItemReportModel data;
+  final ItemGridModel data;
 
   @override
   Widget build(BuildContext context) {

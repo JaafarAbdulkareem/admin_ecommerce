@@ -1,4 +1,5 @@
 import 'package:admin_ecommerce/controller/report/report_controller.dart';
+import 'package:admin_ecommerce/core/constant/app_color.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -10,6 +11,8 @@ class BarChartWidget extends GetView<ReportControllerImp> {
 
   @override
   Widget build(BuildContext context) {
+    final cities = controller.cityData;
+
     return Column(
       children: [
         Text(
@@ -19,25 +22,21 @@ class BarChartWidget extends GetView<ReportControllerImp> {
         const SizedBox(height: 16),
         SizedBox(
           height: ConstantScale.chartHeight,
-          child: Obx(
-            () {
-              final entries = controller.cityData.entries.toList();
-              return BarChart(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              BarChart(
                 BarChartData(
                   gridData: const FlGridData(show: true),
                   titlesData: FlTitlesData(
                     leftTitles: AxisTitles(
                       sideTitles: SideTitles(
                         showTitles: true,
-                        getTitlesWidget: (value, meta) {
-                          return FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              value.toInt().toString(),
-                              style: Theme.of(context).textTheme.labelSmall,
-                            ),
-                          );
-                        },
+                        getTitlesWidget: (value, meta) => Text(
+                          value.toInt().toString(),
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                        reservedSize: 30,
                       ),
                     ),
                     bottomTitles: AxisTitles(
@@ -45,16 +44,16 @@ class BarChartWidget extends GetView<ReportControllerImp> {
                         showTitles: true,
                         getTitlesWidget: (value, meta) {
                           final index = value.toInt();
-                          if (index < entries.length) {
+                          if (index < cities.length) {
                             return SideTitleWidget(
                               axisSide: meta.axisSide,
                               child: Text(
-                                entries[index].key,
+                                cities[index].city,
                                 style: Theme.of(context).textTheme.labelSmall,
                               ),
                             );
                           } else {
-                            return Container(); // empty widget for invalid index
+                            return const SizedBox.shrink();
                           }
                         },
                         reservedSize: 42,
@@ -69,26 +68,31 @@ class BarChartWidget extends GetView<ReportControllerImp> {
                     ),
                   ),
                   borderData: FlBorderData(show: false),
-                  barGroups: entries.asMap().entries.map(
-                    (e) {
-                      final i = e.key;
-                      final val = e.value.value;
-                      return BarChartGroupData(
-                        x: i,
-                        barRods: [
-                          BarChartRodData(
-                            toY: val,
-                            color: Colors.orange,
-                            width: ConstantScale.barWidth,
-                            borderRadius: BorderRadius.circular(4),
-                          )
-                        ],
-                      );
-                    },
-                  ).toList(),
+                  barGroups: cities.isEmpty
+                      ? []
+                      : cities.asMap().entries.map((e) {
+                          final i = e.key;
+                          final city = e.value;
+                          return BarChartGroupData(
+                            x: i,
+                            barRods: [
+                              BarChartRodData(
+                                toY: city.orderCount.toDouble(),
+                                color: AppColor.barChart,
+                                width: ConstantScale.barWidth,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                            ],
+                          );
+                        }).toList(),
                 ),
-              );
-            },
+              ),
+              if (cities.isEmpty)
+                Text(
+                  KeyLanguage.noData.tr,
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+            ],
           ),
         ),
       ],
