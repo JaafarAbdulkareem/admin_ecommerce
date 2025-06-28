@@ -33,13 +33,6 @@ List<HomeModel> dataHomeFeature = [
       Get.toNamed(ConstantScreenName.message);
     },
   ),
-  // HomeModel(
-  //   image: AppImages.imagesUsers,
-  //   title: KeyLanguage.titleUsers,
-  //   onPressed: () {
-  //     // Navigator function for Users
-  //   },
-  // ),
   HomeModel(
     image: AppImages.imagesNotification,
     title: KeyLanguage.titleNotification,
@@ -54,26 +47,11 @@ List<HomeModel> dataHomeFeature = [
       Get.toNamed(ConstantScreenName.report);
     },
   ),
-
-  // HomeModel(
-  //   image: AppImages.imagesDelivery,
-  //   title: KeyLanguage.titleDelivery,
-  //   onPressed: () {
-  //     // Navigator function for Delivery
-  //   },
-  // ),
-  // HomeModel(
-  //   image: AppImages.imagesPayment,
-  //   title: KeyLanguage.titlePayment,
-  //   onPressed: () {
-  //     // Navigator function for Payment
-  //   },
-  // ),
   HomeModel(
     image: AppImages.imagesSetting,
     title: KeyLanguage.titleSetting,
     onPressed: () {
-      // Navigator function for Setting
+      Get.toNamed(ConstantScreenName.setting);
     },
   ),
 ];

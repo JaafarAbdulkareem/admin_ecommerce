@@ -26,6 +26,7 @@ Map<String, String> english = {
   KeyLanguage.appBarUsersSendNotification: "Users Sent Notificaiton",
   KeyLanguage.appBarDeliverySendNotification: "Delivery Sent Notificaiton",
   KeyLanguage.appBarReport: "Report",
+  KeyLanguage.appBarSetting: "Setting",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -107,6 +108,10 @@ Map<String, String> english = {
   KeyLanguage.titleBarCity: "Orders by City",
   KeyLanguage.titlePieCategory: "Category Distribution",
   KeyLanguage.noData: "No Data",
+//setting
+  KeyLanguage.logout: "Logout",
+  KeyLanguage.darkMode: "Dark Mode",
+  KeyLanguage.language: "Language",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",

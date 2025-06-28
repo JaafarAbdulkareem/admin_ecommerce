@@ -26,6 +26,7 @@ abstract class KeyLanguage {
   static const String appBarDeliverySendNotification =
       "appBarDeliverySendNotification";
   static const String appBarReport = "appBarReport";
+  static const String appBarSetting = "appBarSetting";
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
@@ -102,6 +103,10 @@ abstract class KeyLanguage {
   static const String titleBarCity = "titleBarCity";
   static const String titlePieCategory = "titlePieCategory";
   static const String noData = "noData";
+//setting
+  static const String logout = "logout";
+  static const String darkMode = "darkMode";
+  static const String language = "language";
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";

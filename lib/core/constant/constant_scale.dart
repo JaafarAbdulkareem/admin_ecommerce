@@ -41,6 +41,8 @@ abstract class ConstantScale {
   static const double lineWidth = 3;
   static const double barWidth = 18;
   static const double pieRadius = 60;
+//setting
+  static const int settingNoPassword = 6;
 
   // static const int archiveOrderOption = 3;
 
@@ -74,7 +76,6 @@ abstract class ConstantScale {
 //   static const int favoriteDelay = 250;
 //   //setting
 //   static const int settingDeley = 100;
-//   static const int settingNoPassword = 6;
 //   // address
 //   static const double initialLatitude = 0;
 //   static const double initialLongitude = 0;

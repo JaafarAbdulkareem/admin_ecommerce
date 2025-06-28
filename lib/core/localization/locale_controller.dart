@@ -35,6 +35,13 @@ class LocaleController extends GetxController {
       ConstantKey.keyLanguage,
       languageCode,
     );
+
+    print("isDark : ${themeMode == ThemeMode.dark}");
+    await sharedPrefsService.prefs.setBool(
+      ConstantKey.keyThemeMode,
+      themeMode == ThemeMode.dark,
+    );
+
     language = locale;
 
     // Update _currentTheme according to language and current themeMode
@@ -51,12 +58,18 @@ class LocaleController extends GetxController {
     statusRequest = StatusRequest.success;
     sharedPrefsService = Get.find<SharedPrefsService>();
 
-    String? initLanguage = sharedPrefsService.prefs.getString(ConstantKey.keyLanguage);
+    String? initLanguage =
+        sharedPrefsService.prefs.getString(ConstantKey.keyLanguage);
 
     if (initLanguage == null) {
       language = Locale(Get.deviceLocale?.languageCode ?? ConstantLanguage.en);
     } else {
       language = Locale(initLanguage);
+    }
+    bool? initIsDark =
+        sharedPrefsService.prefs.getBool(ConstantKey.keyThemeMode);
+    if (initIsDark != null) {
+      themeMode = initIsDark ? ThemeMode.dark : ThemeMode.light;
     }
 
     // Set initial theme
@@ -80,8 +93,12 @@ class LocaleController extends GetxController {
   }
 
   // Toggle theme and update accordingly
-  void toggleTheme(bool isDark) {
+  void toggleTheme(bool isDark) async {
     themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+    await sharedPrefsService.prefs.setBool(
+      ConstantKey.keyThemeMode,
+      isDark,
+    );
     _currentTheme = theme;
     Get.changeTheme(_currentTheme);
     update();

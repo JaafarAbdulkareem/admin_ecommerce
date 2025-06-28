@@ -1,6 +1,7 @@
 abstract class ConstantKey {
 //shared references
   static const String keyLanguage = "keyLanguage";
+  static const String keyThemeMode = "keyThemeMode";
   static const String keySplash = "keySplash";
   static const String keyLogin = "keyLogin";
   // static const String keyfavoriteId = "keyFavoriteId";

@@ -26,6 +26,7 @@ Map<String, String> arabic = {
   KeyLanguage.appBarUsersSendNotification: "إشعارات المستخدمين",
   KeyLanguage.appBarDeliverySendNotification: "إشعارات المندوبين",
   KeyLanguage.appBarReport: "التقارير",
+  KeyLanguage.appBarSetting: "الإعدادات",
 // validator
   KeyLanguage.empty: "يرجى تعبئة الحقل",
   KeyLanguage.invalidEmail: "البريد الإلكتروني غير صالح",
@@ -104,6 +105,10 @@ Map<String, String> arabic = {
   KeyLanguage.titleBarCity: "الطلبات حسب المدينة",
   KeyLanguage.titlePieCategory: "توزيع الفئات",
   KeyLanguage.noData: "لا توجد بيانات",
+//setting
+  KeyLanguage.logout: "تسجيل الخروج",
+  KeyLanguage.darkMode: "الوضع الليلي",
+  KeyLanguage.language: "اللغة",
 // dialog
   KeyLanguage.alert: "تنبيه",
   KeyLanguage.alertWantExit: "هل تريد الخروج؟",

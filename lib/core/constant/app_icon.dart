@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppIcon {
-  // static const IconData username = Icons.person_outline;
+  static const IconData username = Icons.person_outline;
   static const IconData email = Icons.email_outlined;
   static const IconData closePassword = Icons.lock_outline;
   static const IconData openPassword = Icons.lock_open_outlined;
@@ -40,7 +40,7 @@ abstract class AppIcon {
   // static const IconData address = Icons.location_on_outlined;
   // static const IconData archive = Icons.archive_outlined;
   // static const IconData contactUs =  Icons.phone_outlined;
-  // static const IconData logout = Icons.logout_outlined;
+  static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
   static const IconData deleteSwipe = Icons.delete;
   // static const IconData typeAddress = Icons.bookmark;
