@@ -19,10 +19,4 @@ class HomeControllerImp extends HomeController {
     // statusRequest = StatusRequest.initial;
     super.onInit();
   }
-
-  @override
-  void dispose() {
-    BackButtonInterceptor.remove(onBackPressed);
-    super.dispose();
-  }
 }
