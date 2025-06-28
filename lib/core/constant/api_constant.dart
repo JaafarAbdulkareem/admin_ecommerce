@@ -46,21 +46,20 @@ abstract class ApiConstant {
       "$folderMessage/users_insert_notification.php";
   static const String apiDeliveryMessageSend =
       "$folderMessage/delivery_insert_notification.php";
-  
 
   static const String folderNotification = "$folderAdmin/notification";
+  static const String apiViewNotification =
+      "$folderNotification/view_notification.php";
   static const String apiViewUsersNotification =
       "$folderNotification/view_users_notification.php";
   static const String apiViewDeliveryNotification =
       "$folderNotification/view_delivery_notification.php";
-  static const String apiViewNotification =
-      "$folderNotification/view_notification.php";
+  static const String apiDeleteNotification =
+      "$folderNotification/delete_notification.php";
   static const String apiDeleteUsersNotification =
       "$folderNotification/delete_users_notification.php";
   static const String apiDeleteDeliveryNotification =
       "$folderNotification/delete_delivery_notification.php";
-  static const String apiDeleteNotification =
-      "$folderNotification/delete_notification.php";
 
   static const String folderReport = "$folderAdmin/report";
   static const String apiViewReport = "$folderReport/view_report.php";

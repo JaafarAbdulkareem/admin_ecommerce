@@ -7,21 +7,21 @@ import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
 import 'package:admin_ecommerce/data/models/notification_model.dart';
 import 'package:get/get.dart';
 
-abstract class ReceiveNotificationController
-    extends BaseNotificationController {
-}
+abstract class UsersSendNotificationController
+    extends BaseNotificationController {}
 
-class ReceiveNotificationControllerImp extends ReceiveNotificationController {
+class UsersSendNotificationControllerImp
+    extends UsersSendNotificationController {
   late SharedPrefsService prefs;
   late String userId;
   static List<NotificationModel> notificationData = [];
   static bool firstTime = true;
   @override
   void onInit() {
+    statusRequest = StatusRequest.initial;
     prefs = Get.find<SharedPrefsService>();
     userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
-    statusRequest = StatusRequest.initial;
-    getData();
+    _getData();
     super.onInit();
   }
 
@@ -31,12 +31,13 @@ class ReceiveNotificationControllerImp extends ReceiveNotificationController {
     }
   }
 
-  void getData() async {
+  void _getData() async {
     if (firstTime) {
       firstTime = false;
       statusRequest = StatusRequest.loading;
       update();
-      var response = await notificationRemote.getNotificationData(userId: userId);
+      var response =
+          await notificationRemote.getUsersSendNotificationData(userId: userId);
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
@@ -67,7 +68,7 @@ class ReceiveNotificationControllerImp extends ReceiveNotificationController {
 
   @override
   Future<void> deleteNotification(int index) async {
-    var response = await notificationRemote.deleteNotification(
+    var response = await notificationRemote.deleteUsersSendNotification(
       id: notificationData[index].id.toString(),
     );
 
