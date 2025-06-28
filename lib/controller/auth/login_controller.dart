@@ -66,8 +66,10 @@ class LoginControllerImp extends LoginController {
 //notification
     // String userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     // FirebaseMessaging.instance.subscribeToTopic(ConstantKey.usersTopics);
-    // FirebaseMessaging.instance
-    //     .subscribeToTopic("${ConstantKey.usersTopics}$userId");
+    if (response[ApiColumnDb.id] != null) {
+      FirebaseMessaging.instance.subscribeToTopic(
+          "${ConstantKey.adminsTopics}${response[ApiColumnDb.id]}");
+    }
   }
 
   @override
