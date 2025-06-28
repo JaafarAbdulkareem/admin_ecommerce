@@ -119,6 +119,8 @@ abstract class KeyLanguage {
   static const String alertNoThingChange = "alertNoThingChange";
   static const String alertInsertImage = "alertInsertImage";
   static const String alertInsertCategory = "alertInsertCategory";
+  static const String alertErrorInsert = "alertErrorInsert";
+  static const String alertErrorUpdate = "alertErrorUpdate";
   static const String alertAddressLoading = "alertAddressLoading";
   static const String alertTitlePermission = "alertTitlePermission";
   static const String alertMessagePermission = "alertMessagePermission";

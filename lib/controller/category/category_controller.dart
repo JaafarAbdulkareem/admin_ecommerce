@@ -1,11 +1,11 @@
 import 'package:admin_ecommerce/controller/base/base_floating_button_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
-import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/category/category_remote.dart';
 import 'package:admin_ecommerce/data/models/category_model.dart';
 import 'package:get/get.dart';
@@ -20,6 +20,9 @@ class CategoryControllerImp extends CategoryController {
   static bool firstTime = true;
   late StatusRequest statusRequest;
   late CategoryRemote categoryRemote;
+
+  final AlertDefault _alertDefault = AlertDefault();
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
@@ -92,10 +95,9 @@ class CategoryControllerImp extends CategoryController {
               update();
             }
           } else {
-            await Get.defaultDialog(
-              title: KeyLanguage.alert.tr,
-              middleText: KeyLanguage.alertSomeError.tr,
-            );
+            statusRequest = StatusRequest.success;
+            update();
+            _alertDefault.snackBarDefault();
           }
         } else {
           update();

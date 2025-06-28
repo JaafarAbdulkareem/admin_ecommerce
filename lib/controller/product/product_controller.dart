@@ -96,6 +96,8 @@ class ProductControllerImp extends ProductController {
               update();
             }
           } else {
+            statusRequest = StatusRequest.success;
+            update();
             _alertDefault.snackBarDefault();
           }
         } else {

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:admin_ecommerce/controller/base/base_choose_image_controller.dart';
 import 'package:admin_ecommerce/controller/category/category_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
@@ -22,6 +23,8 @@ class InsertCategoryControllerImp extends InsertCategoryController {
   File? file;
   late CategoryRemote categoryRemote;
   late CategoryControllerImp categoryController;
+
+  final AlertDefault _alertDefault = AlertDefault();
 
   @override
   void onInit() {
@@ -60,17 +63,16 @@ class InsertCategoryControllerImp extends InsertCategoryController {
             categoryController.getData();
             Get.back();
           } else {
-            statusRequest = StatusRequest.failure;
-            update();
+            Get.back();
+            _alertDefault.snackBarDefault(
+              body: KeyLanguage.alertErrorInsert.tr,
+            );
           }
         } else {
           update();
         }
       } else {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.alertInsertImage.tr,
-        );
+        _alertDefault.dialogDefault(body: KeyLanguage.alertInsertImage.tr);
       }
     }
   }

@@ -126,6 +126,8 @@ Map<String, String> english = {
   KeyLanguage.alertInsertImage: "Image Is Required. Please Upload An Image.",
   KeyLanguage.alertInsertCategory:
       "Category Type Is Required. Please Choose A Category.",
+  KeyLanguage.alertErrorInsert: "Something Went Wrong When Inserting",
+  KeyLanguage.alertErrorUpdate: "Something Went Wrong When Updating.",
   KeyLanguage.alertAddressLoading:
       "Oops! Couldn't Load Your Address. Try Again?",
   KeyLanguage.alertTitlePermission: "Storage Permission",

@@ -50,7 +50,7 @@ class UpdateProductControllerImp extends UpdateProductController {
   late CategoryControllerImp categoryController;
   late List<SelectedListItem> selectListData;
 
-  final AlertDefault _alertDefualt = AlertDefault();
+  final AlertDefault _alertDefault = AlertDefault();
 
   @override
   void onInit() {
@@ -131,7 +131,7 @@ class UpdateProductControllerImp extends UpdateProductController {
           categoryName == dropDown.text &&
           productData.active == active &&
           file == null) {
-        _alertDefualt.dialogDefault(body: KeyLanguage.alertNoThingChange.tr);
+        _alertDefault.dialogDefault(body: KeyLanguage.alertNoThingChange.tr);
       } else {
         statusRequest = StatusRequest.loading;
         update();
@@ -163,10 +163,13 @@ class UpdateProductControllerImp extends UpdateProductController {
             Get.back();
           } else {
             Get.back();
+            _alertDefault.snackBarDefault(
+              body: KeyLanguage.alertErrorUpdate.tr,
+            );
           }
         } else {
           Get.back();
-          _alertDefualt.snackBarDefault();
+          _alertDefault.snackBarDefault();
         }
       }
     }

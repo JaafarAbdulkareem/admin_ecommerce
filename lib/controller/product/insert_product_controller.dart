@@ -128,8 +128,10 @@ class InsertProductControllerImp extends InsertProductController {
               productController.getData();
               Get.back();
             } else {
-              statusRequest = StatusRequest.failure;
-              update();
+              Get.back();
+              _alertDefault.snackBarDefault(
+                body: KeyLanguage.alertErrorInsert.tr,
+              );
             }
           } else {
             update();

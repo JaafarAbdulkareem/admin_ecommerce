@@ -26,7 +26,7 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
   File? file;
   late CategoryRemote categoryRemote;
   late CategoryControllerImp categoryController;
-  final AlertDefault alertDefualt = AlertDefault();
+  final AlertDefault _alertDefault = AlertDefault();
 
   @override
   void onInit() {
@@ -54,10 +54,7 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
       if (categoryData.arabicName == arabicField.text &&
           categoryData.englishName == englishField.text &&
           file == null) {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.alertNoThingChange.tr,
-        );
+        _alertDefault.dialogDefault(body: KeyLanguage.alertNoThingChange.tr);
       } else {
         statusRequest = StatusRequest.loading;
         var response = await categoryRemote.updateCategory(
@@ -80,10 +77,13 @@ class UpdateCategoryControllerImp extends UpdateCategoryController {
             Get.back();
           } else {
             Get.back();
+            _alertDefault.snackBarDefault(
+              body: KeyLanguage.alertErrorUpdate.tr,
+            );
           }
         } else {
           Get.back();
-          alertDefualt.snackBarDefault();
+          _alertDefault.snackBarDefault();
         }
       }
     }
