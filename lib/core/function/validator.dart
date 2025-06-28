@@ -32,13 +32,32 @@ String? validator(String? value, String type, int min, int max) {
 }
 
 String? validatorGeneral(String? value) {
-  if (value == null) {
+  if (value == null || value.trim().isEmpty) {
+    return KeyLanguage.empty.tr;
+  }
+  return null;
+}
+
+String? validatorDigital(String? value) {
+  if (value == null || value.trim().isEmpty) {
     return KeyLanguage.empty.tr;
   } else {
-    value = value.trim();
-    if (value.isEmpty) {
-      return KeyLanguage.empty.tr;
+    final trimmedValue = value.trim();
+    if (num.tryParse(trimmedValue) == null) {
+      return KeyLanguage.enterNumber.tr;
     }
-    return null;
   }
+  return null;
+}
+
+String? validatorDigitalWithNull(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return null;
+  } else {
+    final trimmedValue = value.trim();
+    if (num.tryParse(trimmedValue) == null) {
+      return KeyLanguage.enterNumber.tr;
+    }
+  }
+  return null;
 }

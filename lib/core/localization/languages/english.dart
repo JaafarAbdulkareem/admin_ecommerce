@@ -32,6 +32,7 @@ Map<String, String> english = {
   KeyLanguage.invalidPassword: "Enter The Digital Password",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
+  KeyLanguage.enterNumber: "Only Digital Entry Is Allowed",
 //splash
   KeyLanguage.chooseLanguage: "Choose Language",
   KeyLanguage.arabic: "Arabic",
@@ -62,6 +63,7 @@ Map<String, String> english = {
   KeyLanguage.titleGallery: "Gallery",
 //product
   KeyLanguage.titleActive: "Active",
+  KeyLanguage.titleInactive: "Inactive",
 //order
   KeyLanguage.titleDelivery: "Delivery",
   KeyLanguage.titleReceive: "Receive",
@@ -206,6 +208,7 @@ Map<String, String> english = {
   KeyLanguage.buttonOpenSetting: "Open Settings",
   KeyLanguage.buttonDownloadPdf: "Download PDF",
   KeyLanguage.buttonSend: "Send",
+  KeyLanguage.buttonOkay: "Okey",
   // KeyLanguage.buttonTrack: "Track",
 
   //bar

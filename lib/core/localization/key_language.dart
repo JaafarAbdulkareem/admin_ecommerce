@@ -33,6 +33,7 @@ abstract class KeyLanguage {
   static const String invalidPassword = "invalidPassword";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
+  static const String enterNumber = "enterNumber";
 //splash
   static const String chooseLanguage = "chooseLanguage";
   static const String arabic = "arabic";
@@ -62,6 +63,7 @@ abstract class KeyLanguage {
   static const String titleGallery = "titleGallery";
 //product
   static const String titleActive = "titleActive";
+  static const String titleInactive = "titleInactive";
 //order
   static const String titleDelivery = "titleDelivery";
   static const String titleReceive = "titleReceive";
@@ -194,6 +196,7 @@ abstract class KeyLanguage {
   static const String buttonOpenSetting = "buttonOpenSetting";
   static const String buttonDownloadPdf = "buttonDownloadPdf";
   static const String buttonSend = "buttonSend";
+  static const String buttonOkay = "buttonOkay";
   // static const String buttonTrack = "buttonTrack";
 //bar
   static const String barPending = "barPending";

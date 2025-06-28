@@ -22,6 +22,21 @@ class AlertDefault {
     );
   }
 
+  Future<void> dialogDefault({
+    String? title,
+    String? body,
+  }) async {
+    return await Get.defaultDialog(
+      title: title ?? KeyLanguage.alert.tr,
+      middleText: body ?? KeyLanguage.alertSomeError.tr,
+      textConfirm: KeyLanguage.buttonOkay.tr,
+      buttonColor: AppColor.primary,
+      onConfirm: () {
+        Get.back();
+      },
+    );
+  }
+
   /// Phone permission dialog with theme support
   Future<void> dialogPhoneDefault({
     required String title,

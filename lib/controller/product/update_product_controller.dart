@@ -50,7 +50,7 @@ class UpdateProductControllerImp extends UpdateProductController {
   late CategoryControllerImp categoryController;
   late List<SelectedListItem> selectListData;
 
-  final AlertDefault alertDefualt = AlertDefault();
+  final AlertDefault _alertDefualt = AlertDefault();
 
   @override
   void onInit() {
@@ -129,11 +129,9 @@ class UpdateProductControllerImp extends UpdateProductController {
           productData.price.toString() == price.text &&
           productData.discount.toString() == discount.text &&
           categoryName == dropDown.text &&
+          productData.active == active &&
           file == null) {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.alertNoThingChange.tr,
-        );
+        _alertDefualt.dialogDefault(body: KeyLanguage.alertNoThingChange.tr);
       } else {
         statusRequest = StatusRequest.loading;
         update();
@@ -143,7 +141,7 @@ class UpdateProductControllerImp extends UpdateProductController {
           arabicDescription: arabicDescription.text,
           englishDescription: englishDescription.text,
           count: count.text,
-          active: active.toString(),
+          active: active ? "1" : "0",
           price: price.text,
           discount: discount.text,
           categoryId: categoryId,
@@ -168,7 +166,7 @@ class UpdateProductControllerImp extends UpdateProductController {
           }
         } else {
           Get.back();
-          alertDefualt.snackBarDefault();
+          _alertDefualt.snackBarDefault();
         }
       }
     }

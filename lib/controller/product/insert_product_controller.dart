@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:admin_ecommerce/controller/base/base_choose_image_controller.dart';
 import 'package:admin_ecommerce/controller/category/category_controller.dart';
 import 'package:admin_ecommerce/controller/product/product_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_bool.dart';
@@ -43,6 +44,8 @@ class InsertProductControllerImp extends InsertProductController {
   late CategoryControllerImp categoryController;
   late List<SelectedListItem> selectListData;
 
+  final AlertDefault _alertDefault = AlertDefault();
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
@@ -58,7 +61,6 @@ class InsertProductControllerImp extends InsertProductController {
     active = ConstantBool.initiActive;
     productRemote = ProductRemote(curd: Get.find());
     productController = Get.put(ProductControllerImp());
-
     categoryController = Get.put(CategoryControllerImp());
     selectListData = [];
     fetchDropDownListData();
@@ -107,7 +109,7 @@ class InsertProductControllerImp extends InsertProductController {
             arabicDescription: arabicDescription.text,
             englishDescription: englishDescription.text,
             count: count.text,
-            active: active.toString(),
+            active: active ? "1" : "0",
             price: price.text,
             discount: discount.text,
             categoryId: categoryId!,
@@ -133,15 +135,13 @@ class InsertProductControllerImp extends InsertProductController {
             update();
           }
         } else {
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.alertInsertImage.tr,
+          _alertDefault.dialogDefault(
+            body: KeyLanguage.alertInsertImage.tr,
           );
         }
       } else {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.alertInsertCategory.tr,
+        _alertDefault.dialogDefault(
+          body: KeyLanguage.alertInsertCategory.tr,
         );
       }
     }

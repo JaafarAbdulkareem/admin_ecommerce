@@ -1,11 +1,11 @@
 import 'package:admin_ecommerce/controller/base/base_floating_button_controller.dart';
+import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
-import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/product/product_remote.dart';
 import 'package:admin_ecommerce/data/models/product/product_model.dart';
 import 'package:get/get.dart';
@@ -20,6 +20,8 @@ class ProductControllerImp extends ProductController {
   static bool firstTime = true;
   late StatusRequest statusRequest;
   late ProductRemote productRemote;
+
+  final AlertDefault _alertDefault = AlertDefault();
 
   @override
   void onInit() {
@@ -46,6 +48,7 @@ class ProductControllerImp extends ProductController {
           update();
         }
       } else {
+        firstTime = true;
         update();
       }
     } else {
@@ -74,6 +77,7 @@ class ProductControllerImp extends ProductController {
   void deleteProduct(int index) {
     dialogWantDelete(
       yesButton: () async {
+        Get.back();
         statusRequest = StatusRequest.loading;
         update();
         var response = await productRemote.deleteProduct(
@@ -92,15 +96,11 @@ class ProductControllerImp extends ProductController {
               update();
             }
           } else {
-            await Get.defaultDialog(
-              title: KeyLanguage.alert.tr,
-              middleText: KeyLanguage.alertSomeError.tr,
-            );
+            _alertDefault.snackBarDefault();
           }
         } else {
           update();
         }
-        Get.back();
       },
     );
   }
