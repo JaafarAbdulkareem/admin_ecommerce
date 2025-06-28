@@ -26,7 +26,6 @@ abstract class KeyLanguage {
   static const String appBarDeliverySendNotification =
       "appBarDeliverySendNotification";
   static const String appBarReport = "appBarReport";
-
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
@@ -47,7 +46,6 @@ abstract class KeyLanguage {
   static const String forgetPasswordContent = "forgetPasswordContent";
   static const String titleRePassword = "titleRePassword";
   static const String resetPasswordContent = "resetPasswordContent";
-
 //home
   static const String titleCategory = "titleCategory";
   static const String titleProduct = "titleProduct";
@@ -104,15 +102,12 @@ abstract class KeyLanguage {
   static const String titleBarCity = "titleBarCity";
   static const String titlePieCategory = "titlePieCategory";
   static const String noData = "noData";
-
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
   static const String alertWantDelete = "alertWantDelete";
-  // static const String emailFoundMessage = "emailFoundMessage";
   static const String alertVerifyWrong = "verifyWrongMessage";
   static const String alertSomeError = "alertSomeError";
-  // static const String noApproveMessage = "noApproveMessage";
   static const String alertNoFound = "alertNoFound";
   static const String passwordMismatchMassage = "passwordMismatchMassage";
   static const String alertEnterEmail = "alertEnterEmail";
@@ -135,13 +130,6 @@ abstract class KeyLanguage {
   static const String alertMessageFailedDownload = "alertMessageFailedDownload";
   static const String alertMessageSuccessMessage = "alertMessageSuccessMessage";
   static const String alertMessageFailedMessage = "alertMessageFailedMessage";
-
-  // static const String incrementMessage = "incrementMessage";
-  // static const String decrementMessage = "decrementMessage";
-  // static const String notFoundProductMessage = "messageNotFoundProduct";
-  // static const String serviceExceptionMessage = "serviceExceptionMessage";
-  // static const String permissionExceptionMessage = "permissionExceptionMessage";
-  // static const String orderSuccessMessage = "orderSuccessMessage";
 //label
   static const String labelEmail = "labelEmail";
   static const String labelPassword = "labelPassword";
@@ -159,7 +147,6 @@ abstract class KeyLanguage {
   static const String labelDiscount = "labelDiscount";
   static const String labelTitleMessage = "labelTitleMessage";
   static const String labelBodyMessage = "labelBodyMessage";
-
 //hint
   static const String hintEmail = "hintEmail";
   static const String hintPassword = "hintPassword";
@@ -179,7 +166,6 @@ abstract class KeyLanguage {
   static const String hintSearch = "hintSearch";
   static const String hintTitleMessage = "hintTitleMessage";
   static const String hintBodyMessage = "hintBodyMessage";
-
 //button
   static const String buttonLogin = "buttonLogin";
   static const String buttonYes = "buttonYes";
@@ -199,7 +185,6 @@ abstract class KeyLanguage {
   static const String buttonDownloadPdf = "buttonDownloadPdf";
   static const String buttonSend = "buttonSend";
   static const String buttonOkay = "buttonOkay";
-  // static const String buttonTrack = "buttonTrack";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";
@@ -207,137 +192,4 @@ abstract class KeyLanguage {
   static const String barOnTheWay = "barOnTheWay";
   static const String barArchive = "barArchive";
   static const String barPendingPickup = "barPendingPickup";
-
-//   static const String easyAndSafePayment = "Easy and Safe Payment";
-//   static const String trackYourOrder = "Track Your Order";
-//   static const String fastDelivery = "Fast Delivery";
-//   static const String bodyChooseProduct = "bodyChooseProduct";
-//   //button
-//   static const String continueButton = "ContinueButton";
-//   static const String signupButton = "signupButton";
-//   static const String verifyButton = "verifyButton";
-//   static const String goToCartButton = "goToCartButton";
-//   static const String nextButton = "nextButton";
-//   static const String applyButton = "applyButton";
-//   static const String removeButton = "reomveButton";
-//   static const String checkoutButton = "checkoutButton";
-//   static const String orderButton = "orderButton";
-//   static const String deleteButton = "deleteButton";
-//   static const String acceptButton = "acceptButton";
-//   static const String injectButton = "injectButton";
-//   static const String submitButton = "submitButton";
-//login
-//   static const String successTitle = "successTitle";
-//   static const String signupContent = "signupContent";
-//   static const String successContent = "successContent";
-// //////Text field
-//   //label
-//   static const String usernameLabel = "UsernameLabel";
-
-//   static const String phoneLabel = "phoneLabel";
-//   static const String searchLabel = "searcheLabel";
-//   static const String typeAddressLabel = "typeAddressLabel";
-//   static const String cityLabel = "cityLabel";
-//   static const String streetLabel = "streetLabel";
-//   static const String detailAddressLabel = "detailAddressLabel";
-//   //hint
-//   static const String usernameHint = "usernameHint";
-
-//   static const String phoneHint = "phoneHint";
-//   static const String searchHint = "searcheHint";
-//   static const String typeAddressHint = "typeAddressHint";
-//   static const String cityHint = "cityHint";
-//   static const String streetHint = "streetHint";
-//   static const String detailAddressHint = "detailAddressHint";
-//   static const String couponsHint = "couponsHint";
-//   static const String ratingHint = 'ratingHint';
-//   static const String commentHint = 'commentHint';
-
-//   //message
-//
-//   static const String messageLinkLogin = "messsageLinkLogin";
-//   static const String messageLinkSignup = "messageLinkSignup";
-//   static const String productNoNotAvailableMessage =
-//       "ProductNoNotAvailableMessage";
-  // //validator
-  // static const String empty = "empty";
-  // static const String invalidUsername = "invalidUsername";
-  // static const String invalidEmail = "invalodUsername";
-  // static const String invalidPassword = "invalidPassword";
-  // static const String invalidPhone = "invalidPhone";
-  // static const String lessMin = "lessMin";
-  // static const String greaterMax = "greaterMax";
-
-//   //home
-//   static const String hello = "hello";
-//   static const String titleCategories = "titleCategories";
-//   static const String titleDiscountProduct = "titleDiscountProduct";
-
-//   //botton bar
-//   static const String barHome = "barHome";
-//   static const String barSetting = "barSetting";
-//   static const String barReceipt = "barReceipt";
-//   // static const String barProfile = "barProfile";
-//   static const String barNotification = "barNotification";
-//   //product
-//   static const String color = "color";
-//   static const String addProductMessage = "addProductMessage";
-//   static const String removeProductMessage = "removeProductMessage";
-//   static const String outOfStock = "outOfStock";
-//   // static const String titleBestSelling = "titleBestSelling";
-
-//   // //setting
-//   // static const String nameUSer = "nameUser";
-//   static const String addressSetting = "addressSetting";
-//   // static const String emailUSer = "emailUser";
-//   // static const String phoneUSer = "phoneUser";
-//   // static const String passwordUSer = "passwordUser";
-//   static const String archiveTitle = "archiveTitle";
-//   static const String contectUsTitle = "contectUsTitle";
-//   static const String logout = "logout";
-//   //drawer
-//   static const String aboutUS = "aboutUS";
-//   static const String contactWithUs = "contactWithUs";
-//   static const String commonQuestion = "commonQuestion";
-//   static const String sendComment = "sendComment";
-//   static const String changeLangeuag = "changeLanguage";
-//   static const String changeModeDL = "changeModeDL";
-//   static const String changeModeBG = "changeModeBG";
-//   static const String natification = "natification";
-//   static const String readMoneyAi = "readMoneyAi";
-
-//   // cart
-//   static const String appBarTitleCart = "appBarTitleCart";
-//   static const String youHave = "youHave";
-//   static const String listITemCart = "listItemCart";
-//   static const String shoppingTitle = "shoppingTitle";
-//   static const String ratingTitle = "ratingTitle";
-//   static const String couponsDiscount = "couponsDiscount";
-//   static const String couponsNotFoundMessage = "couponsNotFoundMessage";
-
-//   //search
-//   static const String enterEnter = "enterEnter";
-
-//   //address
-//   static const String appBarTitleInsertAddress = "appBarTitleInsertAddress";
-//   static const String appBarTitleDetailInsertAddress =
-//       "appBarTitleDetailInsertAddress";
-//   static const String appBarTitleDisplayAddress = "appBarTitleDisplayAddress";
-//   static const String waitingGoogleMap = "waitingGoogleMap";
-
-//   //checkout
-  // static const String titlePaymentMethod = "titlePaymentMethod";
-  // static const String titleDeliveryType = "titleDeliveryType";
-  // static const String titleShoppingAddress = "titleShoppingAddress";
-//   static const String chooseDeliveryMessage = "chooseDeliveryMessage";
-//   static const String chooseAddressMessage = "chooseAddressMessage";
-//   //order
-  // static const String appBarTitleOrder = "appBarTitleOrder";
-  // static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";
-  // static const String appBarTitleArchive = "appBarTitleArchive";
-  // static const String totalPrice  = "deliveyPrice";
-
-  // static const String addressTitle = "addressTitle";
-//   //notification
-//   static const String appBarTitleNotification = "appBarTitleNotification";
 }
