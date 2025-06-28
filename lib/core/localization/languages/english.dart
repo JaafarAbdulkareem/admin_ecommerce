@@ -86,7 +86,6 @@ Map<String, String> english = {
   KeyLanguage.onWayOption: "🚚 Order Is Currently In Transit To The Customer.",
   KeyLanguage.doneDeliveryOption: "✅ Order Marked As Delivered And Closed.",
   KeyLanguage.totalPrice: "Total Price",
-//  KeyLanguage.productTitle: "Products",
   KeyLanguage.titlQeuantity: "QTY",
   KeyLanguage.titlePrice: "Price",
 //message
@@ -112,11 +111,8 @@ Map<String, String> english = {
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
   KeyLanguage.alertWantDelete: "Do You Want To Delete?",
-  // KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
   KeyLanguage.alertVerifyWrong: "Your Verification Was Wrong, Try Again ",
   KeyLanguage.alertSomeError: "An Error Occurred, Please Try Again Later",
-  // KeyLanguage.noApproveMessage:
-  //     "verify Your Verification, click Forget Password ",
   KeyLanguage.alertNoFound: "The Email or Password Was Wrong, Try Again",
   KeyLanguage.passwordMismatchMassage:
       "Password Mismatch, Check Your Password again",
@@ -146,16 +142,6 @@ Map<String, String> english = {
       "Your Message Was Sent! The Recipient Will Be Notified Soon. 😊",
   KeyLanguage.alertMessageFailedMessage:
       "Oops! Something Went Wrong. The Message Couldn't Be Sent. Please Try Again. 😕",
-  // KeyLanguage.incrementMessage:
-  //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
-  // // KeyLanguage.decrementMessage:
-  // //     "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
-  // KeyLanguage.notFoundProductMessage: "This Product Is Not Available",
-  // KeyLanguage.serviceExceptionMessage:
-  //     "Location Services Are Turned Off. Please Enable Location Services To Continue.",
-  // KeyLanguage.permissionExceptionMessage:
-  //     "Location Permission Is Denied. Please Grant Location Access In Your Device Settings To Continue.",
-  // KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
 //label
   KeyLanguage.labelEmail: "Email",
   KeyLanguage.labelPassword: "Password",
@@ -171,7 +157,6 @@ Map<String, String> english = {
   KeyLanguage.labelDiscount: "Discount (%)",
   KeyLanguage.labelTitleMessage: "Title",
   KeyLanguage.labelBodyMessage: "Message",
-
 //hint
   KeyLanguage.hintEmail: "Enter Your Email",
   KeyLanguage.hintPassword: "Enter Your Password",
@@ -191,7 +176,6 @@ Map<String, String> english = {
   KeyLanguage.hintSearch: "Search",
   KeyLanguage.hintTitleMessage: "Title of your message",
   KeyLanguage.hintBodyMessage: "Type your message or description...",
-
 //button
   KeyLanguage.buttonLogin: "Login",
   KeyLanguage.buttonYes: "Yes",
@@ -211,9 +195,7 @@ Map<String, String> english = {
   KeyLanguage.buttonDownloadPdf: "Download PDF",
   KeyLanguage.buttonSend: "Send",
   KeyLanguage.buttonOkay: "Okey",
-  // KeyLanguage.buttonTrack: "Track",
-
-  //bar
+//bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"
   KeyLanguage.barAccept: "Accepted",
@@ -221,145 +203,3 @@ Map<String, String> english = {
   KeyLanguage.barArchive: "Archive",
   KeyLanguage.barPendingPickup: "Waiting",
 };
-  
-//   KeyLanguage.easyAndSafePayment: "Easy and Safe Payment",
-//   KeyLanguage.trackYourOrder: "Track Your Order",
-//   KeyLanguage.fastDelivery: "Fast Delivery",
-//   KeyLanguage.bodyChooseProduct:
-//       "We Have 100k Product, Choose\nYour Product From Our E-commerce Shop",
-//   //button
-//   KeyLanguage.continueButton: "Continue",
-//   KeyLanguage.signupButton: "SignUp",
-//   KeyLanguage.verifyButton: "Verify",
-//   KeyLanguage.goToCartButton: "Add To Card",
-//   KeyLanguage.nextButton: "Next",
-//   KeyLanguage.applyButton: "Apply",
-//   KeyLanguage.removeButton: "Remove",
-//   KeyLanguage.checkoutButton: "Checkout",
-//   KeyLanguage.orderButton: "Place Order",
-//   KeyLanguage.deleteButton: "Delete",
-//   KeyLanguage.acceptButton: "Accept",
-//   KeyLanguage.injectButton: "Inject",
-//   KeyLanguage.submitButton: "Submit",
-
-// //auth
-//   KeyLanguage.successTitle: "Success",
-//   KeyLanguage.signupContent:
-//       "Signup with your email and password or continue with social media",
-//   KeyLanguage.successContent:
-//       "Success! Your Action Is Complete. Please Log In Again.",
-// //text field
-//   //label
-//   KeyLanguage.usernameLabel: "Username",
-//   KeyLanguage.phoneLabel: "Phone",
-//   KeyLanguage.searchLabel: "Search",
-//   KeyLanguage.typeAddressLabel: "Type Building",
-//   KeyLanguage.cityLabel: "City",
-//   KeyLanguage.streetLabel: "Street",
-//   KeyLanguage.detailAddressLabel: "Detail Address(Option)",
-
-//   //hint
-//     KeyLanguage.usernameHint: "Enter Your Name",
-//   KeyLanguage.phoneHint: "Enter Your Phone",
-//   KeyLanguage.searchHint: "Find Your Product Here",
-//   KeyLanguage.typeAddressHint: "e.g. Home, Office, School 🏠🏢🏫",
-//   KeyLanguage.cityHint: "Enter your city 🏙️",
-//   KeyLanguage.streetHint: "Enter your street name 🛣️",
-//   KeyLanguage.detailAddressHint: "Apartment number, floor, building 🏢",
-//   KeyLanguage.couponsHint: "Enter Coupons",
-//   KeyLanguage.ratingHint:
-//       "Tap a star to set your rating. Add more description here if you want.",
-//   KeyLanguage.commentHint: "Set your custom comment hint",
-//   //message
-//   
-//   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
-//   KeyLanguage.messageLinkSignup: "I really have an account",
-//   KeyLanguage.productNoNotAvailableMessage:
-//       "Please Note That This Is The Only Unit Currently Available In Our Store.",
-  // //validator
-  // KeyLanguage.empty: "Please, Fill Field",
-  // KeyLanguage.invalidUsername: "Username Is Invalid",
-  // KeyLanguage.invalidEmail: "Email Is Invalid",
-  // KeyLanguage.invalidPassword: "Enter The Digital Password",
-  // KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
-  // KeyLanguage.lessMin: "Entry length is less than : ",
-  // KeyLanguage.greaterMax: "Entry length is greater than : ",
-  //home
-//   KeyLanguage.hello: "Hello",
-//   KeyLanguage.titleCategories: "Categories",
-//   KeyLanguage.titleDiscountProduct: "Product For You",
-//   //botton bar
-//   KeyLanguage.barHome: "HOME",
-//   KeyLanguage.barSetting: " SETTING",
-//   KeyLanguage.barReceipt: "Receipt",
-//   // KeyLanguage.barProfile: "PROFILE",
-//   KeyLanguage.barNotification: "Notification",
-//   //product
-//   KeyLanguage.color: "Color",
-//   KeyLanguage.addProductMessage: "SORRY, Not More Products",
-//   KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
-//   KeyLanguage.outOfStock: "Out Of Stock",
-//   //setting
-//   // KeyLanguage.nameUSer : "Name : ",
-//   KeyLanguage.addressSetting: "Drop Your Address Here",
-//   // KeyLanguage.emailUSer : "Email : ",
-//   // KeyLanguage.phoneUSer : "Phone : ",
-//   // KeyLanguage.passwordUSer : "Password",
-//   KeyLanguage.archiveTitle: "Orders archive",
-//   KeyLanguage.contectUsTitle: "Contact Us",
-//   KeyLanguage.logout: "Logout",
-//   //drawer
-//   KeyLanguage.aboutUS: "Aboout Us",
-//   KeyLanguage.contactWithUs: "contact With Us",
-//   KeyLanguage.commonQuestion: "Common Question",
-//   KeyLanguage.sendComment: "Send Your Comment",
-//   KeyLanguage.changeLangeuag: "Change App Language",
-//   KeyLanguage.changeModeDL: "Change ModeDL",
-//   KeyLanguage.changeModeBG: "changeModeBG",
-//   KeyLanguage.natification: "natification",
-//   KeyLanguage.readMoneyAi: "readMoneyAi",
-//   //cart
-//   KeyLanguage.appBarTitleCart: "My Cart",
-//   KeyLanguage.youHave: "You Have",
-//   KeyLanguage.listITemCart: "Item/s In Your List",
-//   KeyLanguage.shoppingTitle: "Shopping",
-//   KeyLanguage.ratingTitle: "Rating",
-//   KeyLanguage.couponsDiscount: "Coupon Discount",
-//   KeyLanguage.couponsNotFoundMessage:
-//       "Oops, That Coupon Didn’t Work. Try Another One!",
-//   //search
-//   KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
-//   //address
-//   KeyLanguage.appBarTitleInsertAddress: "Add New Address",
-//   KeyLanguage.appBarTitleDetailInsertAddress: "Confirm Address Details",
-//   KeyLanguage.appBarTitleDisplayAddress: "My Addresse/s",
-//   KeyLanguage.waitingGoogleMap: "Waiting, Please...",
-//   //checkout
-  // KeyLanguage.titlePaymentMethod: "Choose Payment Method",
-  // KeyLanguage.titleDeliveryType: "Choose Delivery Type",
-  // KeyLanguage.titleShoppingAddress: "Choose Shopping Address",
-  // KeyLanguage.cashOption: "Cash On Delivery",
-  // KeyLanguage.paymentOption: "Payment Cards",
-  // KeyLanguage.deliveryOption: "Delivery",
-  // KeyLanguage.receiveOption: "Receive",
-  // KeyLanguage.chooseDeliveryMessage:
-  //     "Oops! Please Select A Delivery Option—Either Delivery Or Receive—Before Continuing. 😊",
-  // KeyLanguage.chooseAddressMessage:
-  //     "Oops! Please Select One Of Your Saved Addresses Before Continuing. 😊",
-  // KeyLanguage.appBarTitleOrder: "Orders",
-  // KeyLanguage.appBarTitleDetailOrder: "Orders Detail",
-  // KeyLanguage.appBarTitleArchive: "Archive",
-  // KeyLanguage.orderNumber: "Oreder Number : #",
-  // KeyLanguage.orderType: "Oreder Type : ",
-  // KeyLanguage.orderPrice: "Order Price : ",
-  // KeyLanguage.deliveyPrice: "Delivery Price : ",
-  // KeyLanguage.paymentMethod: "Payment Method : ",
-  // KeyLanguage.orderStatus: "Order Status : ",
-  // KeyLanguage.approvedOption: "✅ Your Order Is Confirmed!",
-  // KeyLanguage.prepareOption: "📦 We’re Preparing Your Order.",
-  // KeyLanguage.onWayOption: "🚚 Your Order Is On The Way!",
-  // KeyLanguage.doneDeliveryOption: "📬 Your Order Has Been Delivered. Enjoy!",
-  // KeyLanguage.addressTitle: "Shipping Address",
-//   //notification
-//   KeyLanguage.appBarTitleNotification: "Notificaion",
-// };
