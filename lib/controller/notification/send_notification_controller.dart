@@ -5,38 +5,39 @@ import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/models/home_model.dart';
 import 'package:get/get.dart';
 
-abstract class NotificationController extends GetxController {}
+abstract class SendNotificationController extends GetxController {}
 
-class NotificationControllerImp extends NotificationController {
+class SendNotificationControllerImp extends SendNotificationController {
   late StatusRequest statusRequest;
-  late List<HomeModel> dataMessageTypeFeature;
+  late List<HomeModel> dataSendTypeFeature;
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
-    dataMessageTypeFeature = [
+    dataSendTypeFeature = [
       HomeModel(
-        image: AppImages.imagesSendMessage,
-        title: KeyLanguage.titleSendMessage,
+        image: AppImages.imagesUsers,
+        title: KeyLanguage.titleUsers,
         onPressed: () {
-          goToSendMessage();
+          goToUsersSendMessage();
         },
       ),
       HomeModel(
-        image: AppImages.imagesReceiveMessage,
-        title: KeyLanguage.titleReceiveMessage,
+        image: AppImages.imagesDeliveryMan,
+        title: KeyLanguage.titleDeliveries,
         onPressed: () {
-          goToReceiveMessage();
+          goToDeliverySendMessage();
         },
       ),
     ];
     super.onInit();
   }
 
-  void goToSendMessage() {
-    Get.toNamed(ConstantScreenName.sendNotification);
+  void goToUsersSendMessage() {
+    Get.toNamed(ConstantScreenName.usersSendNotification);
   }
 
-  void goToReceiveMessage() {
-    Get.toNamed(ConstantScreenName.receiveNotification);
+  void goToDeliverySendMessage() {
+    Get.toNamed(ConstantScreenName.deliverySendNotification);
   }
 }

@@ -9,6 +9,7 @@ import 'package:admin_ecommerce/view/screen/message/message_view.dart';
 import 'package:admin_ecommerce/view/screen/message/users_message_view.dart';
 import 'package:admin_ecommerce/view/screen/notification/notification_view.dart';
 import 'package:admin_ecommerce/view/screen/notification/receive_notification_view.dart';
+import 'package:admin_ecommerce/view/screen/notification/send_notification_view.dart';
 import 'package:admin_ecommerce/view/screen/onboarding/splash_view.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
 import 'package:admin_ecommerce/core/middleware/onboarding_middleware.dart';
@@ -119,6 +120,10 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.notification,
         page: () => const NotificationView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.sendNotification,
+        page: () => const SendNotificationView(),
       ),
       GetPage(
         name: ConstantScreenName.receiveNotification,
