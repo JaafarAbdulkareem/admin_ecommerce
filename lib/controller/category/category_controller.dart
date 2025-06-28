@@ -12,7 +12,6 @@ import 'package:get/get.dart';
 
 abstract class CategoryController extends BaseFloatingButtonController {
   void deleteCategory(int index);
-  // void goToInsertCategory();
   void goToUpdateCategory(int index);
 }
 
@@ -46,6 +45,7 @@ class CategoryControllerImp extends CategoryController {
           update();
         }
       } else {
+        firstTime = true;
         update();
       }
     } else {

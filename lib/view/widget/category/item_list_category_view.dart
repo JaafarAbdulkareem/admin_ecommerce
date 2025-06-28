@@ -9,7 +9,8 @@ class ItemListCategoryView extends StatelessWidget {
   const ItemListCategoryView({
     super.key,
     required this.data,
-    required this.deleteOnTap, required this.updateOnTap,
+    required this.deleteOnTap,
+    required this.updateOnTap,
   });
   final CategoryModel data;
   final VoidCallback deleteOnTap, updateOnTap;
