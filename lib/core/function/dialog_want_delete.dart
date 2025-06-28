@@ -2,7 +2,9 @@ import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Future<void> dialogWantDelete({required VoidCallback yesButton}) async {
+Future<void> dialogWantDelete({
+  required VoidCallback yesButton,
+}) async {
   return await Get.defaultDialog(
     title: KeyLanguage.alert.tr,
     middleText: KeyLanguage.alertWantDelete.tr,
