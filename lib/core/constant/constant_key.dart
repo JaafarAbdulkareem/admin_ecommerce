@@ -63,7 +63,7 @@ abstract class ConstantKey {
   // static const String idDeliveryType = "idDeliveryType";
   // static const String idAddressType = "idAddressType";
 //notifiction
-  // static const String idDeleteIcon = "idDeleteIcon";
+  static const String idDeleteIcon = "idDeleteIcon";
 //choose option
   // static const String cachOption = "cachOption";
   // static const String paymentOption = "paymentOption";
@@ -94,4 +94,5 @@ abstract class ConstantTextFons {
 abstract class ConstantText {
   static const String obscureText = "*";
   static const String currencyPrice = r'$';
+  static const String patternDate = 'yyyy-MM-dd';
 }

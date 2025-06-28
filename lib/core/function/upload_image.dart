@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 /// Picks an image from the device camera.
@@ -10,13 +11,13 @@ Future<File?> pickImageFromCamera() async {
       source: ImageSource.camera,
       imageQuality: 90,
     );
-    
+
     if (xfile != null && xfile.path.isNotEmpty) {
       return File(xfile.path);
     }
   } catch (e) {
     // Handle camera error if needed
-    print('Camera Error: $e');
+    debugPrint('Camera Error: $e');
   }
   return null;
 }
@@ -31,14 +32,22 @@ Future<File?> pickFileFromGallery({bool isSvg = false}) async {
       allowedExtensions: isSvg
           ? ['svg', 'SVG']
           : [
-              'png', 'PNG',
-              'jpg', 'JPG',
-              'jpeg', 'JPEG',
-              'gif', 'GIF',
-              'bmp', 'BMP',
-              'webp', 'WEBP',
-              'heic', 'HEIC',
-              'tiff', 'TIFF'
+              'png',
+              'PNG',
+              'jpg',
+              'JPG',
+              'jpeg',
+              'JPEG',
+              'gif',
+              'GIF',
+              'bmp',
+              'BMP',
+              'webp',
+              'WEBP',
+              'heic',
+              'HEIC',
+              'tiff',
+              'TIFF'
             ],
     );
 
@@ -47,7 +56,7 @@ Future<File?> pickFileFromGallery({bool isSvg = false}) async {
     }
   } catch (e) {
     // Handle file picker error if needed
-    print('File Picker Error: $e');
+    debugPrint('File Picker Error: $e');
   }
   return null;
 }

@@ -42,9 +42,17 @@ class AppImages {
   /// assets/images/receive.png
   static const String imagesReceive = "assets/images/receive.png";
 
+  /// Assets for imagesReceiveMessage
+  /// assets/images/receive_message.png
+  static const String imagesReceiveMessage = "assets/images/receive_message.png";
+
   /// Assets for imagesReport
   /// assets/images/report.png
   static const String imagesReport = "assets/images/report.png";
+
+  /// Assets for imagesSendMessage
+  /// assets/images/send_message.png
+  static const String imagesSendMessage = "assets/images/send_message.png";
 
   /// Assets for imagesSetting
   /// assets/images/setting.png

@@ -41,19 +41,19 @@ List<HomeModel> dataHomeFeature = [
   //   },
   // ),
   HomeModel(
+    image: AppImages.imagesNotification,
+    title: KeyLanguage.titleNotification,
+    onPressed: () {
+      Get.toNamed(ConstantScreenName.notification);
+    },
+  ),
+  HomeModel(
     image: AppImages.imagesReport,
     title: KeyLanguage.titleReport,
     onPressed: () {
       Get.toNamed(ConstantScreenName.report);
     },
   ),
-  // HomeModel(
-  //   image: AppImages.imagesNotification,
-  //   title: KeyLanguage.titleNotification,
-  //   onPressed: () {
-  //     // Navigator function for Notification
-  //   },
-  // ),
 
   // HomeModel(
   //   image: AppImages.imagesDelivery,

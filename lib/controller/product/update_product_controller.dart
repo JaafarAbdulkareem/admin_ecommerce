@@ -155,7 +155,6 @@ class UpdateProductControllerImp extends UpdateProductController {
           file: file,
         );
 
-        print("response : $response");
         statusRequest = handleStatus(response);
 
         if (statusRequest == StatusRequest.success) {

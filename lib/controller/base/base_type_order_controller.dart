@@ -2,6 +2,7 @@ import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/request_permission.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_screen_name.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,14 +35,14 @@ abstract class BaseTypeOrderController extends GetxController {
     } else if (status.isPermanentlyDenied) {
       _showGoToSettingsDialog();
     } else {
-      print("📛 Unknown permission status: $status");
+      debugPrint("📛 Unknown permission status: $status");
     }
   }
 
   void _makeCall(String phone) async {
     final Uri phoneUri = Uri.parse("tel:$phone");
     final bool launched = await launchUrl(phoneUri);
-    print(launched ? "✅ Launch success" : "❌ Launch failed");
+    debugPrint(launched ? "✅ Launch success" : "❌ Launch failed");
   }
 
   void _showRequestPermissionDialog(phone) {
@@ -55,7 +56,7 @@ abstract class BaseTypeOrderController extends GetxController {
           await permissionHandler.requestPhonePermission();
           await onCall(phone); // Retry if granted
         } on PermissionPhoneException {
-          print("❌ User denied phone permission.");
+          debugPrint("❌ User denied phone permission.");
         }
       },
     );

@@ -30,7 +30,11 @@ class ConstantScreenName {
   static const String deliveryMessage = "/deliveryMessage";
 //notification
   static const String notification = "/notification";
-//
+  static const String sendNotification = "/sendNotification";
+  static const String receiveNotification = "/receiveNotification";
+  static const String usersSendNotification = "/usersSendNotification";
+  static const String deliverySendNotification = "/deliverySendNotification";
+//report
   static const String report = "/report";
   // static const String productDetail = "/productDetail";
   // static const String favorite = "/favorite";

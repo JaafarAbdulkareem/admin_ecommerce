@@ -21,6 +21,10 @@ Map<String, String> english = {
   KeyLanguage.appBarUsersMessage: "Users Messages",
   KeyLanguage.appBarDeliveryMessage: "Delivery Messages",
   KeyLanguage.appBarNotification: "Notificaiton",
+  KeyLanguage.appBarReceiveNotification: "Received Notificaiton",
+  KeyLanguage.appBarSendNotification: "Sent Notificaiton",
+  KeyLanguage.appBarUsersSendNotification: "Users Sent Notificaiton",
+  KeyLanguage.appBarDeliverySendNotification: "Delivery Sent Notificaiton",
   KeyLanguage.appBarReport: "Report",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
@@ -88,6 +92,9 @@ Map<String, String> english = {
       "Just Click The Send Button And Your Message Will Be On Its Way! The User Will Get It As A Notification.",
   KeyLanguage.messageDeliveryMessage:
       "Click The Send Button To Notify The Delivery Men. They Will Receive The Message As A Notification",
+//notification
+  KeyLanguage.titleSendMessage: "Sent",
+  KeyLanguage.titleReceiveMessage: "Received",
 //report
   KeyLanguage.titleDashboard: "Dashboard",
   KeyLanguage.titleUserUsing: "Users Using App",
@@ -131,8 +138,10 @@ Map<String, String> english = {
   KeyLanguage.alertMessageSuccessPdf: "PDF saved to Downloads folder.",
   KeyLanguage.alertFailedSave: "Save Failed",
   KeyLanguage.alertMessageFailedDownload: "Error saving PDF: ",
-  KeyLanguage.alertMessageSuccessMessage: "Your Message Was Sent! The Recipient Will Be Notified Soon. 😊",
-  KeyLanguage.alertMessageFailedMessage: "Oops! Something Went Wrong. The Message Couldn't Be Sent. Please Try Again. 😕",
+  KeyLanguage.alertMessageSuccessMessage:
+      "Your Message Was Sent! The Recipient Will Be Notified Soon. 😊",
+  KeyLanguage.alertMessageFailedMessage:
+      "Oops! Something Went Wrong. The Message Couldn't Be Sent. Please Try Again. 😕",
   // KeyLanguage.incrementMessage:
   //     "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
   // // KeyLanguage.decrementMessage:

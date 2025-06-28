@@ -19,6 +19,12 @@ abstract class KeyLanguage {
   static const String appBarUsersMessage = "appBarUSersMessage";
   static const String appBarDeliveryMessage = "appBarDeliveryMessage";
   static const String appBarNotification = "appBarNotification";
+  static const String appBarReceiveNotification = "appBarReceiveNotification";
+  static const String appBarSendNotification = "appBarSendNotification";
+  static const String appBarUsersSendNotification =
+      "appBarUsersSendNotification";
+  static const String appBarDeliverySendNotification =
+      "appBarDeliverySendNotification";
   static const String appBarReport = "appBarReport";
 
 //validator
@@ -83,6 +89,9 @@ abstract class KeyLanguage {
 //message
   static const String messageUserMessage = "messageUserMessage";
   static const String messageDeliveryMessage = "messageDeliveryMessage";
+//notification
+  static const String titleSendMessage = "titleSendMessage";
+  static const String titleReceiveMessage = "titleReceiveMessage";
 //report
   static const String titleDashboard = "titleDashboard";
   static const String titleUserUsing = "titleUserUsing";

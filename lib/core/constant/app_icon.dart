@@ -42,7 +42,7 @@ abstract class AppIcon {
   // static const IconData contactUs =  Icons.phone_outlined;
   // static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
-  // static const IconData deleteSwipe = Icons.delete;
+  static const IconData deleteSwipe = Icons.delete;
   // static const IconData typeAddress = Icons.bookmark;
   // static const IconData city = Icons.location_city;
   // static const IconData street = Icons.route;
