@@ -7,19 +7,20 @@ import 'package:admin_ecommerce/core/service/shared_prefs_service.dart';
 import 'package:admin_ecommerce/data/models/notification_model.dart';
 import 'package:get/get.dart';
 
-abstract class ReceiveNotificationController
+abstract class DeliverySendNotificationController
     extends BaseNotificationController {}
 
-class ReceiveNotificationControllerImp extends ReceiveNotificationController {
+class DeliverySendNotificationControllerImp
+    extends DeliverySendNotificationController {
   late SharedPrefsService prefs;
   late String userId;
   static List<NotificationModel> notificationData = [];
   static bool firstTime = true;
   @override
   void onInit() {
+    statusRequest = StatusRequest.initial;
     prefs = Get.find<SharedPrefsService>();
     userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
-    statusRequest = StatusRequest.initial;
     _getData();
     super.onInit();
   }
@@ -35,8 +36,9 @@ class ReceiveNotificationControllerImp extends ReceiveNotificationController {
       firstTime = false;
       statusRequest = StatusRequest.loading;
       update();
-      var response =
-          await notificationRemote.getNotificationData(userId: userId);
+      var response = await notificationRemote.getDeliverySendNotificationData(
+        userId: userId,
+      );
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
@@ -67,7 +69,7 @@ class ReceiveNotificationControllerImp extends ReceiveNotificationController {
 
   @override
   Future<void> deleteNotification(int index) async {
-    var response = await notificationRemote.deleteNotification(
+    var response = await notificationRemote.deleteDeliverySendNotification(
       id: notificationData[index].id.toString(),
     );
 
