@@ -24,17 +24,19 @@ class BodyLoginView extends GetView<LoginControllerImp> {
       child: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: ConstantScale.horizonPage),
+            padding: const EdgeInsets.symmetric(
+                horizontal: ConstantScale.horizonPage),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const CustomLogoWidget(),
+                const SizedBox(height: 40),
                 TitleDescriptionWidget(
                   title: KeyLanguage.titleWelcome.tr,
                   subTitle: KeyLanguage.messageLogin.tr,
                 ),
+                const SizedBox(height: 25),
                 CustomTextFormFieldWidget(
                   hint: KeyLanguage.hintEmail.tr,
                   label: KeyLanguage.labelEmail.tr,
@@ -68,7 +70,9 @@ class BodyLoginView extends GetView<LoginControllerImp> {
                     },
                   ),
                 ),
+                const SizedBox(height: 16),
                 const ForgetPasswordWidget(),
+                const SizedBox(height: 16),
                 CustomButtonWidget(
                   text: KeyLanguage.buttonLogin.tr,
                   onTap: () {
