@@ -4,12 +4,15 @@ import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:get/get.dart';
 
 String? validator(String? value, String type, int min, int max) {
-  if (value == null) {
+  if (value == null || value.trim().isEmpty) {
     return KeyLanguage.empty.tr;
   } else {
     value = value.trim();
-    if (value.isEmpty) {
-      return KeyLanguage.empty.tr;
+
+    if (ConstantKey.usernameValidator == type) {
+      if (!GetUtils.isUsername(value)) {
+        return KeyLanguage.invalidUsername.tr;
+      }
     } else if (ConstantKey.emailValidator == type) {
       if (!GetUtils.isEmail(value)) {
         return KeyLanguage.invalidEmail.tr;
@@ -25,6 +28,21 @@ String? validator(String? value, String type, int min, int max) {
         }
       } else {
         return KeyLanguage.invalidPassword.tr;
+      }
+    } else if (ConstantKey.phoneValidator == type) {
+      if (!GetUtils.isPhoneNumber(value)) {
+        return KeyLanguage.invalidPhone.tr;
+      }
+    } else if (ConstantKey.ageValidator == type) {
+      if (!GetUtils.isNum(value)) {
+        return KeyLanguage.enterNumber.tr;
+      }
+      int age = int.tryParse(value) ?? 0;
+      if (age < min) {
+        return KeyLanguage.lessMin.tr + min.toString();
+      }
+      if (age > max) {
+        return KeyLanguage.greaterMax.tr + max.toString();
       }
     }
     return null;

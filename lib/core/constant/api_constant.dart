@@ -63,48 +63,10 @@ abstract class ApiConstant {
 
   static const String folderReport = "$folderAdmin/report";
   static const String apiViewReport = "$folderReport/view_report.php";
-//   static const String folderHome = "$folderUser/home";
-//   static const String apiHome = "$folderHome/home.php";
-//   static const String apiSearchPrdouct = "$folderHome/search_product.php";
 
-//   static const String folderCart = "$folderUser/cart";
-//   static const String apiView = "$folderCart/view.php";
-//   static const String apiInsert = "$folderCart/insert.php";
-//   static const String apiDeleteAllProduct =
-//       "$folderCart/delete_all_product.php";
-//   static const String apiIncrement = "$folderCart/increment.php";
-//   static const String apiDecrement = "$folderCart/decrement.php";
-
-  // static const String folderAddress = "$folderUser/address";
-  // static const String apiViewAddress = "$folderAddress/view_address.php";
-  // static const String apiInsertAddress = "$folderAddress/insert_address.php";
-  // static const String apiDeleteAddress = "$folderAddress/delete_address.php";
-  // static const String apiUpdateAddress = "$folderAddress/update_address.php";
-
-//   static const String folderCoupons = "$folderUser/coupons";
-//   static const String apiViewCoupons = "$folderCoupons/view_coupons.php";
-
-//   static const String folderOrder = "$folderUser/order";
-//   // static const String apiCheckProductNo =
-//   //     "$folderOrder/check_product_no.php";
-//   static const String apiCheckout = "$folderOrder/checkout.php";
-//   static const String apiViewOrder = "$folderOrder/view_order.php";
-//   static const String apiDeleteOrder = "$folderOrder/delete_order.php";
-//   static const String apiViewArchive = "$folderOrder/view_archive.php";
-//   static const String apiViewDetailOrder = "$folderOrder/view_detail_order.php";
-//   static const String apiViewInvalidOrder =
-//       "$folderOrder/view_invalid_order.php";
-//   static const String apiInsertSubmitInvalidOrder =
-//       "$folderOrder/insert_submit_invalid_order.php";
-
-//   static const String folderNotification = "$folderUser/notification";
-//   static const String apiViewNotification =
-//       "$folderNotification/view_notification.php";
-//   static const String apiInsertNotification =
-//       "$folderNotification/insert_notification.php";
-//   static const String apiDeleteNotification =
-//       "$folderNotification/delete_notification.php";
-
-//   static const String folderRating = "$folderUser/rating";
-//   static const String apiInsertRating = "$folderRating/insert_rating.php";
+  static const String folderSetting = "$folderAdmin/setting";
+  static const String apiViewDeliveryMen =
+      "$folderSetting/view_delivery_men.php";
+  static const String apiSignupDeliveryMan =
+      "$folderSetting/signup_delivery.php";
 }

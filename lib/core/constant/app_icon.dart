@@ -21,7 +21,8 @@ abstract class AppIcon {
 
   static const IconData notificationRing = Icons.notifications_active_outlined;
   // static const IconData edit = Icons.edit;
-  // static const IconData phone = Icons.phone_android_rounded;
+  static const IconData phone = Icons.phone_android_rounded;
+  static const IconData age = Icons.cake_outlined;
   // static const IconData success = Icons.check_circle_outline;
   // static const IconData search = Icons.search_outlined;
   // static const IconData notification = Icons.notifications;
@@ -50,4 +51,5 @@ abstract class AppIcon {
   static const IconData error = Icons.error;
   static const IconData warning = Icons.warning_amber_rounded;
   static const IconData success = Icons.check_circle;
+  static const IconData login = Icons.login;
 }

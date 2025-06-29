@@ -51,7 +51,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           ),
           hintText: hint,
           hintStyle: Theme.of(context).textTheme.bodySmall,
-          suffixIcon: keyboardType == TextInputType.number
+          suffixIcon: icon == AppIcon.closePassword &&
+                  keyboardType == TextInputType.number
               ? IconButton(
                   onPressed: changeCasePassword,
                   icon: Icon(

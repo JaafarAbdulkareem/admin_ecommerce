@@ -27,6 +27,7 @@ Map<String, String> english = {
   KeyLanguage.appBarDeliverySendNotification: "Delivery Sent Notificaiton",
   KeyLanguage.appBarReport: "Report",
   KeyLanguage.appBarSetting: "Setting",
+  KeyLanguage.appBarSignup: "Signup",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -34,6 +35,8 @@ Map<String, String> english = {
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
   KeyLanguage.enterNumber: "Only Digital Entry Is Allowed",
+  KeyLanguage.invalidUsername: "Username Is Invalid",
+  KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
 //splash
   KeyLanguage.chooseLanguage: "Choose Language",
   KeyLanguage.arabic: "Arabic",
@@ -112,6 +115,10 @@ Map<String, String> english = {
   KeyLanguage.logout: "Logout",
   KeyLanguage.darkMode: "Dark Mode",
   KeyLanguage.language: "Language",
+  KeyLanguage.deliveryRegistor: "Add Delivery Man",
+//login delivery
+  KeyLanguage.messageRegisterDelivery:
+      "Once you register the delivery man, they can log in using the email and password you just added.",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -147,6 +154,10 @@ Map<String, String> english = {
       "Your Message Was Sent! The Recipient Will Be Notified Soon. 😊",
   KeyLanguage.alertMessageFailedMessage:
       "Oops! Something Went Wrong. The Message Couldn't Be Sent. Please Try Again. 😕",
+  KeyLanguage.alertDeliveryRegisterSuccess:
+      "Delivery Man Has Been Registered Successfully And Is Now Pending Verification.",
+  KeyLanguage.alerMessageEmailFound: "The Email or Phone is Exist",
+
 //label
   KeyLanguage.labelEmail: "Email",
   KeyLanguage.labelPassword: "Password",
@@ -162,6 +173,9 @@ Map<String, String> english = {
   KeyLanguage.labelDiscount: "Discount (%)",
   KeyLanguage.labelTitleMessage: "Title",
   KeyLanguage.labelBodyMessage: "Message",
+  KeyLanguage.labelUsername: "Username",
+  KeyLanguage.labelPhone: "Phone",
+  KeyLanguage.labelAge: "Age",
 //hint
   KeyLanguage.hintEmail: "Enter Your Email",
   KeyLanguage.hintPassword: "Enter Your Password",
@@ -181,6 +195,9 @@ Map<String, String> english = {
   KeyLanguage.hintSearch: "Search",
   KeyLanguage.hintTitleMessage: "Title of your message",
   KeyLanguage.hintBodyMessage: "Type your message or description...",
+  KeyLanguage.hintUsername: "Enter Your Name",
+  KeyLanguage.hintPhone: "Enter Your Phone",
+  KeyLanguage.hintAge: "Enter Your Age",
 //button
   KeyLanguage.buttonLogin: "Login",
   KeyLanguage.buttonYes: "Yes",
@@ -200,6 +217,7 @@ Map<String, String> english = {
   KeyLanguage.buttonDownloadPdf: "Download PDF",
   KeyLanguage.buttonSend: "Send",
   KeyLanguage.buttonOkay: "Okey",
+  KeyLanguage.buttonSignup: "SignUp",
 //bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"

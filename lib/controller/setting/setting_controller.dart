@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 abstract class SettingController extends GetxController {
   void changeStatePassword();
+  void goToLoginDelivery();
   void logout();
 }
 
@@ -16,10 +17,9 @@ class SettingControllerImp extends SettingController {
   late SharedPrefsService prefs;
   late String userId;
   late String email;
-  // late String password;
+  late String password;
   late StatusRequest statusRequest;
   RxBool hidePassword = true.obs;
-  late TextEditingController password;
 
   late LocaleController localeController;
   late RxBool isDarkMode;
@@ -34,8 +34,7 @@ class SettingControllerImp extends SettingController {
     prefs = Get.find<SharedPrefsService>();
     userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     email = prefs.prefs.getString(ConstantKey.keyEmail)!;
-    password = TextEditingController(
-        text: prefs.prefs.getString(ConstantKey.keyPassword) ?? "");
+    password = prefs.prefs.getString(ConstantKey.keyPassword)!;
 
     statusRequest = StatusRequest.initial;
 
@@ -67,5 +66,10 @@ class SettingControllerImp extends SettingController {
         .unsubscribeFromTopic("${ConstantKey.adminsTopics}$userId");
     prefs.prefs.clear();
     Get.offAllNamed(ConstantScreenName.login);
+  }
+
+  @override
+  void goToLoginDelivery() {
+    Get.toNamed(ConstantScreenName.loginDelivery);
   }
 }

@@ -1,6 +1,7 @@
 class ApiColumnDb {
   static const String id = "id";
   static const String username = "username";
+  static const String age = "age";
   static const String email = "email";
   static const String password = "password";
   static const String phone = "phone";

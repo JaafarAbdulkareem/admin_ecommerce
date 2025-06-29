@@ -27,6 +27,7 @@ Map<String, String> arabic = {
   KeyLanguage.appBarDeliverySendNotification: "إشعارات المندوبين",
   KeyLanguage.appBarReport: "التقارير",
   KeyLanguage.appBarSetting: "الإعدادات",
+  KeyLanguage.appBarSignup: "التسجيل",
 // validator
   KeyLanguage.empty: "يرجى تعبئة الحقل",
   KeyLanguage.invalidEmail: "البريد الإلكتروني غير صالح",
@@ -34,6 +35,8 @@ Map<String, String> arabic = {
   KeyLanguage.lessMin: "عدد الأحرف أقل من : ",
   KeyLanguage.greaterMax: "عدد الأحرف أكبر من : ",
   KeyLanguage.enterNumber: "مسموح بالأرقام فقط",
+  KeyLanguage.invalidUsername: "اسم المستخدم غير صالح",
+  KeyLanguage.invalidPhone: "أدخل رقم الهاتف بشكل صحيح",
 // splash
   KeyLanguage.chooseLanguage: "اختر اللغة",
   KeyLanguage.arabic: "العربية",
@@ -109,6 +112,10 @@ Map<String, String> arabic = {
   KeyLanguage.logout: "تسجيل الخروج",
   KeyLanguage.darkMode: "الوضع الليلي",
   KeyLanguage.language: "اللغة",
+  KeyLanguage.deliveryRegistor: "إضافة مندوب توصيل",
+//login delivery
+  KeyLanguage.messageRegisterDelivery:
+      "بعد ما تسجل المندوب، يقدر يدخل على النظام باستخدام البريد الإلكتروني وكلمة المرور اللي أضفتهم له.",
 // dialog
   KeyLanguage.alert: "تنبيه",
   KeyLanguage.alertWantExit: "هل تريد الخروج؟",
@@ -140,6 +147,9 @@ Map<String, String> arabic = {
       "تم إرسال رسالتك! سيتم إشعار المستلم قريبًا 😊",
   KeyLanguage.alertMessageFailedMessage:
       "حدث خطأ. لم يتم إرسال الرسالة. حاول مجددًا 😕",
+  KeyLanguage.alertDeliveryRegisterSuccess:
+      "تم تسجيل مندوب التوصيل بنجاح وهو بانتظار التحقق.",
+  KeyLanguage.alerMessageEmailFound: "البريد الإلكتروني أو الهاتف موجود",
 // label
   KeyLanguage.labelEmail: "البريد الإلكتروني",
   KeyLanguage.labelPassword: "كلمة المرور",
@@ -155,6 +165,9 @@ Map<String, String> arabic = {
   KeyLanguage.labelDiscount: "الخصم (%)",
   KeyLanguage.labelTitleMessage: "العنوان",
   KeyLanguage.labelBodyMessage: "الرسالة",
+  KeyLanguage.labelUsername: "اسم المستخدم",
+  KeyLanguage.labelPhone: "الهاتف",
+  KeyLanguage.labelAge: "العمر",
 // hint
   KeyLanguage.hintEmail: "أدخل بريدك الإلكتروني",
   KeyLanguage.hintPassword: "أدخل كلمة المرور",
@@ -172,6 +185,9 @@ Map<String, String> arabic = {
   KeyLanguage.hintSearch: "بحث",
   KeyLanguage.hintTitleMessage: "عنوان الرسالة",
   KeyLanguage.hintBodyMessage: "اكتب رسالتك أو وصفًا...",
+  KeyLanguage.hintUsername: "أدخل اسمك",
+  KeyLanguage.hintPhone: "أدخل رقم هاتفك",
+  KeyLanguage.hintAge: "أدخل عمرك",
 // button
   KeyLanguage.buttonLogin: "تسجيل الدخول",
   KeyLanguage.buttonYes: "نعم",
@@ -191,6 +207,7 @@ Map<String, String> arabic = {
   KeyLanguage.buttonDownloadPdf: "تحميل PDF",
   KeyLanguage.buttonSend: "إرسال",
   KeyLanguage.buttonOkay: "حسنًا",
+  KeyLanguage.buttonSignup: "التسجيل",
 // bar
   KeyLanguage.barPending: "الانتظار",
   KeyLanguage.barProper: "التأكيد",

@@ -11,10 +11,11 @@ abstract class ConstantKey {
   // static const String keyUsername = "keyUsername";
   // static const String userIdValidator = "userId";
 //validator
-  // static const String usernameValidator = "username";
+  static const String usernameValidator = "username";
+  static const String ageValidator = "age";
   static const String emailValidator = "email";
   static const String passwordValidator = "password";
-  // static const String phoneValidator = "phone";
+  static const String phoneValidator = "phone";
 //agurement navigator
   static const String categoryData = "categoryData";
   static const String productData = "productData";

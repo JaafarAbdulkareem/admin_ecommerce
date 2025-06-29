@@ -26,7 +26,7 @@ class BodySettingView extends GetView<SettingControllerImp> {
               title: Text(
                 controller.hidePassword.value
                     ? ConstantText.obscureText * ConstantScale.settingNoPassword
-                    : controller.password.text,
+                    : controller.password,
               ),
               trailing: InkWell(
                 onTap: () {
@@ -41,6 +41,13 @@ class BodySettingView extends GetView<SettingControllerImp> {
             ),
           );
         }),
+        FieldSetting(
+          title: KeyLanguage.deliveryRegistor.tr,
+          icon: AppIcon.login,
+          onTap: () {
+            controller.goToLoginDelivery();
+          },
+        ),
         const ChangeLanguageThemeWidget(),
         const SizedBox(height: 50),
         FieldSetting(

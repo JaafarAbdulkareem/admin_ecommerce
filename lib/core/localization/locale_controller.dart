@@ -36,7 +36,6 @@ class LocaleController extends GetxController {
       languageCode,
     );
 
-    print("isDark : ${themeMode == ThemeMode.dark}");
     await sharedPrefsService.prefs.setBool(
       ConstantKey.keyThemeMode,
       themeMode == ThemeMode.dark,

@@ -27,6 +27,7 @@ abstract class KeyLanguage {
       "appBarDeliverySendNotification";
   static const String appBarReport = "appBarReport";
   static const String appBarSetting = "appBarSetting";
+  static const String appBarSignup = "appBarSignup";
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
@@ -34,6 +35,8 @@ abstract class KeyLanguage {
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
   static const String enterNumber = "enterNumber";
+  static const String invalidUsername = "invalidUsername";
+  static const String invalidPhone = "invalidPhone";
 //splash
   static const String chooseLanguage = "chooseLanguage";
   static const String arabic = "arabic";
@@ -107,6 +110,9 @@ abstract class KeyLanguage {
   static const String logout = "logout";
   static const String darkMode = "darkMode";
   static const String language = "language";
+  static const String deliveryRegistor = "deliveryLogin";
+//login delivery
+  static const String messageRegisterDelivery = "messageRegisterDelivery";
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
@@ -135,6 +141,9 @@ abstract class KeyLanguage {
   static const String alertMessageFailedDownload = "alertMessageFailedDownload";
   static const String alertMessageSuccessMessage = "alertMessageSuccessMessage";
   static const String alertMessageFailedMessage = "alertMessageFailedMessage";
+  static const String alertDeliveryRegisterSuccess =
+      "alertDeliveryRegisterSuccess";
+  static const String alerMessageEmailFound = "alerMessageEmailFound";
 //label
   static const String labelEmail = "labelEmail";
   static const String labelPassword = "labelPassword";
@@ -152,6 +161,9 @@ abstract class KeyLanguage {
   static const String labelDiscount = "labelDiscount";
   static const String labelTitleMessage = "labelTitleMessage";
   static const String labelBodyMessage = "labelBodyMessage";
+  static const String labelUsername = "labelUsername";
+  static const String labelPhone = "labelPhone";
+  static const String labelAge = "labelAge";
 //hint
   static const String hintEmail = "hintEmail";
   static const String hintPassword = "hintPassword";
@@ -171,6 +183,9 @@ abstract class KeyLanguage {
   static const String hintSearch = "hintSearch";
   static const String hintTitleMessage = "hintTitleMessage";
   static const String hintBodyMessage = "hintBodyMessage";
+  static const String hintUsername = "hintUsername";
+  static const String hintPhone = "hintPhone";
+  static const String hintAge = "hintAge";
 //button
   static const String buttonLogin = "buttonLogin";
   static const String buttonYes = "buttonYes";
@@ -190,6 +205,7 @@ abstract class KeyLanguage {
   static const String buttonDownloadPdf = "buttonDownloadPdf";
   static const String buttonSend = "buttonSend";
   static const String buttonOkay = "buttonOkay";
+  static const String buttonSignup = "buttonSignup";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";
