@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 abstract class SettingController extends GetxController {
   void changeStatePassword();
   void goToLoginDelivery();
+  void goToDeliveryInfo();
   void logout();
 }
 
@@ -71,5 +72,10 @@ class SettingControllerImp extends SettingController {
   @override
   void goToLoginDelivery() {
     Get.toNamed(ConstantScreenName.loginDelivery);
+  }
+
+  @override
+  void goToDeliveryInfo() {
+    Get.toNamed(ConstantScreenName.deliveryInfo);
   }
 }

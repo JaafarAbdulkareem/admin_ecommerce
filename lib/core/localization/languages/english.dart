@@ -28,6 +28,7 @@ Map<String, String> english = {
   KeyLanguage.appBarReport: "Report",
   KeyLanguage.appBarSetting: "Setting",
   KeyLanguage.appBarSignup: "Signup",
+  KeyLanguage.appBarDeliveryInfo: "Delivery Details",
 //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -116,9 +117,19 @@ Map<String, String> english = {
   KeyLanguage.darkMode: "Dark Mode",
   KeyLanguage.language: "Language",
   KeyLanguage.deliveryRegistor: "Add Delivery Man",
+  KeyLanguage.deliveryInfo: "Delivery Men Details",
 //login delivery
   KeyLanguage.messageRegisterDelivery:
       "Once you register the delivery man, they can log in using the email and password you just added.",
+//delivery info
+  KeyLanguage.deliveryId: "Delivery ID : #",
+  KeyLanguage.displayDeliveryMen: "Display Delivery Men",
+  KeyLanguage.ageDelivery: "Delivery Age : ",
+  KeyLanguage.phoneDelivery: "Delivery Phone : ",
+  KeyLanguage.passwordDelivery: "Delivery Password : ",
+  KeyLanguage.emailSubjectDeliveryInquiry: "Delivery Inquiry",
+  KeyLanguage.emailBodyDeliveryInquiry:
+      "Hello,\n\nI would like to ask about...",
 //dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.alertWantExit: "Do You Want Exit?",
@@ -157,7 +168,9 @@ Map<String, String> english = {
   KeyLanguage.alertDeliveryRegisterSuccess:
       "Delivery Man Has Been Registered Successfully And Is Now Pending Verification.",
   KeyLanguage.alerMessageEmailFound: "The Email or Phone is Exist",
-
+  KeyLanguage.alertEmailAppTitle: "Email App Not Found",
+  KeyLanguage.alertEmailAppBody:
+      "No email app available to send email.\nPlease install an email client or check your device settings.",
 //label
   KeyLanguage.labelEmail: "Email",
   KeyLanguage.labelPassword: "Password",
@@ -218,6 +231,8 @@ Map<String, String> english = {
   KeyLanguage.buttonSend: "Send",
   KeyLanguage.buttonOkay: "Okey",
   KeyLanguage.buttonSignup: "SignUp",
+  KeyLanguage.buttonEmail: "Email",
+  KeyLanguage.buttonDelete: "Delete",
 //bar
   KeyLanguage.barPending: "Pending",
   KeyLanguage.barProper: "Confirmed", // More clear than "Proper"

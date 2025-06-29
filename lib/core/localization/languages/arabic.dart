@@ -28,6 +28,7 @@ Map<String, String> arabic = {
   KeyLanguage.appBarReport: "التقارير",
   KeyLanguage.appBarSetting: "الإعدادات",
   KeyLanguage.appBarSignup: "التسجيل",
+  KeyLanguage.appBarDeliveryInfo: "معلومات عامل التوصيل",
 // validator
   KeyLanguage.empty: "يرجى تعبئة الحقل",
   KeyLanguage.invalidEmail: "البريد الإلكتروني غير صالح",
@@ -113,9 +114,18 @@ Map<String, String> arabic = {
   KeyLanguage.darkMode: "الوضع الليلي",
   KeyLanguage.language: "اللغة",
   KeyLanguage.deliveryRegistor: "إضافة مندوب توصيل",
+  KeyLanguage.deliveryInfo: "معلومات عمال التوصيل",
 //login delivery
   KeyLanguage.messageRegisterDelivery:
       "بعد ما تسجل المندوب، يقدر يدخل على النظام باستخدام البريد الإلكتروني وكلمة المرور اللي أضفتهم له.",
+//delivery info
+  KeyLanguage.deliveryId: "# : معرّف عامل التوصيل",
+  KeyLanguage.displayDeliveryMen: "عرض مندوبي التوصيل",
+  KeyLanguage.ageDelivery: "عمر المندوب : ",
+  KeyLanguage.phoneDelivery: "رقم المندوب : ",
+  KeyLanguage.passwordDelivery: "كلمة مرور المندوب : ",
+  KeyLanguage.emailSubjectDeliveryInquiry: "استفسار عن مندوب التوصيل",
+  KeyLanguage.emailBodyDeliveryInquiry: "مرحبًا،\n\nأود أن أستفسر عن...",
 // dialog
   KeyLanguage.alert: "تنبيه",
   KeyLanguage.alertWantExit: "هل تريد الخروج؟",
@@ -150,6 +160,9 @@ Map<String, String> arabic = {
   KeyLanguage.alertDeliveryRegisterSuccess:
       "تم تسجيل مندوب التوصيل بنجاح وهو بانتظار التحقق.",
   KeyLanguage.alerMessageEmailFound: "البريد الإلكتروني أو الهاتف موجود",
+  KeyLanguage.alertEmailAppTitle: "لم يتم العثور على تطبيق بريد إلكتروني",
+  KeyLanguage.alertEmailAppBody:
+      "لا يوجد تطبيق بريد إلكتروني متاح لإرسال البريد.\nيرجى تثبيت تطبيق بريد أو التحقق من إعدادات الجهاز.",
 // label
   KeyLanguage.labelEmail: "البريد الإلكتروني",
   KeyLanguage.labelPassword: "كلمة المرور",
@@ -208,6 +221,8 @@ Map<String, String> arabic = {
   KeyLanguage.buttonSend: "إرسال",
   KeyLanguage.buttonOkay: "حسنًا",
   KeyLanguage.buttonSignup: "التسجيل",
+  KeyLanguage.buttonEmail: "البريد الإلكتروني",
+  KeyLanguage.buttonDelete: "حذف",
 // bar
   KeyLanguage.barPending: "الانتظار",
   KeyLanguage.barProper: "التأكيد",

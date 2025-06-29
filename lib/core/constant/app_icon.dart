@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 abstract class AppIcon {
+  static const IconData barPending = Icons.hourglass_top_outlined;
+  static const IconData barProper = Icons.shopping_bag;
+  static const IconData barAccept = Icons.assignment_turned_in;
+  static const IconData barOnTheWay = Icons.local_shipping;
+  static const IconData barDone = Icons.check_circle;
+
   static const IconData username = Icons.person_outline;
   static const IconData email = Icons.email_outlined;
   static const IconData closePassword = Icons.lock_outline;
@@ -12,44 +18,16 @@ abstract class AppIcon {
   static const IconData discount = Icons.local_offer_outlined;
   static const IconData camera = Icons.camera_alt;
   static const IconData gallery = Icons.image;
-
-  static const IconData barPending = Icons.hourglass_top_outlined;
-  static const IconData barProper = Icons.shopping_bag;
-  static const IconData barAccept = Icons.assignment_turned_in;
-  static const IconData barOnTheWay = Icons.local_shipping;
-  static const IconData barDone = Icons.check_circle;
-
   static const IconData notificationRing = Icons.notifications_active_outlined;
-  // static const IconData edit = Icons.edit;
   static const IconData phone = Icons.phone_android_rounded;
   static const IconData age = Icons.cake_outlined;
-  // static const IconData success = Icons.check_circle_outline;
-  // static const IconData search = Icons.search_outlined;
-  // static const IconData notification = Icons.notifications;
-  // static const IconData home = Icons.home;
-  // static const IconData setting = Icons.settings;
-  // static const IconData cart = Icons.shopping_cart;
-  // static const IconData receive = Icons.receipt;
-  // static const IconData profile = Icons.person;
-  // static const IconData favorite = Icons.favorite;
-  // static const IconData favoriteBorder = Icons.favorite_border;
-  // static const IconData shop = Icons.shopify_sharp;
-  // static const IconData star = Icons.star;
-  // static const IconData starBorder = Icons.star_border;
   static const IconData add = Icons.add;
-  // static const IconData remove = Icons.remove;
-  // static const IconData address = Icons.location_on_outlined;
-  // static const IconData archive = Icons.archive_outlined;
-  // static const IconData contactUs =  Icons.phone_outlined;
   static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
   static const IconData deleteSwipe = Icons.delete;
-  // static const IconData typeAddress = Icons.bookmark;
-  // static const IconData city = Icons.location_city;
-  // static const IconData street = Icons.route;
-  // static const IconData detailAddress = Icons.near_me;
   static const IconData error = Icons.error;
   static const IconData warning = Icons.warning_amber_rounded;
   static const IconData success = Icons.check_circle;
   static const IconData login = Icons.login;
+  static const IconData deliveryInfo = Icons.document_scanner_outlined;
 }

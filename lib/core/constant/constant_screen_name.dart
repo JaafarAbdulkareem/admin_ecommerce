@@ -39,18 +39,5 @@ class ConstantScreenName {
 //setting
   static const String setting = "/setting";
   static const String loginDelivery = "/loginDelivery";
-  // static const String productDetail = "/productDetail";
-  // static const String favorite = "/favorite";
-  // static const String cart = "/cart";
-  // static const String checkout = "/checkout";
-  // static const String order = "/order";
-  // static const String invalidOrder = "/invalidOrder";
-  // static const String archiveOrder = "/archiveOrder";
-  // static const String detailOrder = "/detailOrder";
-  // static const String detailArchiveOrder = "/detailArchiveOrder";
-  // static const String notification = "/notification";
-  // //address
-  // static const String insertAddress = "/insertAddress";
-  // static const String detailInsertAddress = "/detailInsertAddress";
-  // static const String displayAddress = "/displayAddress";
+  static const String deliveryInfo = "/deliveryInfo";
 }

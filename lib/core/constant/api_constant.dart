@@ -69,4 +69,6 @@ abstract class ApiConstant {
       "$folderSetting/view_delivery_men.php";
   static const String apiSignupDeliveryMan =
       "$folderSetting/signup_delivery.php";
+  static const String apiDeleteDeliveryMen =
+      "$folderSetting/delete_delivery_men.php";
 }

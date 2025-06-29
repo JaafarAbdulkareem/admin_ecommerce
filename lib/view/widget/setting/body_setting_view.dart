@@ -48,6 +48,13 @@ class BodySettingView extends GetView<SettingControllerImp> {
             controller.goToLoginDelivery();
           },
         ),
+        FieldSetting(
+          title: KeyLanguage.appBarDeliveryInfo.tr,
+          icon: AppIcon.deliveryInfo,
+          onTap: () {
+            controller.goToDeliveryInfo();
+          },
+        ),
         const ChangeLanguageThemeWidget(),
         const SizedBox(height: 50),
         FieldSetting(

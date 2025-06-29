@@ -28,6 +28,7 @@ abstract class KeyLanguage {
   static const String appBarReport = "appBarReport";
   static const String appBarSetting = "appBarSetting";
   static const String appBarSignup = "appBarSignup";
+  static const String appBarDeliveryInfo = "appBarDeliveryInfo";
 //validator
   static const String empty = "empty";
   static const String invalidEmail = "invalidEmail";
@@ -110,9 +111,20 @@ abstract class KeyLanguage {
   static const String logout = "logout";
   static const String darkMode = "darkMode";
   static const String language = "language";
-  static const String deliveryRegistor = "deliveryLogin";
+  static const String deliveryRegistor = "deliveryRegistor";
+  static const String deliveryInfo = "deliveryInfo";
 //login delivery
   static const String messageRegisterDelivery = "messageRegisterDelivery";
+//delivery info
+  static const String deliveryId = "deliveryId";
+  static const String displayDeliveryMen = "displayDeliveryMen";
+  static const String ageDelivery = "ageDelivery";
+  static const String phoneDelivery = "phoneDelivery";
+  static const String passwordDelivery = "passwordDelivery";
+  static const String emailSubjectDeliveryInquiry =
+      "emailSubjectDeliveryInquiry";
+  static const String emailBodyDeliveryInquiry = "emailBodyDeliveryInquiry";
+
 //dialog
   static const String alert = "alert";
   static const String alertWantExit = "alertWantExit";
@@ -144,6 +156,8 @@ abstract class KeyLanguage {
   static const String alertDeliveryRegisterSuccess =
       "alertDeliveryRegisterSuccess";
   static const String alerMessageEmailFound = "alerMessageEmailFound";
+  static const String alertEmailAppTitle = "alertEmailAppTitle";
+  static const String alertEmailAppBody = "alertEmailAppBody";
 //label
   static const String labelEmail = "labelEmail";
   static const String labelPassword = "labelPassword";
@@ -206,6 +220,8 @@ abstract class KeyLanguage {
   static const String buttonSend = "buttonSend";
   static const String buttonOkay = "buttonOkay";
   static const String buttonSignup = "buttonSignup";
+  static const String buttonEmail = "buttonEmail";
+  static const String buttonDelete = "buttonDelete";
 //bar
   static const String barPending = "barPending";
   static const String barProper = "barProper";

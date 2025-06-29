@@ -26,6 +26,7 @@ import 'package:admin_ecommerce/view/screen/product/insert_product_view.dart';
 import 'package:admin_ecommerce/view/screen/product/product_view.dart';
 import 'package:admin_ecommerce/view/screen/product/update_product_view.dart';
 import 'package:admin_ecommerce/view/screen/report/report_view.dart';
+import 'package:admin_ecommerce/view/screen/setting/delivery_men_info_view.dart';
 import 'package:admin_ecommerce/view/screen/setting/signup_delivery_view.dart';
 import 'package:admin_ecommerce/view/screen/setting/setting_view.dart';
 import 'package:get/get.dart';
@@ -154,5 +155,9 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.loginDelivery,
         page: () => const SignupDeliveryView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.deliveryInfo,
+        page: () => const DeliveryMenInfoView(),
       ),
     ];

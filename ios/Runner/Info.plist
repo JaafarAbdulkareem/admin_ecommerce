@@ -57,5 +57,18 @@
 	<array>
 		<string>tel</string>
 	</array>
+	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your photo library to upload images.</string>
+
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs permission to save photos to your photo library.</string>
+
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<!-- Example for custom schemes -->
+		<string>customscheme</string>
+		<string>anotherapp</string>
+	</array>
 </dict>
 </plist>
