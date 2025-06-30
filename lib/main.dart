@@ -12,7 +12,7 @@ void main() async {
   await SharedPrefsService.initialService();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => const MyApp(),
     ),
   );
