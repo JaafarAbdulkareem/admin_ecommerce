@@ -1,12 +1,17 @@
+import 'dart:async';
+
 import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
+import 'package:admin_ecommerce/core/constant/api_column_db.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/dialog_want_delete.dart';
 import 'package:admin_ecommerce/core/function/email_send.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/function/on_call.dart';
 import 'package:admin_ecommerce/data/data_source/remote/setting/setting_remote.dart';
 import 'package:admin_ecommerce/data/models/setting/delivery_info_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 abstract class DelivreyMenInfoController extends GetxController {
@@ -21,12 +26,23 @@ class DelivreyMenInfoControllerImp extends DelivreyMenInfoController {
   static List<DeliveryInfoModel> deliveryMenData = [];
   static bool firstTime = true;
   final AlertDefault _alertDefault = AlertDefault();
+
+  late StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>?
+      _activeDeliverySubscription;
+
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     _settingRemote = SettingRemote(curd: Get.find());
     _getData();
     super.onInit();
+  }
+
+  @override
+  void dispose() {
+    _activeDeliverySubscription?.cancel();
+    _activeDeliverySubscription = null;
+    super.dispose();
   }
 
   void fetchData(response) {
@@ -45,6 +61,7 @@ class DelivreyMenInfoControllerImp extends DelivreyMenInfoController {
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           fetchData(response[ApiResult.data]);
+          _liveActiveDelivery();
           checkDataLength();
         } else {
           statusRequest = StatusRequest.failure;
@@ -110,5 +127,20 @@ class DelivreyMenInfoControllerImp extends DelivreyMenInfoController {
         Get.back();
       },
     );
+  }
+
+  void _liveActiveDelivery() {
+    for (int i = 0; i < deliveryMenData.length; i++) {
+      _activeDeliverySubscription = FirebaseFirestore.instance
+          .collection(ConstantKey.collectionDeliveryStatus)
+          .doc(deliveryMenData[i].id)
+          .snapshots()
+          .listen((event) {
+        if (event.exists) {
+          final newValue = event.get(ApiColumnDb.active);
+          deliveryMenData[i].active.value = newValue; // ✅ update observable
+        }
+      });
+    }
   }
 }

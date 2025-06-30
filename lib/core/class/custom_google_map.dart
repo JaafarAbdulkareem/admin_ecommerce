@@ -81,10 +81,10 @@ class CustomGoogleMap {
           event.get(ApiColumnDb.latitude),
           event.get(ApiColumnDb.longitude),
         );
-      }else{
+      } else {
         latLngSource = latLngStore;
       }
-        updateDeliveryLocation();
+      updateDeliveryLocation();
     });
   }
 

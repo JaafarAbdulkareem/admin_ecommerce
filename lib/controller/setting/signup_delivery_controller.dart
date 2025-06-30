@@ -1,10 +1,13 @@
 import 'package:admin_ecommerce/core/class/alert_default.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
+import 'package:admin_ecommerce/core/constant/api_column_db.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
+import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/core/localization/key_language.dart';
 import 'package:admin_ecommerce/data/data_source/remote/setting/setting_remote.dart';
 import 'package:admin_ecommerce/data/models/setting/insert_delivery_info_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -63,13 +66,18 @@ class SignupDeliveryControllerImp extends SignupDeliveryController {
       update();
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
-          statusRequest = StatusRequest.success;
-          update();
+          await FirebaseFirestore.instance
+              .collection(ConstantKey.collectionDeliveryStatus)
+              .doc(response[ApiResult.data])
+              .set({ApiColumnDb.active: false});
+              
           username.clear();
           phone.clear();
           age.clear();
           email.clear();
           password.clear();
+          statusRequest = StatusRequest.success;
+          update();
           _alertDefault.snackBarDefault(
             title: KeyLanguage.alertTitleSuccess.tr,
             body: KeyLanguage.alertDeliveryRegisterSuccess.tr,

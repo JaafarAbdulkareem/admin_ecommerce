@@ -15,6 +15,7 @@ class ItemDeliveryMenInfo extends GetView<DelivreyMenInfoControllerImp> {
   });
   final DeliveryInfoModel data;
   final VoidCallback onDelete;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -35,14 +36,18 @@ class ItemDeliveryMenInfo extends GetView<DelivreyMenInfoControllerImp> {
                       .titleMedium
                       ?.copyWith(color: AppColor.primary),
                 ),
-                Text(
-                  data.active
-                      ? KeyLanguage.titleActive.tr
-                      : KeyLanguage.titleInactive.tr,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: data.active ? AppColor.price : AppColor.wrong,
-                      ),
-                ),
+                Obx(() {
+                  return Text(
+                    data.active.value
+                        ? KeyLanguage.titleActive.tr
+                        : KeyLanguage.titleInactive.tr,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: data.active.value
+                              ? AppColor.price
+                              : AppColor.wrong,
+                        ),
+                  );
+                }),
               ],
             ),
             const SizedBox(height: 6),
