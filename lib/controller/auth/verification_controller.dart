@@ -35,7 +35,6 @@ class VerificationControllerImp extends VerificationController {
       email: email,
       verifyCode: verifyCode,
     );
-    print("res : $response");
     statusRequest = handleStatus(response);
     update();
     if (statusRequest == StatusRequest.success) {
@@ -97,7 +96,6 @@ class VerificationControllerImp extends VerificationController {
 
   @override
   void verificationOnTap({required String verifyCode}) async {
-    print("regitoer : ${Get.isRegistered<ForgetPasswordControllerImp>()}");
     if (Get.isRegistered<ForgetPasswordControllerImp>()) {
       goToResetPassword(verifyCode: verifyCode);
     } else {
