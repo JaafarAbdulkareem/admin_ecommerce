@@ -102,9 +102,9 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        insertFromFirebase(response[ApiResult.data]);
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
+          insertFromFirebase(response[ApiResult.data], index);
           orderData[index].status = ConstantScale.prepareOption;
           filterDeliveryStatusOrder();
         }
@@ -232,7 +232,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     update([ConstantKey.idOnDoneDeliveryBody]);
   }
 
-  void insertFromFirebase(Map<String, dynamic> data) {
+  void insertFromFirebase(Map<String, dynamic> data, int index) {
     FirebaseFirestore.instance
         .collection(ConstantKey.collectionOrderReady)
         .doc(data[ApiColumnDb.id])
@@ -244,6 +244,11 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
       ApiColumnDb.quantity: data[ApiColumnDb.quantity],
       if (data[ApiColumnDb.addressDetail] != null)
         ApiColumnDb.addressDetail: data[ApiColumnDb.addressDetail],
+      ApiColumnDb.userId: orderData[index].userId,
+      ApiColumnDb.userLatitude: data[ApiColumnDb.userLatitude],
+      ApiColumnDb.userLongitude: data[ApiColumnDb.userLongitude],
+      ApiColumnDb.storeLatitude: ConstantScale.latitudeStore,
+      ApiColumnDb.storeLongitude: ConstantScale.latitudeStore,
     });
   }
 }
