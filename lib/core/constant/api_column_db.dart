@@ -39,6 +39,8 @@ class ApiColumnDb {
   static const String userId = "user_id";
   static const String productId = "product_id";
   static const String productsData = "products_data";
+  static const String quantity = "quantity";
+  static const String addressDetail = "addressDetail";
 
 //Address
   static const String address = "address";

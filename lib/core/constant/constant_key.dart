@@ -77,6 +77,7 @@ abstract class ConstantKey {
 //firebase firestore
   static const String collectionDelivery = "delivery";
   static const String collectionDeliveryStatus = "deliveryStatus";
+  static const String collectionOrderReady = "orderReady";
 
 //pageid
   static const String idAcceptedPage = "idAcceptedPage";

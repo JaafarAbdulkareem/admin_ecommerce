@@ -1,12 +1,14 @@
 import 'package:admin_ecommerce/controller/base/base_type_order_controller.dart';
 import 'package:admin_ecommerce/controller/order/order_controller.dart';
 import 'package:admin_ecommerce/core/class/status_request.dart';
+import 'package:admin_ecommerce/core/constant/api_column_db.dart';
 import 'package:admin_ecommerce/core/constant/api_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_key.dart';
 import 'package:admin_ecommerce/core/constant/constant_scale.dart';
 import 'package:admin_ecommerce/core/function/handle_status.dart';
 import 'package:admin_ecommerce/data/data_source/remote/order/delivery_order_remote.dart';
 import 'package:admin_ecommerce/data/models/order/order_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 abstract class DeliveryOrderController extends BaseTypeOrderController {
@@ -100,6 +102,7 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
+        insertFromFirebase(response[ApiResult.data]);
         int index = orderData.indexWhere((e) => e.id == id);
         if (index != -1) {
           orderData[index].status = ConstantScale.prepareOption;
@@ -227,5 +230,20 @@ class DeliveryOrderControllerImp extends DeliveryOrderController {
     }
     update([ConstantKey.idOnTheWayBody]);
     update([ConstantKey.idOnDoneDeliveryBody]);
+  }
+
+  void insertFromFirebase(Map<String, dynamic> data) {
+    FirebaseFirestore.instance
+        .collection(ConstantKey.collectionOrderReady)
+        .doc(data[ApiColumnDb.id])
+        .set({
+      ApiColumnDb.typeAddress: data[ApiColumnDb.typeAddress],
+      ApiColumnDb.city: data[ApiColumnDb.city],
+      ApiColumnDb.street: data[ApiColumnDb.street],
+      ApiColumnDb.price: data[ApiColumnDb.price],
+      ApiColumnDb.quantity: data[ApiColumnDb.quantity],
+      if (data[ApiColumnDb.addressDetail] != null)
+        ApiColumnDb.addressDetail: data[ApiColumnDb.addressDetail],
+    });
   }
 }
